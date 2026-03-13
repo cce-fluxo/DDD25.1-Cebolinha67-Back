@@ -20,10 +20,15 @@ model consulta {
   id_endereco Int
 }
 
+enum tipo_pagamento {
+  Particular
+  Convenio
+}
+
 model detalhe_da_consulta {
   DH DateTime
   valor Int
-  tipo_pagamento ENUM
+  tipo_pagamento tipo_pagamento @unique
   status String
   tipo_consulta String
   motivo String
