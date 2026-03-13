@@ -11,3 +11,22 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+model consulta {
+  id Int @id @default(autoincrement())
+  id_paciente Int
+  id_dentista Int
+  id_convenio Int
+  id_endereco Int
+}
+
+model detalhe_da_consulta {
+  DH DateTime
+  valor Int
+  tipo_pagamento ENUM
+  status String
+  tipo_consulta String
+  motivo String
+}
+
+

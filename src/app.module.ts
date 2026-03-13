@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DentistaModule } from './dentista/dentista.module';
-import { ConsultasModule } from './consultas/consultas.module';
+import { ConsultasModule } from './consulta/consultas.module';
 import { EnderecoModule } from './endereco/endereco.module';
 import { PacienteModule } from './paciente/paciente.module';
 import { AutorizacaoModule } from './autorizacao/autorizacao.module';
