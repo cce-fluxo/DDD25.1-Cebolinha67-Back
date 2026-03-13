@@ -1,9 +1,19 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { DentistaModule } from './dentista/dentista.module';
+import { ConsultasModule } from './consultas/consultas.module';
+import { EnderecoModule } from './endereco/endereco.module';
+import { PacienteModule } from './paciente/paciente.module';
+import { AutorizacaoModule } from './autorizacao/autorizacao.module';
+import { NotificacaoModule } from './notificacao/notificacao.module';
+import { ConvenioModule } from './convenio/convenio.module';
+import { UsuarioModule } from './usuario/usuario.module';
+import { ImagemModule } from './imagem/imagem.module';
+import { PostagemModule } from './postagem/postagem.module';
 
 @Module({
-  imports: [],
+  imports: [DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule],
   controllers: [AppController],
   providers: [AppService],
 })
