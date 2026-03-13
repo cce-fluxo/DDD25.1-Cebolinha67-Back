@@ -26,6 +26,7 @@ enum tipo_pagamento {
 }
 
 model detalhe_da_consulta {
+  id_consulta Int 
   DH DateTime
   valor Int
   tipo_pagamento tipo_pagamento @unique
@@ -34,4 +35,24 @@ model detalhe_da_consulta {
   motivo String
 }
 
+model dentista {
+  id_dentista Int @id @default(autoincrement())
+  Senha_dentista String
+  Formacao String
+  Instituto String
+  DataInicio DateTime
+  DataTermino DateTime
+  Especializacao String
+}
 
+model endereco {
+  id_endereco Int @id @default(autoincrement())
+  id_dentista Int 
+  dataCriacaoEndereco DateTime
+  Logradouro String
+  Cidade String
+  Estado String
+  Bairro String
+  complemento String
+  CEP String
+}
