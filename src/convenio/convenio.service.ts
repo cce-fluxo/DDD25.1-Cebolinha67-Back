@@ -16,6 +16,10 @@ export class ConvenioService {
     return `This action returns a #${id} convenio`;
   }
 
+  findPaciente(id: number) {
+    return `This action returns the paciente of convenio #${id}`;
+  }
+
   update(id: number, updateConvenioDto: UpdateConvenioDto) {
     return `This action updates a #${id} convenio`;
   }

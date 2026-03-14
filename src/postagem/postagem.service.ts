@@ -16,6 +16,10 @@ export class PostagemService {
     return `This action returns a #${id} postagem`;
   }
 
+  findDentista(id: number) {
+    return `This action returns a #${id} postagem do dentista`;
+  }
+
   update(id: number, updatePostagemDto: UpdatePostagemDto) {
     return `This action updates a #${id} postagem`;
   }

@@ -16,6 +16,14 @@ export class PacienteService {
     return `This action returns a #${id} paciente`;
   }
 
+  findNotificacoes(id: number) {
+    return `This action returns the notifications of paciente #${id}`;
+  }
+
+  findConsultas(id: number) {
+    return `This action returns the consultations of paciente #${id}`;
+  }
+
   update(id: number, updatePacienteDto: UpdatePacienteDto) {
     return `This action updates a #${id} paciente`;
   }
