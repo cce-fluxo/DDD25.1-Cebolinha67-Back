@@ -26,7 +26,13 @@ model usuario{
   Genero String
   data_nascimento DateTime
   token_esqueci_senha String
-}
+} 
+
+
+// teste
+
+
+
 
 model dentista{
   id Int @id @default(autoincrement())
