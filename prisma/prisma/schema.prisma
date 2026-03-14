@@ -26,13 +26,13 @@ model usuario{
   Genero String
   data_nascimento DateTime
   token_esqueci_senha String
+
+// RELACIONAMENTOS
+
+  paciente paciente?
+
+  Imagem_Usuario Imagem_Usuario?
 } 
-
-
-// teste
-
-
-
 
 model dentista{
   id Int @id @default(autoincrement())
@@ -46,9 +46,13 @@ model dentista{
 
 model paciente{
   id Int @id @default(autoincrement())
-  id_usuario Int
+  id_usuario Int @unique
   senha_paciente String
   RG String @unique
+
+  // RELACIONAMENTOS
+
+  usuario usuario @relation(fields:[id_usuario], references: [id])
 }
 
 // NOTIFICAÇÕES 
@@ -81,7 +85,11 @@ model Imagem{
 model Imagem_Usuario{
   id Int @id @default(autoincrement())
   id_imagem Int
-  id_usuario Int
+  id_usuario Int @unique
+
+  // RELACIONAMENTOS
+
+  usuario usuario @relation(fields: [id_usuario], references: [id])
 }
 
 model Imagem_postagem{
