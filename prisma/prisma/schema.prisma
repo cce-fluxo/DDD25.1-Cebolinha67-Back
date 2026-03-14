@@ -1,0 +1,161 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+// pessoal (vulgo arthur e danilo kkkk), vou enviar no grupo mas só pra deixar aqui, vou tentar agrupar tudo seguindo uma lógica, tipo, as entidades relacionadas a consulta, depois as relacionadas a usuario, e por aí vai, pra facilitar a leitura e organização do código, espero que gostem kkkk
+
+// SEÇÃO DE PESSOAS (DENTISTA, PACIENTE, USUÁRIO)
+
+model usuario{
+  id Int @id @default(autoincrement())
+  no_usuario String
+  email_usuario String @unique
+  CPF String @unique
+  NU_celular String @unique
+  Genero String
+  data_nascimento DateTime
+  token_esqueci_senha String
+}
+
+model dentista{
+  id Int @id @default(autoincrement())
+  senha_dentista String
+  formacao String
+  Instituto String
+  DataInicio DateTime
+  DataTermino DateTime
+  Especializacao String
+}
+
+model paciente{
+  id Int @id @default(autoincrement())
+  id_usuario Int
+  senha_paciente String
+  RG String @unique
+}
+
+// NOTIFICAÇÕES 
+
+model notificacao{
+  id Int @id @default(autoincrement())
+  id_notificacao Int
+  DS_mensagem String
+  lido Boolean
+  titulo String
+  simbolo String
+}
+
+model notificacao_to_usuario{
+  id Int @id @default(autoincrement())
+  id_notificacao Int
+  id_usuario Int
+  id_consulta Int
+}
+
+// IMAGENS
+
+model Imagem{
+  id Int @id @default(autoincrement())
+  id_imagem Int
+  URL String
+  Nome String
+}
+
+model Imagem_Usuario{
+  id Int @id @default(autoincrement())
+  id_imagem Int
+  id_usuario Int
+}
+
+model Imagem_postagem{
+  id Int @id @default(autoincrement())
+  id_imagem Int
+  id_postagem Int
+}
+
+// ENDERECO
+
+model endereco{
+  id Int @id @default(autoincrement())
+  id_endereco Int
+  id_dentista Int
+  data_criacao_endereco DateTime
+  logradouro String
+  cidade String
+  estado String
+  bairro String
+  complemento String
+  cep String
+}
+
+// CONSULTA
+
+model consulta {
+  id Int @id @default(autoincrement())
+  id_paciente Int
+  id_dentista Int
+  id_convenio Int
+  id_endereco Int
+}
+
+model detalhe_da_consulta {
+  DH DateTime
+  valor Int
+  tipo_pagamento tipo_pagamento @unique
+  status String
+  tipo_consulta String
+  motivo String
+}
+
+// tipo_pagamento é atributo (enumerado) da entidade detalhe_da_consulta
+enum tipo_pagamento {
+  Particular
+  Convenio
+}
+
+// POSTAGEM
+
+model postagem{
+  id Int @id @default(autoincrement())
+  id_postagem Int
+  titulo String
+  mensagem String
+  tipo String
+  data DateTime
+  id_usuario Int
+}
+
+// CONVÊNIO
+
+model convenio{
+  id Int @id @default(autoincrement())
+  id_convenio Int
+  NO_operadora String
+  NU_carteirinha String
+  DT_val_carteirinha DateTime
+  id_usuario Int
+}
+
+// DOCUMENTO
+
+model documento{
+  id Int @id @default(autoincrement())
+  id_documento Int
+  nome_doc String
+  tipo_doc String
+  extensao String
+  tamanho_doc Float
+}
+
+
