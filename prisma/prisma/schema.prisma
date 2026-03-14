@@ -146,11 +146,11 @@ model notificacao_usuario{
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_notificacao Int
+  id_notificacao Int @unique
   notificacao notificacao @relation(fields: [id_notificacao], references: [id])
-  id_usuario Int
+  id_usuario Int @unique
   usuario usuario @relation(fields: [id_usuario], references: [id])
-  id_consulta Int?
+  id_consulta Int? @unique
   consulta consulta? @relation(fields: [id_consulta], references: [id])
 }
 
@@ -220,6 +220,7 @@ model consulta {
   endereco endereco @relation(fields: [id_endereco], references: [id])
   detalhe_da_consulta detalhe_da_consulta?
   documentos documento[]
+  notificacao_usuario notificacao_usuario[]
 }
 
 model detalhe_da_consulta {
@@ -268,8 +269,8 @@ model convenio{
   DT_val_carteirinha DateTime
 
   // RELACIONAMENTOS
-  id_usuario Int @unique
-  usuario usuario @relation(fields: [id_usuario], references: [id])
+  id_paciente Int @unique
+  paciente paciente @relation(fields: [id_paciente], references: [id])
   consultas consulta[]
 }
 
