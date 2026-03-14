@@ -15,6 +15,68 @@ datasource db {
 
 // pessoal (vulgo arthur e danilo kkkk), vou enviar no grupo mas só pra deixar aqui, vou tentar agrupar tudo seguindo uma lógica, tipo, as entidades relacionadas a consulta, depois as relacionadas a usuario, e por aí vai, pra facilitar a leitura e organização do código, espero que gostem kkkk
 
+/*
+
+TODOS OS RELACIONAMENTOS MER
+
+USUÁRIO 
+
+Usuário 1 : 1 Imagem_usuario ok
+
+Usuário 1 : 1 Paciente ok
+
+Usuário 1 : 1 dentista 
+
+Usuário 1 : N notificao_to_usuario
+
+IMAGEM
+
+Imagem 1 : N imagem_usuário
+
+Imagem 1 : N imagem postagem
+
+IMAGEM POSTAGEM
+
+imagem postagem 1 : N postagem
+
+PACIENTE
+
+paciente 1 : N consultas
+
+paciente 1 : N convenio
+
+
+DENTISTA
+
+dentista 1 : 1 endereço
+
+dentista 1 : N consultas
+
+dentista 1 : N postagens
+
+NOTIFICACAO
+
+notificação 1 : 1 notificacao_to_usuario
+
+ENDERECO
+
+endereço 1 : N consulta
+
+CONSULTA
+
+1 consulta : N documento
+
+1 consulta: 1 detalhes_da_consulta
+
+CONVENIO
+
+1 convenio : N consulta
+
+
+*/
+
+
+
 // SEÇÃO DE PESSOAS (DENTISTA, PACIENTE, USUÁRIO)
 
 model usuario{
