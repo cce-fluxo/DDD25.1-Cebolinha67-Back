@@ -12,9 +12,10 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { ImagemModule } from './imagem/imagem.module';
 import { PostagemModule } from './postagem/postagem.module';
 import { DetalheDaConsultaModule } from './detalhe_da_consulta/detalhe_da_consulta.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
-  imports: [DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule, DetalheDaConsultaModule],
+  imports: [DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule, DetalheDaConsultaModule, PrismaModule],
   controllers: [AppController],
   providers: [AppService],
 })
