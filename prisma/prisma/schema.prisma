@@ -77,6 +77,14 @@ CONVENIO
 
 */
 
+/*
+
+entidade : pascalCase
+
+atributos: snake_case
+
+*/
+
 
 
 // SEÇÃO DE PESSOAS (DENTISTA, PACIENTE, USUÁRIO)
@@ -111,7 +119,7 @@ model dentista{
   // RELACIONAMENTOS
   id_usuario Int @unique
   usuario usuario @relation(fields:[id_usuario], references: [id])
-  postagen postagem[]
+  postagem postagem[]
   endereco endereco?
   consultas consulta[]
 }
@@ -288,5 +296,3 @@ model documento{
   id_consulta Int @unique
   consulta consulta @relation(fields: [id_consulta], references: [id])
 }
-
-
