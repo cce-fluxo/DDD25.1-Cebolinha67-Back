@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `convenio` model and its related types.
+ * This file exports the `Convenio` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model convenio
+ * Model Convenio
  * 
  */
-export type convenioModel = runtime.Types.Result.DefaultSelection<Prisma.$convenioPayload>
+export type ConvenioModel = runtime.Types.Result.DefaultSelection<Prisma.$ConvenioPayload>
 
 export type AggregateConvenio = {
   _count: ConvenioCountAggregateOutputType | null
@@ -41,27 +41,27 @@ export type ConvenioSumAggregateOutputType = {
 export type ConvenioMinAggregateOutputType = {
   id: number | null
   id_convenio: number | null
-  NO_operadora: string | null
-  NU_carteirinha: string | null
-  DT_val_carteirinha: Date | null
+  no_operadora: string | null
+  nu_carteirinha: string | null
+  dt_val_carteirinha: Date | null
   id_paciente: number | null
 }
 
 export type ConvenioMaxAggregateOutputType = {
   id: number | null
   id_convenio: number | null
-  NO_operadora: string | null
-  NU_carteirinha: string | null
-  DT_val_carteirinha: Date | null
+  no_operadora: string | null
+  nu_carteirinha: string | null
+  dt_val_carteirinha: Date | null
   id_paciente: number | null
 }
 
 export type ConvenioCountAggregateOutputType = {
   id: number
   id_convenio: number
-  NO_operadora: number
-  NU_carteirinha: number
-  DT_val_carteirinha: number
+  no_operadora: number
+  nu_carteirinha: number
+  dt_val_carteirinha: number
   id_paciente: number
   _all: number
 }
@@ -82,64 +82,64 @@ export type ConvenioSumAggregateInputType = {
 export type ConvenioMinAggregateInputType = {
   id?: true
   id_convenio?: true
-  NO_operadora?: true
-  NU_carteirinha?: true
-  DT_val_carteirinha?: true
+  no_operadora?: true
+  nu_carteirinha?: true
+  dt_val_carteirinha?: true
   id_paciente?: true
 }
 
 export type ConvenioMaxAggregateInputType = {
   id?: true
   id_convenio?: true
-  NO_operadora?: true
-  NU_carteirinha?: true
-  DT_val_carteirinha?: true
+  no_operadora?: true
+  nu_carteirinha?: true
+  dt_val_carteirinha?: true
   id_paciente?: true
 }
 
 export type ConvenioCountAggregateInputType = {
   id?: true
   id_convenio?: true
-  NO_operadora?: true
-  NU_carteirinha?: true
-  DT_val_carteirinha?: true
+  no_operadora?: true
+  nu_carteirinha?: true
+  dt_val_carteirinha?: true
   id_paciente?: true
   _all?: true
 }
 
 export type ConvenioAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which convenio to aggregate.
+   * Filter which Convenio to aggregate.
    */
-  where?: Prisma.convenioWhereInput
+  where?: Prisma.ConvenioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of convenios to fetch.
+   * Determine the order of Convenios to fetch.
    */
-  orderBy?: Prisma.convenioOrderByWithRelationInput | Prisma.convenioOrderByWithRelationInput[]
+  orderBy?: Prisma.ConvenioOrderByWithRelationInput | Prisma.ConvenioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.convenioWhereUniqueInput
+  cursor?: Prisma.ConvenioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` convenios from the position of the cursor.
+   * Take `±n` Convenios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` convenios.
+   * Skip the first `n` Convenios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned convenios
+   * Count returned Convenios
   **/
   _count?: true | ConvenioCountAggregateInputType
   /**
@@ -179,11 +179,11 @@ export type GetConvenioAggregateType<T extends ConvenioAggregateArgs> = {
 
 
 
-export type convenioGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.convenioWhereInput
-  orderBy?: Prisma.convenioOrderByWithAggregationInput | Prisma.convenioOrderByWithAggregationInput[]
+export type ConvenioGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ConvenioWhereInput
+  orderBy?: Prisma.ConvenioOrderByWithAggregationInput | Prisma.ConvenioOrderByWithAggregationInput[]
   by: Prisma.ConvenioScalarFieldEnum[] | Prisma.ConvenioScalarFieldEnum
-  having?: Prisma.convenioScalarWhereWithAggregatesInput
+  having?: Prisma.ConvenioScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: ConvenioCountAggregateInputType | true
@@ -196,9 +196,9 @@ export type convenioGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 export type ConvenioGroupByOutputType = {
   id: number
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date
   id_paciente: number
   _count: ConvenioCountAggregateOutputType | null
   _avg: ConvenioAvgAggregateOutputType | null
@@ -207,7 +207,7 @@ export type ConvenioGroupByOutputType = {
   _max: ConvenioMaxAggregateOutputType | null
 }
 
-type GetConvenioGroupByPayload<T extends convenioGroupByArgs> = Prisma.PrismaPromise<
+type GetConvenioGroupByPayload<T extends ConvenioGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ConvenioGroupByOutputType, T['by']> &
       {
@@ -222,380 +222,380 @@ type GetConvenioGroupByPayload<T extends convenioGroupByArgs> = Prisma.PrismaPro
 
 
 
-export type convenioWhereInput = {
-  AND?: Prisma.convenioWhereInput | Prisma.convenioWhereInput[]
-  OR?: Prisma.convenioWhereInput[]
-  NOT?: Prisma.convenioWhereInput | Prisma.convenioWhereInput[]
-  id?: Prisma.IntFilter<"convenio"> | number
-  id_convenio?: Prisma.IntFilter<"convenio"> | number
-  NO_operadora?: Prisma.StringFilter<"convenio"> | string
-  NU_carteirinha?: Prisma.StringFilter<"convenio"> | string
-  DT_val_carteirinha?: Prisma.DateTimeFilter<"convenio"> | Date | string
-  id_paciente?: Prisma.IntFilter<"convenio"> | number
-  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.pacienteWhereInput>
+export type ConvenioWhereInput = {
+  AND?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
+  OR?: Prisma.ConvenioWhereInput[]
+  NOT?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
+  id?: Prisma.IntFilter<"Convenio"> | number
+  id_convenio?: Prisma.IntFilter<"Convenio"> | number
+  no_operadora?: Prisma.StringFilter<"Convenio"> | string
+  nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
+  dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
+  id_paciente?: Prisma.IntFilter<"Convenio"> | number
+  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
   consultas?: Prisma.ConsultaListRelationFilter
 }
 
-export type convenioOrderByWithRelationInput = {
+export type ConvenioOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   id_convenio?: Prisma.SortOrder
-  NO_operadora?: Prisma.SortOrder
-  NU_carteirinha?: Prisma.SortOrder
-  DT_val_carteirinha?: Prisma.SortOrder
+  no_operadora?: Prisma.SortOrder
+  nu_carteirinha?: Prisma.SortOrder
+  dt_val_carteirinha?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
-  paciente?: Prisma.pacienteOrderByWithRelationInput
-  consultas?: Prisma.consultaOrderByRelationAggregateInput
+  paciente?: Prisma.PacienteOrderByWithRelationInput
+  consultas?: Prisma.ConsultaOrderByRelationAggregateInput
 }
 
-export type convenioWhereUniqueInput = Prisma.AtLeast<{
+export type ConvenioWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   id_paciente?: number
-  AND?: Prisma.convenioWhereInput | Prisma.convenioWhereInput[]
-  OR?: Prisma.convenioWhereInput[]
-  NOT?: Prisma.convenioWhereInput | Prisma.convenioWhereInput[]
-  id_convenio?: Prisma.IntFilter<"convenio"> | number
-  NO_operadora?: Prisma.StringFilter<"convenio"> | string
-  NU_carteirinha?: Prisma.StringFilter<"convenio"> | string
-  DT_val_carteirinha?: Prisma.DateTimeFilter<"convenio"> | Date | string
-  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.pacienteWhereInput>
+  AND?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
+  OR?: Prisma.ConvenioWhereInput[]
+  NOT?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
+  id_convenio?: Prisma.IntFilter<"Convenio"> | number
+  no_operadora?: Prisma.StringFilter<"Convenio"> | string
+  nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
+  dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
+  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
   consultas?: Prisma.ConsultaListRelationFilter
 }, "id" | "id_paciente">
 
-export type convenioOrderByWithAggregationInput = {
+export type ConvenioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   id_convenio?: Prisma.SortOrder
-  NO_operadora?: Prisma.SortOrder
-  NU_carteirinha?: Prisma.SortOrder
-  DT_val_carteirinha?: Prisma.SortOrder
+  no_operadora?: Prisma.SortOrder
+  nu_carteirinha?: Prisma.SortOrder
+  dt_val_carteirinha?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
-  _count?: Prisma.convenioCountOrderByAggregateInput
-  _avg?: Prisma.convenioAvgOrderByAggregateInput
-  _max?: Prisma.convenioMaxOrderByAggregateInput
-  _min?: Prisma.convenioMinOrderByAggregateInput
-  _sum?: Prisma.convenioSumOrderByAggregateInput
+  _count?: Prisma.ConvenioCountOrderByAggregateInput
+  _avg?: Prisma.ConvenioAvgOrderByAggregateInput
+  _max?: Prisma.ConvenioMaxOrderByAggregateInput
+  _min?: Prisma.ConvenioMinOrderByAggregateInput
+  _sum?: Prisma.ConvenioSumOrderByAggregateInput
 }
 
-export type convenioScalarWhereWithAggregatesInput = {
-  AND?: Prisma.convenioScalarWhereWithAggregatesInput | Prisma.convenioScalarWhereWithAggregatesInput[]
-  OR?: Prisma.convenioScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.convenioScalarWhereWithAggregatesInput | Prisma.convenioScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"convenio"> | number
-  id_convenio?: Prisma.IntWithAggregatesFilter<"convenio"> | number
-  NO_operadora?: Prisma.StringWithAggregatesFilter<"convenio"> | string
-  NU_carteirinha?: Prisma.StringWithAggregatesFilter<"convenio"> | string
-  DT_val_carteirinha?: Prisma.DateTimeWithAggregatesFilter<"convenio"> | Date | string
-  id_paciente?: Prisma.IntWithAggregatesFilter<"convenio"> | number
+export type ConvenioScalarWhereWithAggregatesInput = {
+  AND?: Prisma.ConvenioScalarWhereWithAggregatesInput | Prisma.ConvenioScalarWhereWithAggregatesInput[]
+  OR?: Prisma.ConvenioScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.ConvenioScalarWhereWithAggregatesInput | Prisma.ConvenioScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"Convenio"> | number
+  id_convenio?: Prisma.IntWithAggregatesFilter<"Convenio"> | number
+  no_operadora?: Prisma.StringWithAggregatesFilter<"Convenio"> | string
+  nu_carteirinha?: Prisma.StringWithAggregatesFilter<"Convenio"> | string
+  dt_val_carteirinha?: Prisma.DateTimeWithAggregatesFilter<"Convenio"> | Date | string
+  id_paciente?: Prisma.IntWithAggregatesFilter<"Convenio"> | number
 }
 
-export type convenioCreateInput = {
+export type ConvenioCreateInput = {
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
-  paciente: Prisma.pacienteCreateNestedOneWithoutConveniosInput
-  consultas?: Prisma.consultaCreateNestedManyWithoutConvenioInput
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
+  paciente: Prisma.PacienteCreateNestedOneWithoutConveniosInput
+  consultas?: Prisma.ConsultaCreateNestedManyWithoutConvenioInput
 }
 
-export type convenioUncheckedCreateInput = {
+export type ConvenioUncheckedCreateInput = {
   id?: number
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
   id_paciente: number
-  consultas?: Prisma.consultaUncheckedCreateNestedManyWithoutConvenioInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutConvenioInput
 }
 
-export type convenioUpdateInput = {
+export type ConvenioUpdateInput = {
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConveniosNestedInput
-  consultas?: Prisma.consultaUpdateManyWithoutConvenioNestedInput
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConveniosNestedInput
+  consultas?: Prisma.ConsultaUpdateManyWithoutConvenioNestedInput
 }
 
-export type convenioUncheckedUpdateInput = {
+export type ConvenioUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
-  consultas?: Prisma.consultaUncheckedUpdateManyWithoutConvenioNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutConvenioNestedInput
 }
 
-export type convenioCreateManyInput = {
+export type ConvenioCreateManyInput = {
   id?: number
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
   id_paciente: number
 }
 
-export type convenioUpdateManyMutationInput = {
+export type ConvenioUpdateManyMutationInput = {
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type convenioUncheckedUpdateManyInput = {
+export type ConvenioUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type ConvenioListRelationFilter = {
-  every?: Prisma.convenioWhereInput
-  some?: Prisma.convenioWhereInput
-  none?: Prisma.convenioWhereInput
+  every?: Prisma.ConvenioWhereInput
+  some?: Prisma.ConvenioWhereInput
+  none?: Prisma.ConvenioWhereInput
 }
 
-export type convenioOrderByRelationAggregateInput = {
+export type ConvenioOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
 export type ConvenioScalarRelationFilter = {
-  is?: Prisma.convenioWhereInput
-  isNot?: Prisma.convenioWhereInput
+  is?: Prisma.ConvenioWhereInput
+  isNot?: Prisma.ConvenioWhereInput
 }
 
-export type convenioCountOrderByAggregateInput = {
+export type ConvenioCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_convenio?: Prisma.SortOrder
-  NO_operadora?: Prisma.SortOrder
-  NU_carteirinha?: Prisma.SortOrder
-  DT_val_carteirinha?: Prisma.SortOrder
+  no_operadora?: Prisma.SortOrder
+  nu_carteirinha?: Prisma.SortOrder
+  dt_val_carteirinha?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
-export type convenioAvgOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
-  id_paciente?: Prisma.SortOrder
-}
-
-export type convenioMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
-  NO_operadora?: Prisma.SortOrder
-  NU_carteirinha?: Prisma.SortOrder
-  DT_val_carteirinha?: Prisma.SortOrder
-  id_paciente?: Prisma.SortOrder
-}
-
-export type convenioMinOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
-  NO_operadora?: Prisma.SortOrder
-  NU_carteirinha?: Prisma.SortOrder
-  DT_val_carteirinha?: Prisma.SortOrder
-  id_paciente?: Prisma.SortOrder
-}
-
-export type convenioSumOrderByAggregateInput = {
+export type ConvenioAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_convenio?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
-export type convenioCreateNestedManyWithoutPacienteInput = {
-  create?: Prisma.XOR<Prisma.convenioCreateWithoutPacienteInput, Prisma.convenioUncheckedCreateWithoutPacienteInput> | Prisma.convenioCreateWithoutPacienteInput[] | Prisma.convenioUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.convenioCreateOrConnectWithoutPacienteInput | Prisma.convenioCreateOrConnectWithoutPacienteInput[]
-  createMany?: Prisma.convenioCreateManyPacienteInputEnvelope
-  connect?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
+export type ConvenioMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  id_convenio?: Prisma.SortOrder
+  no_operadora?: Prisma.SortOrder
+  nu_carteirinha?: Prisma.SortOrder
+  dt_val_carteirinha?: Prisma.SortOrder
+  id_paciente?: Prisma.SortOrder
 }
 
-export type convenioUncheckedCreateNestedManyWithoutPacienteInput = {
-  create?: Prisma.XOR<Prisma.convenioCreateWithoutPacienteInput, Prisma.convenioUncheckedCreateWithoutPacienteInput> | Prisma.convenioCreateWithoutPacienteInput[] | Prisma.convenioUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.convenioCreateOrConnectWithoutPacienteInput | Prisma.convenioCreateOrConnectWithoutPacienteInput[]
-  createMany?: Prisma.convenioCreateManyPacienteInputEnvelope
-  connect?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
+export type ConvenioMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  id_convenio?: Prisma.SortOrder
+  no_operadora?: Prisma.SortOrder
+  nu_carteirinha?: Prisma.SortOrder
+  dt_val_carteirinha?: Prisma.SortOrder
+  id_paciente?: Prisma.SortOrder
 }
 
-export type convenioUpdateManyWithoutPacienteNestedInput = {
-  create?: Prisma.XOR<Prisma.convenioCreateWithoutPacienteInput, Prisma.convenioUncheckedCreateWithoutPacienteInput> | Prisma.convenioCreateWithoutPacienteInput[] | Prisma.convenioUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.convenioCreateOrConnectWithoutPacienteInput | Prisma.convenioCreateOrConnectWithoutPacienteInput[]
-  upsert?: Prisma.convenioUpsertWithWhereUniqueWithoutPacienteInput | Prisma.convenioUpsertWithWhereUniqueWithoutPacienteInput[]
-  createMany?: Prisma.convenioCreateManyPacienteInputEnvelope
-  set?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  disconnect?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  delete?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  connect?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  update?: Prisma.convenioUpdateWithWhereUniqueWithoutPacienteInput | Prisma.convenioUpdateWithWhereUniqueWithoutPacienteInput[]
-  updateMany?: Prisma.convenioUpdateManyWithWhereWithoutPacienteInput | Prisma.convenioUpdateManyWithWhereWithoutPacienteInput[]
-  deleteMany?: Prisma.convenioScalarWhereInput | Prisma.convenioScalarWhereInput[]
+export type ConvenioSumOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  id_convenio?: Prisma.SortOrder
+  id_paciente?: Prisma.SortOrder
 }
 
-export type convenioUncheckedUpdateManyWithoutPacienteNestedInput = {
-  create?: Prisma.XOR<Prisma.convenioCreateWithoutPacienteInput, Prisma.convenioUncheckedCreateWithoutPacienteInput> | Prisma.convenioCreateWithoutPacienteInput[] | Prisma.convenioUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.convenioCreateOrConnectWithoutPacienteInput | Prisma.convenioCreateOrConnectWithoutPacienteInput[]
-  upsert?: Prisma.convenioUpsertWithWhereUniqueWithoutPacienteInput | Prisma.convenioUpsertWithWhereUniqueWithoutPacienteInput[]
-  createMany?: Prisma.convenioCreateManyPacienteInputEnvelope
-  set?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  disconnect?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  delete?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  connect?: Prisma.convenioWhereUniqueInput | Prisma.convenioWhereUniqueInput[]
-  update?: Prisma.convenioUpdateWithWhereUniqueWithoutPacienteInput | Prisma.convenioUpdateWithWhereUniqueWithoutPacienteInput[]
-  updateMany?: Prisma.convenioUpdateManyWithWhereWithoutPacienteInput | Prisma.convenioUpdateManyWithWhereWithoutPacienteInput[]
-  deleteMany?: Prisma.convenioScalarWhereInput | Prisma.convenioScalarWhereInput[]
+export type ConvenioCreateNestedManyWithoutPacienteInput = {
+  create?: Prisma.XOR<Prisma.ConvenioCreateWithoutPacienteInput, Prisma.ConvenioUncheckedCreateWithoutPacienteInput> | Prisma.ConvenioCreateWithoutPacienteInput[] | Prisma.ConvenioUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConvenioCreateOrConnectWithoutPacienteInput | Prisma.ConvenioCreateOrConnectWithoutPacienteInput[]
+  createMany?: Prisma.ConvenioCreateManyPacienteInputEnvelope
+  connect?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
 }
 
-export type convenioCreateNestedOneWithoutConsultasInput = {
-  create?: Prisma.XOR<Prisma.convenioCreateWithoutConsultasInput, Prisma.convenioUncheckedCreateWithoutConsultasInput>
-  connectOrCreate?: Prisma.convenioCreateOrConnectWithoutConsultasInput
-  connect?: Prisma.convenioWhereUniqueInput
+export type ConvenioUncheckedCreateNestedManyWithoutPacienteInput = {
+  create?: Prisma.XOR<Prisma.ConvenioCreateWithoutPacienteInput, Prisma.ConvenioUncheckedCreateWithoutPacienteInput> | Prisma.ConvenioCreateWithoutPacienteInput[] | Prisma.ConvenioUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConvenioCreateOrConnectWithoutPacienteInput | Prisma.ConvenioCreateOrConnectWithoutPacienteInput[]
+  createMany?: Prisma.ConvenioCreateManyPacienteInputEnvelope
+  connect?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
 }
 
-export type convenioUpdateOneRequiredWithoutConsultasNestedInput = {
-  create?: Prisma.XOR<Prisma.convenioCreateWithoutConsultasInput, Prisma.convenioUncheckedCreateWithoutConsultasInput>
-  connectOrCreate?: Prisma.convenioCreateOrConnectWithoutConsultasInput
-  upsert?: Prisma.convenioUpsertWithoutConsultasInput
-  connect?: Prisma.convenioWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.convenioUpdateToOneWithWhereWithoutConsultasInput, Prisma.convenioUpdateWithoutConsultasInput>, Prisma.convenioUncheckedUpdateWithoutConsultasInput>
+export type ConvenioUpdateManyWithoutPacienteNestedInput = {
+  create?: Prisma.XOR<Prisma.ConvenioCreateWithoutPacienteInput, Prisma.ConvenioUncheckedCreateWithoutPacienteInput> | Prisma.ConvenioCreateWithoutPacienteInput[] | Prisma.ConvenioUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConvenioCreateOrConnectWithoutPacienteInput | Prisma.ConvenioCreateOrConnectWithoutPacienteInput[]
+  upsert?: Prisma.ConvenioUpsertWithWhereUniqueWithoutPacienteInput | Prisma.ConvenioUpsertWithWhereUniqueWithoutPacienteInput[]
+  createMany?: Prisma.ConvenioCreateManyPacienteInputEnvelope
+  set?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  disconnect?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  delete?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  connect?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  update?: Prisma.ConvenioUpdateWithWhereUniqueWithoutPacienteInput | Prisma.ConvenioUpdateWithWhereUniqueWithoutPacienteInput[]
+  updateMany?: Prisma.ConvenioUpdateManyWithWhereWithoutPacienteInput | Prisma.ConvenioUpdateManyWithWhereWithoutPacienteInput[]
+  deleteMany?: Prisma.ConvenioScalarWhereInput | Prisma.ConvenioScalarWhereInput[]
 }
 
-export type convenioCreateWithoutPacienteInput = {
+export type ConvenioUncheckedUpdateManyWithoutPacienteNestedInput = {
+  create?: Prisma.XOR<Prisma.ConvenioCreateWithoutPacienteInput, Prisma.ConvenioUncheckedCreateWithoutPacienteInput> | Prisma.ConvenioCreateWithoutPacienteInput[] | Prisma.ConvenioUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConvenioCreateOrConnectWithoutPacienteInput | Prisma.ConvenioCreateOrConnectWithoutPacienteInput[]
+  upsert?: Prisma.ConvenioUpsertWithWhereUniqueWithoutPacienteInput | Prisma.ConvenioUpsertWithWhereUniqueWithoutPacienteInput[]
+  createMany?: Prisma.ConvenioCreateManyPacienteInputEnvelope
+  set?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  disconnect?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  delete?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  connect?: Prisma.ConvenioWhereUniqueInput | Prisma.ConvenioWhereUniqueInput[]
+  update?: Prisma.ConvenioUpdateWithWhereUniqueWithoutPacienteInput | Prisma.ConvenioUpdateWithWhereUniqueWithoutPacienteInput[]
+  updateMany?: Prisma.ConvenioUpdateManyWithWhereWithoutPacienteInput | Prisma.ConvenioUpdateManyWithWhereWithoutPacienteInput[]
+  deleteMany?: Prisma.ConvenioScalarWhereInput | Prisma.ConvenioScalarWhereInput[]
+}
+
+export type ConvenioCreateNestedOneWithoutConsultasInput = {
+  create?: Prisma.XOR<Prisma.ConvenioCreateWithoutConsultasInput, Prisma.ConvenioUncheckedCreateWithoutConsultasInput>
+  connectOrCreate?: Prisma.ConvenioCreateOrConnectWithoutConsultasInput
+  connect?: Prisma.ConvenioWhereUniqueInput
+}
+
+export type ConvenioUpdateOneRequiredWithoutConsultasNestedInput = {
+  create?: Prisma.XOR<Prisma.ConvenioCreateWithoutConsultasInput, Prisma.ConvenioUncheckedCreateWithoutConsultasInput>
+  connectOrCreate?: Prisma.ConvenioCreateOrConnectWithoutConsultasInput
+  upsert?: Prisma.ConvenioUpsertWithoutConsultasInput
+  connect?: Prisma.ConvenioWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ConvenioUpdateToOneWithWhereWithoutConsultasInput, Prisma.ConvenioUpdateWithoutConsultasInput>, Prisma.ConvenioUncheckedUpdateWithoutConsultasInput>
+}
+
+export type ConvenioCreateWithoutPacienteInput = {
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
-  consultas?: Prisma.consultaCreateNestedManyWithoutConvenioInput
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
+  consultas?: Prisma.ConsultaCreateNestedManyWithoutConvenioInput
 }
 
-export type convenioUncheckedCreateWithoutPacienteInput = {
+export type ConvenioUncheckedCreateWithoutPacienteInput = {
   id?: number
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
-  consultas?: Prisma.consultaUncheckedCreateNestedManyWithoutConvenioInput
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
+  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutConvenioInput
 }
 
-export type convenioCreateOrConnectWithoutPacienteInput = {
-  where: Prisma.convenioWhereUniqueInput
-  create: Prisma.XOR<Prisma.convenioCreateWithoutPacienteInput, Prisma.convenioUncheckedCreateWithoutPacienteInput>
+export type ConvenioCreateOrConnectWithoutPacienteInput = {
+  where: Prisma.ConvenioWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConvenioCreateWithoutPacienteInput, Prisma.ConvenioUncheckedCreateWithoutPacienteInput>
 }
 
-export type convenioCreateManyPacienteInputEnvelope = {
-  data: Prisma.convenioCreateManyPacienteInput | Prisma.convenioCreateManyPacienteInput[]
+export type ConvenioCreateManyPacienteInputEnvelope = {
+  data: Prisma.ConvenioCreateManyPacienteInput | Prisma.ConvenioCreateManyPacienteInput[]
   skipDuplicates?: boolean
 }
 
-export type convenioUpsertWithWhereUniqueWithoutPacienteInput = {
-  where: Prisma.convenioWhereUniqueInput
-  update: Prisma.XOR<Prisma.convenioUpdateWithoutPacienteInput, Prisma.convenioUncheckedUpdateWithoutPacienteInput>
-  create: Prisma.XOR<Prisma.convenioCreateWithoutPacienteInput, Prisma.convenioUncheckedCreateWithoutPacienteInput>
+export type ConvenioUpsertWithWhereUniqueWithoutPacienteInput = {
+  where: Prisma.ConvenioWhereUniqueInput
+  update: Prisma.XOR<Prisma.ConvenioUpdateWithoutPacienteInput, Prisma.ConvenioUncheckedUpdateWithoutPacienteInput>
+  create: Prisma.XOR<Prisma.ConvenioCreateWithoutPacienteInput, Prisma.ConvenioUncheckedCreateWithoutPacienteInput>
 }
 
-export type convenioUpdateWithWhereUniqueWithoutPacienteInput = {
-  where: Prisma.convenioWhereUniqueInput
-  data: Prisma.XOR<Prisma.convenioUpdateWithoutPacienteInput, Prisma.convenioUncheckedUpdateWithoutPacienteInput>
+export type ConvenioUpdateWithWhereUniqueWithoutPacienteInput = {
+  where: Prisma.ConvenioWhereUniqueInput
+  data: Prisma.XOR<Prisma.ConvenioUpdateWithoutPacienteInput, Prisma.ConvenioUncheckedUpdateWithoutPacienteInput>
 }
 
-export type convenioUpdateManyWithWhereWithoutPacienteInput = {
-  where: Prisma.convenioScalarWhereInput
-  data: Prisma.XOR<Prisma.convenioUpdateManyMutationInput, Prisma.convenioUncheckedUpdateManyWithoutPacienteInput>
+export type ConvenioUpdateManyWithWhereWithoutPacienteInput = {
+  where: Prisma.ConvenioScalarWhereInput
+  data: Prisma.XOR<Prisma.ConvenioUpdateManyMutationInput, Prisma.ConvenioUncheckedUpdateManyWithoutPacienteInput>
 }
 
-export type convenioScalarWhereInput = {
-  AND?: Prisma.convenioScalarWhereInput | Prisma.convenioScalarWhereInput[]
-  OR?: Prisma.convenioScalarWhereInput[]
-  NOT?: Prisma.convenioScalarWhereInput | Prisma.convenioScalarWhereInput[]
-  id?: Prisma.IntFilter<"convenio"> | number
-  id_convenio?: Prisma.IntFilter<"convenio"> | number
-  NO_operadora?: Prisma.StringFilter<"convenio"> | string
-  NU_carteirinha?: Prisma.StringFilter<"convenio"> | string
-  DT_val_carteirinha?: Prisma.DateTimeFilter<"convenio"> | Date | string
-  id_paciente?: Prisma.IntFilter<"convenio"> | number
+export type ConvenioScalarWhereInput = {
+  AND?: Prisma.ConvenioScalarWhereInput | Prisma.ConvenioScalarWhereInput[]
+  OR?: Prisma.ConvenioScalarWhereInput[]
+  NOT?: Prisma.ConvenioScalarWhereInput | Prisma.ConvenioScalarWhereInput[]
+  id?: Prisma.IntFilter<"Convenio"> | number
+  id_convenio?: Prisma.IntFilter<"Convenio"> | number
+  no_operadora?: Prisma.StringFilter<"Convenio"> | string
+  nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
+  dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
+  id_paciente?: Prisma.IntFilter<"Convenio"> | number
 }
 
-export type convenioCreateWithoutConsultasInput = {
+export type ConvenioCreateWithoutConsultasInput = {
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
-  paciente: Prisma.pacienteCreateNestedOneWithoutConveniosInput
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
+  paciente: Prisma.PacienteCreateNestedOneWithoutConveniosInput
 }
 
-export type convenioUncheckedCreateWithoutConsultasInput = {
+export type ConvenioUncheckedCreateWithoutConsultasInput = {
   id?: number
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
   id_paciente: number
 }
 
-export type convenioCreateOrConnectWithoutConsultasInput = {
-  where: Prisma.convenioWhereUniqueInput
-  create: Prisma.XOR<Prisma.convenioCreateWithoutConsultasInput, Prisma.convenioUncheckedCreateWithoutConsultasInput>
+export type ConvenioCreateOrConnectWithoutConsultasInput = {
+  where: Prisma.ConvenioWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConvenioCreateWithoutConsultasInput, Prisma.ConvenioUncheckedCreateWithoutConsultasInput>
 }
 
-export type convenioUpsertWithoutConsultasInput = {
-  update: Prisma.XOR<Prisma.convenioUpdateWithoutConsultasInput, Prisma.convenioUncheckedUpdateWithoutConsultasInput>
-  create: Prisma.XOR<Prisma.convenioCreateWithoutConsultasInput, Prisma.convenioUncheckedCreateWithoutConsultasInput>
-  where?: Prisma.convenioWhereInput
+export type ConvenioUpsertWithoutConsultasInput = {
+  update: Prisma.XOR<Prisma.ConvenioUpdateWithoutConsultasInput, Prisma.ConvenioUncheckedUpdateWithoutConsultasInput>
+  create: Prisma.XOR<Prisma.ConvenioCreateWithoutConsultasInput, Prisma.ConvenioUncheckedCreateWithoutConsultasInput>
+  where?: Prisma.ConvenioWhereInput
 }
 
-export type convenioUpdateToOneWithWhereWithoutConsultasInput = {
-  where?: Prisma.convenioWhereInput
-  data: Prisma.XOR<Prisma.convenioUpdateWithoutConsultasInput, Prisma.convenioUncheckedUpdateWithoutConsultasInput>
+export type ConvenioUpdateToOneWithWhereWithoutConsultasInput = {
+  where?: Prisma.ConvenioWhereInput
+  data: Prisma.XOR<Prisma.ConvenioUpdateWithoutConsultasInput, Prisma.ConvenioUncheckedUpdateWithoutConsultasInput>
 }
 
-export type convenioUpdateWithoutConsultasInput = {
+export type ConvenioUpdateWithoutConsultasInput = {
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConveniosNestedInput
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConveniosNestedInput
 }
 
-export type convenioUncheckedUpdateWithoutConsultasInput = {
+export type ConvenioUncheckedUpdateWithoutConsultasInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type convenioCreateManyPacienteInput = {
+export type ConvenioCreateManyPacienteInput = {
   id?: number
   id_convenio: number
-  NO_operadora: string
-  NU_carteirinha: string
-  DT_val_carteirinha: Date | string
+  no_operadora: string
+  nu_carteirinha: string
+  dt_val_carteirinha: Date | string
 }
 
-export type convenioUpdateWithoutPacienteInput = {
+export type ConvenioUpdateWithoutPacienteInput = {
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  consultas?: Prisma.consultaUpdateManyWithoutConvenioNestedInput
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  consultas?: Prisma.ConsultaUpdateManyWithoutConvenioNestedInput
 }
 
-export type convenioUncheckedUpdateWithoutPacienteInput = {
+export type ConvenioUncheckedUpdateWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  consultas?: Prisma.consultaUncheckedUpdateManyWithoutConvenioNestedInput
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutConvenioNestedInput
 }
 
-export type convenioUncheckedUpdateManyWithoutPacienteInput = {
+export type ConvenioUncheckedUpdateManyWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  NO_operadora?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
-  DT_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
+  dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -625,93 +625,93 @@ export type ConvenioCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
  * ConvenioCountOutputType without action
  */
 export type ConvenioCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
 }
 
 
-export type convenioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ConvenioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_convenio?: boolean
-  NO_operadora?: boolean
-  NU_carteirinha?: boolean
-  DT_val_carteirinha?: boolean
+  no_operadora?: boolean
+  nu_carteirinha?: boolean
+  dt_val_carteirinha?: boolean
   id_paciente?: boolean
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  consultas?: boolean | Prisma.convenio$consultasArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  consultas?: boolean | Prisma.Convenio$consultasArgs<ExtArgs>
   _count?: boolean | Prisma.ConvenioCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["convenio"]>
 
-export type convenioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ConvenioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_convenio?: boolean
-  NO_operadora?: boolean
-  NU_carteirinha?: boolean
-  DT_val_carteirinha?: boolean
+  no_operadora?: boolean
+  nu_carteirinha?: boolean
+  dt_val_carteirinha?: boolean
   id_paciente?: boolean
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["convenio"]>
 
-export type convenioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ConvenioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_convenio?: boolean
-  NO_operadora?: boolean
-  NU_carteirinha?: boolean
-  DT_val_carteirinha?: boolean
+  no_operadora?: boolean
+  nu_carteirinha?: boolean
+  dt_val_carteirinha?: boolean
   id_paciente?: boolean
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["convenio"]>
 
-export type convenioSelectScalar = {
+export type ConvenioSelectScalar = {
   id?: boolean
   id_convenio?: boolean
-  NO_operadora?: boolean
-  NU_carteirinha?: boolean
-  DT_val_carteirinha?: boolean
+  no_operadora?: boolean
+  nu_carteirinha?: boolean
+  dt_val_carteirinha?: boolean
   id_paciente?: boolean
 }
 
-export type convenioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_convenio" | "NO_operadora" | "NU_carteirinha" | "DT_val_carteirinha" | "id_paciente", ExtArgs["result"]["convenio"]>
-export type convenioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  consultas?: boolean | Prisma.convenio$consultasArgs<ExtArgs>
+export type ConvenioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_convenio" | "no_operadora" | "nu_carteirinha" | "dt_val_carteirinha" | "id_paciente", ExtArgs["result"]["convenio"]>
+export type ConvenioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  consultas?: boolean | Prisma.Convenio$consultasArgs<ExtArgs>
   _count?: boolean | Prisma.ConvenioCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type convenioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
+export type ConvenioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
 }
-export type convenioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
+export type ConvenioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
 }
 
-export type $convenioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "convenio"
+export type $ConvenioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Convenio"
   objects: {
-    paciente: Prisma.$pacientePayload<ExtArgs>
-    consultas: Prisma.$consultaPayload<ExtArgs>[]
+    paciente: Prisma.$PacientePayload<ExtArgs>
+    consultas: Prisma.$ConsultaPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     id_convenio: number
-    NO_operadora: string
-    NU_carteirinha: string
-    DT_val_carteirinha: Date
+    no_operadora: string
+    nu_carteirinha: string
+    dt_val_carteirinha: Date
     id_paciente: number
   }, ExtArgs["result"]["convenio"]>
   composites: {}
 }
 
-export type convenioGetPayload<S extends boolean | null | undefined | convenioDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$convenioPayload, S>
+export type ConvenioGetPayload<S extends boolean | null | undefined | ConvenioDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ConvenioPayload, S>
 
-export type convenioCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<convenioFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type ConvenioCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<ConvenioFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: ConvenioCountAggregateInputType | true
   }
 
-export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['convenio'], meta: { name: 'convenio' } }
+export interface ConvenioDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Convenio'], meta: { name: 'Convenio' } }
   /**
    * Find zero or one Convenio that matches the filter.
-   * @param {convenioFindUniqueArgs} args - Arguments to find a Convenio
+   * @param {ConvenioFindUniqueArgs} args - Arguments to find a Convenio
    * @example
    * // Get one Convenio
    * const convenio = await prisma.convenio.findUnique({
@@ -720,12 +720,12 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUnique<T extends convenioFindUniqueArgs>(args: Prisma.SelectSubset<T, convenioFindUniqueArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends ConvenioFindUniqueArgs>(args: Prisma.SelectSubset<T, ConvenioFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Convenio that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {convenioFindUniqueOrThrowArgs} args - Arguments to find a Convenio
+   * @param {ConvenioFindUniqueOrThrowArgs} args - Arguments to find a Convenio
    * @example
    * // Get one Convenio
    * const convenio = await prisma.convenio.findUniqueOrThrow({
@@ -734,13 +734,13 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUniqueOrThrow<T extends convenioFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, convenioFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends ConvenioFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ConvenioFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Convenio that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {convenioFindFirstArgs} args - Arguments to find a Convenio
+   * @param {ConvenioFindFirstArgs} args - Arguments to find a Convenio
    * @example
    * // Get one Convenio
    * const convenio = await prisma.convenio.findFirst({
@@ -749,14 +749,14 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirst<T extends convenioFindFirstArgs>(args?: Prisma.SelectSubset<T, convenioFindFirstArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends ConvenioFindFirstArgs>(args?: Prisma.SelectSubset<T, ConvenioFindFirstArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Convenio that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {convenioFindFirstOrThrowArgs} args - Arguments to find a Convenio
+   * @param {ConvenioFindFirstOrThrowArgs} args - Arguments to find a Convenio
    * @example
    * // Get one Convenio
    * const convenio = await prisma.convenio.findFirstOrThrow({
@@ -765,13 +765,13 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirstOrThrow<T extends convenioFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, convenioFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends ConvenioFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ConvenioFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Convenios that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {convenioFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {ConvenioFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Convenios
    * const convenios = await prisma.convenio.findMany()
@@ -783,11 +783,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * const convenioWithIdOnly = await prisma.convenio.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends convenioFindManyArgs>(args?: Prisma.SelectSubset<T, convenioFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends ConvenioFindManyArgs>(args?: Prisma.SelectSubset<T, ConvenioFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Convenio.
-   * @param {convenioCreateArgs} args - Arguments to create a Convenio.
+   * @param {ConvenioCreateArgs} args - Arguments to create a Convenio.
    * @example
    * // Create one Convenio
    * const Convenio = await prisma.convenio.create({
@@ -797,11 +797,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  create<T extends convenioCreateArgs>(args: Prisma.SelectSubset<T, convenioCreateArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends ConvenioCreateArgs>(args: Prisma.SelectSubset<T, ConvenioCreateArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Convenios.
-   * @param {convenioCreateManyArgs} args - Arguments to create many Convenios.
+   * @param {ConvenioCreateManyArgs} args - Arguments to create many Convenios.
    * @example
    * // Create many Convenios
    * const convenio = await prisma.convenio.createMany({
@@ -811,11 +811,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    *     
    */
-  createMany<T extends convenioCreateManyArgs>(args?: Prisma.SelectSubset<T, convenioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends ConvenioCreateManyArgs>(args?: Prisma.SelectSubset<T, ConvenioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Convenios and returns the data saved in the database.
-   * @param {convenioCreateManyAndReturnArgs} args - Arguments to create many Convenios.
+   * @param {ConvenioCreateManyAndReturnArgs} args - Arguments to create many Convenios.
    * @example
    * // Create many Convenios
    * const convenio = await prisma.convenio.createManyAndReturn({
@@ -835,11 +835,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends convenioCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, convenioCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends ConvenioCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, ConvenioCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Convenio.
-   * @param {convenioDeleteArgs} args - Arguments to delete one Convenio.
+   * @param {ConvenioDeleteArgs} args - Arguments to delete one Convenio.
    * @example
    * // Delete one Convenio
    * const Convenio = await prisma.convenio.delete({
@@ -849,11 +849,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  delete<T extends convenioDeleteArgs>(args: Prisma.SelectSubset<T, convenioDeleteArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends ConvenioDeleteArgs>(args: Prisma.SelectSubset<T, ConvenioDeleteArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Convenio.
-   * @param {convenioUpdateArgs} args - Arguments to update one Convenio.
+   * @param {ConvenioUpdateArgs} args - Arguments to update one Convenio.
    * @example
    * // Update one Convenio
    * const convenio = await prisma.convenio.update({
@@ -866,11 +866,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  update<T extends convenioUpdateArgs>(args: Prisma.SelectSubset<T, convenioUpdateArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends ConvenioUpdateArgs>(args: Prisma.SelectSubset<T, ConvenioUpdateArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Convenios.
-   * @param {convenioDeleteManyArgs} args - Arguments to filter Convenios to delete.
+   * @param {ConvenioDeleteManyArgs} args - Arguments to filter Convenios to delete.
    * @example
    * // Delete a few Convenios
    * const { count } = await prisma.convenio.deleteMany({
@@ -880,13 +880,13 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  deleteMany<T extends convenioDeleteManyArgs>(args?: Prisma.SelectSubset<T, convenioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends ConvenioDeleteManyArgs>(args?: Prisma.SelectSubset<T, ConvenioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Convenios.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {convenioUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {ConvenioUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Convenios
    * const convenio = await prisma.convenio.updateMany({
@@ -899,11 +899,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  updateMany<T extends convenioUpdateManyArgs>(args: Prisma.SelectSubset<T, convenioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends ConvenioUpdateManyArgs>(args: Prisma.SelectSubset<T, ConvenioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Convenios and returns the data updated in the database.
-   * @param {convenioUpdateManyAndReturnArgs} args - Arguments to update many Convenios.
+   * @param {ConvenioUpdateManyAndReturnArgs} args - Arguments to update many Convenios.
    * @example
    * // Update many Convenios
    * const convenio = await prisma.convenio.updateManyAndReturn({
@@ -929,11 +929,11 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends convenioUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, convenioUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends ConvenioUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, ConvenioUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Convenio.
-   * @param {convenioUpsertArgs} args - Arguments to update or create a Convenio.
+   * @param {ConvenioUpsertArgs} args - Arguments to update or create a Convenio.
    * @example
    * // Update or create a Convenio
    * const convenio = await prisma.convenio.upsert({
@@ -948,14 +948,14 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  upsert<T extends convenioUpsertArgs>(args: Prisma.SelectSubset<T, convenioUpsertArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends ConvenioUpsertArgs>(args: Prisma.SelectSubset<T, ConvenioUpsertArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Convenios.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {convenioCountArgs} args - Arguments to filter Convenios to count.
+   * @param {ConvenioCountArgs} args - Arguments to filter Convenios to count.
    * @example
    * // Count the number of Convenios
    * const count = await prisma.convenio.count({
@@ -964,8 +964,8 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
   **/
-  count<T extends convenioCountArgs>(
-    args?: Prisma.Subset<T, convenioCountArgs>,
+  count<T extends ConvenioCountArgs>(
+    args?: Prisma.Subset<T, ConvenioCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1004,7 +1004,7 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Group by Convenio.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {convenioGroupByArgs} args - Group by arguments.
+   * @param {ConvenioGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1019,14 +1019,14 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * 
   **/
   groupBy<
-    T extends convenioGroupByArgs,
+    T extends ConvenioGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: convenioGroupByArgs['orderBy'] }
-      : { orderBy?: convenioGroupByArgs['orderBy'] },
+      ? { orderBy: ConvenioGroupByArgs['orderBy'] }
+      : { orderBy?: ConvenioGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1075,23 +1075,23 @@ export interface convenioDelegate<ExtArgs extends runtime.Types.Extensions.Inter
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, convenioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConvenioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, ConvenioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConvenioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the convenio model
+ * Fields of the Convenio model
  */
-readonly fields: convenioFieldRefs;
+readonly fields: ConvenioFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for convenio.
+ * The delegate class that acts as a "Promise-like" for Convenio.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__convenioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ConvenioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  paciente<T extends Prisma.pacienteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.pacienteDefaultArgs<ExtArgs>>): Prisma.Prisma__pacienteClient<runtime.Types.Result.GetResult<Prisma.$pacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  consultas<T extends Prisma.convenio$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.convenio$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  paciente<T extends Prisma.PacienteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PacienteDefaultArgs<ExtArgs>>): Prisma.Prisma__PacienteClient<runtime.Types.Result.GetResult<Prisma.$PacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  consultas<T extends Prisma.Convenio$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Convenio$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1118,453 +1118,453 @@ export interface Prisma__convenioClient<T, Null = never, ExtArgs extends runtime
 
 
 /**
- * Fields of the convenio model
+ * Fields of the Convenio model
  */
-export interface convenioFieldRefs {
-  readonly id: Prisma.FieldRef<"convenio", 'Int'>
-  readonly id_convenio: Prisma.FieldRef<"convenio", 'Int'>
-  readonly NO_operadora: Prisma.FieldRef<"convenio", 'String'>
-  readonly NU_carteirinha: Prisma.FieldRef<"convenio", 'String'>
-  readonly DT_val_carteirinha: Prisma.FieldRef<"convenio", 'DateTime'>
-  readonly id_paciente: Prisma.FieldRef<"convenio", 'Int'>
+export interface ConvenioFieldRefs {
+  readonly id: Prisma.FieldRef<"Convenio", 'Int'>
+  readonly id_convenio: Prisma.FieldRef<"Convenio", 'Int'>
+  readonly no_operadora: Prisma.FieldRef<"Convenio", 'String'>
+  readonly nu_carteirinha: Prisma.FieldRef<"Convenio", 'String'>
+  readonly dt_val_carteirinha: Prisma.FieldRef<"Convenio", 'DateTime'>
+  readonly id_paciente: Prisma.FieldRef<"Convenio", 'Int'>
 }
     
 
 // Custom InputTypes
 /**
- * convenio findUnique
+ * Convenio findUnique
  */
-export type convenioFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * Filter, which convenio to fetch.
+   * Filter, which Convenio to fetch.
    */
-  where: Prisma.convenioWhereUniqueInput
+  where: Prisma.ConvenioWhereUniqueInput
 }
 
 /**
- * convenio findUniqueOrThrow
+ * Convenio findUniqueOrThrow
  */
-export type convenioFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * Filter, which convenio to fetch.
+   * Filter, which Convenio to fetch.
    */
-  where: Prisma.convenioWhereUniqueInput
+  where: Prisma.ConvenioWhereUniqueInput
 }
 
 /**
- * convenio findFirst
+ * Convenio findFirst
  */
-export type convenioFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * Filter, which convenio to fetch.
+   * Filter, which Convenio to fetch.
    */
-  where?: Prisma.convenioWhereInput
+  where?: Prisma.ConvenioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of convenios to fetch.
+   * Determine the order of Convenios to fetch.
    */
-  orderBy?: Prisma.convenioOrderByWithRelationInput | Prisma.convenioOrderByWithRelationInput[]
+  orderBy?: Prisma.ConvenioOrderByWithRelationInput | Prisma.ConvenioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for convenios.
+   * Sets the position for searching for Convenios.
    */
-  cursor?: Prisma.convenioWhereUniqueInput
+  cursor?: Prisma.ConvenioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` convenios from the position of the cursor.
+   * Take `±n` Convenios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` convenios.
+   * Skip the first `n` Convenios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of convenios.
+   * Filter by unique combinations of Convenios.
    */
   distinct?: Prisma.ConvenioScalarFieldEnum | Prisma.ConvenioScalarFieldEnum[]
 }
 
 /**
- * convenio findFirstOrThrow
+ * Convenio findFirstOrThrow
  */
-export type convenioFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * Filter, which convenio to fetch.
+   * Filter, which Convenio to fetch.
    */
-  where?: Prisma.convenioWhereInput
+  where?: Prisma.ConvenioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of convenios to fetch.
+   * Determine the order of Convenios to fetch.
    */
-  orderBy?: Prisma.convenioOrderByWithRelationInput | Prisma.convenioOrderByWithRelationInput[]
+  orderBy?: Prisma.ConvenioOrderByWithRelationInput | Prisma.ConvenioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for convenios.
+   * Sets the position for searching for Convenios.
    */
-  cursor?: Prisma.convenioWhereUniqueInput
+  cursor?: Prisma.ConvenioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` convenios from the position of the cursor.
+   * Take `±n` Convenios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` convenios.
+   * Skip the first `n` Convenios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of convenios.
+   * Filter by unique combinations of Convenios.
    */
   distinct?: Prisma.ConvenioScalarFieldEnum | Prisma.ConvenioScalarFieldEnum[]
 }
 
 /**
- * convenio findMany
+ * Convenio findMany
  */
-export type convenioFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * Filter, which convenios to fetch.
+   * Filter, which Convenios to fetch.
    */
-  where?: Prisma.convenioWhereInput
+  where?: Prisma.ConvenioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of convenios to fetch.
+   * Determine the order of Convenios to fetch.
    */
-  orderBy?: Prisma.convenioOrderByWithRelationInput | Prisma.convenioOrderByWithRelationInput[]
+  orderBy?: Prisma.ConvenioOrderByWithRelationInput | Prisma.ConvenioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing convenios.
+   * Sets the position for listing Convenios.
    */
-  cursor?: Prisma.convenioWhereUniqueInput
+  cursor?: Prisma.ConvenioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` convenios from the position of the cursor.
+   * Take `±n` Convenios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` convenios.
+   * Skip the first `n` Convenios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of convenios.
+   * Filter by unique combinations of Convenios.
    */
   distinct?: Prisma.ConvenioScalarFieldEnum | Prisma.ConvenioScalarFieldEnum[]
 }
 
 /**
- * convenio create
+ * Convenio create
  */
-export type convenioCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * The data needed to create a convenio.
+   * The data needed to create a Convenio.
    */
-  data: Prisma.XOR<Prisma.convenioCreateInput, Prisma.convenioUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.ConvenioCreateInput, Prisma.ConvenioUncheckedCreateInput>
 }
 
 /**
- * convenio createMany
+ * Convenio createMany
  */
-export type convenioCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many convenios.
+   * The data used to create many Convenios.
    */
-  data: Prisma.convenioCreateManyInput | Prisma.convenioCreateManyInput[]
+  data: Prisma.ConvenioCreateManyInput | Prisma.ConvenioCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * convenio createManyAndReturn
+ * Convenio createManyAndReturn
  */
-export type convenioCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.ConvenioSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
-   * The data used to create many convenios.
+   * The data used to create many Convenios.
    */
-  data: Prisma.convenioCreateManyInput | Prisma.convenioCreateManyInput[]
+  data: Prisma.ConvenioCreateManyInput | Prisma.ConvenioCreateManyInput[]
   skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioIncludeCreateManyAndReturn<ExtArgs> | null
+  include?: Prisma.ConvenioIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * convenio update
+ * Convenio update
  */
-export type convenioUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * The data needed to update a convenio.
+   * The data needed to update a Convenio.
    */
-  data: Prisma.XOR<Prisma.convenioUpdateInput, Prisma.convenioUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.ConvenioUpdateInput, Prisma.ConvenioUncheckedUpdateInput>
   /**
-   * Choose, which convenio to update.
+   * Choose, which Convenio to update.
    */
-  where: Prisma.convenioWhereUniqueInput
+  where: Prisma.ConvenioWhereUniqueInput
 }
 
 /**
- * convenio updateMany
+ * Convenio updateMany
  */
-export type convenioUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update convenios.
+   * The data used to update Convenios.
    */
-  data: Prisma.XOR<Prisma.convenioUpdateManyMutationInput, Prisma.convenioUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ConvenioUpdateManyMutationInput, Prisma.ConvenioUncheckedUpdateManyInput>
   /**
-   * Filter which convenios to update
+   * Filter which Convenios to update
    */
-  where?: Prisma.convenioWhereInput
+  where?: Prisma.ConvenioWhereInput
   /**
-   * Limit how many convenios to update.
+   * Limit how many Convenios to update.
    */
   limit?: number
 }
 
 /**
- * convenio updateManyAndReturn
+ * Convenio updateManyAndReturn
  */
-export type convenioUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.ConvenioSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
-   * The data used to update convenios.
+   * The data used to update Convenios.
    */
-  data: Prisma.XOR<Prisma.convenioUpdateManyMutationInput, Prisma.convenioUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ConvenioUpdateManyMutationInput, Prisma.ConvenioUncheckedUpdateManyInput>
   /**
-   * Filter which convenios to update
+   * Filter which Convenios to update
    */
-  where?: Prisma.convenioWhereInput
+  where?: Prisma.ConvenioWhereInput
   /**
-   * Limit how many convenios to update.
+   * Limit how many Convenios to update.
    */
   limit?: number
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioIncludeUpdateManyAndReturn<ExtArgs> | null
+  include?: Prisma.ConvenioIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * convenio upsert
+ * Convenio upsert
  */
-export type convenioUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * The filter to search for the convenio to update in case it exists.
+   * The filter to search for the Convenio to update in case it exists.
    */
-  where: Prisma.convenioWhereUniqueInput
+  where: Prisma.ConvenioWhereUniqueInput
   /**
-   * In case the convenio found by the `where` argument doesn't exist, create a new convenio with this data.
+   * In case the Convenio found by the `where` argument doesn't exist, create a new Convenio with this data.
    */
-  create: Prisma.XOR<Prisma.convenioCreateInput, Prisma.convenioUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.ConvenioCreateInput, Prisma.ConvenioUncheckedCreateInput>
   /**
-   * In case the convenio was found with the provided `where` argument, update it with this data.
+   * In case the Convenio was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.convenioUpdateInput, Prisma.convenioUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.ConvenioUpdateInput, Prisma.ConvenioUncheckedUpdateInput>
 }
 
 /**
- * convenio delete
+ * Convenio delete
  */
-export type convenioDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
   /**
-   * Filter which convenio to delete.
+   * Filter which Convenio to delete.
    */
-  where: Prisma.convenioWhereUniqueInput
+  where: Prisma.ConvenioWhereUniqueInput
 }
 
 /**
- * convenio deleteMany
+ * Convenio deleteMany
  */
-export type convenioDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which convenios to delete
+   * Filter which Convenios to delete
    */
-  where?: Prisma.convenioWhereInput
+  where?: Prisma.ConvenioWhereInput
   /**
-   * Limit how many convenios to delete.
+   * Limit how many Convenios to delete.
    */
   limit?: number
 }
 
 /**
- * convenio.consultas
+ * Convenio.consultas
  */
-export type convenio$consultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Convenio$consultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
-  where?: Prisma.consultaWhereInput
-  orderBy?: Prisma.consultaOrderByWithRelationInput | Prisma.consultaOrderByWithRelationInput[]
-  cursor?: Prisma.consultaWhereUniqueInput
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
+  where?: Prisma.ConsultaWhereInput
+  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
+  cursor?: Prisma.ConsultaWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
 }
 
 /**
- * convenio without action
+ * Convenio without action
  */
-export type convenioDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConvenioDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the convenio
+   * Select specific fields to fetch from the Convenio
    */
-  select?: Prisma.convenioSelect<ExtArgs> | null
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the convenio
+   * Omit specific fields from the Convenio
    */
-  omit?: Prisma.convenioOmit<ExtArgs> | null
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.convenioInclude<ExtArgs> | null
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
 }

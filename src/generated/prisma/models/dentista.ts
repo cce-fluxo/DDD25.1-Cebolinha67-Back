@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `dentista` model and its related types.
+ * This file exports the `Dentista` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model dentista
+ * Model Dentista
  * 
  */
-export type dentistaModel = runtime.Types.Result.DefaultSelection<Prisma.$dentistaPayload>
+export type DentistaModel = runtime.Types.Result.DefaultSelection<Prisma.$DentistaPayload>
 
 export type AggregateDentista = {
   _count: DentistaCountAggregateOutputType | null
@@ -40,10 +40,10 @@ export type DentistaMinAggregateOutputType = {
   id: number | null
   senha_dentista: string | null
   formacao: string | null
-  Instituto: string | null
-  DataInicio: Date | null
-  DataTermino: Date | null
-  Especializacao: string | null
+  instituto: string | null
+  datainicio: Date | null
+  datatermino: Date | null
+  especializacao: string | null
   id_usuario: number | null
 }
 
@@ -51,10 +51,10 @@ export type DentistaMaxAggregateOutputType = {
   id: number | null
   senha_dentista: string | null
   formacao: string | null
-  Instituto: string | null
-  DataInicio: Date | null
-  DataTermino: Date | null
-  Especializacao: string | null
+  instituto: string | null
+  datainicio: Date | null
+  datatermino: Date | null
+  especializacao: string | null
   id_usuario: number | null
 }
 
@@ -62,10 +62,10 @@ export type DentistaCountAggregateOutputType = {
   id: number
   senha_dentista: number
   formacao: number
-  Instituto: number
-  DataInicio: number
-  DataTermino: number
-  Especializacao: number
+  instituto: number
+  datainicio: number
+  datatermino: number
+  especializacao: number
   id_usuario: number
   _all: number
 }
@@ -85,10 +85,10 @@ export type DentistaMinAggregateInputType = {
   id?: true
   senha_dentista?: true
   formacao?: true
-  Instituto?: true
-  DataInicio?: true
-  DataTermino?: true
-  Especializacao?: true
+  instituto?: true
+  datainicio?: true
+  datatermino?: true
+  especializacao?: true
   id_usuario?: true
 }
 
@@ -96,10 +96,10 @@ export type DentistaMaxAggregateInputType = {
   id?: true
   senha_dentista?: true
   formacao?: true
-  Instituto?: true
-  DataInicio?: true
-  DataTermino?: true
-  Especializacao?: true
+  instituto?: true
+  datainicio?: true
+  datatermino?: true
+  especializacao?: true
   id_usuario?: true
 }
 
@@ -107,47 +107,47 @@ export type DentistaCountAggregateInputType = {
   id?: true
   senha_dentista?: true
   formacao?: true
-  Instituto?: true
-  DataInicio?: true
-  DataTermino?: true
-  Especializacao?: true
+  instituto?: true
+  datainicio?: true
+  datatermino?: true
+  especializacao?: true
   id_usuario?: true
   _all?: true
 }
 
 export type DentistaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which dentista to aggregate.
+   * Filter which Dentista to aggregate.
    */
-  where?: Prisma.dentistaWhereInput
+  where?: Prisma.DentistaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dentistas to fetch.
+   * Determine the order of Dentistas to fetch.
    */
-  orderBy?: Prisma.dentistaOrderByWithRelationInput | Prisma.dentistaOrderByWithRelationInput[]
+  orderBy?: Prisma.DentistaOrderByWithRelationInput | Prisma.DentistaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.dentistaWhereUniqueInput
+  cursor?: Prisma.DentistaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dentistas from the position of the cursor.
+   * Take `±n` Dentistas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dentistas.
+   * Skip the first `n` Dentistas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned dentistas
+   * Count returned Dentistas
   **/
   _count?: true | DentistaCountAggregateInputType
   /**
@@ -187,11 +187,11 @@ export type GetDentistaAggregateType<T extends DentistaAggregateArgs> = {
 
 
 
-export type dentistaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.dentistaWhereInput
-  orderBy?: Prisma.dentistaOrderByWithAggregationInput | Prisma.dentistaOrderByWithAggregationInput[]
+export type DentistaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.DentistaWhereInput
+  orderBy?: Prisma.DentistaOrderByWithAggregationInput | Prisma.DentistaOrderByWithAggregationInput[]
   by: Prisma.DentistaScalarFieldEnum[] | Prisma.DentistaScalarFieldEnum
-  having?: Prisma.dentistaScalarWhereWithAggregatesInput
+  having?: Prisma.DentistaScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: DentistaCountAggregateInputType | true
@@ -205,10 +205,10 @@ export type DentistaGroupByOutputType = {
   id: number
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date
-  DataTermino: Date
-  Especializacao: string
+  instituto: string
+  datainicio: Date
+  datatermino: Date
+  especializacao: string
   id_usuario: number
   _count: DentistaCountAggregateOutputType | null
   _avg: DentistaAvgAggregateOutputType | null
@@ -217,7 +217,7 @@ export type DentistaGroupByOutputType = {
   _max: DentistaMaxAggregateOutputType | null
 }
 
-type GetDentistaGroupByPayload<T extends dentistaGroupByArgs> = Prisma.PrismaPromise<
+type GetDentistaGroupByPayload<T extends DentistaGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<DentistaGroupByOutputType, T['by']> &
       {
@@ -232,561 +232,561 @@ type GetDentistaGroupByPayload<T extends dentistaGroupByArgs> = Prisma.PrismaPro
 
 
 
-export type dentistaWhereInput = {
-  AND?: Prisma.dentistaWhereInput | Prisma.dentistaWhereInput[]
-  OR?: Prisma.dentistaWhereInput[]
-  NOT?: Prisma.dentistaWhereInput | Prisma.dentistaWhereInput[]
-  id?: Prisma.IntFilter<"dentista"> | number
-  senha_dentista?: Prisma.StringFilter<"dentista"> | string
-  formacao?: Prisma.StringFilter<"dentista"> | string
-  Instituto?: Prisma.StringFilter<"dentista"> | string
-  DataInicio?: Prisma.DateTimeFilter<"dentista"> | Date | string
-  DataTermino?: Prisma.DateTimeFilter<"dentista"> | Date | string
-  Especializacao?: Prisma.StringFilter<"dentista"> | string
-  id_usuario?: Prisma.IntFilter<"dentista"> | number
-  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.usuarioWhereInput>
-  postagen?: Prisma.PostagemListRelationFilter
-  endereco?: Prisma.XOR<Prisma.EnderecoNullableScalarRelationFilter, Prisma.enderecoWhereInput> | null
+export type DentistaWhereInput = {
+  AND?: Prisma.DentistaWhereInput | Prisma.DentistaWhereInput[]
+  OR?: Prisma.DentistaWhereInput[]
+  NOT?: Prisma.DentistaWhereInput | Prisma.DentistaWhereInput[]
+  id?: Prisma.IntFilter<"Dentista"> | number
+  senha_dentista?: Prisma.StringFilter<"Dentista"> | string
+  formacao?: Prisma.StringFilter<"Dentista"> | string
+  instituto?: Prisma.StringFilter<"Dentista"> | string
+  datainicio?: Prisma.DateTimeFilter<"Dentista"> | Date | string
+  datatermino?: Prisma.DateTimeFilter<"Dentista"> | Date | string
+  especializacao?: Prisma.StringFilter<"Dentista"> | string
+  id_usuario?: Prisma.IntFilter<"Dentista"> | number
+  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
+  postagem?: Prisma.PostagemListRelationFilter
+  endereco?: Prisma.XOR<Prisma.EnderecoNullableScalarRelationFilter, Prisma.EnderecoWhereInput> | null
   consultas?: Prisma.ConsultaListRelationFilter
 }
 
-export type dentistaOrderByWithRelationInput = {
+export type DentistaOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
-  Instituto?: Prisma.SortOrder
-  DataInicio?: Prisma.SortOrder
-  DataTermino?: Prisma.SortOrder
-  Especializacao?: Prisma.SortOrder
+  instituto?: Prisma.SortOrder
+  datainicio?: Prisma.SortOrder
+  datatermino?: Prisma.SortOrder
+  especializacao?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
-  usuario?: Prisma.usuarioOrderByWithRelationInput
-  postagen?: Prisma.postagemOrderByRelationAggregateInput
-  endereco?: Prisma.enderecoOrderByWithRelationInput
-  consultas?: Prisma.consultaOrderByRelationAggregateInput
+  usuario?: Prisma.UsuarioOrderByWithRelationInput
+  postagem?: Prisma.PostagemOrderByRelationAggregateInput
+  endereco?: Prisma.EnderecoOrderByWithRelationInput
+  consultas?: Prisma.ConsultaOrderByRelationAggregateInput
 }
 
-export type dentistaWhereUniqueInput = Prisma.AtLeast<{
+export type DentistaWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   id_usuario?: number
-  AND?: Prisma.dentistaWhereInput | Prisma.dentistaWhereInput[]
-  OR?: Prisma.dentistaWhereInput[]
-  NOT?: Prisma.dentistaWhereInput | Prisma.dentistaWhereInput[]
-  senha_dentista?: Prisma.StringFilter<"dentista"> | string
-  formacao?: Prisma.StringFilter<"dentista"> | string
-  Instituto?: Prisma.StringFilter<"dentista"> | string
-  DataInicio?: Prisma.DateTimeFilter<"dentista"> | Date | string
-  DataTermino?: Prisma.DateTimeFilter<"dentista"> | Date | string
-  Especializacao?: Prisma.StringFilter<"dentista"> | string
-  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.usuarioWhereInput>
-  postagen?: Prisma.PostagemListRelationFilter
-  endereco?: Prisma.XOR<Prisma.EnderecoNullableScalarRelationFilter, Prisma.enderecoWhereInput> | null
+  AND?: Prisma.DentistaWhereInput | Prisma.DentistaWhereInput[]
+  OR?: Prisma.DentistaWhereInput[]
+  NOT?: Prisma.DentistaWhereInput | Prisma.DentistaWhereInput[]
+  senha_dentista?: Prisma.StringFilter<"Dentista"> | string
+  formacao?: Prisma.StringFilter<"Dentista"> | string
+  instituto?: Prisma.StringFilter<"Dentista"> | string
+  datainicio?: Prisma.DateTimeFilter<"Dentista"> | Date | string
+  datatermino?: Prisma.DateTimeFilter<"Dentista"> | Date | string
+  especializacao?: Prisma.StringFilter<"Dentista"> | string
+  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
+  postagem?: Prisma.PostagemListRelationFilter
+  endereco?: Prisma.XOR<Prisma.EnderecoNullableScalarRelationFilter, Prisma.EnderecoWhereInput> | null
   consultas?: Prisma.ConsultaListRelationFilter
 }, "id" | "id_usuario">
 
-export type dentistaOrderByWithAggregationInput = {
+export type DentistaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
-  Instituto?: Prisma.SortOrder
-  DataInicio?: Prisma.SortOrder
-  DataTermino?: Prisma.SortOrder
-  Especializacao?: Prisma.SortOrder
+  instituto?: Prisma.SortOrder
+  datainicio?: Prisma.SortOrder
+  datatermino?: Prisma.SortOrder
+  especializacao?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
-  _count?: Prisma.dentistaCountOrderByAggregateInput
-  _avg?: Prisma.dentistaAvgOrderByAggregateInput
-  _max?: Prisma.dentistaMaxOrderByAggregateInput
-  _min?: Prisma.dentistaMinOrderByAggregateInput
-  _sum?: Prisma.dentistaSumOrderByAggregateInput
+  _count?: Prisma.DentistaCountOrderByAggregateInput
+  _avg?: Prisma.DentistaAvgOrderByAggregateInput
+  _max?: Prisma.DentistaMaxOrderByAggregateInput
+  _min?: Prisma.DentistaMinOrderByAggregateInput
+  _sum?: Prisma.DentistaSumOrderByAggregateInput
 }
 
-export type dentistaScalarWhereWithAggregatesInput = {
-  AND?: Prisma.dentistaScalarWhereWithAggregatesInput | Prisma.dentistaScalarWhereWithAggregatesInput[]
-  OR?: Prisma.dentistaScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.dentistaScalarWhereWithAggregatesInput | Prisma.dentistaScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"dentista"> | number
-  senha_dentista?: Prisma.StringWithAggregatesFilter<"dentista"> | string
-  formacao?: Prisma.StringWithAggregatesFilter<"dentista"> | string
-  Instituto?: Prisma.StringWithAggregatesFilter<"dentista"> | string
-  DataInicio?: Prisma.DateTimeWithAggregatesFilter<"dentista"> | Date | string
-  DataTermino?: Prisma.DateTimeWithAggregatesFilter<"dentista"> | Date | string
-  Especializacao?: Prisma.StringWithAggregatesFilter<"dentista"> | string
-  id_usuario?: Prisma.IntWithAggregatesFilter<"dentista"> | number
+export type DentistaScalarWhereWithAggregatesInput = {
+  AND?: Prisma.DentistaScalarWhereWithAggregatesInput | Prisma.DentistaScalarWhereWithAggregatesInput[]
+  OR?: Prisma.DentistaScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.DentistaScalarWhereWithAggregatesInput | Prisma.DentistaScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"Dentista"> | number
+  senha_dentista?: Prisma.StringWithAggregatesFilter<"Dentista"> | string
+  formacao?: Prisma.StringWithAggregatesFilter<"Dentista"> | string
+  instituto?: Prisma.StringWithAggregatesFilter<"Dentista"> | string
+  datainicio?: Prisma.DateTimeWithAggregatesFilter<"Dentista"> | Date | string
+  datatermino?: Prisma.DateTimeWithAggregatesFilter<"Dentista"> | Date | string
+  especializacao?: Prisma.StringWithAggregatesFilter<"Dentista"> | string
+  id_usuario?: Prisma.IntWithAggregatesFilter<"Dentista"> | number
 }
 
-export type dentistaCreateInput = {
+export type DentistaCreateInput = {
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
-  usuario: Prisma.usuarioCreateNestedOneWithoutDentistaInput
-  postagen?: Prisma.postagemCreateNestedManyWithoutDentistaInput
-  endereco?: Prisma.enderecoCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.consultaCreateNestedManyWithoutDentistaInput
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
+  usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
+  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
+  endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
+  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaUncheckedCreateInput = {
+export type DentistaUncheckedCreateInput = {
   id?: number
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
   id_usuario: number
-  postagen?: Prisma.postagemUncheckedCreateNestedManyWithoutDentistaInput
-  endereco?: Prisma.enderecoUncheckedCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.consultaUncheckedCreateNestedManyWithoutDentistaInput
+  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
+  endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaUpdateInput = {
+export type DentistaUpdateInput = {
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.usuarioUpdateOneRequiredWithoutDentistaNestedInput
-  postagen?: Prisma.postagemUpdateManyWithoutDentistaNestedInput
-  endereco?: Prisma.enderecoUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUpdateManyWithoutDentistaNestedInput
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
 }
 
-export type dentistaUncheckedUpdateInput = {
+export type DentistaUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  postagen?: Prisma.postagemUncheckedUpdateManyWithoutDentistaNestedInput
-  endereco?: Prisma.enderecoUncheckedUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUncheckedUpdateManyWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
-export type dentistaCreateManyInput = {
+export type DentistaCreateManyInput = {
   id?: number
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
   id_usuario: number
 }
 
-export type dentistaUpdateManyMutationInput = {
+export type DentistaUpdateManyMutationInput = {
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type dentistaUncheckedUpdateManyInput = {
+export type DentistaUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type DentistaNullableScalarRelationFilter = {
-  is?: Prisma.dentistaWhereInput | null
-  isNot?: Prisma.dentistaWhereInput | null
+  is?: Prisma.DentistaWhereInput | null
+  isNot?: Prisma.DentistaWhereInput | null
 }
 
-export type dentistaCountOrderByAggregateInput = {
+export type DentistaCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
-  Instituto?: Prisma.SortOrder
-  DataInicio?: Prisma.SortOrder
-  DataTermino?: Prisma.SortOrder
-  Especializacao?: Prisma.SortOrder
+  instituto?: Prisma.SortOrder
+  datainicio?: Prisma.SortOrder
+  datatermino?: Prisma.SortOrder
+  especializacao?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
 }
 
-export type dentistaAvgOrderByAggregateInput = {
+export type DentistaAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
 }
 
-export type dentistaMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  senha_dentista?: Prisma.SortOrder
-  formacao?: Prisma.SortOrder
-  Instituto?: Prisma.SortOrder
-  DataInicio?: Prisma.SortOrder
-  DataTermino?: Prisma.SortOrder
-  Especializacao?: Prisma.SortOrder
-  id_usuario?: Prisma.SortOrder
-}
-
-export type dentistaMinOrderByAggregateInput = {
+export type DentistaMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
-  Instituto?: Prisma.SortOrder
-  DataInicio?: Prisma.SortOrder
-  DataTermino?: Prisma.SortOrder
-  Especializacao?: Prisma.SortOrder
+  instituto?: Prisma.SortOrder
+  datainicio?: Prisma.SortOrder
+  datatermino?: Prisma.SortOrder
+  especializacao?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
 }
 
-export type dentistaSumOrderByAggregateInput = {
+export type DentistaMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  senha_dentista?: Prisma.SortOrder
+  formacao?: Prisma.SortOrder
+  instituto?: Prisma.SortOrder
+  datainicio?: Prisma.SortOrder
+  datatermino?: Prisma.SortOrder
+  especializacao?: Prisma.SortOrder
+  id_usuario?: Prisma.SortOrder
+}
+
+export type DentistaSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
 }
 
 export type DentistaScalarRelationFilter = {
-  is?: Prisma.dentistaWhereInput
-  isNot?: Prisma.dentistaWhereInput
+  is?: Prisma.DentistaWhereInput
+  isNot?: Prisma.DentistaWhereInput
 }
 
-export type dentistaCreateNestedOneWithoutUsuarioInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutUsuarioInput, Prisma.dentistaUncheckedCreateWithoutUsuarioInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutUsuarioInput
-  connect?: Prisma.dentistaWhereUniqueInput
+export type DentistaCreateNestedOneWithoutUsuarioInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutUsuarioInput, Prisma.DentistaUncheckedCreateWithoutUsuarioInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutUsuarioInput
+  connect?: Prisma.DentistaWhereUniqueInput
 }
 
-export type dentistaUncheckedCreateNestedOneWithoutUsuarioInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutUsuarioInput, Prisma.dentistaUncheckedCreateWithoutUsuarioInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutUsuarioInput
-  connect?: Prisma.dentistaWhereUniqueInput
+export type DentistaUncheckedCreateNestedOneWithoutUsuarioInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutUsuarioInput, Prisma.DentistaUncheckedCreateWithoutUsuarioInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutUsuarioInput
+  connect?: Prisma.DentistaWhereUniqueInput
 }
 
-export type dentistaUpdateOneWithoutUsuarioNestedInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutUsuarioInput, Prisma.dentistaUncheckedCreateWithoutUsuarioInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutUsuarioInput
-  upsert?: Prisma.dentistaUpsertWithoutUsuarioInput
-  disconnect?: Prisma.dentistaWhereInput | boolean
-  delete?: Prisma.dentistaWhereInput | boolean
-  connect?: Prisma.dentistaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.dentistaUpdateToOneWithWhereWithoutUsuarioInput, Prisma.dentistaUpdateWithoutUsuarioInput>, Prisma.dentistaUncheckedUpdateWithoutUsuarioInput>
+export type DentistaUpdateOneWithoutUsuarioNestedInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutUsuarioInput, Prisma.DentistaUncheckedCreateWithoutUsuarioInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutUsuarioInput
+  upsert?: Prisma.DentistaUpsertWithoutUsuarioInput
+  disconnect?: Prisma.DentistaWhereInput | boolean
+  delete?: Prisma.DentistaWhereInput | boolean
+  connect?: Prisma.DentistaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.DentistaUpdateToOneWithWhereWithoutUsuarioInput, Prisma.DentistaUpdateWithoutUsuarioInput>, Prisma.DentistaUncheckedUpdateWithoutUsuarioInput>
 }
 
-export type dentistaUncheckedUpdateOneWithoutUsuarioNestedInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutUsuarioInput, Prisma.dentistaUncheckedCreateWithoutUsuarioInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutUsuarioInput
-  upsert?: Prisma.dentistaUpsertWithoutUsuarioInput
-  disconnect?: Prisma.dentistaWhereInput | boolean
-  delete?: Prisma.dentistaWhereInput | boolean
-  connect?: Prisma.dentistaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.dentistaUpdateToOneWithWhereWithoutUsuarioInput, Prisma.dentistaUpdateWithoutUsuarioInput>, Prisma.dentistaUncheckedUpdateWithoutUsuarioInput>
+export type DentistaUncheckedUpdateOneWithoutUsuarioNestedInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutUsuarioInput, Prisma.DentistaUncheckedCreateWithoutUsuarioInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutUsuarioInput
+  upsert?: Prisma.DentistaUpsertWithoutUsuarioInput
+  disconnect?: Prisma.DentistaWhereInput | boolean
+  delete?: Prisma.DentistaWhereInput | boolean
+  connect?: Prisma.DentistaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.DentistaUpdateToOneWithWhereWithoutUsuarioInput, Prisma.DentistaUpdateWithoutUsuarioInput>, Prisma.DentistaUncheckedUpdateWithoutUsuarioInput>
 }
 
-export type dentistaCreateNestedOneWithoutEnderecoInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutEnderecoInput, Prisma.dentistaUncheckedCreateWithoutEnderecoInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutEnderecoInput
-  connect?: Prisma.dentistaWhereUniqueInput
+export type DentistaCreateNestedOneWithoutEnderecoInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutEnderecoInput, Prisma.DentistaUncheckedCreateWithoutEnderecoInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutEnderecoInput
+  connect?: Prisma.DentistaWhereUniqueInput
 }
 
-export type dentistaUpdateOneRequiredWithoutEnderecoNestedInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutEnderecoInput, Prisma.dentistaUncheckedCreateWithoutEnderecoInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutEnderecoInput
-  upsert?: Prisma.dentistaUpsertWithoutEnderecoInput
-  connect?: Prisma.dentistaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.dentistaUpdateToOneWithWhereWithoutEnderecoInput, Prisma.dentistaUpdateWithoutEnderecoInput>, Prisma.dentistaUncheckedUpdateWithoutEnderecoInput>
+export type DentistaUpdateOneRequiredWithoutEnderecoNestedInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutEnderecoInput, Prisma.DentistaUncheckedCreateWithoutEnderecoInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutEnderecoInput
+  upsert?: Prisma.DentistaUpsertWithoutEnderecoInput
+  connect?: Prisma.DentistaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.DentistaUpdateToOneWithWhereWithoutEnderecoInput, Prisma.DentistaUpdateWithoutEnderecoInput>, Prisma.DentistaUncheckedUpdateWithoutEnderecoInput>
 }
 
-export type dentistaCreateNestedOneWithoutConsultasInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutConsultasInput, Prisma.dentistaUncheckedCreateWithoutConsultasInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutConsultasInput
-  connect?: Prisma.dentistaWhereUniqueInput
+export type DentistaCreateNestedOneWithoutConsultasInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutConsultasInput, Prisma.DentistaUncheckedCreateWithoutConsultasInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutConsultasInput
+  connect?: Prisma.DentistaWhereUniqueInput
 }
 
-export type dentistaUpdateOneRequiredWithoutConsultasNestedInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutConsultasInput, Prisma.dentistaUncheckedCreateWithoutConsultasInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutConsultasInput
-  upsert?: Prisma.dentistaUpsertWithoutConsultasInput
-  connect?: Prisma.dentistaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.dentistaUpdateToOneWithWhereWithoutConsultasInput, Prisma.dentistaUpdateWithoutConsultasInput>, Prisma.dentistaUncheckedUpdateWithoutConsultasInput>
+export type DentistaUpdateOneRequiredWithoutConsultasNestedInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutConsultasInput, Prisma.DentistaUncheckedCreateWithoutConsultasInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutConsultasInput
+  upsert?: Prisma.DentistaUpsertWithoutConsultasInput
+  connect?: Prisma.DentistaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.DentistaUpdateToOneWithWhereWithoutConsultasInput, Prisma.DentistaUpdateWithoutConsultasInput>, Prisma.DentistaUncheckedUpdateWithoutConsultasInput>
 }
 
-export type dentistaCreateNestedOneWithoutPostagenInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutPostagenInput, Prisma.dentistaUncheckedCreateWithoutPostagenInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutPostagenInput
-  connect?: Prisma.dentistaWhereUniqueInput
+export type DentistaCreateNestedOneWithoutPostagemInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutPostagemInput, Prisma.DentistaUncheckedCreateWithoutPostagemInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutPostagemInput
+  connect?: Prisma.DentistaWhereUniqueInput
 }
 
-export type dentistaUpdateOneRequiredWithoutPostagenNestedInput = {
-  create?: Prisma.XOR<Prisma.dentistaCreateWithoutPostagenInput, Prisma.dentistaUncheckedCreateWithoutPostagenInput>
-  connectOrCreate?: Prisma.dentistaCreateOrConnectWithoutPostagenInput
-  upsert?: Prisma.dentistaUpsertWithoutPostagenInput
-  connect?: Prisma.dentistaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.dentistaUpdateToOneWithWhereWithoutPostagenInput, Prisma.dentistaUpdateWithoutPostagenInput>, Prisma.dentistaUncheckedUpdateWithoutPostagenInput>
+export type DentistaUpdateOneRequiredWithoutPostagemNestedInput = {
+  create?: Prisma.XOR<Prisma.DentistaCreateWithoutPostagemInput, Prisma.DentistaUncheckedCreateWithoutPostagemInput>
+  connectOrCreate?: Prisma.DentistaCreateOrConnectWithoutPostagemInput
+  upsert?: Prisma.DentistaUpsertWithoutPostagemInput
+  connect?: Prisma.DentistaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.DentistaUpdateToOneWithWhereWithoutPostagemInput, Prisma.DentistaUpdateWithoutPostagemInput>, Prisma.DentistaUncheckedUpdateWithoutPostagemInput>
 }
 
-export type dentistaCreateWithoutUsuarioInput = {
+export type DentistaCreateWithoutUsuarioInput = {
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
-  postagen?: Prisma.postagemCreateNestedManyWithoutDentistaInput
-  endereco?: Prisma.enderecoCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.consultaCreateNestedManyWithoutDentistaInput
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
+  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
+  endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
+  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaUncheckedCreateWithoutUsuarioInput = {
+export type DentistaUncheckedCreateWithoutUsuarioInput = {
   id?: number
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
-  postagen?: Prisma.postagemUncheckedCreateNestedManyWithoutDentistaInput
-  endereco?: Prisma.enderecoUncheckedCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.consultaUncheckedCreateNestedManyWithoutDentistaInput
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
+  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
+  endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaCreateOrConnectWithoutUsuarioInput = {
-  where: Prisma.dentistaWhereUniqueInput
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutUsuarioInput, Prisma.dentistaUncheckedCreateWithoutUsuarioInput>
+export type DentistaCreateOrConnectWithoutUsuarioInput = {
+  where: Prisma.DentistaWhereUniqueInput
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutUsuarioInput, Prisma.DentistaUncheckedCreateWithoutUsuarioInput>
 }
 
-export type dentistaUpsertWithoutUsuarioInput = {
-  update: Prisma.XOR<Prisma.dentistaUpdateWithoutUsuarioInput, Prisma.dentistaUncheckedUpdateWithoutUsuarioInput>
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutUsuarioInput, Prisma.dentistaUncheckedCreateWithoutUsuarioInput>
-  where?: Prisma.dentistaWhereInput
+export type DentistaUpsertWithoutUsuarioInput = {
+  update: Prisma.XOR<Prisma.DentistaUpdateWithoutUsuarioInput, Prisma.DentistaUncheckedUpdateWithoutUsuarioInput>
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutUsuarioInput, Prisma.DentistaUncheckedCreateWithoutUsuarioInput>
+  where?: Prisma.DentistaWhereInput
 }
 
-export type dentistaUpdateToOneWithWhereWithoutUsuarioInput = {
-  where?: Prisma.dentistaWhereInput
-  data: Prisma.XOR<Prisma.dentistaUpdateWithoutUsuarioInput, Prisma.dentistaUncheckedUpdateWithoutUsuarioInput>
+export type DentistaUpdateToOneWithWhereWithoutUsuarioInput = {
+  where?: Prisma.DentistaWhereInput
+  data: Prisma.XOR<Prisma.DentistaUpdateWithoutUsuarioInput, Prisma.DentistaUncheckedUpdateWithoutUsuarioInput>
 }
 
-export type dentistaUpdateWithoutUsuarioInput = {
+export type DentistaUpdateWithoutUsuarioInput = {
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  postagen?: Prisma.postagemUpdateManyWithoutDentistaNestedInput
-  endereco?: Prisma.enderecoUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUpdateManyWithoutDentistaNestedInput
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
 }
 
-export type dentistaUncheckedUpdateWithoutUsuarioInput = {
+export type DentistaUncheckedUpdateWithoutUsuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  postagen?: Prisma.postagemUncheckedUpdateManyWithoutDentistaNestedInput
-  endereco?: Prisma.enderecoUncheckedUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUncheckedUpdateManyWithoutDentistaNestedInput
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
-export type dentistaCreateWithoutEnderecoInput = {
+export type DentistaCreateWithoutEnderecoInput = {
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
-  usuario: Prisma.usuarioCreateNestedOneWithoutDentistaInput
-  postagen?: Prisma.postagemCreateNestedManyWithoutDentistaInput
-  consultas?: Prisma.consultaCreateNestedManyWithoutDentistaInput
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
+  usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
+  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
+  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaUncheckedCreateWithoutEnderecoInput = {
+export type DentistaUncheckedCreateWithoutEnderecoInput = {
   id?: number
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
   id_usuario: number
-  postagen?: Prisma.postagemUncheckedCreateNestedManyWithoutDentistaInput
-  consultas?: Prisma.consultaUncheckedCreateNestedManyWithoutDentistaInput
+  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaCreateOrConnectWithoutEnderecoInput = {
-  where: Prisma.dentistaWhereUniqueInput
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutEnderecoInput, Prisma.dentistaUncheckedCreateWithoutEnderecoInput>
+export type DentistaCreateOrConnectWithoutEnderecoInput = {
+  where: Prisma.DentistaWhereUniqueInput
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutEnderecoInput, Prisma.DentistaUncheckedCreateWithoutEnderecoInput>
 }
 
-export type dentistaUpsertWithoutEnderecoInput = {
-  update: Prisma.XOR<Prisma.dentistaUpdateWithoutEnderecoInput, Prisma.dentistaUncheckedUpdateWithoutEnderecoInput>
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutEnderecoInput, Prisma.dentistaUncheckedCreateWithoutEnderecoInput>
-  where?: Prisma.dentistaWhereInput
+export type DentistaUpsertWithoutEnderecoInput = {
+  update: Prisma.XOR<Prisma.DentistaUpdateWithoutEnderecoInput, Prisma.DentistaUncheckedUpdateWithoutEnderecoInput>
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutEnderecoInput, Prisma.DentistaUncheckedCreateWithoutEnderecoInput>
+  where?: Prisma.DentistaWhereInput
 }
 
-export type dentistaUpdateToOneWithWhereWithoutEnderecoInput = {
-  where?: Prisma.dentistaWhereInput
-  data: Prisma.XOR<Prisma.dentistaUpdateWithoutEnderecoInput, Prisma.dentistaUncheckedUpdateWithoutEnderecoInput>
+export type DentistaUpdateToOneWithWhereWithoutEnderecoInput = {
+  where?: Prisma.DentistaWhereInput
+  data: Prisma.XOR<Prisma.DentistaUpdateWithoutEnderecoInput, Prisma.DentistaUncheckedUpdateWithoutEnderecoInput>
 }
 
-export type dentistaUpdateWithoutEnderecoInput = {
+export type DentistaUpdateWithoutEnderecoInput = {
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.usuarioUpdateOneRequiredWithoutDentistaNestedInput
-  postagen?: Prisma.postagemUpdateManyWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUpdateManyWithoutDentistaNestedInput
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
 }
 
-export type dentistaUncheckedUpdateWithoutEnderecoInput = {
+export type DentistaUncheckedUpdateWithoutEnderecoInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  postagen?: Prisma.postagemUncheckedUpdateManyWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUncheckedUpdateManyWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
-export type dentistaCreateWithoutConsultasInput = {
+export type DentistaCreateWithoutConsultasInput = {
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
-  usuario: Prisma.usuarioCreateNestedOneWithoutDentistaInput
-  postagen?: Prisma.postagemCreateNestedManyWithoutDentistaInput
-  endereco?: Prisma.enderecoCreateNestedOneWithoutDentistaInput
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
+  usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
+  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
+  endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
 }
 
-export type dentistaUncheckedCreateWithoutConsultasInput = {
+export type DentistaUncheckedCreateWithoutConsultasInput = {
   id?: number
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
   id_usuario: number
-  postagen?: Prisma.postagemUncheckedCreateNestedManyWithoutDentistaInput
-  endereco?: Prisma.enderecoUncheckedCreateNestedOneWithoutDentistaInput
+  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
+  endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
 }
 
-export type dentistaCreateOrConnectWithoutConsultasInput = {
-  where: Prisma.dentistaWhereUniqueInput
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutConsultasInput, Prisma.dentistaUncheckedCreateWithoutConsultasInput>
+export type DentistaCreateOrConnectWithoutConsultasInput = {
+  where: Prisma.DentistaWhereUniqueInput
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutConsultasInput, Prisma.DentistaUncheckedCreateWithoutConsultasInput>
 }
 
-export type dentistaUpsertWithoutConsultasInput = {
-  update: Prisma.XOR<Prisma.dentistaUpdateWithoutConsultasInput, Prisma.dentistaUncheckedUpdateWithoutConsultasInput>
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutConsultasInput, Prisma.dentistaUncheckedCreateWithoutConsultasInput>
-  where?: Prisma.dentistaWhereInput
+export type DentistaUpsertWithoutConsultasInput = {
+  update: Prisma.XOR<Prisma.DentistaUpdateWithoutConsultasInput, Prisma.DentistaUncheckedUpdateWithoutConsultasInput>
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutConsultasInput, Prisma.DentistaUncheckedCreateWithoutConsultasInput>
+  where?: Prisma.DentistaWhereInput
 }
 
-export type dentistaUpdateToOneWithWhereWithoutConsultasInput = {
-  where?: Prisma.dentistaWhereInput
-  data: Prisma.XOR<Prisma.dentistaUpdateWithoutConsultasInput, Prisma.dentistaUncheckedUpdateWithoutConsultasInput>
+export type DentistaUpdateToOneWithWhereWithoutConsultasInput = {
+  where?: Prisma.DentistaWhereInput
+  data: Prisma.XOR<Prisma.DentistaUpdateWithoutConsultasInput, Prisma.DentistaUncheckedUpdateWithoutConsultasInput>
 }
 
-export type dentistaUpdateWithoutConsultasInput = {
+export type DentistaUpdateWithoutConsultasInput = {
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.usuarioUpdateOneRequiredWithoutDentistaNestedInput
-  postagen?: Prisma.postagemUpdateManyWithoutDentistaNestedInput
-  endereco?: Prisma.enderecoUpdateOneWithoutDentistaNestedInput
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
 }
 
-export type dentistaUncheckedUpdateWithoutConsultasInput = {
+export type DentistaUncheckedUpdateWithoutConsultasInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  postagen?: Prisma.postagemUncheckedUpdateManyWithoutDentistaNestedInput
-  endereco?: Prisma.enderecoUncheckedUpdateOneWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
 }
 
-export type dentistaCreateWithoutPostagenInput = {
+export type DentistaCreateWithoutPostagemInput = {
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
-  usuario: Prisma.usuarioCreateNestedOneWithoutDentistaInput
-  endereco?: Prisma.enderecoCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.consultaCreateNestedManyWithoutDentistaInput
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
+  usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
+  endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
+  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaUncheckedCreateWithoutPostagenInput = {
+export type DentistaUncheckedCreateWithoutPostagemInput = {
   id?: number
   senha_dentista: string
   formacao: string
-  Instituto: string
-  DataInicio: Date | string
-  DataTermino: Date | string
-  Especializacao: string
+  instituto: string
+  datainicio: Date | string
+  datatermino: Date | string
+  especializacao: string
   id_usuario: number
-  endereco?: Prisma.enderecoUncheckedCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.consultaUncheckedCreateNestedManyWithoutDentistaInput
+  endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
 }
 
-export type dentistaCreateOrConnectWithoutPostagenInput = {
-  where: Prisma.dentistaWhereUniqueInput
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutPostagenInput, Prisma.dentistaUncheckedCreateWithoutPostagenInput>
+export type DentistaCreateOrConnectWithoutPostagemInput = {
+  where: Prisma.DentistaWhereUniqueInput
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutPostagemInput, Prisma.DentistaUncheckedCreateWithoutPostagemInput>
 }
 
-export type dentistaUpsertWithoutPostagenInput = {
-  update: Prisma.XOR<Prisma.dentistaUpdateWithoutPostagenInput, Prisma.dentistaUncheckedUpdateWithoutPostagenInput>
-  create: Prisma.XOR<Prisma.dentistaCreateWithoutPostagenInput, Prisma.dentistaUncheckedCreateWithoutPostagenInput>
-  where?: Prisma.dentistaWhereInput
+export type DentistaUpsertWithoutPostagemInput = {
+  update: Prisma.XOR<Prisma.DentistaUpdateWithoutPostagemInput, Prisma.DentistaUncheckedUpdateWithoutPostagemInput>
+  create: Prisma.XOR<Prisma.DentistaCreateWithoutPostagemInput, Prisma.DentistaUncheckedCreateWithoutPostagemInput>
+  where?: Prisma.DentistaWhereInput
 }
 
-export type dentistaUpdateToOneWithWhereWithoutPostagenInput = {
-  where?: Prisma.dentistaWhereInput
-  data: Prisma.XOR<Prisma.dentistaUpdateWithoutPostagenInput, Prisma.dentistaUncheckedUpdateWithoutPostagenInput>
+export type DentistaUpdateToOneWithWhereWithoutPostagemInput = {
+  where?: Prisma.DentistaWhereInput
+  data: Prisma.XOR<Prisma.DentistaUpdateWithoutPostagemInput, Prisma.DentistaUncheckedUpdateWithoutPostagemInput>
 }
 
-export type dentistaUpdateWithoutPostagenInput = {
+export type DentistaUpdateWithoutPostagemInput = {
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.usuarioUpdateOneRequiredWithoutDentistaNestedInput
-  endereco?: Prisma.enderecoUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUpdateManyWithoutDentistaNestedInput
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
 }
 
-export type dentistaUncheckedUpdateWithoutPostagenInput = {
+export type DentistaUncheckedUpdateWithoutPostagemInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
-  Instituto?: Prisma.StringFieldUpdateOperationsInput | string
-  DataInicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  DataTermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  Especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  instituto?: Prisma.StringFieldUpdateOperationsInput | string
+  datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  endereco?: Prisma.enderecoUncheckedUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.consultaUncheckedUpdateManyWithoutDentistaNestedInput
+  endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
 
@@ -795,12 +795,12 @@ export type dentistaUncheckedUpdateWithoutPostagenInput = {
  */
 
 export type DentistaCountOutputType = {
-  postagen: number
+  postagem: number
   consultas: number
 }
 
 export type DentistaCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  postagen?: boolean | DentistaCountOutputTypeCountPostagenArgs
+  postagem?: boolean | DentistaCountOutputTypeCountPostagemArgs
   consultas?: boolean | DentistaCountOutputTypeCountConsultasArgs
 }
 
@@ -817,117 +817,117 @@ export type DentistaCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
 /**
  * DentistaCountOutputType without action
  */
-export type DentistaCountOutputTypeCountPostagenArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.postagemWhereInput
+export type DentistaCountOutputTypeCountPostagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PostagemWhereInput
 }
 
 /**
  * DentistaCountOutputType without action
  */
 export type DentistaCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
 }
 
 
-export type dentistaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type DentistaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   senha_dentista?: boolean
   formacao?: boolean
-  Instituto?: boolean
-  DataInicio?: boolean
-  DataTermino?: boolean
-  Especializacao?: boolean
+  instituto?: boolean
+  datainicio?: boolean
+  datatermino?: boolean
+  especializacao?: boolean
   id_usuario?: boolean
-  usuario?: boolean | Prisma.usuarioDefaultArgs<ExtArgs>
-  postagen?: boolean | Prisma.dentista$postagenArgs<ExtArgs>
-  endereco?: boolean | Prisma.dentista$enderecoArgs<ExtArgs>
-  consultas?: boolean | Prisma.dentista$consultasArgs<ExtArgs>
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.Dentista$postagemArgs<ExtArgs>
+  endereco?: boolean | Prisma.Dentista$enderecoArgs<ExtArgs>
+  consultas?: boolean | Prisma.Dentista$consultasArgs<ExtArgs>
   _count?: boolean | Prisma.DentistaCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["dentista"]>
 
-export type dentistaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type DentistaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   senha_dentista?: boolean
   formacao?: boolean
-  Instituto?: boolean
-  DataInicio?: boolean
-  DataTermino?: boolean
-  Especializacao?: boolean
+  instituto?: boolean
+  datainicio?: boolean
+  datatermino?: boolean
+  especializacao?: boolean
   id_usuario?: boolean
-  usuario?: boolean | Prisma.usuarioDefaultArgs<ExtArgs>
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["dentista"]>
 
-export type dentistaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type DentistaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   senha_dentista?: boolean
   formacao?: boolean
-  Instituto?: boolean
-  DataInicio?: boolean
-  DataTermino?: boolean
-  Especializacao?: boolean
+  instituto?: boolean
+  datainicio?: boolean
+  datatermino?: boolean
+  especializacao?: boolean
   id_usuario?: boolean
-  usuario?: boolean | Prisma.usuarioDefaultArgs<ExtArgs>
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["dentista"]>
 
-export type dentistaSelectScalar = {
+export type DentistaSelectScalar = {
   id?: boolean
   senha_dentista?: boolean
   formacao?: boolean
-  Instituto?: boolean
-  DataInicio?: boolean
-  DataTermino?: boolean
-  Especializacao?: boolean
+  instituto?: boolean
+  datainicio?: boolean
+  datatermino?: boolean
+  especializacao?: boolean
   id_usuario?: boolean
 }
 
-export type dentistaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "senha_dentista" | "formacao" | "Instituto" | "DataInicio" | "DataTermino" | "Especializacao" | "id_usuario", ExtArgs["result"]["dentista"]>
-export type dentistaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  usuario?: boolean | Prisma.usuarioDefaultArgs<ExtArgs>
-  postagen?: boolean | Prisma.dentista$postagenArgs<ExtArgs>
-  endereco?: boolean | Prisma.dentista$enderecoArgs<ExtArgs>
-  consultas?: boolean | Prisma.dentista$consultasArgs<ExtArgs>
+export type DentistaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "senha_dentista" | "formacao" | "instituto" | "datainicio" | "datatermino" | "especializacao" | "id_usuario", ExtArgs["result"]["dentista"]>
+export type DentistaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.Dentista$postagemArgs<ExtArgs>
+  endereco?: boolean | Prisma.Dentista$enderecoArgs<ExtArgs>
+  consultas?: boolean | Prisma.Dentista$consultasArgs<ExtArgs>
   _count?: boolean | Prisma.DentistaCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type dentistaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  usuario?: boolean | Prisma.usuarioDefaultArgs<ExtArgs>
+export type DentistaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
 }
-export type dentistaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  usuario?: boolean | Prisma.usuarioDefaultArgs<ExtArgs>
+export type DentistaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
 }
 
-export type $dentistaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "dentista"
+export type $DentistaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Dentista"
   objects: {
-    usuario: Prisma.$usuarioPayload<ExtArgs>
-    postagen: Prisma.$postagemPayload<ExtArgs>[]
-    endereco: Prisma.$enderecoPayload<ExtArgs> | null
-    consultas: Prisma.$consultaPayload<ExtArgs>[]
+    usuario: Prisma.$UsuarioPayload<ExtArgs>
+    postagem: Prisma.$PostagemPayload<ExtArgs>[]
+    endereco: Prisma.$EnderecoPayload<ExtArgs> | null
+    consultas: Prisma.$ConsultaPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     senha_dentista: string
     formacao: string
-    Instituto: string
-    DataInicio: Date
-    DataTermino: Date
-    Especializacao: string
+    instituto: string
+    datainicio: Date
+    datatermino: Date
+    especializacao: string
     id_usuario: number
   }, ExtArgs["result"]["dentista"]>
   composites: {}
 }
 
-export type dentistaGetPayload<S extends boolean | null | undefined | dentistaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$dentistaPayload, S>
+export type DentistaGetPayload<S extends boolean | null | undefined | DentistaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$DentistaPayload, S>
 
-export type dentistaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<dentistaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type DentistaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<DentistaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: DentistaCountAggregateInputType | true
   }
 
-export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['dentista'], meta: { name: 'dentista' } }
+export interface DentistaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Dentista'], meta: { name: 'Dentista' } }
   /**
    * Find zero or one Dentista that matches the filter.
-   * @param {dentistaFindUniqueArgs} args - Arguments to find a Dentista
+   * @param {DentistaFindUniqueArgs} args - Arguments to find a Dentista
    * @example
    * // Get one Dentista
    * const dentista = await prisma.dentista.findUnique({
@@ -936,12 +936,12 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUnique<T extends dentistaFindUniqueArgs>(args: Prisma.SelectSubset<T, dentistaFindUniqueArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends DentistaFindUniqueArgs>(args: Prisma.SelectSubset<T, DentistaFindUniqueArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Dentista that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {dentistaFindUniqueOrThrowArgs} args - Arguments to find a Dentista
+   * @param {DentistaFindUniqueOrThrowArgs} args - Arguments to find a Dentista
    * @example
    * // Get one Dentista
    * const dentista = await prisma.dentista.findUniqueOrThrow({
@@ -950,13 +950,13 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUniqueOrThrow<T extends dentistaFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, dentistaFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends DentistaFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, DentistaFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Dentista that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dentistaFindFirstArgs} args - Arguments to find a Dentista
+   * @param {DentistaFindFirstArgs} args - Arguments to find a Dentista
    * @example
    * // Get one Dentista
    * const dentista = await prisma.dentista.findFirst({
@@ -965,14 +965,14 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirst<T extends dentistaFindFirstArgs>(args?: Prisma.SelectSubset<T, dentistaFindFirstArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends DentistaFindFirstArgs>(args?: Prisma.SelectSubset<T, DentistaFindFirstArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Dentista that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dentistaFindFirstOrThrowArgs} args - Arguments to find a Dentista
+   * @param {DentistaFindFirstOrThrowArgs} args - Arguments to find a Dentista
    * @example
    * // Get one Dentista
    * const dentista = await prisma.dentista.findFirstOrThrow({
@@ -981,13 +981,13 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirstOrThrow<T extends dentistaFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, dentistaFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends DentistaFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, DentistaFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Dentistas that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dentistaFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {DentistaFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Dentistas
    * const dentistas = await prisma.dentista.findMany()
@@ -999,11 +999,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * const dentistaWithIdOnly = await prisma.dentista.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends dentistaFindManyArgs>(args?: Prisma.SelectSubset<T, dentistaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends DentistaFindManyArgs>(args?: Prisma.SelectSubset<T, DentistaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Dentista.
-   * @param {dentistaCreateArgs} args - Arguments to create a Dentista.
+   * @param {DentistaCreateArgs} args - Arguments to create a Dentista.
    * @example
    * // Create one Dentista
    * const Dentista = await prisma.dentista.create({
@@ -1013,11 +1013,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  create<T extends dentistaCreateArgs>(args: Prisma.SelectSubset<T, dentistaCreateArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends DentistaCreateArgs>(args: Prisma.SelectSubset<T, DentistaCreateArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Dentistas.
-   * @param {dentistaCreateManyArgs} args - Arguments to create many Dentistas.
+   * @param {DentistaCreateManyArgs} args - Arguments to create many Dentistas.
    * @example
    * // Create many Dentistas
    * const dentista = await prisma.dentista.createMany({
@@ -1027,11 +1027,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    *     
    */
-  createMany<T extends dentistaCreateManyArgs>(args?: Prisma.SelectSubset<T, dentistaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends DentistaCreateManyArgs>(args?: Prisma.SelectSubset<T, DentistaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Dentistas and returns the data saved in the database.
-   * @param {dentistaCreateManyAndReturnArgs} args - Arguments to create many Dentistas.
+   * @param {DentistaCreateManyAndReturnArgs} args - Arguments to create many Dentistas.
    * @example
    * // Create many Dentistas
    * const dentista = await prisma.dentista.createManyAndReturn({
@@ -1051,11 +1051,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends dentistaCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, dentistaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends DentistaCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, DentistaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Dentista.
-   * @param {dentistaDeleteArgs} args - Arguments to delete one Dentista.
+   * @param {DentistaDeleteArgs} args - Arguments to delete one Dentista.
    * @example
    * // Delete one Dentista
    * const Dentista = await prisma.dentista.delete({
@@ -1065,11 +1065,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  delete<T extends dentistaDeleteArgs>(args: Prisma.SelectSubset<T, dentistaDeleteArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends DentistaDeleteArgs>(args: Prisma.SelectSubset<T, DentistaDeleteArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Dentista.
-   * @param {dentistaUpdateArgs} args - Arguments to update one Dentista.
+   * @param {DentistaUpdateArgs} args - Arguments to update one Dentista.
    * @example
    * // Update one Dentista
    * const dentista = await prisma.dentista.update({
@@ -1082,11 +1082,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  update<T extends dentistaUpdateArgs>(args: Prisma.SelectSubset<T, dentistaUpdateArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends DentistaUpdateArgs>(args: Prisma.SelectSubset<T, DentistaUpdateArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Dentistas.
-   * @param {dentistaDeleteManyArgs} args - Arguments to filter Dentistas to delete.
+   * @param {DentistaDeleteManyArgs} args - Arguments to filter Dentistas to delete.
    * @example
    * // Delete a few Dentistas
    * const { count } = await prisma.dentista.deleteMany({
@@ -1096,13 +1096,13 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  deleteMany<T extends dentistaDeleteManyArgs>(args?: Prisma.SelectSubset<T, dentistaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends DentistaDeleteManyArgs>(args?: Prisma.SelectSubset<T, DentistaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Dentistas.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dentistaUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {DentistaUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Dentistas
    * const dentista = await prisma.dentista.updateMany({
@@ -1115,11 +1115,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  updateMany<T extends dentistaUpdateManyArgs>(args: Prisma.SelectSubset<T, dentistaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends DentistaUpdateManyArgs>(args: Prisma.SelectSubset<T, DentistaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Dentistas and returns the data updated in the database.
-   * @param {dentistaUpdateManyAndReturnArgs} args - Arguments to update many Dentistas.
+   * @param {DentistaUpdateManyAndReturnArgs} args - Arguments to update many Dentistas.
    * @example
    * // Update many Dentistas
    * const dentista = await prisma.dentista.updateManyAndReturn({
@@ -1145,11 +1145,11 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends dentistaUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, dentistaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends DentistaUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, DentistaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Dentista.
-   * @param {dentistaUpsertArgs} args - Arguments to update or create a Dentista.
+   * @param {DentistaUpsertArgs} args - Arguments to update or create a Dentista.
    * @example
    * // Update or create a Dentista
    * const dentista = await prisma.dentista.upsert({
@@ -1164,14 +1164,14 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  upsert<T extends dentistaUpsertArgs>(args: Prisma.SelectSubset<T, dentistaUpsertArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends DentistaUpsertArgs>(args: Prisma.SelectSubset<T, DentistaUpsertArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Dentistas.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dentistaCountArgs} args - Arguments to filter Dentistas to count.
+   * @param {DentistaCountArgs} args - Arguments to filter Dentistas to count.
    * @example
    * // Count the number of Dentistas
    * const count = await prisma.dentista.count({
@@ -1180,8 +1180,8 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
   **/
-  count<T extends dentistaCountArgs>(
-    args?: Prisma.Subset<T, dentistaCountArgs>,
+  count<T extends DentistaCountArgs>(
+    args?: Prisma.Subset<T, DentistaCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1220,7 +1220,7 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Group by Dentista.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dentistaGroupByArgs} args - Group by arguments.
+   * @param {DentistaGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1235,14 +1235,14 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * 
   **/
   groupBy<
-    T extends dentistaGroupByArgs,
+    T extends DentistaGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: dentistaGroupByArgs['orderBy'] }
-      : { orderBy?: dentistaGroupByArgs['orderBy'] },
+      ? { orderBy: DentistaGroupByArgs['orderBy'] }
+      : { orderBy?: DentistaGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1291,25 +1291,25 @@ export interface dentistaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, dentistaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDentistaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, DentistaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDentistaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the dentista model
+ * Fields of the Dentista model
  */
-readonly fields: dentistaFieldRefs;
+readonly fields: DentistaFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for dentista.
+ * The delegate class that acts as a "Promise-like" for Dentista.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__dentistaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__DentistaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  usuario<T extends Prisma.usuarioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.usuarioDefaultArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  postagen<T extends Prisma.dentista$postagenArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.dentista$postagenArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  endereco<T extends Prisma.dentista$enderecoArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.dentista$enderecoArgs<ExtArgs>>): Prisma.Prisma__enderecoClient<runtime.Types.Result.GetResult<Prisma.$enderecoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  consultas<T extends Prisma.dentista$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.dentista$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  usuario<T extends Prisma.UsuarioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UsuarioDefaultArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  postagem<T extends Prisma.Dentista$postagemArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$postagemArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  endereco<T extends Prisma.Dentista$enderecoArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$enderecoArgs<ExtArgs>>): Prisma.Prisma__EnderecoClient<runtime.Types.Result.GetResult<Prisma.$EnderecoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  consultas<T extends Prisma.Dentista$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1336,498 +1336,498 @@ export interface Prisma__dentistaClient<T, Null = never, ExtArgs extends runtime
 
 
 /**
- * Fields of the dentista model
+ * Fields of the Dentista model
  */
-export interface dentistaFieldRefs {
-  readonly id: Prisma.FieldRef<"dentista", 'Int'>
-  readonly senha_dentista: Prisma.FieldRef<"dentista", 'String'>
-  readonly formacao: Prisma.FieldRef<"dentista", 'String'>
-  readonly Instituto: Prisma.FieldRef<"dentista", 'String'>
-  readonly DataInicio: Prisma.FieldRef<"dentista", 'DateTime'>
-  readonly DataTermino: Prisma.FieldRef<"dentista", 'DateTime'>
-  readonly Especializacao: Prisma.FieldRef<"dentista", 'String'>
-  readonly id_usuario: Prisma.FieldRef<"dentista", 'Int'>
+export interface DentistaFieldRefs {
+  readonly id: Prisma.FieldRef<"Dentista", 'Int'>
+  readonly senha_dentista: Prisma.FieldRef<"Dentista", 'String'>
+  readonly formacao: Prisma.FieldRef<"Dentista", 'String'>
+  readonly instituto: Prisma.FieldRef<"Dentista", 'String'>
+  readonly datainicio: Prisma.FieldRef<"Dentista", 'DateTime'>
+  readonly datatermino: Prisma.FieldRef<"Dentista", 'DateTime'>
+  readonly especializacao: Prisma.FieldRef<"Dentista", 'String'>
+  readonly id_usuario: Prisma.FieldRef<"Dentista", 'Int'>
 }
     
 
 // Custom InputTypes
 /**
- * dentista findUnique
+ * Dentista findUnique
  */
-export type dentistaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * Filter, which dentista to fetch.
+   * Filter, which Dentista to fetch.
    */
-  where: Prisma.dentistaWhereUniqueInput
+  where: Prisma.DentistaWhereUniqueInput
 }
 
 /**
- * dentista findUniqueOrThrow
+ * Dentista findUniqueOrThrow
  */
-export type dentistaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * Filter, which dentista to fetch.
+   * Filter, which Dentista to fetch.
    */
-  where: Prisma.dentistaWhereUniqueInput
+  where: Prisma.DentistaWhereUniqueInput
 }
 
 /**
- * dentista findFirst
+ * Dentista findFirst
  */
-export type dentistaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * Filter, which dentista to fetch.
+   * Filter, which Dentista to fetch.
    */
-  where?: Prisma.dentistaWhereInput
+  where?: Prisma.DentistaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dentistas to fetch.
+   * Determine the order of Dentistas to fetch.
    */
-  orderBy?: Prisma.dentistaOrderByWithRelationInput | Prisma.dentistaOrderByWithRelationInput[]
+  orderBy?: Prisma.DentistaOrderByWithRelationInput | Prisma.DentistaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for dentistas.
+   * Sets the position for searching for Dentistas.
    */
-  cursor?: Prisma.dentistaWhereUniqueInput
+  cursor?: Prisma.DentistaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dentistas from the position of the cursor.
+   * Take `±n` Dentistas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dentistas.
+   * Skip the first `n` Dentistas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of dentistas.
+   * Filter by unique combinations of Dentistas.
    */
   distinct?: Prisma.DentistaScalarFieldEnum | Prisma.DentistaScalarFieldEnum[]
 }
 
 /**
- * dentista findFirstOrThrow
+ * Dentista findFirstOrThrow
  */
-export type dentistaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * Filter, which dentista to fetch.
+   * Filter, which Dentista to fetch.
    */
-  where?: Prisma.dentistaWhereInput
+  where?: Prisma.DentistaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dentistas to fetch.
+   * Determine the order of Dentistas to fetch.
    */
-  orderBy?: Prisma.dentistaOrderByWithRelationInput | Prisma.dentistaOrderByWithRelationInput[]
+  orderBy?: Prisma.DentistaOrderByWithRelationInput | Prisma.DentistaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for dentistas.
+   * Sets the position for searching for Dentistas.
    */
-  cursor?: Prisma.dentistaWhereUniqueInput
+  cursor?: Prisma.DentistaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dentistas from the position of the cursor.
+   * Take `±n` Dentistas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dentistas.
+   * Skip the first `n` Dentistas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of dentistas.
+   * Filter by unique combinations of Dentistas.
    */
   distinct?: Prisma.DentistaScalarFieldEnum | Prisma.DentistaScalarFieldEnum[]
 }
 
 /**
- * dentista findMany
+ * Dentista findMany
  */
-export type dentistaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * Filter, which dentistas to fetch.
+   * Filter, which Dentistas to fetch.
    */
-  where?: Prisma.dentistaWhereInput
+  where?: Prisma.DentistaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dentistas to fetch.
+   * Determine the order of Dentistas to fetch.
    */
-  orderBy?: Prisma.dentistaOrderByWithRelationInput | Prisma.dentistaOrderByWithRelationInput[]
+  orderBy?: Prisma.DentistaOrderByWithRelationInput | Prisma.DentistaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing dentistas.
+   * Sets the position for listing Dentistas.
    */
-  cursor?: Prisma.dentistaWhereUniqueInput
+  cursor?: Prisma.DentistaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dentistas from the position of the cursor.
+   * Take `±n` Dentistas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dentistas.
+   * Skip the first `n` Dentistas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of dentistas.
+   * Filter by unique combinations of Dentistas.
    */
   distinct?: Prisma.DentistaScalarFieldEnum | Prisma.DentistaScalarFieldEnum[]
 }
 
 /**
- * dentista create
+ * Dentista create
  */
-export type dentistaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * The data needed to create a dentista.
+   * The data needed to create a Dentista.
    */
-  data: Prisma.XOR<Prisma.dentistaCreateInput, Prisma.dentistaUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.DentistaCreateInput, Prisma.DentistaUncheckedCreateInput>
 }
 
 /**
- * dentista createMany
+ * Dentista createMany
  */
-export type dentistaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many dentistas.
+   * The data used to create many Dentistas.
    */
-  data: Prisma.dentistaCreateManyInput | Prisma.dentistaCreateManyInput[]
+  data: Prisma.DentistaCreateManyInput | Prisma.DentistaCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * dentista createManyAndReturn
+ * Dentista createManyAndReturn
  */
-export type dentistaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.DentistaSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
-   * The data used to create many dentistas.
+   * The data used to create many Dentistas.
    */
-  data: Prisma.dentistaCreateManyInput | Prisma.dentistaCreateManyInput[]
+  data: Prisma.DentistaCreateManyInput | Prisma.DentistaCreateManyInput[]
   skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaIncludeCreateManyAndReturn<ExtArgs> | null
+  include?: Prisma.DentistaIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * dentista update
+ * Dentista update
  */
-export type dentistaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * The data needed to update a dentista.
+   * The data needed to update a Dentista.
    */
-  data: Prisma.XOR<Prisma.dentistaUpdateInput, Prisma.dentistaUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.DentistaUpdateInput, Prisma.DentistaUncheckedUpdateInput>
   /**
-   * Choose, which dentista to update.
+   * Choose, which Dentista to update.
    */
-  where: Prisma.dentistaWhereUniqueInput
+  where: Prisma.DentistaWhereUniqueInput
 }
 
 /**
- * dentista updateMany
+ * Dentista updateMany
  */
-export type dentistaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update dentistas.
+   * The data used to update Dentistas.
    */
-  data: Prisma.XOR<Prisma.dentistaUpdateManyMutationInput, Prisma.dentistaUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.DentistaUpdateManyMutationInput, Prisma.DentistaUncheckedUpdateManyInput>
   /**
-   * Filter which dentistas to update
+   * Filter which Dentistas to update
    */
-  where?: Prisma.dentistaWhereInput
+  where?: Prisma.DentistaWhereInput
   /**
-   * Limit how many dentistas to update.
+   * Limit how many Dentistas to update.
    */
   limit?: number
 }
 
 /**
- * dentista updateManyAndReturn
+ * Dentista updateManyAndReturn
  */
-export type dentistaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.DentistaSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
-   * The data used to update dentistas.
+   * The data used to update Dentistas.
    */
-  data: Prisma.XOR<Prisma.dentistaUpdateManyMutationInput, Prisma.dentistaUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.DentistaUpdateManyMutationInput, Prisma.DentistaUncheckedUpdateManyInput>
   /**
-   * Filter which dentistas to update
+   * Filter which Dentistas to update
    */
-  where?: Prisma.dentistaWhereInput
+  where?: Prisma.DentistaWhereInput
   /**
-   * Limit how many dentistas to update.
+   * Limit how many Dentistas to update.
    */
   limit?: number
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaIncludeUpdateManyAndReturn<ExtArgs> | null
+  include?: Prisma.DentistaIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * dentista upsert
+ * Dentista upsert
  */
-export type dentistaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * The filter to search for the dentista to update in case it exists.
+   * The filter to search for the Dentista to update in case it exists.
    */
-  where: Prisma.dentistaWhereUniqueInput
+  where: Prisma.DentistaWhereUniqueInput
   /**
-   * In case the dentista found by the `where` argument doesn't exist, create a new dentista with this data.
+   * In case the Dentista found by the `where` argument doesn't exist, create a new Dentista with this data.
    */
-  create: Prisma.XOR<Prisma.dentistaCreateInput, Prisma.dentistaUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.DentistaCreateInput, Prisma.DentistaUncheckedCreateInput>
   /**
-   * In case the dentista was found with the provided `where` argument, update it with this data.
+   * In case the Dentista was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.dentistaUpdateInput, Prisma.dentistaUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.DentistaUpdateInput, Prisma.DentistaUncheckedUpdateInput>
 }
 
 /**
- * dentista delete
+ * Dentista delete
  */
-export type dentistaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
   /**
-   * Filter which dentista to delete.
+   * Filter which Dentista to delete.
    */
-  where: Prisma.dentistaWhereUniqueInput
+  where: Prisma.DentistaWhereUniqueInput
 }
 
 /**
- * dentista deleteMany
+ * Dentista deleteMany
  */
-export type dentistaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which dentistas to delete
+   * Filter which Dentistas to delete
    */
-  where?: Prisma.dentistaWhereInput
+  where?: Prisma.DentistaWhereInput
   /**
-   * Limit how many dentistas to delete.
+   * Limit how many Dentistas to delete.
    */
   limit?: number
 }
 
 /**
- * dentista.postagen
+ * Dentista.postagem
  */
-export type dentista$postagenArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Dentista$postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
-  where?: Prisma.postagemWhereInput
-  orderBy?: Prisma.postagemOrderByWithRelationInput | Prisma.postagemOrderByWithRelationInput[]
-  cursor?: Prisma.postagemWhereUniqueInput
+  include?: Prisma.PostagemInclude<ExtArgs> | null
+  where?: Prisma.PostagemWhereInput
+  orderBy?: Prisma.PostagemOrderByWithRelationInput | Prisma.PostagemOrderByWithRelationInput[]
+  cursor?: Prisma.PostagemWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.PostagemScalarFieldEnum | Prisma.PostagemScalarFieldEnum[]
 }
 
 /**
- * dentista.endereco
+ * Dentista.endereco
  */
-export type dentista$enderecoArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Dentista$enderecoArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the endereco
+   * Select specific fields to fetch from the Endereco
    */
-  select?: Prisma.enderecoSelect<ExtArgs> | null
+  select?: Prisma.EnderecoSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the endereco
+   * Omit specific fields from the Endereco
    */
-  omit?: Prisma.enderecoOmit<ExtArgs> | null
+  omit?: Prisma.EnderecoOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.enderecoInclude<ExtArgs> | null
-  where?: Prisma.enderecoWhereInput
+  include?: Prisma.EnderecoInclude<ExtArgs> | null
+  where?: Prisma.EnderecoWhereInput
 }
 
 /**
- * dentista.consultas
+ * Dentista.consultas
  */
-export type dentista$consultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Dentista$consultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
-  where?: Prisma.consultaWhereInput
-  orderBy?: Prisma.consultaOrderByWithRelationInput | Prisma.consultaOrderByWithRelationInput[]
-  cursor?: Prisma.consultaWhereUniqueInput
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
+  where?: Prisma.ConsultaWhereInput
+  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
+  cursor?: Prisma.ConsultaWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
 }
 
 /**
- * dentista without action
+ * Dentista without action
  */
-export type dentistaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DentistaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
+  include?: Prisma.DentistaInclude<ExtArgs> | null
 }

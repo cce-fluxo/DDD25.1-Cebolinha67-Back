@@ -18,72 +18,72 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
- * Model usuario
+ * Model Usuario
  * 
  */
-export type usuario = Prisma.usuarioModel
+export type Usuario = Prisma.UsuarioModel
 /**
- * Model dentista
+ * Model Dentista
  * 
  */
-export type dentista = Prisma.dentistaModel
+export type Dentista = Prisma.DentistaModel
 /**
- * Model paciente
+ * Model Paciente
  * 
  */
-export type paciente = Prisma.pacienteModel
+export type Paciente = Prisma.PacienteModel
 /**
- * Model notificacao
+ * Model Notificacao
  * 
  */
-export type notificacao = Prisma.notificacaoModel
+export type Notificacao = Prisma.NotificacaoModel
 /**
- * Model notificacao_usuario
+ * Model NotificacaoUsuario
  * 
  */
-export type notificacao_usuario = Prisma.notificacao_usuarioModel
+export type NotificacaoUsuario = Prisma.NotificacaoUsuarioModel
 /**
- * Model imagem
+ * Model Imagem
  * 
  */
-export type imagem = Prisma.imagemModel
+export type Imagem = Prisma.ImagemModel
 /**
- * Model imagem_usuario
+ * Model ImagemUsuario
  * 
  */
-export type imagem_usuario = Prisma.imagem_usuarioModel
+export type ImagemUsuario = Prisma.ImagemUsuarioModel
 /**
- * Model imagem_postagem
+ * Model ImagemPostagem
  * 
  */
-export type imagem_postagem = Prisma.imagem_postagemModel
+export type ImagemPostagem = Prisma.ImagemPostagemModel
 /**
- * Model endereco
+ * Model Endereco
  * 
  */
-export type endereco = Prisma.enderecoModel
+export type Endereco = Prisma.EnderecoModel
 /**
- * Model consulta
+ * Model Consulta
  * 
  */
-export type consulta = Prisma.consultaModel
+export type Consulta = Prisma.ConsultaModel
 /**
- * Model detalhe_da_consulta
+ * Model DetalheDaConsulta
  * 
  */
-export type detalhe_da_consulta = Prisma.detalhe_da_consultaModel
+export type DetalheDaConsulta = Prisma.DetalheDaConsultaModel
 /**
- * Model postagem
+ * Model Postagem
  * 
  */
-export type postagem = Prisma.postagemModel
+export type Postagem = Prisma.PostagemModel
 /**
- * Model convenio
+ * Model Convenio
  * 
  */
-export type convenio = Prisma.convenioModel
+export type Convenio = Prisma.ConvenioModel
 /**
- * Model documento
+ * Model Documento
  * 
  */
-export type documento = Prisma.documentoModel
+export type Documento = Prisma.DocumentoModel

@@ -51,20 +51,20 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  usuario: 'usuario',
-  dentista: 'dentista',
-  paciente: 'paciente',
-  notificacao: 'notificacao',
-  notificacao_usuario: 'notificacao_usuario',
-  imagem: 'imagem',
-  imagem_usuario: 'imagem_usuario',
-  imagem_postagem: 'imagem_postagem',
-  endereco: 'endereco',
-  consulta: 'consulta',
-  detalhe_da_consulta: 'detalhe_da_consulta',
-  postagem: 'postagem',
-  convenio: 'convenio',
-  documento: 'documento'
+  Usuario: 'Usuario',
+  Dentista: 'Dentista',
+  Paciente: 'Paciente',
+  Notificacao: 'Notificacao',
+  NotificacaoUsuario: 'NotificacaoUsuario',
+  Imagem: 'Imagem',
+  ImagemUsuario: 'ImagemUsuario',
+  ImagemPostagem: 'ImagemPostagem',
+  Endereco: 'Endereco',
+  Consulta: 'Consulta',
+  DetalheDaConsulta: 'DetalheDaConsulta',
+  Postagem: 'Postagem',
+  Convenio: 'Convenio',
+  Documento: 'Documento'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -88,8 +88,8 @@ export const UsuarioScalarFieldEnum = {
   no_usuario: 'no_usuario',
   email_usuario: 'email_usuario',
   CPF: 'CPF',
-  NU_celular: 'NU_celular',
-  Genero: 'Genero',
+  nu_celular: 'nu_celular',
+  genero: 'genero',
   data_nascimento: 'data_nascimento',
   token_esqueci_senha: 'token_esqueci_senha'
 } as const
@@ -101,10 +101,10 @@ export const DentistaScalarFieldEnum = {
   id: 'id',
   senha_dentista: 'senha_dentista',
   formacao: 'formacao',
-  Instituto: 'Instituto',
-  DataInicio: 'DataInicio',
-  DataTermino: 'DataTermino',
-  Especializacao: 'Especializacao',
+  instituto: 'instituto',
+  datainicio: 'datainicio',
+  datatermino: 'datatermino',
+  especializacao: 'especializacao',
   id_usuario: 'id_usuario'
 } as const
 
@@ -114,7 +114,7 @@ export type DentistaScalarFieldEnum = (typeof DentistaScalarFieldEnum)[keyof typ
 export const PacienteScalarFieldEnum = {
   id: 'id',
   senha_paciente: 'senha_paciente',
-  RG: 'RG',
+  rg: 'rg',
   id_usuario: 'id_usuario'
 } as const
 
@@ -124,7 +124,7 @@ export type PacienteScalarFieldEnum = (typeof PacienteScalarFieldEnum)[keyof typ
 export const NotificacaoScalarFieldEnum = {
   id: 'id',
   id_notificacao: 'id_notificacao',
-  DS_mensagem: 'DS_mensagem',
+  ds_mensagem: 'ds_mensagem',
   lido: 'lido',
   titulo: 'titulo',
   simbolo: 'simbolo'
@@ -133,41 +133,41 @@ export const NotificacaoScalarFieldEnum = {
 export type NotificacaoScalarFieldEnum = (typeof NotificacaoScalarFieldEnum)[keyof typeof NotificacaoScalarFieldEnum]
 
 
-export const Notificacao_usuarioScalarFieldEnum = {
+export const NotificacaoUsuarioScalarFieldEnum = {
   id: 'id',
   id_notificacao: 'id_notificacao',
   id_usuario: 'id_usuario',
   id_consulta: 'id_consulta'
 } as const
 
-export type Notificacao_usuarioScalarFieldEnum = (typeof Notificacao_usuarioScalarFieldEnum)[keyof typeof Notificacao_usuarioScalarFieldEnum]
+export type NotificacaoUsuarioScalarFieldEnum = (typeof NotificacaoUsuarioScalarFieldEnum)[keyof typeof NotificacaoUsuarioScalarFieldEnum]
 
 
 export const ImagemScalarFieldEnum = {
   id: 'id',
-  URL: 'URL',
-  Nome: 'Nome'
+  url: 'url',
+  nome: 'nome'
 } as const
 
 export type ImagemScalarFieldEnum = (typeof ImagemScalarFieldEnum)[keyof typeof ImagemScalarFieldEnum]
 
 
-export const Imagem_usuarioScalarFieldEnum = {
+export const ImagemUsuarioScalarFieldEnum = {
   id: 'id',
   id_imagem: 'id_imagem',
   id_usuario: 'id_usuario'
 } as const
 
-export type Imagem_usuarioScalarFieldEnum = (typeof Imagem_usuarioScalarFieldEnum)[keyof typeof Imagem_usuarioScalarFieldEnum]
+export type ImagemUsuarioScalarFieldEnum = (typeof ImagemUsuarioScalarFieldEnum)[keyof typeof ImagemUsuarioScalarFieldEnum]
 
 
-export const Imagem_postagemScalarFieldEnum = {
+export const ImagemPostagemScalarFieldEnum = {
   id: 'id',
   id_imagem: 'id_imagem',
   id_postagem: 'id_postagem'
 } as const
 
-export type Imagem_postagemScalarFieldEnum = (typeof Imagem_postagemScalarFieldEnum)[keyof typeof Imagem_postagemScalarFieldEnum]
+export type ImagemPostagemScalarFieldEnum = (typeof ImagemPostagemScalarFieldEnum)[keyof typeof ImagemPostagemScalarFieldEnum]
 
 
 export const EnderecoScalarFieldEnum = {
@@ -196,7 +196,7 @@ export const ConsultaScalarFieldEnum = {
 export type ConsultaScalarFieldEnum = (typeof ConsultaScalarFieldEnum)[keyof typeof ConsultaScalarFieldEnum]
 
 
-export const Detalhe_da_consultaScalarFieldEnum = {
+export const DetalheDaConsultaScalarFieldEnum = {
   id: 'id',
   DH: 'DH',
   valor: 'valor',
@@ -207,7 +207,7 @@ export const Detalhe_da_consultaScalarFieldEnum = {
   id_consulta: 'id_consulta'
 } as const
 
-export type Detalhe_da_consultaScalarFieldEnum = (typeof Detalhe_da_consultaScalarFieldEnum)[keyof typeof Detalhe_da_consultaScalarFieldEnum]
+export type DetalheDaConsultaScalarFieldEnum = (typeof DetalheDaConsultaScalarFieldEnum)[keyof typeof DetalheDaConsultaScalarFieldEnum]
 
 
 export const PostagemScalarFieldEnum = {
@@ -226,9 +226,9 @@ export type PostagemScalarFieldEnum = (typeof PostagemScalarFieldEnum)[keyof typ
 export const ConvenioScalarFieldEnum = {
   id: 'id',
   id_convenio: 'id_convenio',
-  NO_operadora: 'NO_operadora',
-  NU_carteirinha: 'NU_carteirinha',
-  DT_val_carteirinha: 'DT_val_carteirinha',
+  no_operadora: 'no_operadora',
+  nu_carteirinha: 'nu_carteirinha',
+  dt_val_carteirinha: 'dt_val_carteirinha',
   id_paciente: 'id_paciente'
 } as const
 

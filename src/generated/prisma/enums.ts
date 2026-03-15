@@ -9,9 +9,9 @@
 * 🟢 You can import this file directly.
 */
 
-export const tipo_pagamento = {
-  Particular: 'Particular',
-  Convenio: 'Convenio'
+export const TipoPagamento = {
+  particular: 'particular',
+  convenio: 'convenio'
 } as const
 
-export type tipo_pagamento = (typeof tipo_pagamento)[keyof typeof tipo_pagamento]
+export type TipoPagamento = (typeof TipoPagamento)[keyof typeof TipoPagamento]

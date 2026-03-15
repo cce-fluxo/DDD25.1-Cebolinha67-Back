@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `usuario` model and its related types.
+ * This file exports the `Usuario` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model usuario
+ * Model Usuario
  * 
  */
-export type usuarioModel = runtime.Types.Result.DefaultSelection<Prisma.$usuarioPayload>
+export type UsuarioModel = runtime.Types.Result.DefaultSelection<Prisma.$UsuarioPayload>
 
 export type AggregateUsuario = {
   _count: UsuarioCountAggregateOutputType | null
@@ -39,8 +39,8 @@ export type UsuarioMinAggregateOutputType = {
   no_usuario: string | null
   email_usuario: string | null
   CPF: string | null
-  NU_celular: string | null
-  Genero: string | null
+  nu_celular: string | null
+  genero: string | null
   data_nascimento: Date | null
   token_esqueci_senha: string | null
 }
@@ -50,8 +50,8 @@ export type UsuarioMaxAggregateOutputType = {
   no_usuario: string | null
   email_usuario: string | null
   CPF: string | null
-  NU_celular: string | null
-  Genero: string | null
+  nu_celular: string | null
+  genero: string | null
   data_nascimento: Date | null
   token_esqueci_senha: string | null
 }
@@ -61,8 +61,8 @@ export type UsuarioCountAggregateOutputType = {
   no_usuario: number
   email_usuario: number
   CPF: number
-  NU_celular: number
-  Genero: number
+  nu_celular: number
+  genero: number
   data_nascimento: number
   token_esqueci_senha: number
   _all: number
@@ -82,8 +82,8 @@ export type UsuarioMinAggregateInputType = {
   no_usuario?: true
   email_usuario?: true
   CPF?: true
-  NU_celular?: true
-  Genero?: true
+  nu_celular?: true
+  genero?: true
   data_nascimento?: true
   token_esqueci_senha?: true
 }
@@ -93,8 +93,8 @@ export type UsuarioMaxAggregateInputType = {
   no_usuario?: true
   email_usuario?: true
   CPF?: true
-  NU_celular?: true
-  Genero?: true
+  nu_celular?: true
+  genero?: true
   data_nascimento?: true
   token_esqueci_senha?: true
 }
@@ -104,8 +104,8 @@ export type UsuarioCountAggregateInputType = {
   no_usuario?: true
   email_usuario?: true
   CPF?: true
-  NU_celular?: true
-  Genero?: true
+  nu_celular?: true
+  genero?: true
   data_nascimento?: true
   token_esqueci_senha?: true
   _all?: true
@@ -113,37 +113,37 @@ export type UsuarioCountAggregateInputType = {
 
 export type UsuarioAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which usuario to aggregate.
+   * Filter which Usuario to aggregate.
    */
-  where?: Prisma.usuarioWhereInput
+  where?: Prisma.UsuarioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of usuarios to fetch.
+   * Determine the order of Usuarios to fetch.
    */
-  orderBy?: Prisma.usuarioOrderByWithRelationInput | Prisma.usuarioOrderByWithRelationInput[]
+  orderBy?: Prisma.UsuarioOrderByWithRelationInput | Prisma.UsuarioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.usuarioWhereUniqueInput
+  cursor?: Prisma.UsuarioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` usuarios from the position of the cursor.
+   * Take `±n` Usuarios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` usuarios.
+   * Skip the first `n` Usuarios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned usuarios
+   * Count returned Usuarios
   **/
   _count?: true | UsuarioCountAggregateInputType
   /**
@@ -183,11 +183,11 @@ export type GetUsuarioAggregateType<T extends UsuarioAggregateArgs> = {
 
 
 
-export type usuarioGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.usuarioWhereInput
-  orderBy?: Prisma.usuarioOrderByWithAggregationInput | Prisma.usuarioOrderByWithAggregationInput[]
+export type UsuarioGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UsuarioWhereInput
+  orderBy?: Prisma.UsuarioOrderByWithAggregationInput | Prisma.UsuarioOrderByWithAggregationInput[]
   by: Prisma.UsuarioScalarFieldEnum[] | Prisma.UsuarioScalarFieldEnum
-  having?: Prisma.usuarioScalarWhereWithAggregatesInput
+  having?: Prisma.UsuarioScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: UsuarioCountAggregateInputType | true
@@ -202,8 +202,8 @@ export type UsuarioGroupByOutputType = {
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date
   token_esqueci_senha: string
   _count: UsuarioCountAggregateOutputType | null
@@ -213,7 +213,7 @@ export type UsuarioGroupByOutputType = {
   _max: UsuarioMaxAggregateOutputType | null
 }
 
-type GetUsuarioGroupByPayload<T extends usuarioGroupByArgs> = Prisma.PrismaPromise<
+type GetUsuarioGroupByPayload<T extends UsuarioGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<UsuarioGroupByOutputType, T['by']> &
       {
@@ -228,221 +228,221 @@ type GetUsuarioGroupByPayload<T extends usuarioGroupByArgs> = Prisma.PrismaPromi
 
 
 
-export type usuarioWhereInput = {
-  AND?: Prisma.usuarioWhereInput | Prisma.usuarioWhereInput[]
-  OR?: Prisma.usuarioWhereInput[]
-  NOT?: Prisma.usuarioWhereInput | Prisma.usuarioWhereInput[]
-  id?: Prisma.IntFilter<"usuario"> | number
-  no_usuario?: Prisma.StringFilter<"usuario"> | string
-  email_usuario?: Prisma.StringFilter<"usuario"> | string
-  CPF?: Prisma.StringFilter<"usuario"> | string
-  NU_celular?: Prisma.StringFilter<"usuario"> | string
-  Genero?: Prisma.StringFilter<"usuario"> | string
-  data_nascimento?: Prisma.DateTimeFilter<"usuario"> | Date | string
-  token_esqueci_senha?: Prisma.StringFilter<"usuario"> | string
-  notificacao_usuario?: Prisma.Notificacao_usuarioListRelationFilter
-  imagem_usuario?: Prisma.XOR<Prisma.Imagem_usuarioNullableScalarRelationFilter, Prisma.imagem_usuarioWhereInput> | null
-  paciente?: Prisma.XOR<Prisma.PacienteNullableScalarRelationFilter, Prisma.pacienteWhereInput> | null
-  dentista?: Prisma.XOR<Prisma.DentistaNullableScalarRelationFilter, Prisma.dentistaWhereInput> | null
+export type UsuarioWhereInput = {
+  AND?: Prisma.UsuarioWhereInput | Prisma.UsuarioWhereInput[]
+  OR?: Prisma.UsuarioWhereInput[]
+  NOT?: Prisma.UsuarioWhereInput | Prisma.UsuarioWhereInput[]
+  id?: Prisma.IntFilter<"Usuario"> | number
+  no_usuario?: Prisma.StringFilter<"Usuario"> | string
+  email_usuario?: Prisma.StringFilter<"Usuario"> | string
+  CPF?: Prisma.StringFilter<"Usuario"> | string
+  nu_celular?: Prisma.StringFilter<"Usuario"> | string
+  genero?: Prisma.StringFilter<"Usuario"> | string
+  data_nascimento?: Prisma.DateTimeFilter<"Usuario"> | Date | string
+  token_esqueci_senha?: Prisma.StringFilter<"Usuario"> | string
+  notificacao_usuario?: Prisma.NotificacaoUsuarioListRelationFilter
+  imagem_usuario?: Prisma.XOR<Prisma.ImagemUsuarioNullableScalarRelationFilter, Prisma.ImagemUsuarioWhereInput> | null
+  paciente?: Prisma.XOR<Prisma.PacienteNullableScalarRelationFilter, Prisma.PacienteWhereInput> | null
+  dentista?: Prisma.XOR<Prisma.DentistaNullableScalarRelationFilter, Prisma.DentistaWhereInput> | null
 }
 
-export type usuarioOrderByWithRelationInput = {
+export type UsuarioOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
   CPF?: Prisma.SortOrder
-  NU_celular?: Prisma.SortOrder
-  Genero?: Prisma.SortOrder
+  nu_celular?: Prisma.SortOrder
+  genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
   token_esqueci_senha?: Prisma.SortOrder
-  notificacao_usuario?: Prisma.notificacao_usuarioOrderByRelationAggregateInput
-  imagem_usuario?: Prisma.imagem_usuarioOrderByWithRelationInput
-  paciente?: Prisma.pacienteOrderByWithRelationInput
-  dentista?: Prisma.dentistaOrderByWithRelationInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioOrderByRelationAggregateInput
+  imagem_usuario?: Prisma.ImagemUsuarioOrderByWithRelationInput
+  paciente?: Prisma.PacienteOrderByWithRelationInput
+  dentista?: Prisma.DentistaOrderByWithRelationInput
 }
 
-export type usuarioWhereUniqueInput = Prisma.AtLeast<{
+export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   email_usuario?: string
   CPF?: string
-  NU_celular?: string
-  AND?: Prisma.usuarioWhereInput | Prisma.usuarioWhereInput[]
-  OR?: Prisma.usuarioWhereInput[]
-  NOT?: Prisma.usuarioWhereInput | Prisma.usuarioWhereInput[]
-  no_usuario?: Prisma.StringFilter<"usuario"> | string
-  Genero?: Prisma.StringFilter<"usuario"> | string
-  data_nascimento?: Prisma.DateTimeFilter<"usuario"> | Date | string
-  token_esqueci_senha?: Prisma.StringFilter<"usuario"> | string
-  notificacao_usuario?: Prisma.Notificacao_usuarioListRelationFilter
-  imagem_usuario?: Prisma.XOR<Prisma.Imagem_usuarioNullableScalarRelationFilter, Prisma.imagem_usuarioWhereInput> | null
-  paciente?: Prisma.XOR<Prisma.PacienteNullableScalarRelationFilter, Prisma.pacienteWhereInput> | null
-  dentista?: Prisma.XOR<Prisma.DentistaNullableScalarRelationFilter, Prisma.dentistaWhereInput> | null
-}, "id" | "email_usuario" | "CPF" | "NU_celular">
+  nu_celular?: string
+  AND?: Prisma.UsuarioWhereInput | Prisma.UsuarioWhereInput[]
+  OR?: Prisma.UsuarioWhereInput[]
+  NOT?: Prisma.UsuarioWhereInput | Prisma.UsuarioWhereInput[]
+  no_usuario?: Prisma.StringFilter<"Usuario"> | string
+  genero?: Prisma.StringFilter<"Usuario"> | string
+  data_nascimento?: Prisma.DateTimeFilter<"Usuario"> | Date | string
+  token_esqueci_senha?: Prisma.StringFilter<"Usuario"> | string
+  notificacao_usuario?: Prisma.NotificacaoUsuarioListRelationFilter
+  imagem_usuario?: Prisma.XOR<Prisma.ImagemUsuarioNullableScalarRelationFilter, Prisma.ImagemUsuarioWhereInput> | null
+  paciente?: Prisma.XOR<Prisma.PacienteNullableScalarRelationFilter, Prisma.PacienteWhereInput> | null
+  dentista?: Prisma.XOR<Prisma.DentistaNullableScalarRelationFilter, Prisma.DentistaWhereInput> | null
+}, "id" | "email_usuario" | "CPF" | "nu_celular">
 
-export type usuarioOrderByWithAggregationInput = {
+export type UsuarioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
   CPF?: Prisma.SortOrder
-  NU_celular?: Prisma.SortOrder
-  Genero?: Prisma.SortOrder
+  nu_celular?: Prisma.SortOrder
+  genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
   token_esqueci_senha?: Prisma.SortOrder
-  _count?: Prisma.usuarioCountOrderByAggregateInput
-  _avg?: Prisma.usuarioAvgOrderByAggregateInput
-  _max?: Prisma.usuarioMaxOrderByAggregateInput
-  _min?: Prisma.usuarioMinOrderByAggregateInput
-  _sum?: Prisma.usuarioSumOrderByAggregateInput
+  _count?: Prisma.UsuarioCountOrderByAggregateInput
+  _avg?: Prisma.UsuarioAvgOrderByAggregateInput
+  _max?: Prisma.UsuarioMaxOrderByAggregateInput
+  _min?: Prisma.UsuarioMinOrderByAggregateInput
+  _sum?: Prisma.UsuarioSumOrderByAggregateInput
 }
 
-export type usuarioScalarWhereWithAggregatesInput = {
-  AND?: Prisma.usuarioScalarWhereWithAggregatesInput | Prisma.usuarioScalarWhereWithAggregatesInput[]
-  OR?: Prisma.usuarioScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.usuarioScalarWhereWithAggregatesInput | Prisma.usuarioScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"usuario"> | number
-  no_usuario?: Prisma.StringWithAggregatesFilter<"usuario"> | string
-  email_usuario?: Prisma.StringWithAggregatesFilter<"usuario"> | string
-  CPF?: Prisma.StringWithAggregatesFilter<"usuario"> | string
-  NU_celular?: Prisma.StringWithAggregatesFilter<"usuario"> | string
-  Genero?: Prisma.StringWithAggregatesFilter<"usuario"> | string
-  data_nascimento?: Prisma.DateTimeWithAggregatesFilter<"usuario"> | Date | string
-  token_esqueci_senha?: Prisma.StringWithAggregatesFilter<"usuario"> | string
+export type UsuarioScalarWhereWithAggregatesInput = {
+  AND?: Prisma.UsuarioScalarWhereWithAggregatesInput | Prisma.UsuarioScalarWhereWithAggregatesInput[]
+  OR?: Prisma.UsuarioScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.UsuarioScalarWhereWithAggregatesInput | Prisma.UsuarioScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"Usuario"> | number
+  no_usuario?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  email_usuario?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  CPF?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  nu_celular?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  genero?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  data_nascimento?: Prisma.DateTimeWithAggregatesFilter<"Usuario"> | Date | string
+  token_esqueci_senha?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
 }
 
-export type usuarioCreateInput = {
+export type UsuarioCreateInput = {
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutUsuarioInput
-  imagem_usuario?: Prisma.imagem_usuarioCreateNestedOneWithoutUsuarioInput
-  paciente?: Prisma.pacienteCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
+  paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioUncheckedCreateInput = {
+export type UsuarioUncheckedCreateInput = {
   id?: number
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutUsuarioInput
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedCreateNestedOneWithoutUsuarioInput
-  paciente?: Prisma.pacienteUncheckedCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaUncheckedCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
+  paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaUncheckedCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioUpdateInput = {
+export type UsuarioUpdateInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutUsuarioNestedInput
-  imagem_usuario?: Prisma.imagem_usuarioUpdateOneWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioUncheckedUpdateInput = {
+export type UsuarioUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutUsuarioNestedInput
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedUpdateOneWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUncheckedUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUncheckedUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUncheckedUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioCreateManyInput = {
+export type UsuarioCreateManyInput = {
   id?: number
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
 }
 
-export type usuarioUpdateManyMutationInput = {
+export type UsuarioUpdateManyMutationInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type usuarioUncheckedUpdateManyInput = {
+export type UsuarioUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
-export type usuarioCountOrderByAggregateInput = {
+export type UsuarioCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
   CPF?: Prisma.SortOrder
-  NU_celular?: Prisma.SortOrder
-  Genero?: Prisma.SortOrder
+  nu_celular?: Prisma.SortOrder
+  genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
   token_esqueci_senha?: Prisma.SortOrder
 }
 
-export type usuarioAvgOrderByAggregateInput = {
+export type UsuarioAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
-export type usuarioMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  no_usuario?: Prisma.SortOrder
-  email_usuario?: Prisma.SortOrder
-  CPF?: Prisma.SortOrder
-  NU_celular?: Prisma.SortOrder
-  Genero?: Prisma.SortOrder
-  data_nascimento?: Prisma.SortOrder
-  token_esqueci_senha?: Prisma.SortOrder
-}
-
-export type usuarioMinOrderByAggregateInput = {
+export type UsuarioMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
   CPF?: Prisma.SortOrder
-  NU_celular?: Prisma.SortOrder
-  Genero?: Prisma.SortOrder
+  nu_celular?: Prisma.SortOrder
+  genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
   token_esqueci_senha?: Prisma.SortOrder
 }
 
-export type usuarioSumOrderByAggregateInput = {
+export type UsuarioMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  no_usuario?: Prisma.SortOrder
+  email_usuario?: Prisma.SortOrder
+  CPF?: Prisma.SortOrder
+  nu_celular?: Prisma.SortOrder
+  genero?: Prisma.SortOrder
+  data_nascimento?: Prisma.SortOrder
+  token_esqueci_senha?: Prisma.SortOrder
+}
+
+export type UsuarioSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
 export type UsuarioScalarRelationFilter = {
-  is?: Prisma.usuarioWhereInput
-  isNot?: Prisma.usuarioWhereInput
+  is?: Prisma.UsuarioWhereInput
+  isNot?: Prisma.UsuarioWhereInput
 }
 
 export type StringFieldUpdateOperationsInput = {
@@ -461,340 +461,340 @@ export type IntFieldUpdateOperationsInput = {
   divide?: number
 }
 
-export type usuarioCreateNestedOneWithoutDentistaInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutDentistaInput, Prisma.usuarioUncheckedCreateWithoutDentistaInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutDentistaInput
-  connect?: Prisma.usuarioWhereUniqueInput
+export type UsuarioCreateNestedOneWithoutDentistaInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutDentistaInput, Prisma.UsuarioUncheckedCreateWithoutDentistaInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutDentistaInput
+  connect?: Prisma.UsuarioWhereUniqueInput
 }
 
-export type usuarioUpdateOneRequiredWithoutDentistaNestedInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutDentistaInput, Prisma.usuarioUncheckedCreateWithoutDentistaInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutDentistaInput
-  upsert?: Prisma.usuarioUpsertWithoutDentistaInput
-  connect?: Prisma.usuarioWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usuarioUpdateToOneWithWhereWithoutDentistaInput, Prisma.usuarioUpdateWithoutDentistaInput>, Prisma.usuarioUncheckedUpdateWithoutDentistaInput>
+export type UsuarioUpdateOneRequiredWithoutDentistaNestedInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutDentistaInput, Prisma.UsuarioUncheckedCreateWithoutDentistaInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutDentistaInput
+  upsert?: Prisma.UsuarioUpsertWithoutDentistaInput
+  connect?: Prisma.UsuarioWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UsuarioUpdateToOneWithWhereWithoutDentistaInput, Prisma.UsuarioUpdateWithoutDentistaInput>, Prisma.UsuarioUncheckedUpdateWithoutDentistaInput>
 }
 
-export type usuarioCreateNestedOneWithoutPacienteInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutPacienteInput, Prisma.usuarioUncheckedCreateWithoutPacienteInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutPacienteInput
-  connect?: Prisma.usuarioWhereUniqueInput
+export type UsuarioCreateNestedOneWithoutPacienteInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutPacienteInput, Prisma.UsuarioUncheckedCreateWithoutPacienteInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutPacienteInput
+  connect?: Prisma.UsuarioWhereUniqueInput
 }
 
-export type usuarioUpdateOneRequiredWithoutPacienteNestedInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutPacienteInput, Prisma.usuarioUncheckedCreateWithoutPacienteInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutPacienteInput
-  upsert?: Prisma.usuarioUpsertWithoutPacienteInput
-  connect?: Prisma.usuarioWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usuarioUpdateToOneWithWhereWithoutPacienteInput, Prisma.usuarioUpdateWithoutPacienteInput>, Prisma.usuarioUncheckedUpdateWithoutPacienteInput>
+export type UsuarioUpdateOneRequiredWithoutPacienteNestedInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutPacienteInput, Prisma.UsuarioUncheckedCreateWithoutPacienteInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutPacienteInput
+  upsert?: Prisma.UsuarioUpsertWithoutPacienteInput
+  connect?: Prisma.UsuarioWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UsuarioUpdateToOneWithWhereWithoutPacienteInput, Prisma.UsuarioUpdateWithoutPacienteInput>, Prisma.UsuarioUncheckedUpdateWithoutPacienteInput>
 }
 
-export type usuarioCreateNestedOneWithoutNotificacao_usuarioInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutNotificacao_usuarioInput, Prisma.usuarioUncheckedCreateWithoutNotificacao_usuarioInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutNotificacao_usuarioInput
-  connect?: Prisma.usuarioWhereUniqueInput
+export type UsuarioCreateNestedOneWithoutNotificacao_usuarioInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutNotificacao_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutNotificacao_usuarioInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutNotificacao_usuarioInput
+  connect?: Prisma.UsuarioWhereUniqueInput
 }
 
-export type usuarioUpdateOneRequiredWithoutNotificacao_usuarioNestedInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutNotificacao_usuarioInput, Prisma.usuarioUncheckedCreateWithoutNotificacao_usuarioInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutNotificacao_usuarioInput
-  upsert?: Prisma.usuarioUpsertWithoutNotificacao_usuarioInput
-  connect?: Prisma.usuarioWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usuarioUpdateToOneWithWhereWithoutNotificacao_usuarioInput, Prisma.usuarioUpdateWithoutNotificacao_usuarioInput>, Prisma.usuarioUncheckedUpdateWithoutNotificacao_usuarioInput>
+export type UsuarioUpdateOneRequiredWithoutNotificacao_usuarioNestedInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutNotificacao_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutNotificacao_usuarioInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutNotificacao_usuarioInput
+  upsert?: Prisma.UsuarioUpsertWithoutNotificacao_usuarioInput
+  connect?: Prisma.UsuarioWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UsuarioUpdateToOneWithWhereWithoutNotificacao_usuarioInput, Prisma.UsuarioUpdateWithoutNotificacao_usuarioInput>, Prisma.UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput>
 }
 
-export type usuarioCreateNestedOneWithoutImagem_usuarioInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutImagem_usuarioInput, Prisma.usuarioUncheckedCreateWithoutImagem_usuarioInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutImagem_usuarioInput
-  connect?: Prisma.usuarioWhereUniqueInput
+export type UsuarioCreateNestedOneWithoutImagem_usuarioInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutImagem_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutImagem_usuarioInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutImagem_usuarioInput
+  connect?: Prisma.UsuarioWhereUniqueInput
 }
 
-export type usuarioUpdateOneRequiredWithoutImagem_usuarioNestedInput = {
-  create?: Prisma.XOR<Prisma.usuarioCreateWithoutImagem_usuarioInput, Prisma.usuarioUncheckedCreateWithoutImagem_usuarioInput>
-  connectOrCreate?: Prisma.usuarioCreateOrConnectWithoutImagem_usuarioInput
-  upsert?: Prisma.usuarioUpsertWithoutImagem_usuarioInput
-  connect?: Prisma.usuarioWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usuarioUpdateToOneWithWhereWithoutImagem_usuarioInput, Prisma.usuarioUpdateWithoutImagem_usuarioInput>, Prisma.usuarioUncheckedUpdateWithoutImagem_usuarioInput>
+export type UsuarioUpdateOneRequiredWithoutImagem_usuarioNestedInput = {
+  create?: Prisma.XOR<Prisma.UsuarioCreateWithoutImagem_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutImagem_usuarioInput>
+  connectOrCreate?: Prisma.UsuarioCreateOrConnectWithoutImagem_usuarioInput
+  upsert?: Prisma.UsuarioUpsertWithoutImagem_usuarioInput
+  connect?: Prisma.UsuarioWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UsuarioUpdateToOneWithWhereWithoutImagem_usuarioInput, Prisma.UsuarioUpdateWithoutImagem_usuarioInput>, Prisma.UsuarioUncheckedUpdateWithoutImagem_usuarioInput>
 }
 
-export type usuarioCreateWithoutDentistaInput = {
+export type UsuarioCreateWithoutDentistaInput = {
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutUsuarioInput
-  imagem_usuario?: Prisma.imagem_usuarioCreateNestedOneWithoutUsuarioInput
-  paciente?: Prisma.pacienteCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
+  paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioUncheckedCreateWithoutDentistaInput = {
+export type UsuarioUncheckedCreateWithoutDentistaInput = {
   id?: number
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutUsuarioInput
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedCreateNestedOneWithoutUsuarioInput
-  paciente?: Prisma.pacienteUncheckedCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
+  paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioCreateOrConnectWithoutDentistaInput = {
-  where: Prisma.usuarioWhereUniqueInput
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutDentistaInput, Prisma.usuarioUncheckedCreateWithoutDentistaInput>
+export type UsuarioCreateOrConnectWithoutDentistaInput = {
+  where: Prisma.UsuarioWhereUniqueInput
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutDentistaInput, Prisma.UsuarioUncheckedCreateWithoutDentistaInput>
 }
 
-export type usuarioUpsertWithoutDentistaInput = {
-  update: Prisma.XOR<Prisma.usuarioUpdateWithoutDentistaInput, Prisma.usuarioUncheckedUpdateWithoutDentistaInput>
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutDentistaInput, Prisma.usuarioUncheckedCreateWithoutDentistaInput>
-  where?: Prisma.usuarioWhereInput
+export type UsuarioUpsertWithoutDentistaInput = {
+  update: Prisma.XOR<Prisma.UsuarioUpdateWithoutDentistaInput, Prisma.UsuarioUncheckedUpdateWithoutDentistaInput>
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutDentistaInput, Prisma.UsuarioUncheckedCreateWithoutDentistaInput>
+  where?: Prisma.UsuarioWhereInput
 }
 
-export type usuarioUpdateToOneWithWhereWithoutDentistaInput = {
-  where?: Prisma.usuarioWhereInput
-  data: Prisma.XOR<Prisma.usuarioUpdateWithoutDentistaInput, Prisma.usuarioUncheckedUpdateWithoutDentistaInput>
+export type UsuarioUpdateToOneWithWhereWithoutDentistaInput = {
+  where?: Prisma.UsuarioWhereInput
+  data: Prisma.XOR<Prisma.UsuarioUpdateWithoutDentistaInput, Prisma.UsuarioUncheckedUpdateWithoutDentistaInput>
 }
 
-export type usuarioUpdateWithoutDentistaInput = {
+export type UsuarioUpdateWithoutDentistaInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutUsuarioNestedInput
-  imagem_usuario?: Prisma.imagem_usuarioUpdateOneWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioUncheckedUpdateWithoutDentistaInput = {
+export type UsuarioUncheckedUpdateWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutUsuarioNestedInput
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedUpdateOneWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUncheckedUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioCreateWithoutPacienteInput = {
+export type UsuarioCreateWithoutPacienteInput = {
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutUsuarioInput
-  imagem_usuario?: Prisma.imagem_usuarioCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioUncheckedCreateWithoutPacienteInput = {
+export type UsuarioUncheckedCreateWithoutPacienteInput = {
   id?: number
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutUsuarioInput
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaUncheckedCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaUncheckedCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioCreateOrConnectWithoutPacienteInput = {
-  where: Prisma.usuarioWhereUniqueInput
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutPacienteInput, Prisma.usuarioUncheckedCreateWithoutPacienteInput>
+export type UsuarioCreateOrConnectWithoutPacienteInput = {
+  where: Prisma.UsuarioWhereUniqueInput
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutPacienteInput, Prisma.UsuarioUncheckedCreateWithoutPacienteInput>
 }
 
-export type usuarioUpsertWithoutPacienteInput = {
-  update: Prisma.XOR<Prisma.usuarioUpdateWithoutPacienteInput, Prisma.usuarioUncheckedUpdateWithoutPacienteInput>
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutPacienteInput, Prisma.usuarioUncheckedCreateWithoutPacienteInput>
-  where?: Prisma.usuarioWhereInput
+export type UsuarioUpsertWithoutPacienteInput = {
+  update: Prisma.XOR<Prisma.UsuarioUpdateWithoutPacienteInput, Prisma.UsuarioUncheckedUpdateWithoutPacienteInput>
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutPacienteInput, Prisma.UsuarioUncheckedCreateWithoutPacienteInput>
+  where?: Prisma.UsuarioWhereInput
 }
 
-export type usuarioUpdateToOneWithWhereWithoutPacienteInput = {
-  where?: Prisma.usuarioWhereInput
-  data: Prisma.XOR<Prisma.usuarioUpdateWithoutPacienteInput, Prisma.usuarioUncheckedUpdateWithoutPacienteInput>
+export type UsuarioUpdateToOneWithWhereWithoutPacienteInput = {
+  where?: Prisma.UsuarioWhereInput
+  data: Prisma.XOR<Prisma.UsuarioUpdateWithoutPacienteInput, Prisma.UsuarioUncheckedUpdateWithoutPacienteInput>
 }
 
-export type usuarioUpdateWithoutPacienteInput = {
+export type UsuarioUpdateWithoutPacienteInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutUsuarioNestedInput
-  imagem_usuario?: Prisma.imagem_usuarioUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioUncheckedUpdateWithoutPacienteInput = {
+export type UsuarioUncheckedUpdateWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutUsuarioNestedInput
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUncheckedUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUncheckedUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioCreateWithoutNotificacao_usuarioInput = {
+export type UsuarioCreateWithoutNotificacao_usuarioInput = {
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  imagem_usuario?: Prisma.imagem_usuarioCreateNestedOneWithoutUsuarioInput
-  paciente?: Prisma.pacienteCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaCreateNestedOneWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
+  paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioUncheckedCreateWithoutNotificacao_usuarioInput = {
+export type UsuarioUncheckedCreateWithoutNotificacao_usuarioInput = {
   id?: number
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedCreateNestedOneWithoutUsuarioInput
-  paciente?: Prisma.pacienteUncheckedCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaUncheckedCreateNestedOneWithoutUsuarioInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
+  paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaUncheckedCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioCreateOrConnectWithoutNotificacao_usuarioInput = {
-  where: Prisma.usuarioWhereUniqueInput
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutNotificacao_usuarioInput, Prisma.usuarioUncheckedCreateWithoutNotificacao_usuarioInput>
+export type UsuarioCreateOrConnectWithoutNotificacao_usuarioInput = {
+  where: Prisma.UsuarioWhereUniqueInput
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutNotificacao_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutNotificacao_usuarioInput>
 }
 
-export type usuarioUpsertWithoutNotificacao_usuarioInput = {
-  update: Prisma.XOR<Prisma.usuarioUpdateWithoutNotificacao_usuarioInput, Prisma.usuarioUncheckedUpdateWithoutNotificacao_usuarioInput>
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutNotificacao_usuarioInput, Prisma.usuarioUncheckedCreateWithoutNotificacao_usuarioInput>
-  where?: Prisma.usuarioWhereInput
+export type UsuarioUpsertWithoutNotificacao_usuarioInput = {
+  update: Prisma.XOR<Prisma.UsuarioUpdateWithoutNotificacao_usuarioInput, Prisma.UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput>
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutNotificacao_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutNotificacao_usuarioInput>
+  where?: Prisma.UsuarioWhereInput
 }
 
-export type usuarioUpdateToOneWithWhereWithoutNotificacao_usuarioInput = {
-  where?: Prisma.usuarioWhereInput
-  data: Prisma.XOR<Prisma.usuarioUpdateWithoutNotificacao_usuarioInput, Prisma.usuarioUncheckedUpdateWithoutNotificacao_usuarioInput>
+export type UsuarioUpdateToOneWithWhereWithoutNotificacao_usuarioInput = {
+  where?: Prisma.UsuarioWhereInput
+  data: Prisma.XOR<Prisma.UsuarioUpdateWithoutNotificacao_usuarioInput, Prisma.UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput>
 }
 
-export type usuarioUpdateWithoutNotificacao_usuarioInput = {
+export type UsuarioUpdateWithoutNotificacao_usuarioInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  imagem_usuario?: Prisma.imagem_usuarioUpdateOneWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUpdateOneWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioUncheckedUpdateWithoutNotificacao_usuarioInput = {
+export type UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  imagem_usuario?: Prisma.imagem_usuarioUncheckedUpdateOneWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUncheckedUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUncheckedUpdateOneWithoutUsuarioNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUncheckedUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioCreateWithoutImagem_usuarioInput = {
+export type UsuarioCreateWithoutImagem_usuarioInput = {
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutUsuarioInput
-  paciente?: Prisma.pacienteCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
+  paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioUncheckedCreateWithoutImagem_usuarioInput = {
+export type UsuarioUncheckedCreateWithoutImagem_usuarioInput = {
   id?: number
   no_usuario: string
   email_usuario: string
   CPF: string
-  NU_celular: string
-  Genero: string
+  nu_celular: string
+  genero: string
   data_nascimento: Date | string
   token_esqueci_senha: string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutUsuarioInput
-  paciente?: Prisma.pacienteUncheckedCreateNestedOneWithoutUsuarioInput
-  dentista?: Prisma.dentistaUncheckedCreateNestedOneWithoutUsuarioInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
+  paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
+  dentista?: Prisma.DentistaUncheckedCreateNestedOneWithoutUsuarioInput
 }
 
-export type usuarioCreateOrConnectWithoutImagem_usuarioInput = {
-  where: Prisma.usuarioWhereUniqueInput
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutImagem_usuarioInput, Prisma.usuarioUncheckedCreateWithoutImagem_usuarioInput>
+export type UsuarioCreateOrConnectWithoutImagem_usuarioInput = {
+  where: Prisma.UsuarioWhereUniqueInput
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutImagem_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutImagem_usuarioInput>
 }
 
-export type usuarioUpsertWithoutImagem_usuarioInput = {
-  update: Prisma.XOR<Prisma.usuarioUpdateWithoutImagem_usuarioInput, Prisma.usuarioUncheckedUpdateWithoutImagem_usuarioInput>
-  create: Prisma.XOR<Prisma.usuarioCreateWithoutImagem_usuarioInput, Prisma.usuarioUncheckedCreateWithoutImagem_usuarioInput>
-  where?: Prisma.usuarioWhereInput
+export type UsuarioUpsertWithoutImagem_usuarioInput = {
+  update: Prisma.XOR<Prisma.UsuarioUpdateWithoutImagem_usuarioInput, Prisma.UsuarioUncheckedUpdateWithoutImagem_usuarioInput>
+  create: Prisma.XOR<Prisma.UsuarioCreateWithoutImagem_usuarioInput, Prisma.UsuarioUncheckedCreateWithoutImagem_usuarioInput>
+  where?: Prisma.UsuarioWhereInput
 }
 
-export type usuarioUpdateToOneWithWhereWithoutImagem_usuarioInput = {
-  where?: Prisma.usuarioWhereInput
-  data: Prisma.XOR<Prisma.usuarioUpdateWithoutImagem_usuarioInput, Prisma.usuarioUncheckedUpdateWithoutImagem_usuarioInput>
+export type UsuarioUpdateToOneWithWhereWithoutImagem_usuarioInput = {
+  where?: Prisma.UsuarioWhereInput
+  data: Prisma.XOR<Prisma.UsuarioUpdateWithoutImagem_usuarioInput, Prisma.UsuarioUncheckedUpdateWithoutImagem_usuarioInput>
 }
 
-export type usuarioUpdateWithoutImagem_usuarioInput = {
+export type UsuarioUpdateWithoutImagem_usuarioInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUpdateOneWithoutUsuarioNestedInput
 }
 
-export type usuarioUncheckedUpdateWithoutImagem_usuarioInput = {
+export type UsuarioUncheckedUpdateWithoutImagem_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   CPF?: Prisma.StringFieldUpdateOperationsInput | string
-  NU_celular?: Prisma.StringFieldUpdateOperationsInput | string
-  Genero?: Prisma.StringFieldUpdateOperationsInput | string
+  nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
+  genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutUsuarioNestedInput
-  paciente?: Prisma.pacienteUncheckedUpdateOneWithoutUsuarioNestedInput
-  dentista?: Prisma.dentistaUncheckedUpdateOneWithoutUsuarioNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
+  paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
+  dentista?: Prisma.DentistaUncheckedUpdateOneWithoutUsuarioNestedInput
 }
 
 
@@ -824,103 +824,103 @@ export type UsuarioCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
  * UsuarioCountOutputType without action
  */
 export type UsuarioCountOutputTypeCountNotificacao_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.notificacao_usuarioWhereInput
+  where?: Prisma.NotificacaoUsuarioWhereInput
 }
 
 
-export type usuarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type UsuarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
   CPF?: boolean
-  NU_celular?: boolean
-  Genero?: boolean
+  nu_celular?: boolean
+  genero?: boolean
   data_nascimento?: boolean
   token_esqueci_senha?: boolean
-  notificacao_usuario?: boolean | Prisma.usuario$notificacao_usuarioArgs<ExtArgs>
-  imagem_usuario?: boolean | Prisma.usuario$imagem_usuarioArgs<ExtArgs>
-  paciente?: boolean | Prisma.usuario$pacienteArgs<ExtArgs>
-  dentista?: boolean | Prisma.usuario$dentistaArgs<ExtArgs>
+  notificacao_usuario?: boolean | Prisma.Usuario$notificacao_usuarioArgs<ExtArgs>
+  imagem_usuario?: boolean | Prisma.Usuario$imagem_usuarioArgs<ExtArgs>
+  paciente?: boolean | Prisma.Usuario$pacienteArgs<ExtArgs>
+  dentista?: boolean | Prisma.Usuario$dentistaArgs<ExtArgs>
   _count?: boolean | Prisma.UsuarioCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["usuario"]>
 
-export type usuarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type UsuarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
   CPF?: boolean
-  NU_celular?: boolean
-  Genero?: boolean
+  nu_celular?: boolean
+  genero?: boolean
   data_nascimento?: boolean
   token_esqueci_senha?: boolean
 }, ExtArgs["result"]["usuario"]>
 
-export type usuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type UsuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
   CPF?: boolean
-  NU_celular?: boolean
-  Genero?: boolean
+  nu_celular?: boolean
+  genero?: boolean
   data_nascimento?: boolean
   token_esqueci_senha?: boolean
 }, ExtArgs["result"]["usuario"]>
 
-export type usuarioSelectScalar = {
+export type UsuarioSelectScalar = {
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
   CPF?: boolean
-  NU_celular?: boolean
-  Genero?: boolean
+  nu_celular?: boolean
+  genero?: boolean
   data_nascimento?: boolean
   token_esqueci_senha?: boolean
 }
 
-export type usuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_usuario" | "email_usuario" | "CPF" | "NU_celular" | "Genero" | "data_nascimento" | "token_esqueci_senha", ExtArgs["result"]["usuario"]>
-export type usuarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  notificacao_usuario?: boolean | Prisma.usuario$notificacao_usuarioArgs<ExtArgs>
-  imagem_usuario?: boolean | Prisma.usuario$imagem_usuarioArgs<ExtArgs>
-  paciente?: boolean | Prisma.usuario$pacienteArgs<ExtArgs>
-  dentista?: boolean | Prisma.usuario$dentistaArgs<ExtArgs>
+export type UsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_usuario" | "email_usuario" | "CPF" | "nu_celular" | "genero" | "data_nascimento" | "token_esqueci_senha", ExtArgs["result"]["usuario"]>
+export type UsuarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  notificacao_usuario?: boolean | Prisma.Usuario$notificacao_usuarioArgs<ExtArgs>
+  imagem_usuario?: boolean | Prisma.Usuario$imagem_usuarioArgs<ExtArgs>
+  paciente?: boolean | Prisma.Usuario$pacienteArgs<ExtArgs>
+  dentista?: boolean | Prisma.Usuario$dentistaArgs<ExtArgs>
   _count?: boolean | Prisma.UsuarioCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type usuarioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
-export type usuarioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type UsuarioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type UsuarioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
-export type $usuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "usuario"
+export type $UsuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Usuario"
   objects: {
-    notificacao_usuario: Prisma.$notificacao_usuarioPayload<ExtArgs>[]
-    imagem_usuario: Prisma.$imagem_usuarioPayload<ExtArgs> | null
-    paciente: Prisma.$pacientePayload<ExtArgs> | null
-    dentista: Prisma.$dentistaPayload<ExtArgs> | null
+    notificacao_usuario: Prisma.$NotificacaoUsuarioPayload<ExtArgs>[]
+    imagem_usuario: Prisma.$ImagemUsuarioPayload<ExtArgs> | null
+    paciente: Prisma.$PacientePayload<ExtArgs> | null
+    dentista: Prisma.$DentistaPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     no_usuario: string
     email_usuario: string
     CPF: string
-    NU_celular: string
-    Genero: string
+    nu_celular: string
+    genero: string
     data_nascimento: Date
     token_esqueci_senha: string
   }, ExtArgs["result"]["usuario"]>
   composites: {}
 }
 
-export type usuarioGetPayload<S extends boolean | null | undefined | usuarioDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$usuarioPayload, S>
+export type UsuarioGetPayload<S extends boolean | null | undefined | UsuarioDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$UsuarioPayload, S>
 
-export type usuarioCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<usuarioFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type UsuarioCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<UsuarioFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: UsuarioCountAggregateInputType | true
   }
 
-export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['usuario'], meta: { name: 'usuario' } }
+export interface UsuarioDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Usuario'], meta: { name: 'Usuario' } }
   /**
    * Find zero or one Usuario that matches the filter.
-   * @param {usuarioFindUniqueArgs} args - Arguments to find a Usuario
+   * @param {UsuarioFindUniqueArgs} args - Arguments to find a Usuario
    * @example
    * // Get one Usuario
    * const usuario = await prisma.usuario.findUnique({
@@ -929,12 +929,12 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUnique<T extends usuarioFindUniqueArgs>(args: Prisma.SelectSubset<T, usuarioFindUniqueArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends UsuarioFindUniqueArgs>(args: Prisma.SelectSubset<T, UsuarioFindUniqueArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Usuario that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {usuarioFindUniqueOrThrowArgs} args - Arguments to find a Usuario
+   * @param {UsuarioFindUniqueOrThrowArgs} args - Arguments to find a Usuario
    * @example
    * // Get one Usuario
    * const usuario = await prisma.usuario.findUniqueOrThrow({
@@ -943,13 +943,13 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findUniqueOrThrow<T extends usuarioFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, usuarioFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends UsuarioFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, UsuarioFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Usuario that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {usuarioFindFirstArgs} args - Arguments to find a Usuario
+   * @param {UsuarioFindFirstArgs} args - Arguments to find a Usuario
    * @example
    * // Get one Usuario
    * const usuario = await prisma.usuario.findFirst({
@@ -958,14 +958,14 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirst<T extends usuarioFindFirstArgs>(args?: Prisma.SelectSubset<T, usuarioFindFirstArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends UsuarioFindFirstArgs>(args?: Prisma.SelectSubset<T, UsuarioFindFirstArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Usuario that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {usuarioFindFirstOrThrowArgs} args - Arguments to find a Usuario
+   * @param {UsuarioFindFirstOrThrowArgs} args - Arguments to find a Usuario
    * @example
    * // Get one Usuario
    * const usuario = await prisma.usuario.findFirstOrThrow({
@@ -974,13 +974,13 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  findFirstOrThrow<T extends usuarioFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, usuarioFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends UsuarioFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, UsuarioFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Usuarios that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {usuarioFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {UsuarioFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Usuarios
    * const usuarios = await prisma.usuario.findMany()
@@ -992,11 +992,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * const usuarioWithIdOnly = await prisma.usuario.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends usuarioFindManyArgs>(args?: Prisma.SelectSubset<T, usuarioFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends UsuarioFindManyArgs>(args?: Prisma.SelectSubset<T, UsuarioFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Usuario.
-   * @param {usuarioCreateArgs} args - Arguments to create a Usuario.
+   * @param {UsuarioCreateArgs} args - Arguments to create a Usuario.
    * @example
    * // Create one Usuario
    * const Usuario = await prisma.usuario.create({
@@ -1006,11 +1006,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  create<T extends usuarioCreateArgs>(args: Prisma.SelectSubset<T, usuarioCreateArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends UsuarioCreateArgs>(args: Prisma.SelectSubset<T, UsuarioCreateArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Usuarios.
-   * @param {usuarioCreateManyArgs} args - Arguments to create many Usuarios.
+   * @param {UsuarioCreateManyArgs} args - Arguments to create many Usuarios.
    * @example
    * // Create many Usuarios
    * const usuario = await prisma.usuario.createMany({
@@ -1020,11 +1020,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    *     
    */
-  createMany<T extends usuarioCreateManyArgs>(args?: Prisma.SelectSubset<T, usuarioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends UsuarioCreateManyArgs>(args?: Prisma.SelectSubset<T, UsuarioCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Usuarios and returns the data saved in the database.
-   * @param {usuarioCreateManyAndReturnArgs} args - Arguments to create many Usuarios.
+   * @param {UsuarioCreateManyAndReturnArgs} args - Arguments to create many Usuarios.
    * @example
    * // Create many Usuarios
    * const usuario = await prisma.usuario.createManyAndReturn({
@@ -1044,11 +1044,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends usuarioCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, usuarioCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends UsuarioCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, UsuarioCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Usuario.
-   * @param {usuarioDeleteArgs} args - Arguments to delete one Usuario.
+   * @param {UsuarioDeleteArgs} args - Arguments to delete one Usuario.
    * @example
    * // Delete one Usuario
    * const Usuario = await prisma.usuario.delete({
@@ -1058,11 +1058,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  delete<T extends usuarioDeleteArgs>(args: Prisma.SelectSubset<T, usuarioDeleteArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends UsuarioDeleteArgs>(args: Prisma.SelectSubset<T, UsuarioDeleteArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Usuario.
-   * @param {usuarioUpdateArgs} args - Arguments to update one Usuario.
+   * @param {UsuarioUpdateArgs} args - Arguments to update one Usuario.
    * @example
    * // Update one Usuario
    * const usuario = await prisma.usuario.update({
@@ -1075,11 +1075,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  update<T extends usuarioUpdateArgs>(args: Prisma.SelectSubset<T, usuarioUpdateArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends UsuarioUpdateArgs>(args: Prisma.SelectSubset<T, UsuarioUpdateArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Usuarios.
-   * @param {usuarioDeleteManyArgs} args - Arguments to filter Usuarios to delete.
+   * @param {UsuarioDeleteManyArgs} args - Arguments to filter Usuarios to delete.
    * @example
    * // Delete a few Usuarios
    * const { count } = await prisma.usuario.deleteMany({
@@ -1089,13 +1089,13 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  deleteMany<T extends usuarioDeleteManyArgs>(args?: Prisma.SelectSubset<T, usuarioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends UsuarioDeleteManyArgs>(args?: Prisma.SelectSubset<T, UsuarioDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Usuarios.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {usuarioUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {UsuarioUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Usuarios
    * const usuario = await prisma.usuario.updateMany({
@@ -1108,11 +1108,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * })
    * 
    */
-  updateMany<T extends usuarioUpdateManyArgs>(args: Prisma.SelectSubset<T, usuarioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends UsuarioUpdateManyArgs>(args: Prisma.SelectSubset<T, UsuarioUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Usuarios and returns the data updated in the database.
-   * @param {usuarioUpdateManyAndReturnArgs} args - Arguments to update many Usuarios.
+   * @param {UsuarioUpdateManyAndReturnArgs} args - Arguments to update many Usuarios.
    * @example
    * // Update many Usuarios
    * const usuario = await prisma.usuario.updateManyAndReturn({
@@ -1138,11 +1138,11 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends usuarioUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, usuarioUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends UsuarioUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, UsuarioUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Usuario.
-   * @param {usuarioUpsertArgs} args - Arguments to update or create a Usuario.
+   * @param {UsuarioUpsertArgs} args - Arguments to update or create a Usuario.
    * @example
    * // Update or create a Usuario
    * const usuario = await prisma.usuario.upsert({
@@ -1157,14 +1157,14 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
    */
-  upsert<T extends usuarioUpsertArgs>(args: Prisma.SelectSubset<T, usuarioUpsertArgs<ExtArgs>>): Prisma.Prisma__usuarioClient<runtime.Types.Result.GetResult<Prisma.$usuarioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends UsuarioUpsertArgs>(args: Prisma.SelectSubset<T, UsuarioUpsertArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Usuarios.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {usuarioCountArgs} args - Arguments to filter Usuarios to count.
+   * @param {UsuarioCountArgs} args - Arguments to filter Usuarios to count.
    * @example
    * // Count the number of Usuarios
    * const count = await prisma.usuario.count({
@@ -1173,8 +1173,8 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    *   }
    * })
   **/
-  count<T extends usuarioCountArgs>(
-    args?: Prisma.Subset<T, usuarioCountArgs>,
+  count<T extends UsuarioCountArgs>(
+    args?: Prisma.Subset<T, UsuarioCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1213,7 +1213,7 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * Group by Usuario.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {usuarioGroupByArgs} args - Group by arguments.
+   * @param {UsuarioGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1228,14 +1228,14 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
    * 
   **/
   groupBy<
-    T extends usuarioGroupByArgs,
+    T extends UsuarioGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: usuarioGroupByArgs['orderBy'] }
-      : { orderBy?: usuarioGroupByArgs['orderBy'] },
+      ? { orderBy: UsuarioGroupByArgs['orderBy'] }
+      : { orderBy?: UsuarioGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1284,25 +1284,25 @@ export interface usuarioDelegate<ExtArgs extends runtime.Types.Extensions.Intern
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, usuarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUsuarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, UsuarioGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetUsuarioGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the usuario model
+ * Fields of the Usuario model
  */
-readonly fields: usuarioFieldRefs;
+readonly fields: UsuarioFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for usuario.
+ * The delegate class that acts as a "Promise-like" for Usuario.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__usuarioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__UsuarioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  notificacao_usuario<T extends Prisma.usuario$notificacao_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.usuario$notificacao_usuarioArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$notificacao_usuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  imagem_usuario<T extends Prisma.usuario$imagem_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.usuario$imagem_usuarioArgs<ExtArgs>>): Prisma.Prisma__imagem_usuarioClient<runtime.Types.Result.GetResult<Prisma.$imagem_usuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  paciente<T extends Prisma.usuario$pacienteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.usuario$pacienteArgs<ExtArgs>>): Prisma.Prisma__pacienteClient<runtime.Types.Result.GetResult<Prisma.$pacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  dentista<T extends Prisma.usuario$dentistaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.usuario$dentistaArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  notificacao_usuario<T extends Prisma.Usuario$notificacao_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Usuario$notificacao_usuarioArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificacaoUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  imagem_usuario<T extends Prisma.Usuario$imagem_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Usuario$imagem_usuarioArgs<ExtArgs>>): Prisma.Prisma__ImagemUsuarioClient<runtime.Types.Result.GetResult<Prisma.$ImagemUsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  paciente<T extends Prisma.Usuario$pacienteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Usuario$pacienteArgs<ExtArgs>>): Prisma.Prisma__PacienteClient<runtime.Types.Result.GetResult<Prisma.$PacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  dentista<T extends Prisma.Usuario$dentistaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Usuario$dentistaArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1329,504 +1329,504 @@ export interface Prisma__usuarioClient<T, Null = never, ExtArgs extends runtime.
 
 
 /**
- * Fields of the usuario model
+ * Fields of the Usuario model
  */
-export interface usuarioFieldRefs {
-  readonly id: Prisma.FieldRef<"usuario", 'Int'>
-  readonly no_usuario: Prisma.FieldRef<"usuario", 'String'>
-  readonly email_usuario: Prisma.FieldRef<"usuario", 'String'>
-  readonly CPF: Prisma.FieldRef<"usuario", 'String'>
-  readonly NU_celular: Prisma.FieldRef<"usuario", 'String'>
-  readonly Genero: Prisma.FieldRef<"usuario", 'String'>
-  readonly data_nascimento: Prisma.FieldRef<"usuario", 'DateTime'>
-  readonly token_esqueci_senha: Prisma.FieldRef<"usuario", 'String'>
+export interface UsuarioFieldRefs {
+  readonly id: Prisma.FieldRef<"Usuario", 'Int'>
+  readonly no_usuario: Prisma.FieldRef<"Usuario", 'String'>
+  readonly email_usuario: Prisma.FieldRef<"Usuario", 'String'>
+  readonly CPF: Prisma.FieldRef<"Usuario", 'String'>
+  readonly nu_celular: Prisma.FieldRef<"Usuario", 'String'>
+  readonly genero: Prisma.FieldRef<"Usuario", 'String'>
+  readonly data_nascimento: Prisma.FieldRef<"Usuario", 'DateTime'>
+  readonly token_esqueci_senha: Prisma.FieldRef<"Usuario", 'String'>
 }
     
 
 // Custom InputTypes
 /**
- * usuario findUnique
+ * Usuario findUnique
  */
-export type usuarioFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * Filter, which usuario to fetch.
+   * Filter, which Usuario to fetch.
    */
-  where: Prisma.usuarioWhereUniqueInput
+  where: Prisma.UsuarioWhereUniqueInput
 }
 
 /**
- * usuario findUniqueOrThrow
+ * Usuario findUniqueOrThrow
  */
-export type usuarioFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * Filter, which usuario to fetch.
+   * Filter, which Usuario to fetch.
    */
-  where: Prisma.usuarioWhereUniqueInput
+  where: Prisma.UsuarioWhereUniqueInput
 }
 
 /**
- * usuario findFirst
+ * Usuario findFirst
  */
-export type usuarioFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * Filter, which usuario to fetch.
+   * Filter, which Usuario to fetch.
    */
-  where?: Prisma.usuarioWhereInput
+  where?: Prisma.UsuarioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of usuarios to fetch.
+   * Determine the order of Usuarios to fetch.
    */
-  orderBy?: Prisma.usuarioOrderByWithRelationInput | Prisma.usuarioOrderByWithRelationInput[]
+  orderBy?: Prisma.UsuarioOrderByWithRelationInput | Prisma.UsuarioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for usuarios.
+   * Sets the position for searching for Usuarios.
    */
-  cursor?: Prisma.usuarioWhereUniqueInput
+  cursor?: Prisma.UsuarioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` usuarios from the position of the cursor.
+   * Take `±n` Usuarios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` usuarios.
+   * Skip the first `n` Usuarios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of usuarios.
+   * Filter by unique combinations of Usuarios.
    */
   distinct?: Prisma.UsuarioScalarFieldEnum | Prisma.UsuarioScalarFieldEnum[]
 }
 
 /**
- * usuario findFirstOrThrow
+ * Usuario findFirstOrThrow
  */
-export type usuarioFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * Filter, which usuario to fetch.
+   * Filter, which Usuario to fetch.
    */
-  where?: Prisma.usuarioWhereInput
+  where?: Prisma.UsuarioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of usuarios to fetch.
+   * Determine the order of Usuarios to fetch.
    */
-  orderBy?: Prisma.usuarioOrderByWithRelationInput | Prisma.usuarioOrderByWithRelationInput[]
+  orderBy?: Prisma.UsuarioOrderByWithRelationInput | Prisma.UsuarioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for usuarios.
+   * Sets the position for searching for Usuarios.
    */
-  cursor?: Prisma.usuarioWhereUniqueInput
+  cursor?: Prisma.UsuarioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` usuarios from the position of the cursor.
+   * Take `±n` Usuarios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` usuarios.
+   * Skip the first `n` Usuarios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of usuarios.
+   * Filter by unique combinations of Usuarios.
    */
   distinct?: Prisma.UsuarioScalarFieldEnum | Prisma.UsuarioScalarFieldEnum[]
 }
 
 /**
- * usuario findMany
+ * Usuario findMany
  */
-export type usuarioFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * Filter, which usuarios to fetch.
+   * Filter, which Usuarios to fetch.
    */
-  where?: Prisma.usuarioWhereInput
+  where?: Prisma.UsuarioWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of usuarios to fetch.
+   * Determine the order of Usuarios to fetch.
    */
-  orderBy?: Prisma.usuarioOrderByWithRelationInput | Prisma.usuarioOrderByWithRelationInput[]
+  orderBy?: Prisma.UsuarioOrderByWithRelationInput | Prisma.UsuarioOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing usuarios.
+   * Sets the position for listing Usuarios.
    */
-  cursor?: Prisma.usuarioWhereUniqueInput
+  cursor?: Prisma.UsuarioWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` usuarios from the position of the cursor.
+   * Take `±n` Usuarios from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` usuarios.
+   * Skip the first `n` Usuarios.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of usuarios.
+   * Filter by unique combinations of Usuarios.
    */
   distinct?: Prisma.UsuarioScalarFieldEnum | Prisma.UsuarioScalarFieldEnum[]
 }
 
 /**
- * usuario create
+ * Usuario create
  */
-export type usuarioCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * The data needed to create a usuario.
+   * The data needed to create a Usuario.
    */
-  data: Prisma.XOR<Prisma.usuarioCreateInput, Prisma.usuarioUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.UsuarioCreateInput, Prisma.UsuarioUncheckedCreateInput>
 }
 
 /**
- * usuario createMany
+ * Usuario createMany
  */
-export type usuarioCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many usuarios.
+   * The data used to create many Usuarios.
    */
-  data: Prisma.usuarioCreateManyInput | Prisma.usuarioCreateManyInput[]
+  data: Prisma.UsuarioCreateManyInput | Prisma.UsuarioCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * usuario createManyAndReturn
+ * Usuario createManyAndReturn
  */
-export type usuarioCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.UsuarioSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
-   * The data used to create many usuarios.
+   * The data used to create many Usuarios.
    */
-  data: Prisma.usuarioCreateManyInput | Prisma.usuarioCreateManyInput[]
+  data: Prisma.UsuarioCreateManyInput | Prisma.UsuarioCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * usuario update
+ * Usuario update
  */
-export type usuarioUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * The data needed to update a usuario.
+   * The data needed to update a Usuario.
    */
-  data: Prisma.XOR<Prisma.usuarioUpdateInput, Prisma.usuarioUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.UsuarioUpdateInput, Prisma.UsuarioUncheckedUpdateInput>
   /**
-   * Choose, which usuario to update.
+   * Choose, which Usuario to update.
    */
-  where: Prisma.usuarioWhereUniqueInput
+  where: Prisma.UsuarioWhereUniqueInput
 }
 
 /**
- * usuario updateMany
+ * Usuario updateMany
  */
-export type usuarioUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update usuarios.
+   * The data used to update Usuarios.
    */
-  data: Prisma.XOR<Prisma.usuarioUpdateManyMutationInput, Prisma.usuarioUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.UsuarioUpdateManyMutationInput, Prisma.UsuarioUncheckedUpdateManyInput>
   /**
-   * Filter which usuarios to update
+   * Filter which Usuarios to update
    */
-  where?: Prisma.usuarioWhereInput
+  where?: Prisma.UsuarioWhereInput
   /**
-   * Limit how many usuarios to update.
+   * Limit how many Usuarios to update.
    */
   limit?: number
 }
 
 /**
- * usuario updateManyAndReturn
+ * Usuario updateManyAndReturn
  */
-export type usuarioUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.UsuarioSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
-   * The data used to update usuarios.
+   * The data used to update Usuarios.
    */
-  data: Prisma.XOR<Prisma.usuarioUpdateManyMutationInput, Prisma.usuarioUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.UsuarioUpdateManyMutationInput, Prisma.UsuarioUncheckedUpdateManyInput>
   /**
-   * Filter which usuarios to update
+   * Filter which Usuarios to update
    */
-  where?: Prisma.usuarioWhereInput
+  where?: Prisma.UsuarioWhereInput
   /**
-   * Limit how many usuarios to update.
+   * Limit how many Usuarios to update.
    */
   limit?: number
 }
 
 /**
- * usuario upsert
+ * Usuario upsert
  */
-export type usuarioUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * The filter to search for the usuario to update in case it exists.
+   * The filter to search for the Usuario to update in case it exists.
    */
-  where: Prisma.usuarioWhereUniqueInput
+  where: Prisma.UsuarioWhereUniqueInput
   /**
-   * In case the usuario found by the `where` argument doesn't exist, create a new usuario with this data.
+   * In case the Usuario found by the `where` argument doesn't exist, create a new Usuario with this data.
    */
-  create: Prisma.XOR<Prisma.usuarioCreateInput, Prisma.usuarioUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.UsuarioCreateInput, Prisma.UsuarioUncheckedCreateInput>
   /**
-   * In case the usuario was found with the provided `where` argument, update it with this data.
+   * In case the Usuario was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.usuarioUpdateInput, Prisma.usuarioUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.UsuarioUpdateInput, Prisma.UsuarioUncheckedUpdateInput>
 }
 
 /**
- * usuario delete
+ * Usuario delete
  */
-export type usuarioDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
   /**
-   * Filter which usuario to delete.
+   * Filter which Usuario to delete.
    */
-  where: Prisma.usuarioWhereUniqueInput
+  where: Prisma.UsuarioWhereUniqueInput
 }
 
 /**
- * usuario deleteMany
+ * Usuario deleteMany
  */
-export type usuarioDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which usuarios to delete
+   * Filter which Usuarios to delete
    */
-  where?: Prisma.usuarioWhereInput
+  where?: Prisma.UsuarioWhereInput
   /**
-   * Limit how many usuarios to delete.
+   * Limit how many Usuarios to delete.
    */
   limit?: number
 }
 
 /**
- * usuario.notificacao_usuario
+ * Usuario.notificacao_usuario
  */
-export type usuario$notificacao_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Usuario$notificacao_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the notificacao_usuario
+   * Select specific fields to fetch from the NotificacaoUsuario
    */
-  select?: Prisma.notificacao_usuarioSelect<ExtArgs> | null
+  select?: Prisma.NotificacaoUsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the notificacao_usuario
+   * Omit specific fields from the NotificacaoUsuario
    */
-  omit?: Prisma.notificacao_usuarioOmit<ExtArgs> | null
+  omit?: Prisma.NotificacaoUsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.notificacao_usuarioInclude<ExtArgs> | null
-  where?: Prisma.notificacao_usuarioWhereInput
-  orderBy?: Prisma.notificacao_usuarioOrderByWithRelationInput | Prisma.notificacao_usuarioOrderByWithRelationInput[]
-  cursor?: Prisma.notificacao_usuarioWhereUniqueInput
+  include?: Prisma.NotificacaoUsuarioInclude<ExtArgs> | null
+  where?: Prisma.NotificacaoUsuarioWhereInput
+  orderBy?: Prisma.NotificacaoUsuarioOrderByWithRelationInput | Prisma.NotificacaoUsuarioOrderByWithRelationInput[]
+  cursor?: Prisma.NotificacaoUsuarioWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.Notificacao_usuarioScalarFieldEnum | Prisma.Notificacao_usuarioScalarFieldEnum[]
+  distinct?: Prisma.NotificacaoUsuarioScalarFieldEnum | Prisma.NotificacaoUsuarioScalarFieldEnum[]
 }
 
 /**
- * usuario.imagem_usuario
+ * Usuario.imagem_usuario
  */
-export type usuario$imagem_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Usuario$imagem_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the imagem_usuario
+   * Select specific fields to fetch from the ImagemUsuario
    */
-  select?: Prisma.imagem_usuarioSelect<ExtArgs> | null
+  select?: Prisma.ImagemUsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the imagem_usuario
+   * Omit specific fields from the ImagemUsuario
    */
-  omit?: Prisma.imagem_usuarioOmit<ExtArgs> | null
+  omit?: Prisma.ImagemUsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.imagem_usuarioInclude<ExtArgs> | null
-  where?: Prisma.imagem_usuarioWhereInput
+  include?: Prisma.ImagemUsuarioInclude<ExtArgs> | null
+  where?: Prisma.ImagemUsuarioWhereInput
 }
 
 /**
- * usuario.paciente
+ * Usuario.paciente
  */
-export type usuario$pacienteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Usuario$pacienteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the paciente
+   * Select specific fields to fetch from the Paciente
    */
-  select?: Prisma.pacienteSelect<ExtArgs> | null
+  select?: Prisma.PacienteSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the paciente
+   * Omit specific fields from the Paciente
    */
-  omit?: Prisma.pacienteOmit<ExtArgs> | null
+  omit?: Prisma.PacienteOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.pacienteInclude<ExtArgs> | null
-  where?: Prisma.pacienteWhereInput
+  include?: Prisma.PacienteInclude<ExtArgs> | null
+  where?: Prisma.PacienteWhereInput
 }
 
 /**
- * usuario.dentista
+ * Usuario.dentista
  */
-export type usuario$dentistaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Usuario$dentistaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dentista
+   * Select specific fields to fetch from the Dentista
    */
-  select?: Prisma.dentistaSelect<ExtArgs> | null
+  select?: Prisma.DentistaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dentista
+   * Omit specific fields from the Dentista
    */
-  omit?: Prisma.dentistaOmit<ExtArgs> | null
+  omit?: Prisma.DentistaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dentistaInclude<ExtArgs> | null
-  where?: Prisma.dentistaWhereInput
+  include?: Prisma.DentistaInclude<ExtArgs> | null
+  where?: Prisma.DentistaWhereInput
 }
 
 /**
- * usuario without action
+ * Usuario without action
  */
-export type usuarioDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UsuarioDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the usuario
+   * Select specific fields to fetch from the Usuario
    */
-  select?: Prisma.usuarioSelect<ExtArgs> | null
+  select?: Prisma.UsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the usuario
+   * Omit specific fields from the Usuario
    */
-  omit?: Prisma.usuarioOmit<ExtArgs> | null
+  omit?: Prisma.UsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usuarioInclude<ExtArgs> | null
+  include?: Prisma.UsuarioInclude<ExtArgs> | null
 }

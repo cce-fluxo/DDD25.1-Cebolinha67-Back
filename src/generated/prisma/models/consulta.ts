@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `consulta` model and its related types.
+ * This file exports the `Consulta` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model consulta
+ * Model Consulta
  * 
  */
-export type consultaModel = runtime.Types.Result.DefaultSelection<Prisma.$consultaPayload>
+export type ConsultaModel = runtime.Types.Result.DefaultSelection<Prisma.$ConsultaPayload>
 
 export type AggregateConsulta = {
   _count: ConsultaCountAggregateOutputType | null
@@ -111,37 +111,37 @@ export type ConsultaCountAggregateInputType = {
 
 export type ConsultaAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which consulta to aggregate.
+   * Filter which Consulta to aggregate.
    */
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of consultas to fetch.
+   * Determine the order of Consultas to fetch.
    */
-  orderBy?: Prisma.consultaOrderByWithRelationInput | Prisma.consultaOrderByWithRelationInput[]
+  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.consultaWhereUniqueInput
+  cursor?: Prisma.ConsultaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` consultas from the position of the cursor.
+   * Take `±n` Consultas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` consultas.
+   * Skip the first `n` Consultas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned consultas
+   * Count returned Consultas
   **/
   _count?: true | ConsultaCountAggregateInputType
   /**
@@ -181,11 +181,11 @@ export type GetConsultaAggregateType<T extends ConsultaAggregateArgs> = {
 
 
 
-export type consultaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.consultaWhereInput
-  orderBy?: Prisma.consultaOrderByWithAggregationInput | Prisma.consultaOrderByWithAggregationInput[]
+export type ConsultaGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ConsultaWhereInput
+  orderBy?: Prisma.ConsultaOrderByWithAggregationInput | Prisma.ConsultaOrderByWithAggregationInput[]
   by: Prisma.ConsultaScalarFieldEnum[] | Prisma.ConsultaScalarFieldEnum
-  having?: Prisma.consultaScalarWhereWithAggregatesInput
+  having?: Prisma.ConsultaScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: ConsultaCountAggregateInputType | true
@@ -208,7 +208,7 @@ export type ConsultaGroupByOutputType = {
   _max: ConsultaMaxAggregateOutputType | null
 }
 
-type GetConsultaGroupByPayload<T extends consultaGroupByArgs> = Prisma.PrismaPromise<
+type GetConsultaGroupByPayload<T extends ConsultaGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ConsultaGroupByOutputType, T['by']> &
       {
@@ -223,124 +223,124 @@ type GetConsultaGroupByPayload<T extends consultaGroupByArgs> = Prisma.PrismaPro
 
 
 
-export type consultaWhereInput = {
-  AND?: Prisma.consultaWhereInput | Prisma.consultaWhereInput[]
-  OR?: Prisma.consultaWhereInput[]
-  NOT?: Prisma.consultaWhereInput | Prisma.consultaWhereInput[]
-  id?: Prisma.IntFilter<"consulta"> | number
-  id_paciente?: Prisma.IntFilter<"consulta"> | number
-  id_dentista?: Prisma.IntFilter<"consulta"> | number
-  id_convenio?: Prisma.IntFilter<"consulta"> | number
-  id_endereco?: Prisma.IntFilter<"consulta"> | number
-  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.pacienteWhereInput>
-  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.dentistaWhereInput>
-  convenio?: Prisma.XOR<Prisma.ConvenioScalarRelationFilter, Prisma.convenioWhereInput>
-  endereco?: Prisma.XOR<Prisma.EnderecoScalarRelationFilter, Prisma.enderecoWhereInput>
-  detalhe_da_consulta?: Prisma.XOR<Prisma.Detalhe_da_consultaNullableScalarRelationFilter, Prisma.detalhe_da_consultaWhereInput> | null
+export type ConsultaWhereInput = {
+  AND?: Prisma.ConsultaWhereInput | Prisma.ConsultaWhereInput[]
+  OR?: Prisma.ConsultaWhereInput[]
+  NOT?: Prisma.ConsultaWhereInput | Prisma.ConsultaWhereInput[]
+  id?: Prisma.IntFilter<"Consulta"> | number
+  id_paciente?: Prisma.IntFilter<"Consulta"> | number
+  id_dentista?: Prisma.IntFilter<"Consulta"> | number
+  id_convenio?: Prisma.IntFilter<"Consulta"> | number
+  id_endereco?: Prisma.IntFilter<"Consulta"> | number
+  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
+  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
+  convenio?: Prisma.XOR<Prisma.ConvenioScalarRelationFilter, Prisma.ConvenioWhereInput>
+  endereco?: Prisma.XOR<Prisma.EnderecoScalarRelationFilter, Prisma.EnderecoWhereInput>
+  detalhe_da_consulta?: Prisma.XOR<Prisma.DetalheDaConsultaNullableScalarRelationFilter, Prisma.DetalheDaConsultaWhereInput> | null
   documentos?: Prisma.DocumentoListRelationFilter
-  notificacao_usuario?: Prisma.Notificacao_usuarioListRelationFilter
+  notificacao_usuario?: Prisma.NotificacaoUsuarioListRelationFilter
 }
 
-export type consultaOrderByWithRelationInput = {
+export type ConsultaOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
   id_convenio?: Prisma.SortOrder
   id_endereco?: Prisma.SortOrder
-  paciente?: Prisma.pacienteOrderByWithRelationInput
-  dentista?: Prisma.dentistaOrderByWithRelationInput
-  convenio?: Prisma.convenioOrderByWithRelationInput
-  endereco?: Prisma.enderecoOrderByWithRelationInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaOrderByWithRelationInput
-  documentos?: Prisma.documentoOrderByRelationAggregateInput
-  notificacao_usuario?: Prisma.notificacao_usuarioOrderByRelationAggregateInput
+  paciente?: Prisma.PacienteOrderByWithRelationInput
+  dentista?: Prisma.DentistaOrderByWithRelationInput
+  convenio?: Prisma.ConvenioOrderByWithRelationInput
+  endereco?: Prisma.EnderecoOrderByWithRelationInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaOrderByWithRelationInput
+  documentos?: Prisma.DocumentoOrderByRelationAggregateInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioOrderByRelationAggregateInput
 }
 
-export type consultaWhereUniqueInput = Prisma.AtLeast<{
+export type ConsultaWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   id_paciente?: number
   id_dentista?: number
   id_convenio?: number
   id_endereco?: number
-  AND?: Prisma.consultaWhereInput | Prisma.consultaWhereInput[]
-  OR?: Prisma.consultaWhereInput[]
-  NOT?: Prisma.consultaWhereInput | Prisma.consultaWhereInput[]
-  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.pacienteWhereInput>
-  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.dentistaWhereInput>
-  convenio?: Prisma.XOR<Prisma.ConvenioScalarRelationFilter, Prisma.convenioWhereInput>
-  endereco?: Prisma.XOR<Prisma.EnderecoScalarRelationFilter, Prisma.enderecoWhereInput>
-  detalhe_da_consulta?: Prisma.XOR<Prisma.Detalhe_da_consultaNullableScalarRelationFilter, Prisma.detalhe_da_consultaWhereInput> | null
+  AND?: Prisma.ConsultaWhereInput | Prisma.ConsultaWhereInput[]
+  OR?: Prisma.ConsultaWhereInput[]
+  NOT?: Prisma.ConsultaWhereInput | Prisma.ConsultaWhereInput[]
+  paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
+  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
+  convenio?: Prisma.XOR<Prisma.ConvenioScalarRelationFilter, Prisma.ConvenioWhereInput>
+  endereco?: Prisma.XOR<Prisma.EnderecoScalarRelationFilter, Prisma.EnderecoWhereInput>
+  detalhe_da_consulta?: Prisma.XOR<Prisma.DetalheDaConsultaNullableScalarRelationFilter, Prisma.DetalheDaConsultaWhereInput> | null
   documentos?: Prisma.DocumentoListRelationFilter
-  notificacao_usuario?: Prisma.Notificacao_usuarioListRelationFilter
+  notificacao_usuario?: Prisma.NotificacaoUsuarioListRelationFilter
 }, "id" | "id_paciente" | "id_dentista" | "id_convenio" | "id_endereco">
 
-export type consultaOrderByWithAggregationInput = {
+export type ConsultaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
   id_convenio?: Prisma.SortOrder
   id_endereco?: Prisma.SortOrder
-  _count?: Prisma.consultaCountOrderByAggregateInput
-  _avg?: Prisma.consultaAvgOrderByAggregateInput
-  _max?: Prisma.consultaMaxOrderByAggregateInput
-  _min?: Prisma.consultaMinOrderByAggregateInput
-  _sum?: Prisma.consultaSumOrderByAggregateInput
+  _count?: Prisma.ConsultaCountOrderByAggregateInput
+  _avg?: Prisma.ConsultaAvgOrderByAggregateInput
+  _max?: Prisma.ConsultaMaxOrderByAggregateInput
+  _min?: Prisma.ConsultaMinOrderByAggregateInput
+  _sum?: Prisma.ConsultaSumOrderByAggregateInput
 }
 
-export type consultaScalarWhereWithAggregatesInput = {
-  AND?: Prisma.consultaScalarWhereWithAggregatesInput | Prisma.consultaScalarWhereWithAggregatesInput[]
-  OR?: Prisma.consultaScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.consultaScalarWhereWithAggregatesInput | Prisma.consultaScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"consulta"> | number
-  id_paciente?: Prisma.IntWithAggregatesFilter<"consulta"> | number
-  id_dentista?: Prisma.IntWithAggregatesFilter<"consulta"> | number
-  id_convenio?: Prisma.IntWithAggregatesFilter<"consulta"> | number
-  id_endereco?: Prisma.IntWithAggregatesFilter<"consulta"> | number
+export type ConsultaScalarWhereWithAggregatesInput = {
+  AND?: Prisma.ConsultaScalarWhereWithAggregatesInput | Prisma.ConsultaScalarWhereWithAggregatesInput[]
+  OR?: Prisma.ConsultaScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.ConsultaScalarWhereWithAggregatesInput | Prisma.ConsultaScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"Consulta"> | number
+  id_paciente?: Prisma.IntWithAggregatesFilter<"Consulta"> | number
+  id_dentista?: Prisma.IntWithAggregatesFilter<"Consulta"> | number
+  id_convenio?: Prisma.IntWithAggregatesFilter<"Consulta"> | number
+  id_endereco?: Prisma.IntWithAggregatesFilter<"Consulta"> | number
 }
 
-export type consultaCreateInput = {
-  paciente: Prisma.pacienteCreateNestedOneWithoutConsultasInput
-  dentista: Prisma.dentistaCreateNestedOneWithoutConsultasInput
-  convenio: Prisma.convenioCreateNestedOneWithoutConsultasInput
-  endereco: Prisma.enderecoCreateNestedOneWithoutConsultasInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateInput = {
+  paciente: Prisma.PacienteCreateNestedOneWithoutConsultasInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutConsultasInput
+  convenio: Prisma.ConvenioCreateNestedOneWithoutConsultasInput
+  endereco: Prisma.EnderecoCreateNestedOneWithoutConsultasInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateInput = {
+export type ConsultaUncheckedCreateInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_convenio: number
   id_endereco: number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoUncheckedCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutConsultaInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoUncheckedCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUpdateInput = {
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConsultasNestedInput
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutConsultasNestedInput
-  convenio?: Prisma.convenioUpdateOneRequiredWithoutConsultasNestedInput
-  endereco?: Prisma.enderecoUpdateOneRequiredWithoutConsultasNestedInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateInput = {
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConsultasNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutConsultasNestedInput
+  convenio?: Prisma.ConvenioUpdateOneRequiredWithoutConsultasNestedInput
+  endereco?: Prisma.EnderecoUpdateOneRequiredWithoutConsultasNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateInput = {
+export type ConsultaUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUncheckedUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutConsultaNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUncheckedUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaCreateManyInput = {
+export type ConsultaCreateManyInput = {
   id?: number
   id_paciente: number
   id_dentista: number
@@ -348,11 +348,11 @@ export type consultaCreateManyInput = {
   id_endereco: number
 }
 
-export type consultaUpdateManyMutationInput = {
+export type ConsultaUpdateManyMutationInput = {
 
 }
 
-export type consultaUncheckedUpdateManyInput = {
+export type ConsultaUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
@@ -361,21 +361,21 @@ export type consultaUncheckedUpdateManyInput = {
 }
 
 export type ConsultaListRelationFilter = {
-  every?: Prisma.consultaWhereInput
-  some?: Prisma.consultaWhereInput
-  none?: Prisma.consultaWhereInput
+  every?: Prisma.ConsultaWhereInput
+  some?: Prisma.ConsultaWhereInput
+  none?: Prisma.ConsultaWhereInput
 }
 
-export type consultaOrderByRelationAggregateInput = {
+export type ConsultaOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
 export type ConsultaNullableScalarRelationFilter = {
-  is?: Prisma.consultaWhereInput | null
-  isNot?: Prisma.consultaWhereInput | null
+  is?: Prisma.ConsultaWhereInput | null
+  isNot?: Prisma.ConsultaWhereInput | null
 }
 
-export type consultaCountOrderByAggregateInput = {
+export type ConsultaCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
@@ -383,7 +383,7 @@ export type consultaCountOrderByAggregateInput = {
   id_endereco?: Prisma.SortOrder
 }
 
-export type consultaAvgOrderByAggregateInput = {
+export type ConsultaAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
@@ -391,7 +391,7 @@ export type consultaAvgOrderByAggregateInput = {
   id_endereco?: Prisma.SortOrder
 }
 
-export type consultaMaxOrderByAggregateInput = {
+export type ConsultaMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
@@ -399,7 +399,7 @@ export type consultaMaxOrderByAggregateInput = {
   id_endereco?: Prisma.SortOrder
 }
 
-export type consultaMinOrderByAggregateInput = {
+export type ConsultaMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
@@ -407,7 +407,7 @@ export type consultaMinOrderByAggregateInput = {
   id_endereco?: Prisma.SortOrder
 }
 
-export type consultaSumOrderByAggregateInput = {
+export type ConsultaSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
@@ -416,701 +416,701 @@ export type consultaSumOrderByAggregateInput = {
 }
 
 export type ConsultaScalarRelationFilter = {
-  is?: Prisma.consultaWhereInput
-  isNot?: Prisma.consultaWhereInput
+  is?: Prisma.ConsultaWhereInput
+  isNot?: Prisma.ConsultaWhereInput
 }
 
-export type consultaCreateNestedManyWithoutDentistaInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDentistaInput, Prisma.consultaUncheckedCreateWithoutDentistaInput> | Prisma.consultaCreateWithoutDentistaInput[] | Prisma.consultaUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDentistaInput | Prisma.consultaCreateOrConnectWithoutDentistaInput[]
-  createMany?: Prisma.consultaCreateManyDentistaInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaCreateNestedManyWithoutDentistaInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDentistaInput, Prisma.ConsultaUncheckedCreateWithoutDentistaInput> | Prisma.ConsultaCreateWithoutDentistaInput[] | Prisma.ConsultaUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDentistaInput | Prisma.ConsultaCreateOrConnectWithoutDentistaInput[]
+  createMany?: Prisma.ConsultaCreateManyDentistaInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUncheckedCreateNestedManyWithoutDentistaInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDentistaInput, Prisma.consultaUncheckedCreateWithoutDentistaInput> | Prisma.consultaCreateWithoutDentistaInput[] | Prisma.consultaUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDentistaInput | Prisma.consultaCreateOrConnectWithoutDentistaInput[]
-  createMany?: Prisma.consultaCreateManyDentistaInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaUncheckedCreateNestedManyWithoutDentistaInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDentistaInput, Prisma.ConsultaUncheckedCreateWithoutDentistaInput> | Prisma.ConsultaCreateWithoutDentistaInput[] | Prisma.ConsultaUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDentistaInput | Prisma.ConsultaCreateOrConnectWithoutDentistaInput[]
+  createMany?: Prisma.ConsultaCreateManyDentistaInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUpdateManyWithoutDentistaNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDentistaInput, Prisma.consultaUncheckedCreateWithoutDentistaInput> | Prisma.consultaCreateWithoutDentistaInput[] | Prisma.consultaUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDentistaInput | Prisma.consultaCreateOrConnectWithoutDentistaInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutDentistaInput | Prisma.consultaUpsertWithWhereUniqueWithoutDentistaInput[]
-  createMany?: Prisma.consultaCreateManyDentistaInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutDentistaInput | Prisma.consultaUpdateWithWhereUniqueWithoutDentistaInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutDentistaInput | Prisma.consultaUpdateManyWithWhereWithoutDentistaInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUpdateManyWithoutDentistaNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDentistaInput, Prisma.ConsultaUncheckedCreateWithoutDentistaInput> | Prisma.ConsultaCreateWithoutDentistaInput[] | Prisma.ConsultaUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDentistaInput | Prisma.ConsultaCreateOrConnectWithoutDentistaInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutDentistaInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutDentistaInput[]
+  createMany?: Prisma.ConsultaCreateManyDentistaInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutDentistaInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutDentistaInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutDentistaInput | Prisma.ConsultaUpdateManyWithWhereWithoutDentistaInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaUncheckedUpdateManyWithoutDentistaNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDentistaInput, Prisma.consultaUncheckedCreateWithoutDentistaInput> | Prisma.consultaCreateWithoutDentistaInput[] | Prisma.consultaUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDentistaInput | Prisma.consultaCreateOrConnectWithoutDentistaInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutDentistaInput | Prisma.consultaUpsertWithWhereUniqueWithoutDentistaInput[]
-  createMany?: Prisma.consultaCreateManyDentistaInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutDentistaInput | Prisma.consultaUpdateWithWhereUniqueWithoutDentistaInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutDentistaInput | Prisma.consultaUpdateManyWithWhereWithoutDentistaInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUncheckedUpdateManyWithoutDentistaNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDentistaInput, Prisma.ConsultaUncheckedCreateWithoutDentistaInput> | Prisma.ConsultaCreateWithoutDentistaInput[] | Prisma.ConsultaUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDentistaInput | Prisma.ConsultaCreateOrConnectWithoutDentistaInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutDentistaInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutDentistaInput[]
+  createMany?: Prisma.ConsultaCreateManyDentistaInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutDentistaInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutDentistaInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutDentistaInput | Prisma.ConsultaUpdateManyWithWhereWithoutDentistaInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaCreateNestedManyWithoutPacienteInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutPacienteInput, Prisma.consultaUncheckedCreateWithoutPacienteInput> | Prisma.consultaCreateWithoutPacienteInput[] | Prisma.consultaUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutPacienteInput | Prisma.consultaCreateOrConnectWithoutPacienteInput[]
-  createMany?: Prisma.consultaCreateManyPacienteInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaCreateNestedManyWithoutPacienteInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutPacienteInput, Prisma.ConsultaUncheckedCreateWithoutPacienteInput> | Prisma.ConsultaCreateWithoutPacienteInput[] | Prisma.ConsultaUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutPacienteInput | Prisma.ConsultaCreateOrConnectWithoutPacienteInput[]
+  createMany?: Prisma.ConsultaCreateManyPacienteInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUncheckedCreateNestedManyWithoutPacienteInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutPacienteInput, Prisma.consultaUncheckedCreateWithoutPacienteInput> | Prisma.consultaCreateWithoutPacienteInput[] | Prisma.consultaUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutPacienteInput | Prisma.consultaCreateOrConnectWithoutPacienteInput[]
-  createMany?: Prisma.consultaCreateManyPacienteInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaUncheckedCreateNestedManyWithoutPacienteInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutPacienteInput, Prisma.ConsultaUncheckedCreateWithoutPacienteInput> | Prisma.ConsultaCreateWithoutPacienteInput[] | Prisma.ConsultaUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutPacienteInput | Prisma.ConsultaCreateOrConnectWithoutPacienteInput[]
+  createMany?: Prisma.ConsultaCreateManyPacienteInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUpdateManyWithoutPacienteNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutPacienteInput, Prisma.consultaUncheckedCreateWithoutPacienteInput> | Prisma.consultaCreateWithoutPacienteInput[] | Prisma.consultaUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutPacienteInput | Prisma.consultaCreateOrConnectWithoutPacienteInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutPacienteInput | Prisma.consultaUpsertWithWhereUniqueWithoutPacienteInput[]
-  createMany?: Prisma.consultaCreateManyPacienteInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutPacienteInput | Prisma.consultaUpdateWithWhereUniqueWithoutPacienteInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutPacienteInput | Prisma.consultaUpdateManyWithWhereWithoutPacienteInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUpdateManyWithoutPacienteNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutPacienteInput, Prisma.ConsultaUncheckedCreateWithoutPacienteInput> | Prisma.ConsultaCreateWithoutPacienteInput[] | Prisma.ConsultaUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutPacienteInput | Prisma.ConsultaCreateOrConnectWithoutPacienteInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutPacienteInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutPacienteInput[]
+  createMany?: Prisma.ConsultaCreateManyPacienteInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutPacienteInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutPacienteInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutPacienteInput | Prisma.ConsultaUpdateManyWithWhereWithoutPacienteInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaUncheckedUpdateManyWithoutPacienteNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutPacienteInput, Prisma.consultaUncheckedCreateWithoutPacienteInput> | Prisma.consultaCreateWithoutPacienteInput[] | Prisma.consultaUncheckedCreateWithoutPacienteInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutPacienteInput | Prisma.consultaCreateOrConnectWithoutPacienteInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutPacienteInput | Prisma.consultaUpsertWithWhereUniqueWithoutPacienteInput[]
-  createMany?: Prisma.consultaCreateManyPacienteInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutPacienteInput | Prisma.consultaUpdateWithWhereUniqueWithoutPacienteInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutPacienteInput | Prisma.consultaUpdateManyWithWhereWithoutPacienteInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUncheckedUpdateManyWithoutPacienteNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutPacienteInput, Prisma.ConsultaUncheckedCreateWithoutPacienteInput> | Prisma.ConsultaCreateWithoutPacienteInput[] | Prisma.ConsultaUncheckedCreateWithoutPacienteInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutPacienteInput | Prisma.ConsultaCreateOrConnectWithoutPacienteInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutPacienteInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutPacienteInput[]
+  createMany?: Prisma.ConsultaCreateManyPacienteInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutPacienteInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutPacienteInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutPacienteInput | Prisma.ConsultaUpdateManyWithWhereWithoutPacienteInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaCreateNestedOneWithoutNotificacao_usuarioInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutNotificacao_usuarioInput, Prisma.consultaUncheckedCreateWithoutNotificacao_usuarioInput>
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutNotificacao_usuarioInput
-  connect?: Prisma.consultaWhereUniqueInput
+export type ConsultaCreateNestedOneWithoutNotificacao_usuarioInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutNotificacao_usuarioInput, Prisma.ConsultaUncheckedCreateWithoutNotificacao_usuarioInput>
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutNotificacao_usuarioInput
+  connect?: Prisma.ConsultaWhereUniqueInput
 }
 
-export type consultaUpdateOneWithoutNotificacao_usuarioNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutNotificacao_usuarioInput, Prisma.consultaUncheckedCreateWithoutNotificacao_usuarioInput>
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutNotificacao_usuarioInput
-  upsert?: Prisma.consultaUpsertWithoutNotificacao_usuarioInput
-  disconnect?: Prisma.consultaWhereInput | boolean
-  delete?: Prisma.consultaWhereInput | boolean
-  connect?: Prisma.consultaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.consultaUpdateToOneWithWhereWithoutNotificacao_usuarioInput, Prisma.consultaUpdateWithoutNotificacao_usuarioInput>, Prisma.consultaUncheckedUpdateWithoutNotificacao_usuarioInput>
+export type ConsultaUpdateOneWithoutNotificacao_usuarioNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutNotificacao_usuarioInput, Prisma.ConsultaUncheckedCreateWithoutNotificacao_usuarioInput>
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutNotificacao_usuarioInput
+  upsert?: Prisma.ConsultaUpsertWithoutNotificacao_usuarioInput
+  disconnect?: Prisma.ConsultaWhereInput | boolean
+  delete?: Prisma.ConsultaWhereInput | boolean
+  connect?: Prisma.ConsultaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ConsultaUpdateToOneWithWhereWithoutNotificacao_usuarioInput, Prisma.ConsultaUpdateWithoutNotificacao_usuarioInput>, Prisma.ConsultaUncheckedUpdateWithoutNotificacao_usuarioInput>
 }
 
-export type consultaCreateNestedManyWithoutEnderecoInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutEnderecoInput, Prisma.consultaUncheckedCreateWithoutEnderecoInput> | Prisma.consultaCreateWithoutEnderecoInput[] | Prisma.consultaUncheckedCreateWithoutEnderecoInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutEnderecoInput | Prisma.consultaCreateOrConnectWithoutEnderecoInput[]
-  createMany?: Prisma.consultaCreateManyEnderecoInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaCreateNestedManyWithoutEnderecoInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutEnderecoInput, Prisma.ConsultaUncheckedCreateWithoutEnderecoInput> | Prisma.ConsultaCreateWithoutEnderecoInput[] | Prisma.ConsultaUncheckedCreateWithoutEnderecoInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutEnderecoInput | Prisma.ConsultaCreateOrConnectWithoutEnderecoInput[]
+  createMany?: Prisma.ConsultaCreateManyEnderecoInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUncheckedCreateNestedManyWithoutEnderecoInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutEnderecoInput, Prisma.consultaUncheckedCreateWithoutEnderecoInput> | Prisma.consultaCreateWithoutEnderecoInput[] | Prisma.consultaUncheckedCreateWithoutEnderecoInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutEnderecoInput | Prisma.consultaCreateOrConnectWithoutEnderecoInput[]
-  createMany?: Prisma.consultaCreateManyEnderecoInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaUncheckedCreateNestedManyWithoutEnderecoInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutEnderecoInput, Prisma.ConsultaUncheckedCreateWithoutEnderecoInput> | Prisma.ConsultaCreateWithoutEnderecoInput[] | Prisma.ConsultaUncheckedCreateWithoutEnderecoInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutEnderecoInput | Prisma.ConsultaCreateOrConnectWithoutEnderecoInput[]
+  createMany?: Prisma.ConsultaCreateManyEnderecoInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUpdateManyWithoutEnderecoNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutEnderecoInput, Prisma.consultaUncheckedCreateWithoutEnderecoInput> | Prisma.consultaCreateWithoutEnderecoInput[] | Prisma.consultaUncheckedCreateWithoutEnderecoInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutEnderecoInput | Prisma.consultaCreateOrConnectWithoutEnderecoInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutEnderecoInput | Prisma.consultaUpsertWithWhereUniqueWithoutEnderecoInput[]
-  createMany?: Prisma.consultaCreateManyEnderecoInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutEnderecoInput | Prisma.consultaUpdateWithWhereUniqueWithoutEnderecoInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutEnderecoInput | Prisma.consultaUpdateManyWithWhereWithoutEnderecoInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUpdateManyWithoutEnderecoNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutEnderecoInput, Prisma.ConsultaUncheckedCreateWithoutEnderecoInput> | Prisma.ConsultaCreateWithoutEnderecoInput[] | Prisma.ConsultaUncheckedCreateWithoutEnderecoInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutEnderecoInput | Prisma.ConsultaCreateOrConnectWithoutEnderecoInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutEnderecoInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutEnderecoInput[]
+  createMany?: Prisma.ConsultaCreateManyEnderecoInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutEnderecoInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutEnderecoInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutEnderecoInput | Prisma.ConsultaUpdateManyWithWhereWithoutEnderecoInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaUncheckedUpdateManyWithoutEnderecoNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutEnderecoInput, Prisma.consultaUncheckedCreateWithoutEnderecoInput> | Prisma.consultaCreateWithoutEnderecoInput[] | Prisma.consultaUncheckedCreateWithoutEnderecoInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutEnderecoInput | Prisma.consultaCreateOrConnectWithoutEnderecoInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutEnderecoInput | Prisma.consultaUpsertWithWhereUniqueWithoutEnderecoInput[]
-  createMany?: Prisma.consultaCreateManyEnderecoInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutEnderecoInput | Prisma.consultaUpdateWithWhereUniqueWithoutEnderecoInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutEnderecoInput | Prisma.consultaUpdateManyWithWhereWithoutEnderecoInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUncheckedUpdateManyWithoutEnderecoNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutEnderecoInput, Prisma.ConsultaUncheckedCreateWithoutEnderecoInput> | Prisma.ConsultaCreateWithoutEnderecoInput[] | Prisma.ConsultaUncheckedCreateWithoutEnderecoInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutEnderecoInput | Prisma.ConsultaCreateOrConnectWithoutEnderecoInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutEnderecoInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutEnderecoInput[]
+  createMany?: Prisma.ConsultaCreateManyEnderecoInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutEnderecoInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutEnderecoInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutEnderecoInput | Prisma.ConsultaUpdateManyWithWhereWithoutEnderecoInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaCreateNestedOneWithoutDetalhe_da_consultaInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDetalhe_da_consultaInput, Prisma.consultaUncheckedCreateWithoutDetalhe_da_consultaInput>
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDetalhe_da_consultaInput
-  connect?: Prisma.consultaWhereUniqueInput
+export type ConsultaCreateNestedOneWithoutDetalhe_da_consultaInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDetalhe_da_consultaInput, Prisma.ConsultaUncheckedCreateWithoutDetalhe_da_consultaInput>
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDetalhe_da_consultaInput
+  connect?: Prisma.ConsultaWhereUniqueInput
 }
 
-export type consultaUpdateOneRequiredWithoutDetalhe_da_consultaNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDetalhe_da_consultaInput, Prisma.consultaUncheckedCreateWithoutDetalhe_da_consultaInput>
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDetalhe_da_consultaInput
-  upsert?: Prisma.consultaUpsertWithoutDetalhe_da_consultaInput
-  connect?: Prisma.consultaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.consultaUpdateToOneWithWhereWithoutDetalhe_da_consultaInput, Prisma.consultaUpdateWithoutDetalhe_da_consultaInput>, Prisma.consultaUncheckedUpdateWithoutDetalhe_da_consultaInput>
+export type ConsultaUpdateOneRequiredWithoutDetalhe_da_consultaNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDetalhe_da_consultaInput, Prisma.ConsultaUncheckedCreateWithoutDetalhe_da_consultaInput>
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDetalhe_da_consultaInput
+  upsert?: Prisma.ConsultaUpsertWithoutDetalhe_da_consultaInput
+  connect?: Prisma.ConsultaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ConsultaUpdateToOneWithWhereWithoutDetalhe_da_consultaInput, Prisma.ConsultaUpdateWithoutDetalhe_da_consultaInput>, Prisma.ConsultaUncheckedUpdateWithoutDetalhe_da_consultaInput>
 }
 
-export type consultaCreateNestedManyWithoutConvenioInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutConvenioInput, Prisma.consultaUncheckedCreateWithoutConvenioInput> | Prisma.consultaCreateWithoutConvenioInput[] | Prisma.consultaUncheckedCreateWithoutConvenioInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutConvenioInput | Prisma.consultaCreateOrConnectWithoutConvenioInput[]
-  createMany?: Prisma.consultaCreateManyConvenioInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaCreateNestedManyWithoutConvenioInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutConvenioInput, Prisma.ConsultaUncheckedCreateWithoutConvenioInput> | Prisma.ConsultaCreateWithoutConvenioInput[] | Prisma.ConsultaUncheckedCreateWithoutConvenioInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutConvenioInput | Prisma.ConsultaCreateOrConnectWithoutConvenioInput[]
+  createMany?: Prisma.ConsultaCreateManyConvenioInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUncheckedCreateNestedManyWithoutConvenioInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutConvenioInput, Prisma.consultaUncheckedCreateWithoutConvenioInput> | Prisma.consultaCreateWithoutConvenioInput[] | Prisma.consultaUncheckedCreateWithoutConvenioInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutConvenioInput | Prisma.consultaCreateOrConnectWithoutConvenioInput[]
-  createMany?: Prisma.consultaCreateManyConvenioInputEnvelope
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
+export type ConsultaUncheckedCreateNestedManyWithoutConvenioInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutConvenioInput, Prisma.ConsultaUncheckedCreateWithoutConvenioInput> | Prisma.ConsultaCreateWithoutConvenioInput[] | Prisma.ConsultaUncheckedCreateWithoutConvenioInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutConvenioInput | Prisma.ConsultaCreateOrConnectWithoutConvenioInput[]
+  createMany?: Prisma.ConsultaCreateManyConvenioInputEnvelope
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
 }
 
-export type consultaUpdateManyWithoutConvenioNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutConvenioInput, Prisma.consultaUncheckedCreateWithoutConvenioInput> | Prisma.consultaCreateWithoutConvenioInput[] | Prisma.consultaUncheckedCreateWithoutConvenioInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutConvenioInput | Prisma.consultaCreateOrConnectWithoutConvenioInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutConvenioInput | Prisma.consultaUpsertWithWhereUniqueWithoutConvenioInput[]
-  createMany?: Prisma.consultaCreateManyConvenioInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutConvenioInput | Prisma.consultaUpdateWithWhereUniqueWithoutConvenioInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutConvenioInput | Prisma.consultaUpdateManyWithWhereWithoutConvenioInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUpdateManyWithoutConvenioNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutConvenioInput, Prisma.ConsultaUncheckedCreateWithoutConvenioInput> | Prisma.ConsultaCreateWithoutConvenioInput[] | Prisma.ConsultaUncheckedCreateWithoutConvenioInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutConvenioInput | Prisma.ConsultaCreateOrConnectWithoutConvenioInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutConvenioInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutConvenioInput[]
+  createMany?: Prisma.ConsultaCreateManyConvenioInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutConvenioInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutConvenioInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutConvenioInput | Prisma.ConsultaUpdateManyWithWhereWithoutConvenioInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaUncheckedUpdateManyWithoutConvenioNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutConvenioInput, Prisma.consultaUncheckedCreateWithoutConvenioInput> | Prisma.consultaCreateWithoutConvenioInput[] | Prisma.consultaUncheckedCreateWithoutConvenioInput[]
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutConvenioInput | Prisma.consultaCreateOrConnectWithoutConvenioInput[]
-  upsert?: Prisma.consultaUpsertWithWhereUniqueWithoutConvenioInput | Prisma.consultaUpsertWithWhereUniqueWithoutConvenioInput[]
-  createMany?: Prisma.consultaCreateManyConvenioInputEnvelope
-  set?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  disconnect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  delete?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  connect?: Prisma.consultaWhereUniqueInput | Prisma.consultaWhereUniqueInput[]
-  update?: Prisma.consultaUpdateWithWhereUniqueWithoutConvenioInput | Prisma.consultaUpdateWithWhereUniqueWithoutConvenioInput[]
-  updateMany?: Prisma.consultaUpdateManyWithWhereWithoutConvenioInput | Prisma.consultaUpdateManyWithWhereWithoutConvenioInput[]
-  deleteMany?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
+export type ConsultaUncheckedUpdateManyWithoutConvenioNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutConvenioInput, Prisma.ConsultaUncheckedCreateWithoutConvenioInput> | Prisma.ConsultaCreateWithoutConvenioInput[] | Prisma.ConsultaUncheckedCreateWithoutConvenioInput[]
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutConvenioInput | Prisma.ConsultaCreateOrConnectWithoutConvenioInput[]
+  upsert?: Prisma.ConsultaUpsertWithWhereUniqueWithoutConvenioInput | Prisma.ConsultaUpsertWithWhereUniqueWithoutConvenioInput[]
+  createMany?: Prisma.ConsultaCreateManyConvenioInputEnvelope
+  set?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  disconnect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  delete?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  connect?: Prisma.ConsultaWhereUniqueInput | Prisma.ConsultaWhereUniqueInput[]
+  update?: Prisma.ConsultaUpdateWithWhereUniqueWithoutConvenioInput | Prisma.ConsultaUpdateWithWhereUniqueWithoutConvenioInput[]
+  updateMany?: Prisma.ConsultaUpdateManyWithWhereWithoutConvenioInput | Prisma.ConsultaUpdateManyWithWhereWithoutConvenioInput[]
+  deleteMany?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
 }
 
-export type consultaCreateNestedOneWithoutDocumentosInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDocumentosInput, Prisma.consultaUncheckedCreateWithoutDocumentosInput>
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDocumentosInput
-  connect?: Prisma.consultaWhereUniqueInput
+export type ConsultaCreateNestedOneWithoutDocumentosInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDocumentosInput, Prisma.ConsultaUncheckedCreateWithoutDocumentosInput>
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDocumentosInput
+  connect?: Prisma.ConsultaWhereUniqueInput
 }
 
-export type consultaUpdateOneRequiredWithoutDocumentosNestedInput = {
-  create?: Prisma.XOR<Prisma.consultaCreateWithoutDocumentosInput, Prisma.consultaUncheckedCreateWithoutDocumentosInput>
-  connectOrCreate?: Prisma.consultaCreateOrConnectWithoutDocumentosInput
-  upsert?: Prisma.consultaUpsertWithoutDocumentosInput
-  connect?: Prisma.consultaWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.consultaUpdateToOneWithWhereWithoutDocumentosInput, Prisma.consultaUpdateWithoutDocumentosInput>, Prisma.consultaUncheckedUpdateWithoutDocumentosInput>
+export type ConsultaUpdateOneRequiredWithoutDocumentosNestedInput = {
+  create?: Prisma.XOR<Prisma.ConsultaCreateWithoutDocumentosInput, Prisma.ConsultaUncheckedCreateWithoutDocumentosInput>
+  connectOrCreate?: Prisma.ConsultaCreateOrConnectWithoutDocumentosInput
+  upsert?: Prisma.ConsultaUpsertWithoutDocumentosInput
+  connect?: Prisma.ConsultaWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ConsultaUpdateToOneWithWhereWithoutDocumentosInput, Prisma.ConsultaUpdateWithoutDocumentosInput>, Prisma.ConsultaUncheckedUpdateWithoutDocumentosInput>
 }
 
-export type consultaCreateWithoutDentistaInput = {
-  paciente: Prisma.pacienteCreateNestedOneWithoutConsultasInput
-  convenio: Prisma.convenioCreateNestedOneWithoutConsultasInput
-  endereco: Prisma.enderecoCreateNestedOneWithoutConsultasInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateWithoutDentistaInput = {
+  paciente: Prisma.PacienteCreateNestedOneWithoutConsultasInput
+  convenio: Prisma.ConvenioCreateNestedOneWithoutConsultasInput
+  endereco: Prisma.EnderecoCreateNestedOneWithoutConsultasInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateWithoutDentistaInput = {
+export type ConsultaUncheckedCreateWithoutDentistaInput = {
   id?: number
   id_paciente: number
   id_convenio: number
   id_endereco: number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoUncheckedCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutConsultaInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoUncheckedCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaCreateOrConnectWithoutDentistaInput = {
-  where: Prisma.consultaWhereUniqueInput
-  create: Prisma.XOR<Prisma.consultaCreateWithoutDentistaInput, Prisma.consultaUncheckedCreateWithoutDentistaInput>
+export type ConsultaCreateOrConnectWithoutDentistaInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutDentistaInput, Prisma.ConsultaUncheckedCreateWithoutDentistaInput>
 }
 
-export type consultaCreateManyDentistaInputEnvelope = {
-  data: Prisma.consultaCreateManyDentistaInput | Prisma.consultaCreateManyDentistaInput[]
+export type ConsultaCreateManyDentistaInputEnvelope = {
+  data: Prisma.ConsultaCreateManyDentistaInput | Prisma.ConsultaCreateManyDentistaInput[]
   skipDuplicates?: boolean
 }
 
-export type consultaUpsertWithWhereUniqueWithoutDentistaInput = {
-  where: Prisma.consultaWhereUniqueInput
-  update: Prisma.XOR<Prisma.consultaUpdateWithoutDentistaInput, Prisma.consultaUncheckedUpdateWithoutDentistaInput>
-  create: Prisma.XOR<Prisma.consultaCreateWithoutDentistaInput, Prisma.consultaUncheckedCreateWithoutDentistaInput>
+export type ConsultaUpsertWithWhereUniqueWithoutDentistaInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  update: Prisma.XOR<Prisma.ConsultaUpdateWithoutDentistaInput, Prisma.ConsultaUncheckedUpdateWithoutDentistaInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutDentistaInput, Prisma.ConsultaUncheckedCreateWithoutDentistaInput>
 }
 
-export type consultaUpdateWithWhereUniqueWithoutDentistaInput = {
-  where: Prisma.consultaWhereUniqueInput
-  data: Prisma.XOR<Prisma.consultaUpdateWithoutDentistaInput, Prisma.consultaUncheckedUpdateWithoutDentistaInput>
+export type ConsultaUpdateWithWhereUniqueWithoutDentistaInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateWithoutDentistaInput, Prisma.ConsultaUncheckedUpdateWithoutDentistaInput>
 }
 
-export type consultaUpdateManyWithWhereWithoutDentistaInput = {
-  where: Prisma.consultaScalarWhereInput
-  data: Prisma.XOR<Prisma.consultaUpdateManyMutationInput, Prisma.consultaUncheckedUpdateManyWithoutDentistaInput>
+export type ConsultaUpdateManyWithWhereWithoutDentistaInput = {
+  where: Prisma.ConsultaScalarWhereInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateManyMutationInput, Prisma.ConsultaUncheckedUpdateManyWithoutDentistaInput>
 }
 
-export type consultaScalarWhereInput = {
-  AND?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
-  OR?: Prisma.consultaScalarWhereInput[]
-  NOT?: Prisma.consultaScalarWhereInput | Prisma.consultaScalarWhereInput[]
-  id?: Prisma.IntFilter<"consulta"> | number
-  id_paciente?: Prisma.IntFilter<"consulta"> | number
-  id_dentista?: Prisma.IntFilter<"consulta"> | number
-  id_convenio?: Prisma.IntFilter<"consulta"> | number
-  id_endereco?: Prisma.IntFilter<"consulta"> | number
+export type ConsultaScalarWhereInput = {
+  AND?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
+  OR?: Prisma.ConsultaScalarWhereInput[]
+  NOT?: Prisma.ConsultaScalarWhereInput | Prisma.ConsultaScalarWhereInput[]
+  id?: Prisma.IntFilter<"Consulta"> | number
+  id_paciente?: Prisma.IntFilter<"Consulta"> | number
+  id_dentista?: Prisma.IntFilter<"Consulta"> | number
+  id_convenio?: Prisma.IntFilter<"Consulta"> | number
+  id_endereco?: Prisma.IntFilter<"Consulta"> | number
 }
 
-export type consultaCreateWithoutPacienteInput = {
-  dentista: Prisma.dentistaCreateNestedOneWithoutConsultasInput
-  convenio: Prisma.convenioCreateNestedOneWithoutConsultasInput
-  endereco: Prisma.enderecoCreateNestedOneWithoutConsultasInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateWithoutPacienteInput = {
+  dentista: Prisma.DentistaCreateNestedOneWithoutConsultasInput
+  convenio: Prisma.ConvenioCreateNestedOneWithoutConsultasInput
+  endereco: Prisma.EnderecoCreateNestedOneWithoutConsultasInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateWithoutPacienteInput = {
+export type ConsultaUncheckedCreateWithoutPacienteInput = {
   id?: number
   id_dentista: number
   id_convenio: number
   id_endereco: number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoUncheckedCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutConsultaInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoUncheckedCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaCreateOrConnectWithoutPacienteInput = {
-  where: Prisma.consultaWhereUniqueInput
-  create: Prisma.XOR<Prisma.consultaCreateWithoutPacienteInput, Prisma.consultaUncheckedCreateWithoutPacienteInput>
+export type ConsultaCreateOrConnectWithoutPacienteInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutPacienteInput, Prisma.ConsultaUncheckedCreateWithoutPacienteInput>
 }
 
-export type consultaCreateManyPacienteInputEnvelope = {
-  data: Prisma.consultaCreateManyPacienteInput | Prisma.consultaCreateManyPacienteInput[]
+export type ConsultaCreateManyPacienteInputEnvelope = {
+  data: Prisma.ConsultaCreateManyPacienteInput | Prisma.ConsultaCreateManyPacienteInput[]
   skipDuplicates?: boolean
 }
 
-export type consultaUpsertWithWhereUniqueWithoutPacienteInput = {
-  where: Prisma.consultaWhereUniqueInput
-  update: Prisma.XOR<Prisma.consultaUpdateWithoutPacienteInput, Prisma.consultaUncheckedUpdateWithoutPacienteInput>
-  create: Prisma.XOR<Prisma.consultaCreateWithoutPacienteInput, Prisma.consultaUncheckedCreateWithoutPacienteInput>
+export type ConsultaUpsertWithWhereUniqueWithoutPacienteInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  update: Prisma.XOR<Prisma.ConsultaUpdateWithoutPacienteInput, Prisma.ConsultaUncheckedUpdateWithoutPacienteInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutPacienteInput, Prisma.ConsultaUncheckedCreateWithoutPacienteInput>
 }
 
-export type consultaUpdateWithWhereUniqueWithoutPacienteInput = {
-  where: Prisma.consultaWhereUniqueInput
-  data: Prisma.XOR<Prisma.consultaUpdateWithoutPacienteInput, Prisma.consultaUncheckedUpdateWithoutPacienteInput>
+export type ConsultaUpdateWithWhereUniqueWithoutPacienteInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateWithoutPacienteInput, Prisma.ConsultaUncheckedUpdateWithoutPacienteInput>
 }
 
-export type consultaUpdateManyWithWhereWithoutPacienteInput = {
-  where: Prisma.consultaScalarWhereInput
-  data: Prisma.XOR<Prisma.consultaUpdateManyMutationInput, Prisma.consultaUncheckedUpdateManyWithoutPacienteInput>
+export type ConsultaUpdateManyWithWhereWithoutPacienteInput = {
+  where: Prisma.ConsultaScalarWhereInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateManyMutationInput, Prisma.ConsultaUncheckedUpdateManyWithoutPacienteInput>
 }
 
-export type consultaCreateWithoutNotificacao_usuarioInput = {
-  paciente: Prisma.pacienteCreateNestedOneWithoutConsultasInput
-  dentista: Prisma.dentistaCreateNestedOneWithoutConsultasInput
-  convenio: Prisma.convenioCreateNestedOneWithoutConsultasInput
-  endereco: Prisma.enderecoCreateNestedOneWithoutConsultasInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateWithoutNotificacao_usuarioInput = {
+  paciente: Prisma.PacienteCreateNestedOneWithoutConsultasInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutConsultasInput
+  convenio: Prisma.ConvenioCreateNestedOneWithoutConsultasInput
+  endereco: Prisma.EnderecoCreateNestedOneWithoutConsultasInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateWithoutNotificacao_usuarioInput = {
+export type ConsultaUncheckedCreateWithoutNotificacao_usuarioInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_convenio: number
   id_endereco: number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoUncheckedCreateNestedManyWithoutConsultaInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaCreateOrConnectWithoutNotificacao_usuarioInput = {
-  where: Prisma.consultaWhereUniqueInput
-  create: Prisma.XOR<Prisma.consultaCreateWithoutNotificacao_usuarioInput, Prisma.consultaUncheckedCreateWithoutNotificacao_usuarioInput>
+export type ConsultaCreateOrConnectWithoutNotificacao_usuarioInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutNotificacao_usuarioInput, Prisma.ConsultaUncheckedCreateWithoutNotificacao_usuarioInput>
 }
 
-export type consultaUpsertWithoutNotificacao_usuarioInput = {
-  update: Prisma.XOR<Prisma.consultaUpdateWithoutNotificacao_usuarioInput, Prisma.consultaUncheckedUpdateWithoutNotificacao_usuarioInput>
-  create: Prisma.XOR<Prisma.consultaCreateWithoutNotificacao_usuarioInput, Prisma.consultaUncheckedCreateWithoutNotificacao_usuarioInput>
-  where?: Prisma.consultaWhereInput
+export type ConsultaUpsertWithoutNotificacao_usuarioInput = {
+  update: Prisma.XOR<Prisma.ConsultaUpdateWithoutNotificacao_usuarioInput, Prisma.ConsultaUncheckedUpdateWithoutNotificacao_usuarioInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutNotificacao_usuarioInput, Prisma.ConsultaUncheckedCreateWithoutNotificacao_usuarioInput>
+  where?: Prisma.ConsultaWhereInput
 }
 
-export type consultaUpdateToOneWithWhereWithoutNotificacao_usuarioInput = {
-  where?: Prisma.consultaWhereInput
-  data: Prisma.XOR<Prisma.consultaUpdateWithoutNotificacao_usuarioInput, Prisma.consultaUncheckedUpdateWithoutNotificacao_usuarioInput>
+export type ConsultaUpdateToOneWithWhereWithoutNotificacao_usuarioInput = {
+  where?: Prisma.ConsultaWhereInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateWithoutNotificacao_usuarioInput, Prisma.ConsultaUncheckedUpdateWithoutNotificacao_usuarioInput>
 }
 
-export type consultaUpdateWithoutNotificacao_usuarioInput = {
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConsultasNestedInput
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutConsultasNestedInput
-  convenio?: Prisma.convenioUpdateOneRequiredWithoutConsultasNestedInput
-  endereco?: Prisma.enderecoUpdateOneRequiredWithoutConsultasNestedInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateWithoutNotificacao_usuarioInput = {
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConsultasNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutConsultasNestedInput
+  convenio?: Prisma.ConvenioUpdateOneRequiredWithoutConsultasNestedInput
+  endereco?: Prisma.EnderecoUpdateOneRequiredWithoutConsultasNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateWithoutNotificacao_usuarioInput = {
+export type ConsultaUncheckedUpdateWithoutNotificacao_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUncheckedUpdateManyWithoutConsultaNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaCreateWithoutEnderecoInput = {
-  paciente: Prisma.pacienteCreateNestedOneWithoutConsultasInput
-  dentista: Prisma.dentistaCreateNestedOneWithoutConsultasInput
-  convenio: Prisma.convenioCreateNestedOneWithoutConsultasInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateWithoutEnderecoInput = {
+  paciente: Prisma.PacienteCreateNestedOneWithoutConsultasInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutConsultasInput
+  convenio: Prisma.ConvenioCreateNestedOneWithoutConsultasInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateWithoutEnderecoInput = {
+export type ConsultaUncheckedCreateWithoutEnderecoInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_convenio: number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoUncheckedCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutConsultaInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoUncheckedCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaCreateOrConnectWithoutEnderecoInput = {
-  where: Prisma.consultaWhereUniqueInput
-  create: Prisma.XOR<Prisma.consultaCreateWithoutEnderecoInput, Prisma.consultaUncheckedCreateWithoutEnderecoInput>
+export type ConsultaCreateOrConnectWithoutEnderecoInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutEnderecoInput, Prisma.ConsultaUncheckedCreateWithoutEnderecoInput>
 }
 
-export type consultaCreateManyEnderecoInputEnvelope = {
-  data: Prisma.consultaCreateManyEnderecoInput | Prisma.consultaCreateManyEnderecoInput[]
+export type ConsultaCreateManyEnderecoInputEnvelope = {
+  data: Prisma.ConsultaCreateManyEnderecoInput | Prisma.ConsultaCreateManyEnderecoInput[]
   skipDuplicates?: boolean
 }
 
-export type consultaUpsertWithWhereUniqueWithoutEnderecoInput = {
-  where: Prisma.consultaWhereUniqueInput
-  update: Prisma.XOR<Prisma.consultaUpdateWithoutEnderecoInput, Prisma.consultaUncheckedUpdateWithoutEnderecoInput>
-  create: Prisma.XOR<Prisma.consultaCreateWithoutEnderecoInput, Prisma.consultaUncheckedCreateWithoutEnderecoInput>
+export type ConsultaUpsertWithWhereUniqueWithoutEnderecoInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  update: Prisma.XOR<Prisma.ConsultaUpdateWithoutEnderecoInput, Prisma.ConsultaUncheckedUpdateWithoutEnderecoInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutEnderecoInput, Prisma.ConsultaUncheckedCreateWithoutEnderecoInput>
 }
 
-export type consultaUpdateWithWhereUniqueWithoutEnderecoInput = {
-  where: Prisma.consultaWhereUniqueInput
-  data: Prisma.XOR<Prisma.consultaUpdateWithoutEnderecoInput, Prisma.consultaUncheckedUpdateWithoutEnderecoInput>
+export type ConsultaUpdateWithWhereUniqueWithoutEnderecoInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateWithoutEnderecoInput, Prisma.ConsultaUncheckedUpdateWithoutEnderecoInput>
 }
 
-export type consultaUpdateManyWithWhereWithoutEnderecoInput = {
-  where: Prisma.consultaScalarWhereInput
-  data: Prisma.XOR<Prisma.consultaUpdateManyMutationInput, Prisma.consultaUncheckedUpdateManyWithoutEnderecoInput>
+export type ConsultaUpdateManyWithWhereWithoutEnderecoInput = {
+  where: Prisma.ConsultaScalarWhereInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateManyMutationInput, Prisma.ConsultaUncheckedUpdateManyWithoutEnderecoInput>
 }
 
-export type consultaCreateWithoutDetalhe_da_consultaInput = {
-  paciente: Prisma.pacienteCreateNestedOneWithoutConsultasInput
-  dentista: Prisma.dentistaCreateNestedOneWithoutConsultasInput
-  convenio: Prisma.convenioCreateNestedOneWithoutConsultasInput
-  endereco: Prisma.enderecoCreateNestedOneWithoutConsultasInput
-  documentos?: Prisma.documentoCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateWithoutDetalhe_da_consultaInput = {
+  paciente: Prisma.PacienteCreateNestedOneWithoutConsultasInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutConsultasInput
+  convenio: Prisma.ConvenioCreateNestedOneWithoutConsultasInput
+  endereco: Prisma.EnderecoCreateNestedOneWithoutConsultasInput
+  documentos?: Prisma.DocumentoCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateWithoutDetalhe_da_consultaInput = {
+export type ConsultaUncheckedCreateWithoutDetalhe_da_consultaInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_convenio: number
   id_endereco: number
-  documentos?: Prisma.documentoUncheckedCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutConsultaInput
+  documentos?: Prisma.DocumentoUncheckedCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaCreateOrConnectWithoutDetalhe_da_consultaInput = {
-  where: Prisma.consultaWhereUniqueInput
-  create: Prisma.XOR<Prisma.consultaCreateWithoutDetalhe_da_consultaInput, Prisma.consultaUncheckedCreateWithoutDetalhe_da_consultaInput>
+export type ConsultaCreateOrConnectWithoutDetalhe_da_consultaInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutDetalhe_da_consultaInput, Prisma.ConsultaUncheckedCreateWithoutDetalhe_da_consultaInput>
 }
 
-export type consultaUpsertWithoutDetalhe_da_consultaInput = {
-  update: Prisma.XOR<Prisma.consultaUpdateWithoutDetalhe_da_consultaInput, Prisma.consultaUncheckedUpdateWithoutDetalhe_da_consultaInput>
-  create: Prisma.XOR<Prisma.consultaCreateWithoutDetalhe_da_consultaInput, Prisma.consultaUncheckedCreateWithoutDetalhe_da_consultaInput>
-  where?: Prisma.consultaWhereInput
+export type ConsultaUpsertWithoutDetalhe_da_consultaInput = {
+  update: Prisma.XOR<Prisma.ConsultaUpdateWithoutDetalhe_da_consultaInput, Prisma.ConsultaUncheckedUpdateWithoutDetalhe_da_consultaInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutDetalhe_da_consultaInput, Prisma.ConsultaUncheckedCreateWithoutDetalhe_da_consultaInput>
+  where?: Prisma.ConsultaWhereInput
 }
 
-export type consultaUpdateToOneWithWhereWithoutDetalhe_da_consultaInput = {
-  where?: Prisma.consultaWhereInput
-  data: Prisma.XOR<Prisma.consultaUpdateWithoutDetalhe_da_consultaInput, Prisma.consultaUncheckedUpdateWithoutDetalhe_da_consultaInput>
+export type ConsultaUpdateToOneWithWhereWithoutDetalhe_da_consultaInput = {
+  where?: Prisma.ConsultaWhereInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateWithoutDetalhe_da_consultaInput, Prisma.ConsultaUncheckedUpdateWithoutDetalhe_da_consultaInput>
 }
 
-export type consultaUpdateWithoutDetalhe_da_consultaInput = {
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConsultasNestedInput
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutConsultasNestedInput
-  convenio?: Prisma.convenioUpdateOneRequiredWithoutConsultasNestedInput
-  endereco?: Prisma.enderecoUpdateOneRequiredWithoutConsultasNestedInput
-  documentos?: Prisma.documentoUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateWithoutDetalhe_da_consultaInput = {
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConsultasNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutConsultasNestedInput
+  convenio?: Prisma.ConvenioUpdateOneRequiredWithoutConsultasNestedInput
+  endereco?: Prisma.EnderecoUpdateOneRequiredWithoutConsultasNestedInput
+  documentos?: Prisma.DocumentoUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateWithoutDetalhe_da_consultaInput = {
+export type ConsultaUncheckedUpdateWithoutDetalhe_da_consultaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
-  documentos?: Prisma.documentoUncheckedUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUncheckedUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaCreateWithoutConvenioInput = {
-  paciente: Prisma.pacienteCreateNestedOneWithoutConsultasInput
-  dentista: Prisma.dentistaCreateNestedOneWithoutConsultasInput
-  endereco: Prisma.enderecoCreateNestedOneWithoutConsultasInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateWithoutConvenioInput = {
+  paciente: Prisma.PacienteCreateNestedOneWithoutConsultasInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutConsultasInput
+  endereco: Prisma.EnderecoCreateNestedOneWithoutConsultasInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateWithoutConvenioInput = {
+export type ConsultaUncheckedCreateWithoutConvenioInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_endereco: number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedCreateNestedOneWithoutConsultaInput
-  documentos?: Prisma.documentoUncheckedCreateNestedManyWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutConsultaInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedCreateNestedOneWithoutConsultaInput
+  documentos?: Prisma.DocumentoUncheckedCreateNestedManyWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaCreateOrConnectWithoutConvenioInput = {
-  where: Prisma.consultaWhereUniqueInput
-  create: Prisma.XOR<Prisma.consultaCreateWithoutConvenioInput, Prisma.consultaUncheckedCreateWithoutConvenioInput>
+export type ConsultaCreateOrConnectWithoutConvenioInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutConvenioInput, Prisma.ConsultaUncheckedCreateWithoutConvenioInput>
 }
 
-export type consultaCreateManyConvenioInputEnvelope = {
-  data: Prisma.consultaCreateManyConvenioInput | Prisma.consultaCreateManyConvenioInput[]
+export type ConsultaCreateManyConvenioInputEnvelope = {
+  data: Prisma.ConsultaCreateManyConvenioInput | Prisma.ConsultaCreateManyConvenioInput[]
   skipDuplicates?: boolean
 }
 
-export type consultaUpsertWithWhereUniqueWithoutConvenioInput = {
-  where: Prisma.consultaWhereUniqueInput
-  update: Prisma.XOR<Prisma.consultaUpdateWithoutConvenioInput, Prisma.consultaUncheckedUpdateWithoutConvenioInput>
-  create: Prisma.XOR<Prisma.consultaCreateWithoutConvenioInput, Prisma.consultaUncheckedCreateWithoutConvenioInput>
+export type ConsultaUpsertWithWhereUniqueWithoutConvenioInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  update: Prisma.XOR<Prisma.ConsultaUpdateWithoutConvenioInput, Prisma.ConsultaUncheckedUpdateWithoutConvenioInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutConvenioInput, Prisma.ConsultaUncheckedCreateWithoutConvenioInput>
 }
 
-export type consultaUpdateWithWhereUniqueWithoutConvenioInput = {
-  where: Prisma.consultaWhereUniqueInput
-  data: Prisma.XOR<Prisma.consultaUpdateWithoutConvenioInput, Prisma.consultaUncheckedUpdateWithoutConvenioInput>
+export type ConsultaUpdateWithWhereUniqueWithoutConvenioInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateWithoutConvenioInput, Prisma.ConsultaUncheckedUpdateWithoutConvenioInput>
 }
 
-export type consultaUpdateManyWithWhereWithoutConvenioInput = {
-  where: Prisma.consultaScalarWhereInput
-  data: Prisma.XOR<Prisma.consultaUpdateManyMutationInput, Prisma.consultaUncheckedUpdateManyWithoutConvenioInput>
+export type ConsultaUpdateManyWithWhereWithoutConvenioInput = {
+  where: Prisma.ConsultaScalarWhereInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateManyMutationInput, Prisma.ConsultaUncheckedUpdateManyWithoutConvenioInput>
 }
 
-export type consultaCreateWithoutDocumentosInput = {
-  paciente: Prisma.pacienteCreateNestedOneWithoutConsultasInput
-  dentista: Prisma.dentistaCreateNestedOneWithoutConsultasInput
-  convenio: Prisma.convenioCreateNestedOneWithoutConsultasInput
-  endereco: Prisma.enderecoCreateNestedOneWithoutConsultasInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaCreateNestedOneWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioCreateNestedManyWithoutConsultaInput
+export type ConsultaCreateWithoutDocumentosInput = {
+  paciente: Prisma.PacienteCreateNestedOneWithoutConsultasInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutConsultasInput
+  convenio: Prisma.ConvenioCreateNestedOneWithoutConsultasInput
+  endereco: Prisma.EnderecoCreateNestedOneWithoutConsultasInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaCreateNestedOneWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaUncheckedCreateWithoutDocumentosInput = {
+export type ConsultaUncheckedCreateWithoutDocumentosInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_convenio: number
   id_endereco: number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedCreateNestedOneWithoutConsultaInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedCreateNestedManyWithoutConsultaInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedCreateNestedOneWithoutConsultaInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutConsultaInput
 }
 
-export type consultaCreateOrConnectWithoutDocumentosInput = {
-  where: Prisma.consultaWhereUniqueInput
-  create: Prisma.XOR<Prisma.consultaCreateWithoutDocumentosInput, Prisma.consultaUncheckedCreateWithoutDocumentosInput>
+export type ConsultaCreateOrConnectWithoutDocumentosInput = {
+  where: Prisma.ConsultaWhereUniqueInput
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutDocumentosInput, Prisma.ConsultaUncheckedCreateWithoutDocumentosInput>
 }
 
-export type consultaUpsertWithoutDocumentosInput = {
-  update: Prisma.XOR<Prisma.consultaUpdateWithoutDocumentosInput, Prisma.consultaUncheckedUpdateWithoutDocumentosInput>
-  create: Prisma.XOR<Prisma.consultaCreateWithoutDocumentosInput, Prisma.consultaUncheckedCreateWithoutDocumentosInput>
-  where?: Prisma.consultaWhereInput
+export type ConsultaUpsertWithoutDocumentosInput = {
+  update: Prisma.XOR<Prisma.ConsultaUpdateWithoutDocumentosInput, Prisma.ConsultaUncheckedUpdateWithoutDocumentosInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateWithoutDocumentosInput, Prisma.ConsultaUncheckedCreateWithoutDocumentosInput>
+  where?: Prisma.ConsultaWhereInput
 }
 
-export type consultaUpdateToOneWithWhereWithoutDocumentosInput = {
-  where?: Prisma.consultaWhereInput
-  data: Prisma.XOR<Prisma.consultaUpdateWithoutDocumentosInput, Prisma.consultaUncheckedUpdateWithoutDocumentosInput>
+export type ConsultaUpdateToOneWithWhereWithoutDocumentosInput = {
+  where?: Prisma.ConsultaWhereInput
+  data: Prisma.XOR<Prisma.ConsultaUpdateWithoutDocumentosInput, Prisma.ConsultaUncheckedUpdateWithoutDocumentosInput>
 }
 
-export type consultaUpdateWithoutDocumentosInput = {
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConsultasNestedInput
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutConsultasNestedInput
-  convenio?: Prisma.convenioUpdateOneRequiredWithoutConsultasNestedInput
-  endereco?: Prisma.enderecoUpdateOneRequiredWithoutConsultasNestedInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUpdateOneWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateWithoutDocumentosInput = {
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConsultasNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutConsultasNestedInput
+  convenio?: Prisma.ConvenioUpdateOneRequiredWithoutConsultasNestedInput
+  endereco?: Prisma.EnderecoUpdateOneRequiredWithoutConsultasNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUpdateOneWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateWithoutDocumentosInput = {
+export type ConsultaUncheckedUpdateWithoutDocumentosInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedUpdateOneWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutConsultaNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedUpdateOneWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaCreateManyDentistaInput = {
+export type ConsultaCreateManyDentistaInput = {
   id?: number
   id_paciente: number
   id_convenio: number
   id_endereco: number
 }
 
-export type consultaUpdateWithoutDentistaInput = {
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConsultasNestedInput
-  convenio?: Prisma.convenioUpdateOneRequiredWithoutConsultasNestedInput
-  endereco?: Prisma.enderecoUpdateOneRequiredWithoutConsultasNestedInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateWithoutDentistaInput = {
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConsultasNestedInput
+  convenio?: Prisma.ConvenioUpdateOneRequiredWithoutConsultasNestedInput
+  endereco?: Prisma.EnderecoUpdateOneRequiredWithoutConsultasNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateWithoutDentistaInput = {
+export type ConsultaUncheckedUpdateWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUncheckedUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutConsultaNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUncheckedUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateManyWithoutDentistaInput = {
+export type ConsultaUncheckedUpdateManyWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type consultaCreateManyPacienteInput = {
+export type ConsultaCreateManyPacienteInput = {
   id?: number
   id_dentista: number
   id_convenio: number
   id_endereco: number
 }
 
-export type consultaUpdateWithoutPacienteInput = {
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutConsultasNestedInput
-  convenio?: Prisma.convenioUpdateOneRequiredWithoutConsultasNestedInput
-  endereco?: Prisma.enderecoUpdateOneRequiredWithoutConsultasNestedInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateWithoutPacienteInput = {
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutConsultasNestedInput
+  convenio?: Prisma.ConvenioUpdateOneRequiredWithoutConsultasNestedInput
+  endereco?: Prisma.EnderecoUpdateOneRequiredWithoutConsultasNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateWithoutPacienteInput = {
+export type ConsultaUncheckedUpdateWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUncheckedUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutConsultaNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUncheckedUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateManyWithoutPacienteInput = {
+export type ConsultaUncheckedUpdateManyWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type consultaCreateManyEnderecoInput = {
+export type ConsultaCreateManyEnderecoInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_convenio: number
 }
 
-export type consultaUpdateWithoutEnderecoInput = {
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConsultasNestedInput
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutConsultasNestedInput
-  convenio?: Prisma.convenioUpdateOneRequiredWithoutConsultasNestedInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateWithoutEnderecoInput = {
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConsultasNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutConsultasNestedInput
+  convenio?: Prisma.ConvenioUpdateOneRequiredWithoutConsultasNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateWithoutEnderecoInput = {
+export type ConsultaUncheckedUpdateWithoutEnderecoInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUncheckedUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutConsultaNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUncheckedUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateManyWithoutEnderecoInput = {
+export type ConsultaUncheckedUpdateManyWithoutEnderecoInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type consultaCreateManyConvenioInput = {
+export type ConsultaCreateManyConvenioInput = {
   id?: number
   id_paciente: number
   id_dentista: number
   id_endereco: number
 }
 
-export type consultaUpdateWithoutConvenioInput = {
-  paciente?: Prisma.pacienteUpdateOneRequiredWithoutConsultasNestedInput
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutConsultasNestedInput
-  endereco?: Prisma.enderecoUpdateOneRequiredWithoutConsultasNestedInput
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUpdateManyWithoutConsultaNestedInput
+export type ConsultaUpdateWithoutConvenioInput = {
+  paciente?: Prisma.PacienteUpdateOneRequiredWithoutConsultasNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutConsultasNestedInput
+  endereco?: Prisma.EnderecoUpdateOneRequiredWithoutConsultasNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateWithoutConvenioInput = {
+export type ConsultaUncheckedUpdateWithoutConvenioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
   id_endereco?: Prisma.IntFieldUpdateOperationsInput | number
-  detalhe_da_consulta?: Prisma.detalhe_da_consultaUncheckedUpdateOneWithoutConsultaNestedInput
-  documentos?: Prisma.documentoUncheckedUpdateManyWithoutConsultaNestedInput
-  notificacao_usuario?: Prisma.notificacao_usuarioUncheckedUpdateManyWithoutConsultaNestedInput
+  detalhe_da_consulta?: Prisma.DetalheDaConsultaUncheckedUpdateOneWithoutConsultaNestedInput
+  documentos?: Prisma.DocumentoUncheckedUpdateManyWithoutConsultaNestedInput
+  notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput
 }
 
-export type consultaUncheckedUpdateManyWithoutConvenioInput = {
+export type ConsultaUncheckedUpdateManyWithoutConvenioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1146,58 +1146,58 @@ export type ConsultaCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
  * ConsultaCountOutputType without action
  */
 export type ConsultaCountOutputTypeCountDocumentosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.documentoWhereInput
+  where?: Prisma.DocumentoWhereInput
 }
 
 /**
  * ConsultaCountOutputType without action
  */
 export type ConsultaCountOutputTypeCountNotificacao_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.notificacao_usuarioWhereInput
+  where?: Prisma.NotificacaoUsuarioWhereInput
 }
 
 
-export type consultaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ConsultaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_paciente?: boolean
   id_dentista?: boolean
   id_convenio?: boolean
   id_endereco?: boolean
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  convenio?: boolean | Prisma.convenioDefaultArgs<ExtArgs>
-  endereco?: boolean | Prisma.enderecoDefaultArgs<ExtArgs>
-  detalhe_da_consulta?: boolean | Prisma.consulta$detalhe_da_consultaArgs<ExtArgs>
-  documentos?: boolean | Prisma.consulta$documentosArgs<ExtArgs>
-  notificacao_usuario?: boolean | Prisma.consulta$notificacao_usuarioArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  convenio?: boolean | Prisma.ConvenioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.EnderecoDefaultArgs<ExtArgs>
+  detalhe_da_consulta?: boolean | Prisma.Consulta$detalhe_da_consultaArgs<ExtArgs>
+  documentos?: boolean | Prisma.Consulta$documentosArgs<ExtArgs>
+  notificacao_usuario?: boolean | Prisma.Consulta$notificacao_usuarioArgs<ExtArgs>
   _count?: boolean | Prisma.ConsultaCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["consulta"]>
 
-export type consultaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ConsultaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_paciente?: boolean
   id_dentista?: boolean
   id_convenio?: boolean
   id_endereco?: boolean
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  convenio?: boolean | Prisma.convenioDefaultArgs<ExtArgs>
-  endereco?: boolean | Prisma.enderecoDefaultArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  convenio?: boolean | Prisma.ConvenioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.EnderecoDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["consulta"]>
 
-export type consultaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type ConsultaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_paciente?: boolean
   id_dentista?: boolean
   id_convenio?: boolean
   id_endereco?: boolean
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  convenio?: boolean | Prisma.convenioDefaultArgs<ExtArgs>
-  endereco?: boolean | Prisma.enderecoDefaultArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  convenio?: boolean | Prisma.ConvenioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.EnderecoDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["consulta"]>
 
-export type consultaSelectScalar = {
+export type ConsultaSelectScalar = {
   id?: boolean
   id_paciente?: boolean
   id_dentista?: boolean
@@ -1205,40 +1205,40 @@ export type consultaSelectScalar = {
   id_endereco?: boolean
 }
 
-export type consultaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_paciente" | "id_dentista" | "id_convenio" | "id_endereco", ExtArgs["result"]["consulta"]>
-export type consultaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  convenio?: boolean | Prisma.convenioDefaultArgs<ExtArgs>
-  endereco?: boolean | Prisma.enderecoDefaultArgs<ExtArgs>
-  detalhe_da_consulta?: boolean | Prisma.consulta$detalhe_da_consultaArgs<ExtArgs>
-  documentos?: boolean | Prisma.consulta$documentosArgs<ExtArgs>
-  notificacao_usuario?: boolean | Prisma.consulta$notificacao_usuarioArgs<ExtArgs>
+export type ConsultaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_paciente" | "id_dentista" | "id_convenio" | "id_endereco", ExtArgs["result"]["consulta"]>
+export type ConsultaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  convenio?: boolean | Prisma.ConvenioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.EnderecoDefaultArgs<ExtArgs>
+  detalhe_da_consulta?: boolean | Prisma.Consulta$detalhe_da_consultaArgs<ExtArgs>
+  documentos?: boolean | Prisma.Consulta$documentosArgs<ExtArgs>
+  notificacao_usuario?: boolean | Prisma.Consulta$notificacao_usuarioArgs<ExtArgs>
   _count?: boolean | Prisma.ConsultaCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type consultaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  convenio?: boolean | Prisma.convenioDefaultArgs<ExtArgs>
-  endereco?: boolean | Prisma.enderecoDefaultArgs<ExtArgs>
+export type ConsultaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  convenio?: boolean | Prisma.ConvenioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.EnderecoDefaultArgs<ExtArgs>
 }
-export type consultaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paciente?: boolean | Prisma.pacienteDefaultArgs<ExtArgs>
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  convenio?: boolean | Prisma.convenioDefaultArgs<ExtArgs>
-  endereco?: boolean | Prisma.enderecoDefaultArgs<ExtArgs>
+export type ConsultaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  convenio?: boolean | Prisma.ConvenioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.EnderecoDefaultArgs<ExtArgs>
 }
 
-export type $consultaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "consulta"
+export type $ConsultaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Consulta"
   objects: {
-    paciente: Prisma.$pacientePayload<ExtArgs>
-    dentista: Prisma.$dentistaPayload<ExtArgs>
-    convenio: Prisma.$convenioPayload<ExtArgs>
-    endereco: Prisma.$enderecoPayload<ExtArgs>
-    detalhe_da_consulta: Prisma.$detalhe_da_consultaPayload<ExtArgs> | null
-    documentos: Prisma.$documentoPayload<ExtArgs>[]
-    notificacao_usuario: Prisma.$notificacao_usuarioPayload<ExtArgs>[]
+    paciente: Prisma.$PacientePayload<ExtArgs>
+    dentista: Prisma.$DentistaPayload<ExtArgs>
+    convenio: Prisma.$ConvenioPayload<ExtArgs>
+    endereco: Prisma.$EnderecoPayload<ExtArgs>
+    detalhe_da_consulta: Prisma.$DetalheDaConsultaPayload<ExtArgs> | null
+    documentos: Prisma.$DocumentoPayload<ExtArgs>[]
+    notificacao_usuario: Prisma.$NotificacaoUsuarioPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1250,18 +1250,18 @@ export type $consultaPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   composites: {}
 }
 
-export type consultaGetPayload<S extends boolean | null | undefined | consultaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$consultaPayload, S>
+export type ConsultaGetPayload<S extends boolean | null | undefined | ConsultaDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ConsultaPayload, S>
 
-export type consultaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<consultaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type ConsultaCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<ConsultaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: ConsultaCountAggregateInputType | true
   }
 
-export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['consulta'], meta: { name: 'consulta' } }
+export interface ConsultaDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Consulta'], meta: { name: 'Consulta' } }
   /**
    * Find zero or one Consulta that matches the filter.
-   * @param {consultaFindUniqueArgs} args - Arguments to find a Consulta
+   * @param {ConsultaFindUniqueArgs} args - Arguments to find a Consulta
    * @example
    * // Get one Consulta
    * const consulta = await prisma.consulta.findUnique({
@@ -1270,12 +1270,12 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUnique<T extends consultaFindUniqueArgs>(args: Prisma.SelectSubset<T, consultaFindUniqueArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends ConsultaFindUniqueArgs>(args: Prisma.SelectSubset<T, ConsultaFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Consulta that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {consultaFindUniqueOrThrowArgs} args - Arguments to find a Consulta
+   * @param {ConsultaFindUniqueOrThrowArgs} args - Arguments to find a Consulta
    * @example
    * // Get one Consulta
    * const consulta = await prisma.consulta.findUniqueOrThrow({
@@ -1284,13 +1284,13 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUniqueOrThrow<T extends consultaFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, consultaFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends ConsultaFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ConsultaFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Consulta that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {consultaFindFirstArgs} args - Arguments to find a Consulta
+   * @param {ConsultaFindFirstArgs} args - Arguments to find a Consulta
    * @example
    * // Get one Consulta
    * const consulta = await prisma.consulta.findFirst({
@@ -1299,14 +1299,14 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirst<T extends consultaFindFirstArgs>(args?: Prisma.SelectSubset<T, consultaFindFirstArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends ConsultaFindFirstArgs>(args?: Prisma.SelectSubset<T, ConsultaFindFirstArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Consulta that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {consultaFindFirstOrThrowArgs} args - Arguments to find a Consulta
+   * @param {ConsultaFindFirstOrThrowArgs} args - Arguments to find a Consulta
    * @example
    * // Get one Consulta
    * const consulta = await prisma.consulta.findFirstOrThrow({
@@ -1315,13 +1315,13 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirstOrThrow<T extends consultaFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, consultaFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends ConsultaFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ConsultaFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Consultas that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {consultaFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {ConsultaFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Consultas
    * const consultas = await prisma.consulta.findMany()
@@ -1333,11 +1333,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * const consultaWithIdOnly = await prisma.consulta.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends consultaFindManyArgs>(args?: Prisma.SelectSubset<T, consultaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends ConsultaFindManyArgs>(args?: Prisma.SelectSubset<T, ConsultaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Consulta.
-   * @param {consultaCreateArgs} args - Arguments to create a Consulta.
+   * @param {ConsultaCreateArgs} args - Arguments to create a Consulta.
    * @example
    * // Create one Consulta
    * const Consulta = await prisma.consulta.create({
@@ -1347,11 +1347,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  create<T extends consultaCreateArgs>(args: Prisma.SelectSubset<T, consultaCreateArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends ConsultaCreateArgs>(args: Prisma.SelectSubset<T, ConsultaCreateArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Consultas.
-   * @param {consultaCreateManyArgs} args - Arguments to create many Consultas.
+   * @param {ConsultaCreateManyArgs} args - Arguments to create many Consultas.
    * @example
    * // Create many Consultas
    * const consulta = await prisma.consulta.createMany({
@@ -1361,11 +1361,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    *     
    */
-  createMany<T extends consultaCreateManyArgs>(args?: Prisma.SelectSubset<T, consultaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends ConsultaCreateManyArgs>(args?: Prisma.SelectSubset<T, ConsultaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Consultas and returns the data saved in the database.
-   * @param {consultaCreateManyAndReturnArgs} args - Arguments to create many Consultas.
+   * @param {ConsultaCreateManyAndReturnArgs} args - Arguments to create many Consultas.
    * @example
    * // Create many Consultas
    * const consulta = await prisma.consulta.createManyAndReturn({
@@ -1385,11 +1385,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends consultaCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, consultaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends ConsultaCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, ConsultaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Consulta.
-   * @param {consultaDeleteArgs} args - Arguments to delete one Consulta.
+   * @param {ConsultaDeleteArgs} args - Arguments to delete one Consulta.
    * @example
    * // Delete one Consulta
    * const Consulta = await prisma.consulta.delete({
@@ -1399,11 +1399,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  delete<T extends consultaDeleteArgs>(args: Prisma.SelectSubset<T, consultaDeleteArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends ConsultaDeleteArgs>(args: Prisma.SelectSubset<T, ConsultaDeleteArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Consulta.
-   * @param {consultaUpdateArgs} args - Arguments to update one Consulta.
+   * @param {ConsultaUpdateArgs} args - Arguments to update one Consulta.
    * @example
    * // Update one Consulta
    * const consulta = await prisma.consulta.update({
@@ -1416,11 +1416,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  update<T extends consultaUpdateArgs>(args: Prisma.SelectSubset<T, consultaUpdateArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends ConsultaUpdateArgs>(args: Prisma.SelectSubset<T, ConsultaUpdateArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Consultas.
-   * @param {consultaDeleteManyArgs} args - Arguments to filter Consultas to delete.
+   * @param {ConsultaDeleteManyArgs} args - Arguments to filter Consultas to delete.
    * @example
    * // Delete a few Consultas
    * const { count } = await prisma.consulta.deleteMany({
@@ -1430,13 +1430,13 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  deleteMany<T extends consultaDeleteManyArgs>(args?: Prisma.SelectSubset<T, consultaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends ConsultaDeleteManyArgs>(args?: Prisma.SelectSubset<T, ConsultaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Consultas.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {consultaUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {ConsultaUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Consultas
    * const consulta = await prisma.consulta.updateMany({
@@ -1449,11 +1449,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  updateMany<T extends consultaUpdateManyArgs>(args: Prisma.SelectSubset<T, consultaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends ConsultaUpdateManyArgs>(args: Prisma.SelectSubset<T, ConsultaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Consultas and returns the data updated in the database.
-   * @param {consultaUpdateManyAndReturnArgs} args - Arguments to update many Consultas.
+   * @param {ConsultaUpdateManyAndReturnArgs} args - Arguments to update many Consultas.
    * @example
    * // Update many Consultas
    * const consulta = await prisma.consulta.updateManyAndReturn({
@@ -1479,11 +1479,11 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends consultaUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, consultaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends ConsultaUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, ConsultaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Consulta.
-   * @param {consultaUpsertArgs} args - Arguments to update or create a Consulta.
+   * @param {ConsultaUpsertArgs} args - Arguments to update or create a Consulta.
    * @example
    * // Update or create a Consulta
    * const consulta = await prisma.consulta.upsert({
@@ -1498,14 +1498,14 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  upsert<T extends consultaUpsertArgs>(args: Prisma.SelectSubset<T, consultaUpsertArgs<ExtArgs>>): Prisma.Prisma__consultaClient<runtime.Types.Result.GetResult<Prisma.$consultaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends ConsultaUpsertArgs>(args: Prisma.SelectSubset<T, ConsultaUpsertArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Consultas.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {consultaCountArgs} args - Arguments to filter Consultas to count.
+   * @param {ConsultaCountArgs} args - Arguments to filter Consultas to count.
    * @example
    * // Count the number of Consultas
    * const count = await prisma.consulta.count({
@@ -1514,8 +1514,8 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
   **/
-  count<T extends consultaCountArgs>(
-    args?: Prisma.Subset<T, consultaCountArgs>,
+  count<T extends ConsultaCountArgs>(
+    args?: Prisma.Subset<T, ConsultaCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1554,7 +1554,7 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Group by Consulta.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {consultaGroupByArgs} args - Group by arguments.
+   * @param {ConsultaGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1569,14 +1569,14 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * 
   **/
   groupBy<
-    T extends consultaGroupByArgs,
+    T extends ConsultaGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: consultaGroupByArgs['orderBy'] }
-      : { orderBy?: consultaGroupByArgs['orderBy'] },
+      ? { orderBy: ConsultaGroupByArgs['orderBy'] }
+      : { orderBy?: ConsultaGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1625,28 +1625,28 @@ export interface consultaDelegate<ExtArgs extends runtime.Types.Extensions.Inter
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, consultaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConsultaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, ConsultaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetConsultaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the consulta model
+ * Fields of the Consulta model
  */
-readonly fields: consultaFieldRefs;
+readonly fields: ConsultaFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for consulta.
+ * The delegate class that acts as a "Promise-like" for Consulta.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__consultaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__ConsultaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  paciente<T extends Prisma.pacienteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.pacienteDefaultArgs<ExtArgs>>): Prisma.Prisma__pacienteClient<runtime.Types.Result.GetResult<Prisma.$pacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  dentista<T extends Prisma.dentistaDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.dentistaDefaultArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  convenio<T extends Prisma.convenioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.convenioDefaultArgs<ExtArgs>>): Prisma.Prisma__convenioClient<runtime.Types.Result.GetResult<Prisma.$convenioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  endereco<T extends Prisma.enderecoDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.enderecoDefaultArgs<ExtArgs>>): Prisma.Prisma__enderecoClient<runtime.Types.Result.GetResult<Prisma.$enderecoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  detalhe_da_consulta<T extends Prisma.consulta$detalhe_da_consultaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.consulta$detalhe_da_consultaArgs<ExtArgs>>): Prisma.Prisma__detalhe_da_consultaClient<runtime.Types.Result.GetResult<Prisma.$detalhe_da_consultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  documentos<T extends Prisma.consulta$documentosArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.consulta$documentosArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$documentoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  notificacao_usuario<T extends Prisma.consulta$notificacao_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.consulta$notificacao_usuarioArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$notificacao_usuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  paciente<T extends Prisma.PacienteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PacienteDefaultArgs<ExtArgs>>): Prisma.Prisma__PacienteClient<runtime.Types.Result.GetResult<Prisma.$PacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  dentista<T extends Prisma.DentistaDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DentistaDefaultArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  convenio<T extends Prisma.ConvenioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ConvenioDefaultArgs<ExtArgs>>): Prisma.Prisma__ConvenioClient<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  endereco<T extends Prisma.EnderecoDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EnderecoDefaultArgs<ExtArgs>>): Prisma.Prisma__EnderecoClient<runtime.Types.Result.GetResult<Prisma.$EnderecoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  detalhe_da_consulta<T extends Prisma.Consulta$detalhe_da_consultaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Consulta$detalhe_da_consultaArgs<ExtArgs>>): Prisma.Prisma__DetalheDaConsultaClient<runtime.Types.Result.GetResult<Prisma.$DetalheDaConsultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  documentos<T extends Prisma.Consulta$documentosArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Consulta$documentosArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DocumentoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  notificacao_usuario<T extends Prisma.Consulta$notificacao_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Consulta$notificacao_usuarioArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$NotificacaoUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1673,495 +1673,495 @@ export interface Prisma__consultaClient<T, Null = never, ExtArgs extends runtime
 
 
 /**
- * Fields of the consulta model
+ * Fields of the Consulta model
  */
-export interface consultaFieldRefs {
-  readonly id: Prisma.FieldRef<"consulta", 'Int'>
-  readonly id_paciente: Prisma.FieldRef<"consulta", 'Int'>
-  readonly id_dentista: Prisma.FieldRef<"consulta", 'Int'>
-  readonly id_convenio: Prisma.FieldRef<"consulta", 'Int'>
-  readonly id_endereco: Prisma.FieldRef<"consulta", 'Int'>
+export interface ConsultaFieldRefs {
+  readonly id: Prisma.FieldRef<"Consulta", 'Int'>
+  readonly id_paciente: Prisma.FieldRef<"Consulta", 'Int'>
+  readonly id_dentista: Prisma.FieldRef<"Consulta", 'Int'>
+  readonly id_convenio: Prisma.FieldRef<"Consulta", 'Int'>
+  readonly id_endereco: Prisma.FieldRef<"Consulta", 'Int'>
 }
     
 
 // Custom InputTypes
 /**
- * consulta findUnique
+ * Consulta findUnique
  */
-export type consultaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * Filter, which consulta to fetch.
+   * Filter, which Consulta to fetch.
    */
-  where: Prisma.consultaWhereUniqueInput
+  where: Prisma.ConsultaWhereUniqueInput
 }
 
 /**
- * consulta findUniqueOrThrow
+ * Consulta findUniqueOrThrow
  */
-export type consultaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * Filter, which consulta to fetch.
+   * Filter, which Consulta to fetch.
    */
-  where: Prisma.consultaWhereUniqueInput
+  where: Prisma.ConsultaWhereUniqueInput
 }
 
 /**
- * consulta findFirst
+ * Consulta findFirst
  */
-export type consultaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * Filter, which consulta to fetch.
+   * Filter, which Consulta to fetch.
    */
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of consultas to fetch.
+   * Determine the order of Consultas to fetch.
    */
-  orderBy?: Prisma.consultaOrderByWithRelationInput | Prisma.consultaOrderByWithRelationInput[]
+  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for consultas.
+   * Sets the position for searching for Consultas.
    */
-  cursor?: Prisma.consultaWhereUniqueInput
+  cursor?: Prisma.ConsultaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` consultas from the position of the cursor.
+   * Take `±n` Consultas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` consultas.
+   * Skip the first `n` Consultas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of consultas.
+   * Filter by unique combinations of Consultas.
    */
   distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
 }
 
 /**
- * consulta findFirstOrThrow
+ * Consulta findFirstOrThrow
  */
-export type consultaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * Filter, which consulta to fetch.
+   * Filter, which Consulta to fetch.
    */
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of consultas to fetch.
+   * Determine the order of Consultas to fetch.
    */
-  orderBy?: Prisma.consultaOrderByWithRelationInput | Prisma.consultaOrderByWithRelationInput[]
+  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for consultas.
+   * Sets the position for searching for Consultas.
    */
-  cursor?: Prisma.consultaWhereUniqueInput
+  cursor?: Prisma.ConsultaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` consultas from the position of the cursor.
+   * Take `±n` Consultas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` consultas.
+   * Skip the first `n` Consultas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of consultas.
+   * Filter by unique combinations of Consultas.
    */
   distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
 }
 
 /**
- * consulta findMany
+ * Consulta findMany
  */
-export type consultaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * Filter, which consultas to fetch.
+   * Filter, which Consultas to fetch.
    */
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of consultas to fetch.
+   * Determine the order of Consultas to fetch.
    */
-  orderBy?: Prisma.consultaOrderByWithRelationInput | Prisma.consultaOrderByWithRelationInput[]
+  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing consultas.
+   * Sets the position for listing Consultas.
    */
-  cursor?: Prisma.consultaWhereUniqueInput
+  cursor?: Prisma.ConsultaWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` consultas from the position of the cursor.
+   * Take `±n` Consultas from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` consultas.
+   * Skip the first `n` Consultas.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of consultas.
+   * Filter by unique combinations of Consultas.
    */
   distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
 }
 
 /**
- * consulta create
+ * Consulta create
  */
-export type consultaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * The data needed to create a consulta.
+   * The data needed to create a Consulta.
    */
-  data: Prisma.XOR<Prisma.consultaCreateInput, Prisma.consultaUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.ConsultaCreateInput, Prisma.ConsultaUncheckedCreateInput>
 }
 
 /**
- * consulta createMany
+ * Consulta createMany
  */
-export type consultaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many consultas.
+   * The data used to create many Consultas.
    */
-  data: Prisma.consultaCreateManyInput | Prisma.consultaCreateManyInput[]
+  data: Prisma.ConsultaCreateManyInput | Prisma.ConsultaCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * consulta createManyAndReturn
+ * Consulta createManyAndReturn
  */
-export type consultaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.ConsultaSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
-   * The data used to create many consultas.
+   * The data used to create many Consultas.
    */
-  data: Prisma.consultaCreateManyInput | Prisma.consultaCreateManyInput[]
+  data: Prisma.ConsultaCreateManyInput | Prisma.ConsultaCreateManyInput[]
   skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaIncludeCreateManyAndReturn<ExtArgs> | null
+  include?: Prisma.ConsultaIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * consulta update
+ * Consulta update
  */
-export type consultaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * The data needed to update a consulta.
+   * The data needed to update a Consulta.
    */
-  data: Prisma.XOR<Prisma.consultaUpdateInput, Prisma.consultaUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.ConsultaUpdateInput, Prisma.ConsultaUncheckedUpdateInput>
   /**
-   * Choose, which consulta to update.
+   * Choose, which Consulta to update.
    */
-  where: Prisma.consultaWhereUniqueInput
+  where: Prisma.ConsultaWhereUniqueInput
 }
 
 /**
- * consulta updateMany
+ * Consulta updateMany
  */
-export type consultaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update consultas.
+   * The data used to update Consultas.
    */
-  data: Prisma.XOR<Prisma.consultaUpdateManyMutationInput, Prisma.consultaUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ConsultaUpdateManyMutationInput, Prisma.ConsultaUncheckedUpdateManyInput>
   /**
-   * Filter which consultas to update
+   * Filter which Consultas to update
    */
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
   /**
-   * Limit how many consultas to update.
+   * Limit how many Consultas to update.
    */
   limit?: number
 }
 
 /**
- * consulta updateManyAndReturn
+ * Consulta updateManyAndReturn
  */
-export type consultaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.ConsultaSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
-   * The data used to update consultas.
+   * The data used to update Consultas.
    */
-  data: Prisma.XOR<Prisma.consultaUpdateManyMutationInput, Prisma.consultaUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.ConsultaUpdateManyMutationInput, Prisma.ConsultaUncheckedUpdateManyInput>
   /**
-   * Filter which consultas to update
+   * Filter which Consultas to update
    */
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
   /**
-   * Limit how many consultas to update.
+   * Limit how many Consultas to update.
    */
   limit?: number
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaIncludeUpdateManyAndReturn<ExtArgs> | null
+  include?: Prisma.ConsultaIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * consulta upsert
+ * Consulta upsert
  */
-export type consultaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * The filter to search for the consulta to update in case it exists.
+   * The filter to search for the Consulta to update in case it exists.
    */
-  where: Prisma.consultaWhereUniqueInput
+  where: Prisma.ConsultaWhereUniqueInput
   /**
-   * In case the consulta found by the `where` argument doesn't exist, create a new consulta with this data.
+   * In case the Consulta found by the `where` argument doesn't exist, create a new Consulta with this data.
    */
-  create: Prisma.XOR<Prisma.consultaCreateInput, Prisma.consultaUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.ConsultaCreateInput, Prisma.ConsultaUncheckedCreateInput>
   /**
-   * In case the consulta was found with the provided `where` argument, update it with this data.
+   * In case the Consulta was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.consultaUpdateInput, Prisma.consultaUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.ConsultaUpdateInput, Prisma.ConsultaUncheckedUpdateInput>
 }
 
 /**
- * consulta delete
+ * Consulta delete
  */
-export type consultaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
   /**
-   * Filter which consulta to delete.
+   * Filter which Consulta to delete.
    */
-  where: Prisma.consultaWhereUniqueInput
+  where: Prisma.ConsultaWhereUniqueInput
 }
 
 /**
- * consulta deleteMany
+ * Consulta deleteMany
  */
-export type consultaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which consultas to delete
+   * Filter which Consultas to delete
    */
-  where?: Prisma.consultaWhereInput
+  where?: Prisma.ConsultaWhereInput
   /**
-   * Limit how many consultas to delete.
+   * Limit how many Consultas to delete.
    */
   limit?: number
 }
 
 /**
- * consulta.detalhe_da_consulta
+ * Consulta.detalhe_da_consulta
  */
-export type consulta$detalhe_da_consultaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Consulta$detalhe_da_consultaArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the detalhe_da_consulta
+   * Select specific fields to fetch from the DetalheDaConsulta
    */
-  select?: Prisma.detalhe_da_consultaSelect<ExtArgs> | null
+  select?: Prisma.DetalheDaConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the detalhe_da_consulta
+   * Omit specific fields from the DetalheDaConsulta
    */
-  omit?: Prisma.detalhe_da_consultaOmit<ExtArgs> | null
+  omit?: Prisma.DetalheDaConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.detalhe_da_consultaInclude<ExtArgs> | null
-  where?: Prisma.detalhe_da_consultaWhereInput
+  include?: Prisma.DetalheDaConsultaInclude<ExtArgs> | null
+  where?: Prisma.DetalheDaConsultaWhereInput
 }
 
 /**
- * consulta.documentos
+ * Consulta.documentos
  */
-export type consulta$documentosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Consulta$documentosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the documento
+   * Select specific fields to fetch from the Documento
    */
-  select?: Prisma.documentoSelect<ExtArgs> | null
+  select?: Prisma.DocumentoSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the documento
+   * Omit specific fields from the Documento
    */
-  omit?: Prisma.documentoOmit<ExtArgs> | null
+  omit?: Prisma.DocumentoOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.documentoInclude<ExtArgs> | null
-  where?: Prisma.documentoWhereInput
-  orderBy?: Prisma.documentoOrderByWithRelationInput | Prisma.documentoOrderByWithRelationInput[]
-  cursor?: Prisma.documentoWhereUniqueInput
+  include?: Prisma.DocumentoInclude<ExtArgs> | null
+  where?: Prisma.DocumentoWhereInput
+  orderBy?: Prisma.DocumentoOrderByWithRelationInput | Prisma.DocumentoOrderByWithRelationInput[]
+  cursor?: Prisma.DocumentoWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.DocumentoScalarFieldEnum | Prisma.DocumentoScalarFieldEnum[]
 }
 
 /**
- * consulta.notificacao_usuario
+ * Consulta.notificacao_usuario
  */
-export type consulta$notificacao_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Consulta$notificacao_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the notificacao_usuario
+   * Select specific fields to fetch from the NotificacaoUsuario
    */
-  select?: Prisma.notificacao_usuarioSelect<ExtArgs> | null
+  select?: Prisma.NotificacaoUsuarioSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the notificacao_usuario
+   * Omit specific fields from the NotificacaoUsuario
    */
-  omit?: Prisma.notificacao_usuarioOmit<ExtArgs> | null
+  omit?: Prisma.NotificacaoUsuarioOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.notificacao_usuarioInclude<ExtArgs> | null
-  where?: Prisma.notificacao_usuarioWhereInput
-  orderBy?: Prisma.notificacao_usuarioOrderByWithRelationInput | Prisma.notificacao_usuarioOrderByWithRelationInput[]
-  cursor?: Prisma.notificacao_usuarioWhereUniqueInput
+  include?: Prisma.NotificacaoUsuarioInclude<ExtArgs> | null
+  where?: Prisma.NotificacaoUsuarioWhereInput
+  orderBy?: Prisma.NotificacaoUsuarioOrderByWithRelationInput | Prisma.NotificacaoUsuarioOrderByWithRelationInput[]
+  cursor?: Prisma.NotificacaoUsuarioWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.Notificacao_usuarioScalarFieldEnum | Prisma.Notificacao_usuarioScalarFieldEnum[]
+  distinct?: Prisma.NotificacaoUsuarioScalarFieldEnum | Prisma.NotificacaoUsuarioScalarFieldEnum[]
 }
 
 /**
- * consulta without action
+ * Consulta without action
  */
-export type consultaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type ConsultaDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the consulta
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.consultaSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the consulta
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.consultaOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.consultaInclude<ExtArgs> | null
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
 }

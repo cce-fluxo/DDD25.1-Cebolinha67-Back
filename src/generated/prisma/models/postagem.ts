@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `postagem` model and its related types.
+ * This file exports the `Postagem` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.js"
 import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
- * Model postagem
+ * Model Postagem
  * 
  */
-export type postagemModel = runtime.Types.Result.DefaultSelection<Prisma.$postagemPayload>
+export type PostagemModel = runtime.Types.Result.DefaultSelection<Prisma.$PostagemPayload>
 
 export type AggregatePostagem = {
   _count: PostagemCountAggregateOutputType | null
@@ -115,37 +115,37 @@ export type PostagemCountAggregateInputType = {
 
 export type PostagemAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which postagem to aggregate.
+   * Filter which Postagem to aggregate.
    */
-  where?: Prisma.postagemWhereInput
+  where?: Prisma.PostagemWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of postagems to fetch.
+   * Determine the order of Postagems to fetch.
    */
-  orderBy?: Prisma.postagemOrderByWithRelationInput | Prisma.postagemOrderByWithRelationInput[]
+  orderBy?: Prisma.PostagemOrderByWithRelationInput | Prisma.PostagemOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.postagemWhereUniqueInput
+  cursor?: Prisma.PostagemWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` postagems from the position of the cursor.
+   * Take `±n` Postagems from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` postagems.
+   * Skip the first `n` Postagems.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned postagems
+   * Count returned Postagems
   **/
   _count?: true | PostagemCountAggregateInputType
   /**
@@ -185,11 +185,11 @@ export type GetPostagemAggregateType<T extends PostagemAggregateArgs> = {
 
 
 
-export type postagemGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.postagemWhereInput
-  orderBy?: Prisma.postagemOrderByWithAggregationInput | Prisma.postagemOrderByWithAggregationInput[]
+export type PostagemGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PostagemWhereInput
+  orderBy?: Prisma.PostagemOrderByWithAggregationInput | Prisma.PostagemOrderByWithAggregationInput[]
   by: Prisma.PostagemScalarFieldEnum[] | Prisma.PostagemScalarFieldEnum
-  having?: Prisma.postagemScalarWhereWithAggregatesInput
+  having?: Prisma.PostagemScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: PostagemCountAggregateInputType | true
@@ -214,7 +214,7 @@ export type PostagemGroupByOutputType = {
   _max: PostagemMaxAggregateOutputType | null
 }
 
-type GetPostagemGroupByPayload<T extends postagemGroupByArgs> = Prisma.PrismaPromise<
+type GetPostagemGroupByPayload<T extends PostagemGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<PostagemGroupByOutputType, T['by']> &
       {
@@ -229,22 +229,22 @@ type GetPostagemGroupByPayload<T extends postagemGroupByArgs> = Prisma.PrismaPro
 
 
 
-export type postagemWhereInput = {
-  AND?: Prisma.postagemWhereInput | Prisma.postagemWhereInput[]
-  OR?: Prisma.postagemWhereInput[]
-  NOT?: Prisma.postagemWhereInput | Prisma.postagemWhereInput[]
-  id?: Prisma.IntFilter<"postagem"> | number
-  id_postagem?: Prisma.IntFilter<"postagem"> | number
-  titulo?: Prisma.StringFilter<"postagem"> | string
-  mensagem?: Prisma.StringFilter<"postagem"> | string
-  tipo?: Prisma.StringFilter<"postagem"> | string
-  data?: Prisma.DateTimeFilter<"postagem"> | Date | string
-  id_dentista?: Prisma.IntFilter<"postagem"> | number
-  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.dentistaWhereInput>
-  imagem_postagem?: Prisma.Imagem_postagemListRelationFilter
+export type PostagemWhereInput = {
+  AND?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
+  OR?: Prisma.PostagemWhereInput[]
+  NOT?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
+  id?: Prisma.IntFilter<"Postagem"> | number
+  id_postagem?: Prisma.IntFilter<"Postagem"> | number
+  titulo?: Prisma.StringFilter<"Postagem"> | string
+  mensagem?: Prisma.StringFilter<"Postagem"> | string
+  tipo?: Prisma.StringFilter<"Postagem"> | string
+  data?: Prisma.DateTimeFilter<"Postagem"> | Date | string
+  id_dentista?: Prisma.IntFilter<"Postagem"> | number
+  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
+  imagem_postagem?: Prisma.ImagemPostagemListRelationFilter
 }
 
-export type postagemOrderByWithRelationInput = {
+export type PostagemOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -252,26 +252,26 @@ export type postagemOrderByWithRelationInput = {
   tipo?: Prisma.SortOrder
   data?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
-  dentista?: Prisma.dentistaOrderByWithRelationInput
-  imagem_postagem?: Prisma.imagem_postagemOrderByRelationAggregateInput
+  dentista?: Prisma.DentistaOrderByWithRelationInput
+  imagem_postagem?: Prisma.ImagemPostagemOrderByRelationAggregateInput
 }
 
-export type postagemWhereUniqueInput = Prisma.AtLeast<{
+export type PostagemWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   id_dentista?: number
-  AND?: Prisma.postagemWhereInput | Prisma.postagemWhereInput[]
-  OR?: Prisma.postagemWhereInput[]
-  NOT?: Prisma.postagemWhereInput | Prisma.postagemWhereInput[]
-  id_postagem?: Prisma.IntFilter<"postagem"> | number
-  titulo?: Prisma.StringFilter<"postagem"> | string
-  mensagem?: Prisma.StringFilter<"postagem"> | string
-  tipo?: Prisma.StringFilter<"postagem"> | string
-  data?: Prisma.DateTimeFilter<"postagem"> | Date | string
-  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.dentistaWhereInput>
-  imagem_postagem?: Prisma.Imagem_postagemListRelationFilter
+  AND?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
+  OR?: Prisma.PostagemWhereInput[]
+  NOT?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
+  id_postagem?: Prisma.IntFilter<"Postagem"> | number
+  titulo?: Prisma.StringFilter<"Postagem"> | string
+  mensagem?: Prisma.StringFilter<"Postagem"> | string
+  tipo?: Prisma.StringFilter<"Postagem"> | string
+  data?: Prisma.DateTimeFilter<"Postagem"> | Date | string
+  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
+  imagem_postagem?: Prisma.ImagemPostagemListRelationFilter
 }, "id" | "id_dentista">
 
-export type postagemOrderByWithAggregationInput = {
+export type PostagemOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -279,37 +279,37 @@ export type postagemOrderByWithAggregationInput = {
   tipo?: Prisma.SortOrder
   data?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
-  _count?: Prisma.postagemCountOrderByAggregateInput
-  _avg?: Prisma.postagemAvgOrderByAggregateInput
-  _max?: Prisma.postagemMaxOrderByAggregateInput
-  _min?: Prisma.postagemMinOrderByAggregateInput
-  _sum?: Prisma.postagemSumOrderByAggregateInput
+  _count?: Prisma.PostagemCountOrderByAggregateInput
+  _avg?: Prisma.PostagemAvgOrderByAggregateInput
+  _max?: Prisma.PostagemMaxOrderByAggregateInput
+  _min?: Prisma.PostagemMinOrderByAggregateInput
+  _sum?: Prisma.PostagemSumOrderByAggregateInput
 }
 
-export type postagemScalarWhereWithAggregatesInput = {
-  AND?: Prisma.postagemScalarWhereWithAggregatesInput | Prisma.postagemScalarWhereWithAggregatesInput[]
-  OR?: Prisma.postagemScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.postagemScalarWhereWithAggregatesInput | Prisma.postagemScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"postagem"> | number
-  id_postagem?: Prisma.IntWithAggregatesFilter<"postagem"> | number
-  titulo?: Prisma.StringWithAggregatesFilter<"postagem"> | string
-  mensagem?: Prisma.StringWithAggregatesFilter<"postagem"> | string
-  tipo?: Prisma.StringWithAggregatesFilter<"postagem"> | string
-  data?: Prisma.DateTimeWithAggregatesFilter<"postagem"> | Date | string
-  id_dentista?: Prisma.IntWithAggregatesFilter<"postagem"> | number
+export type PostagemScalarWhereWithAggregatesInput = {
+  AND?: Prisma.PostagemScalarWhereWithAggregatesInput | Prisma.PostagemScalarWhereWithAggregatesInput[]
+  OR?: Prisma.PostagemScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.PostagemScalarWhereWithAggregatesInput | Prisma.PostagemScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"Postagem"> | number
+  id_postagem?: Prisma.IntWithAggregatesFilter<"Postagem"> | number
+  titulo?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
+  mensagem?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
+  tipo?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
+  data?: Prisma.DateTimeWithAggregatesFilter<"Postagem"> | Date | string
+  id_dentista?: Prisma.IntWithAggregatesFilter<"Postagem"> | number
 }
 
-export type postagemCreateInput = {
+export type PostagemCreateInput = {
   id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
   data: Date | string
-  dentista: Prisma.dentistaCreateNestedOneWithoutPostagenInput
-  imagem_postagem?: Prisma.imagem_postagemCreateNestedManyWithoutPostagemInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutPostagemInput
+  imagem_postagem?: Prisma.ImagemPostagemCreateNestedManyWithoutPostagemInput
 }
 
-export type postagemUncheckedCreateInput = {
+export type PostagemUncheckedCreateInput = {
   id?: number
   id_postagem: number
   titulo: string
@@ -317,20 +317,20 @@ export type postagemUncheckedCreateInput = {
   tipo: string
   data: Date | string
   id_dentista: number
-  imagem_postagem?: Prisma.imagem_postagemUncheckedCreateNestedManyWithoutPostagemInput
+  imagem_postagem?: Prisma.ImagemPostagemUncheckedCreateNestedManyWithoutPostagemInput
 }
 
-export type postagemUpdateInput = {
+export type PostagemUpdateInput = {
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
   data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutPostagenNestedInput
-  imagem_postagem?: Prisma.imagem_postagemUpdateManyWithoutPostagemNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutPostagemNestedInput
+  imagem_postagem?: Prisma.ImagemPostagemUpdateManyWithoutPostagemNestedInput
 }
 
-export type postagemUncheckedUpdateInput = {
+export type PostagemUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -338,10 +338,10 @@ export type postagemUncheckedUpdateInput = {
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
   data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
-  imagem_postagem?: Prisma.imagem_postagemUncheckedUpdateManyWithoutPostagemNestedInput
+  imagem_postagem?: Prisma.ImagemPostagemUncheckedUpdateManyWithoutPostagemNestedInput
 }
 
-export type postagemCreateManyInput = {
+export type PostagemCreateManyInput = {
   id?: number
   id_postagem: number
   titulo: string
@@ -351,7 +351,7 @@ export type postagemCreateManyInput = {
   id_dentista: number
 }
 
-export type postagemUpdateManyMutationInput = {
+export type PostagemUpdateManyMutationInput = {
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
@@ -359,7 +359,7 @@ export type postagemUpdateManyMutationInput = {
   data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type postagemUncheckedUpdateManyInput = {
+export type PostagemUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -370,21 +370,21 @@ export type postagemUncheckedUpdateManyInput = {
 }
 
 export type PostagemListRelationFilter = {
-  every?: Prisma.postagemWhereInput
-  some?: Prisma.postagemWhereInput
-  none?: Prisma.postagemWhereInput
+  every?: Prisma.PostagemWhereInput
+  some?: Prisma.PostagemWhereInput
+  none?: Prisma.PostagemWhereInput
 }
 
-export type postagemOrderByRelationAggregateInput = {
+export type PostagemOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
 export type PostagemScalarRelationFilter = {
-  is?: Prisma.postagemWhereInput
-  isNot?: Prisma.postagemWhereInput
+  is?: Prisma.PostagemWhereInput
+  isNot?: Prisma.PostagemWhereInput
 }
 
-export type postagemCountOrderByAggregateInput = {
+export type PostagemCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -394,23 +394,13 @@ export type postagemCountOrderByAggregateInput = {
   id_dentista?: Prisma.SortOrder
 }
 
-export type postagemAvgOrderByAggregateInput = {
+export type PostagemAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
 }
 
-export type postagemMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
-  titulo?: Prisma.SortOrder
-  mensagem?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  data?: Prisma.SortOrder
-  id_dentista?: Prisma.SortOrder
-}
-
-export type postagemMinOrderByAggregateInput = {
+export type PostagemMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -420,136 +410,146 @@ export type postagemMinOrderByAggregateInput = {
   id_dentista?: Prisma.SortOrder
 }
 
-export type postagemSumOrderByAggregateInput = {
+export type PostagemMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  id_postagem?: Prisma.SortOrder
+  titulo?: Prisma.SortOrder
+  mensagem?: Prisma.SortOrder
+  tipo?: Prisma.SortOrder
+  data?: Prisma.SortOrder
+  id_dentista?: Prisma.SortOrder
+}
+
+export type PostagemSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
 }
 
-export type postagemCreateNestedManyWithoutDentistaInput = {
-  create?: Prisma.XOR<Prisma.postagemCreateWithoutDentistaInput, Prisma.postagemUncheckedCreateWithoutDentistaInput> | Prisma.postagemCreateWithoutDentistaInput[] | Prisma.postagemUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.postagemCreateOrConnectWithoutDentistaInput | Prisma.postagemCreateOrConnectWithoutDentistaInput[]
-  createMany?: Prisma.postagemCreateManyDentistaInputEnvelope
-  connect?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
+export type PostagemCreateNestedManyWithoutDentistaInput = {
+  create?: Prisma.XOR<Prisma.PostagemCreateWithoutDentistaInput, Prisma.PostagemUncheckedCreateWithoutDentistaInput> | Prisma.PostagemCreateWithoutDentistaInput[] | Prisma.PostagemUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.PostagemCreateOrConnectWithoutDentistaInput | Prisma.PostagemCreateOrConnectWithoutDentistaInput[]
+  createMany?: Prisma.PostagemCreateManyDentistaInputEnvelope
+  connect?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
 }
 
-export type postagemUncheckedCreateNestedManyWithoutDentistaInput = {
-  create?: Prisma.XOR<Prisma.postagemCreateWithoutDentistaInput, Prisma.postagemUncheckedCreateWithoutDentistaInput> | Prisma.postagemCreateWithoutDentistaInput[] | Prisma.postagemUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.postagemCreateOrConnectWithoutDentistaInput | Prisma.postagemCreateOrConnectWithoutDentistaInput[]
-  createMany?: Prisma.postagemCreateManyDentistaInputEnvelope
-  connect?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
+export type PostagemUncheckedCreateNestedManyWithoutDentistaInput = {
+  create?: Prisma.XOR<Prisma.PostagemCreateWithoutDentistaInput, Prisma.PostagemUncheckedCreateWithoutDentistaInput> | Prisma.PostagemCreateWithoutDentistaInput[] | Prisma.PostagemUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.PostagemCreateOrConnectWithoutDentistaInput | Prisma.PostagemCreateOrConnectWithoutDentistaInput[]
+  createMany?: Prisma.PostagemCreateManyDentistaInputEnvelope
+  connect?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
 }
 
-export type postagemUpdateManyWithoutDentistaNestedInput = {
-  create?: Prisma.XOR<Prisma.postagemCreateWithoutDentistaInput, Prisma.postagemUncheckedCreateWithoutDentistaInput> | Prisma.postagemCreateWithoutDentistaInput[] | Prisma.postagemUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.postagemCreateOrConnectWithoutDentistaInput | Prisma.postagemCreateOrConnectWithoutDentistaInput[]
-  upsert?: Prisma.postagemUpsertWithWhereUniqueWithoutDentistaInput | Prisma.postagemUpsertWithWhereUniqueWithoutDentistaInput[]
-  createMany?: Prisma.postagemCreateManyDentistaInputEnvelope
-  set?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  disconnect?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  delete?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  connect?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  update?: Prisma.postagemUpdateWithWhereUniqueWithoutDentistaInput | Prisma.postagemUpdateWithWhereUniqueWithoutDentistaInput[]
-  updateMany?: Prisma.postagemUpdateManyWithWhereWithoutDentistaInput | Prisma.postagemUpdateManyWithWhereWithoutDentistaInput[]
-  deleteMany?: Prisma.postagemScalarWhereInput | Prisma.postagemScalarWhereInput[]
+export type PostagemUpdateManyWithoutDentistaNestedInput = {
+  create?: Prisma.XOR<Prisma.PostagemCreateWithoutDentistaInput, Prisma.PostagemUncheckedCreateWithoutDentistaInput> | Prisma.PostagemCreateWithoutDentistaInput[] | Prisma.PostagemUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.PostagemCreateOrConnectWithoutDentistaInput | Prisma.PostagemCreateOrConnectWithoutDentistaInput[]
+  upsert?: Prisma.PostagemUpsertWithWhereUniqueWithoutDentistaInput | Prisma.PostagemUpsertWithWhereUniqueWithoutDentistaInput[]
+  createMany?: Prisma.PostagemCreateManyDentistaInputEnvelope
+  set?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  disconnect?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  delete?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  connect?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  update?: Prisma.PostagemUpdateWithWhereUniqueWithoutDentistaInput | Prisma.PostagemUpdateWithWhereUniqueWithoutDentistaInput[]
+  updateMany?: Prisma.PostagemUpdateManyWithWhereWithoutDentistaInput | Prisma.PostagemUpdateManyWithWhereWithoutDentistaInput[]
+  deleteMany?: Prisma.PostagemScalarWhereInput | Prisma.PostagemScalarWhereInput[]
 }
 
-export type postagemUncheckedUpdateManyWithoutDentistaNestedInput = {
-  create?: Prisma.XOR<Prisma.postagemCreateWithoutDentistaInput, Prisma.postagemUncheckedCreateWithoutDentistaInput> | Prisma.postagemCreateWithoutDentistaInput[] | Prisma.postagemUncheckedCreateWithoutDentistaInput[]
-  connectOrCreate?: Prisma.postagemCreateOrConnectWithoutDentistaInput | Prisma.postagemCreateOrConnectWithoutDentistaInput[]
-  upsert?: Prisma.postagemUpsertWithWhereUniqueWithoutDentistaInput | Prisma.postagemUpsertWithWhereUniqueWithoutDentistaInput[]
-  createMany?: Prisma.postagemCreateManyDentistaInputEnvelope
-  set?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  disconnect?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  delete?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  connect?: Prisma.postagemWhereUniqueInput | Prisma.postagemWhereUniqueInput[]
-  update?: Prisma.postagemUpdateWithWhereUniqueWithoutDentistaInput | Prisma.postagemUpdateWithWhereUniqueWithoutDentistaInput[]
-  updateMany?: Prisma.postagemUpdateManyWithWhereWithoutDentistaInput | Prisma.postagemUpdateManyWithWhereWithoutDentistaInput[]
-  deleteMany?: Prisma.postagemScalarWhereInput | Prisma.postagemScalarWhereInput[]
+export type PostagemUncheckedUpdateManyWithoutDentistaNestedInput = {
+  create?: Prisma.XOR<Prisma.PostagemCreateWithoutDentistaInput, Prisma.PostagemUncheckedCreateWithoutDentistaInput> | Prisma.PostagemCreateWithoutDentistaInput[] | Prisma.PostagemUncheckedCreateWithoutDentistaInput[]
+  connectOrCreate?: Prisma.PostagemCreateOrConnectWithoutDentistaInput | Prisma.PostagemCreateOrConnectWithoutDentistaInput[]
+  upsert?: Prisma.PostagemUpsertWithWhereUniqueWithoutDentistaInput | Prisma.PostagemUpsertWithWhereUniqueWithoutDentistaInput[]
+  createMany?: Prisma.PostagemCreateManyDentistaInputEnvelope
+  set?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  disconnect?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  delete?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  connect?: Prisma.PostagemWhereUniqueInput | Prisma.PostagemWhereUniqueInput[]
+  update?: Prisma.PostagemUpdateWithWhereUniqueWithoutDentistaInput | Prisma.PostagemUpdateWithWhereUniqueWithoutDentistaInput[]
+  updateMany?: Prisma.PostagemUpdateManyWithWhereWithoutDentistaInput | Prisma.PostagemUpdateManyWithWhereWithoutDentistaInput[]
+  deleteMany?: Prisma.PostagemScalarWhereInput | Prisma.PostagemScalarWhereInput[]
 }
 
-export type postagemCreateNestedOneWithoutImagem_postagemInput = {
-  create?: Prisma.XOR<Prisma.postagemCreateWithoutImagem_postagemInput, Prisma.postagemUncheckedCreateWithoutImagem_postagemInput>
-  connectOrCreate?: Prisma.postagemCreateOrConnectWithoutImagem_postagemInput
-  connect?: Prisma.postagemWhereUniqueInput
+export type PostagemCreateNestedOneWithoutImagem_postagemInput = {
+  create?: Prisma.XOR<Prisma.PostagemCreateWithoutImagem_postagemInput, Prisma.PostagemUncheckedCreateWithoutImagem_postagemInput>
+  connectOrCreate?: Prisma.PostagemCreateOrConnectWithoutImagem_postagemInput
+  connect?: Prisma.PostagemWhereUniqueInput
 }
 
-export type postagemUpdateOneRequiredWithoutImagem_postagemNestedInput = {
-  create?: Prisma.XOR<Prisma.postagemCreateWithoutImagem_postagemInput, Prisma.postagemUncheckedCreateWithoutImagem_postagemInput>
-  connectOrCreate?: Prisma.postagemCreateOrConnectWithoutImagem_postagemInput
-  upsert?: Prisma.postagemUpsertWithoutImagem_postagemInput
-  connect?: Prisma.postagemWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.postagemUpdateToOneWithWhereWithoutImagem_postagemInput, Prisma.postagemUpdateWithoutImagem_postagemInput>, Prisma.postagemUncheckedUpdateWithoutImagem_postagemInput>
+export type PostagemUpdateOneRequiredWithoutImagem_postagemNestedInput = {
+  create?: Prisma.XOR<Prisma.PostagemCreateWithoutImagem_postagemInput, Prisma.PostagemUncheckedCreateWithoutImagem_postagemInput>
+  connectOrCreate?: Prisma.PostagemCreateOrConnectWithoutImagem_postagemInput
+  upsert?: Prisma.PostagemUpsertWithoutImagem_postagemInput
+  connect?: Prisma.PostagemWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PostagemUpdateToOneWithWhereWithoutImagem_postagemInput, Prisma.PostagemUpdateWithoutImagem_postagemInput>, Prisma.PostagemUncheckedUpdateWithoutImagem_postagemInput>
 }
 
-export type postagemCreateWithoutDentistaInput = {
+export type PostagemCreateWithoutDentistaInput = {
   id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
   data: Date | string
-  imagem_postagem?: Prisma.imagem_postagemCreateNestedManyWithoutPostagemInput
+  imagem_postagem?: Prisma.ImagemPostagemCreateNestedManyWithoutPostagemInput
 }
 
-export type postagemUncheckedCreateWithoutDentistaInput = {
+export type PostagemUncheckedCreateWithoutDentistaInput = {
   id?: number
   id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
   data: Date | string
-  imagem_postagem?: Prisma.imagem_postagemUncheckedCreateNestedManyWithoutPostagemInput
+  imagem_postagem?: Prisma.ImagemPostagemUncheckedCreateNestedManyWithoutPostagemInput
 }
 
-export type postagemCreateOrConnectWithoutDentistaInput = {
-  where: Prisma.postagemWhereUniqueInput
-  create: Prisma.XOR<Prisma.postagemCreateWithoutDentistaInput, Prisma.postagemUncheckedCreateWithoutDentistaInput>
+export type PostagemCreateOrConnectWithoutDentistaInput = {
+  where: Prisma.PostagemWhereUniqueInput
+  create: Prisma.XOR<Prisma.PostagemCreateWithoutDentistaInput, Prisma.PostagemUncheckedCreateWithoutDentistaInput>
 }
 
-export type postagemCreateManyDentistaInputEnvelope = {
-  data: Prisma.postagemCreateManyDentistaInput | Prisma.postagemCreateManyDentistaInput[]
+export type PostagemCreateManyDentistaInputEnvelope = {
+  data: Prisma.PostagemCreateManyDentistaInput | Prisma.PostagemCreateManyDentistaInput[]
   skipDuplicates?: boolean
 }
 
-export type postagemUpsertWithWhereUniqueWithoutDentistaInput = {
-  where: Prisma.postagemWhereUniqueInput
-  update: Prisma.XOR<Prisma.postagemUpdateWithoutDentistaInput, Prisma.postagemUncheckedUpdateWithoutDentistaInput>
-  create: Prisma.XOR<Prisma.postagemCreateWithoutDentistaInput, Prisma.postagemUncheckedCreateWithoutDentistaInput>
+export type PostagemUpsertWithWhereUniqueWithoutDentistaInput = {
+  where: Prisma.PostagemWhereUniqueInput
+  update: Prisma.XOR<Prisma.PostagemUpdateWithoutDentistaInput, Prisma.PostagemUncheckedUpdateWithoutDentistaInput>
+  create: Prisma.XOR<Prisma.PostagemCreateWithoutDentistaInput, Prisma.PostagemUncheckedCreateWithoutDentistaInput>
 }
 
-export type postagemUpdateWithWhereUniqueWithoutDentistaInput = {
-  where: Prisma.postagemWhereUniqueInput
-  data: Prisma.XOR<Prisma.postagemUpdateWithoutDentistaInput, Prisma.postagemUncheckedUpdateWithoutDentistaInput>
+export type PostagemUpdateWithWhereUniqueWithoutDentistaInput = {
+  where: Prisma.PostagemWhereUniqueInput
+  data: Prisma.XOR<Prisma.PostagemUpdateWithoutDentistaInput, Prisma.PostagemUncheckedUpdateWithoutDentistaInput>
 }
 
-export type postagemUpdateManyWithWhereWithoutDentistaInput = {
-  where: Prisma.postagemScalarWhereInput
-  data: Prisma.XOR<Prisma.postagemUpdateManyMutationInput, Prisma.postagemUncheckedUpdateManyWithoutDentistaInput>
+export type PostagemUpdateManyWithWhereWithoutDentistaInput = {
+  where: Prisma.PostagemScalarWhereInput
+  data: Prisma.XOR<Prisma.PostagemUpdateManyMutationInput, Prisma.PostagemUncheckedUpdateManyWithoutDentistaInput>
 }
 
-export type postagemScalarWhereInput = {
-  AND?: Prisma.postagemScalarWhereInput | Prisma.postagemScalarWhereInput[]
-  OR?: Prisma.postagemScalarWhereInput[]
-  NOT?: Prisma.postagemScalarWhereInput | Prisma.postagemScalarWhereInput[]
-  id?: Prisma.IntFilter<"postagem"> | number
-  id_postagem?: Prisma.IntFilter<"postagem"> | number
-  titulo?: Prisma.StringFilter<"postagem"> | string
-  mensagem?: Prisma.StringFilter<"postagem"> | string
-  tipo?: Prisma.StringFilter<"postagem"> | string
-  data?: Prisma.DateTimeFilter<"postagem"> | Date | string
-  id_dentista?: Prisma.IntFilter<"postagem"> | number
+export type PostagemScalarWhereInput = {
+  AND?: Prisma.PostagemScalarWhereInput | Prisma.PostagemScalarWhereInput[]
+  OR?: Prisma.PostagemScalarWhereInput[]
+  NOT?: Prisma.PostagemScalarWhereInput | Prisma.PostagemScalarWhereInput[]
+  id?: Prisma.IntFilter<"Postagem"> | number
+  id_postagem?: Prisma.IntFilter<"Postagem"> | number
+  titulo?: Prisma.StringFilter<"Postagem"> | string
+  mensagem?: Prisma.StringFilter<"Postagem"> | string
+  tipo?: Prisma.StringFilter<"Postagem"> | string
+  data?: Prisma.DateTimeFilter<"Postagem"> | Date | string
+  id_dentista?: Prisma.IntFilter<"Postagem"> | number
 }
 
-export type postagemCreateWithoutImagem_postagemInput = {
+export type PostagemCreateWithoutImagem_postagemInput = {
   id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
   data: Date | string
-  dentista: Prisma.dentistaCreateNestedOneWithoutPostagenInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutPostagemInput
 }
 
-export type postagemUncheckedCreateWithoutImagem_postagemInput = {
+export type PostagemUncheckedCreateWithoutImagem_postagemInput = {
   id?: number
   id_postagem: number
   titulo: string
@@ -559,32 +559,32 @@ export type postagemUncheckedCreateWithoutImagem_postagemInput = {
   id_dentista: number
 }
 
-export type postagemCreateOrConnectWithoutImagem_postagemInput = {
-  where: Prisma.postagemWhereUniqueInput
-  create: Prisma.XOR<Prisma.postagemCreateWithoutImagem_postagemInput, Prisma.postagemUncheckedCreateWithoutImagem_postagemInput>
+export type PostagemCreateOrConnectWithoutImagem_postagemInput = {
+  where: Prisma.PostagemWhereUniqueInput
+  create: Prisma.XOR<Prisma.PostagemCreateWithoutImagem_postagemInput, Prisma.PostagemUncheckedCreateWithoutImagem_postagemInput>
 }
 
-export type postagemUpsertWithoutImagem_postagemInput = {
-  update: Prisma.XOR<Prisma.postagemUpdateWithoutImagem_postagemInput, Prisma.postagemUncheckedUpdateWithoutImagem_postagemInput>
-  create: Prisma.XOR<Prisma.postagemCreateWithoutImagem_postagemInput, Prisma.postagemUncheckedCreateWithoutImagem_postagemInput>
-  where?: Prisma.postagemWhereInput
+export type PostagemUpsertWithoutImagem_postagemInput = {
+  update: Prisma.XOR<Prisma.PostagemUpdateWithoutImagem_postagemInput, Prisma.PostagemUncheckedUpdateWithoutImagem_postagemInput>
+  create: Prisma.XOR<Prisma.PostagemCreateWithoutImagem_postagemInput, Prisma.PostagemUncheckedCreateWithoutImagem_postagemInput>
+  where?: Prisma.PostagemWhereInput
 }
 
-export type postagemUpdateToOneWithWhereWithoutImagem_postagemInput = {
-  where?: Prisma.postagemWhereInput
-  data: Prisma.XOR<Prisma.postagemUpdateWithoutImagem_postagemInput, Prisma.postagemUncheckedUpdateWithoutImagem_postagemInput>
+export type PostagemUpdateToOneWithWhereWithoutImagem_postagemInput = {
+  where?: Prisma.PostagemWhereInput
+  data: Prisma.XOR<Prisma.PostagemUpdateWithoutImagem_postagemInput, Prisma.PostagemUncheckedUpdateWithoutImagem_postagemInput>
 }
 
-export type postagemUpdateWithoutImagem_postagemInput = {
+export type PostagemUpdateWithoutImagem_postagemInput = {
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
   data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dentista?: Prisma.dentistaUpdateOneRequiredWithoutPostagenNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutPostagemNestedInput
 }
 
-export type postagemUncheckedUpdateWithoutImagem_postagemInput = {
+export type PostagemUncheckedUpdateWithoutImagem_postagemInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -594,7 +594,7 @@ export type postagemUncheckedUpdateWithoutImagem_postagemInput = {
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
-export type postagemCreateManyDentistaInput = {
+export type PostagemCreateManyDentistaInput = {
   id?: number
   id_postagem: number
   titulo: string
@@ -603,26 +603,26 @@ export type postagemCreateManyDentistaInput = {
   data: Date | string
 }
 
-export type postagemUpdateWithoutDentistaInput = {
+export type PostagemUpdateWithoutDentistaInput = {
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
   data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  imagem_postagem?: Prisma.imagem_postagemUpdateManyWithoutPostagemNestedInput
+  imagem_postagem?: Prisma.ImagemPostagemUpdateManyWithoutPostagemNestedInput
 }
 
-export type postagemUncheckedUpdateWithoutDentistaInput = {
+export type PostagemUncheckedUpdateWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
   data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  imagem_postagem?: Prisma.imagem_postagemUncheckedUpdateManyWithoutPostagemNestedInput
+  imagem_postagem?: Prisma.ImagemPostagemUncheckedUpdateManyWithoutPostagemNestedInput
 }
 
-export type postagemUncheckedUpdateManyWithoutDentistaInput = {
+export type PostagemUncheckedUpdateManyWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -658,11 +658,11 @@ export type PostagemCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
  * PostagemCountOutputType without action
  */
 export type PostagemCountOutputTypeCountImagem_postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.imagem_postagemWhereInput
+  where?: Prisma.ImagemPostagemWhereInput
 }
 
 
-export type postagemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type PostagemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_postagem?: boolean
   titulo?: boolean
@@ -670,12 +670,12 @@ export type postagemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   tipo?: boolean
   data?: boolean
   id_dentista?: boolean
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  imagem_postagem?: boolean | Prisma.postagem$imagem_postagemArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  imagem_postagem?: boolean | Prisma.Postagem$imagem_postagemArgs<ExtArgs>
   _count?: boolean | Prisma.PostagemCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagem"]>
 
-export type postagemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type PostagemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_postagem?: boolean
   titulo?: boolean
@@ -683,10 +683,10 @@ export type postagemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   tipo?: boolean
   data?: boolean
   id_dentista?: boolean
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagem"]>
 
-export type postagemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type PostagemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   id_postagem?: boolean
   titulo?: boolean
@@ -694,10 +694,10 @@ export type postagemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   tipo?: boolean
   data?: boolean
   id_dentista?: boolean
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagem"]>
 
-export type postagemSelectScalar = {
+export type PostagemSelectScalar = {
   id?: boolean
   id_postagem?: boolean
   titulo?: boolean
@@ -707,24 +707,24 @@ export type postagemSelectScalar = {
   id_dentista?: boolean
 }
 
-export type postagemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_postagem" | "titulo" | "mensagem" | "tipo" | "data" | "id_dentista", ExtArgs["result"]["postagem"]>
-export type postagemInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
-  imagem_postagem?: boolean | Prisma.postagem$imagem_postagemArgs<ExtArgs>
+export type PostagemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_postagem" | "titulo" | "mensagem" | "tipo" | "data" | "id_dentista", ExtArgs["result"]["postagem"]>
+export type PostagemInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  imagem_postagem?: boolean | Prisma.Postagem$imagem_postagemArgs<ExtArgs>
   _count?: boolean | Prisma.PostagemCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type postagemIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
+export type PostagemIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }
-export type postagemIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  dentista?: boolean | Prisma.dentistaDefaultArgs<ExtArgs>
+export type PostagemIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }
 
-export type $postagemPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "postagem"
+export type $PostagemPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "Postagem"
   objects: {
-    dentista: Prisma.$dentistaPayload<ExtArgs>
-    imagem_postagem: Prisma.$imagem_postagemPayload<ExtArgs>[]
+    dentista: Prisma.$DentistaPayload<ExtArgs>
+    imagem_postagem: Prisma.$ImagemPostagemPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -738,18 +738,18 @@ export type $postagemPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   composites: {}
 }
 
-export type postagemGetPayload<S extends boolean | null | undefined | postagemDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$postagemPayload, S>
+export type PostagemGetPayload<S extends boolean | null | undefined | PostagemDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PostagemPayload, S>
 
-export type postagemCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<postagemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type PostagemCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<PostagemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: PostagemCountAggregateInputType | true
   }
 
-export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['postagem'], meta: { name: 'postagem' } }
+export interface PostagemDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Postagem'], meta: { name: 'Postagem' } }
   /**
    * Find zero or one Postagem that matches the filter.
-   * @param {postagemFindUniqueArgs} args - Arguments to find a Postagem
+   * @param {PostagemFindUniqueArgs} args - Arguments to find a Postagem
    * @example
    * // Get one Postagem
    * const postagem = await prisma.postagem.findUnique({
@@ -758,12 +758,12 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUnique<T extends postagemFindUniqueArgs>(args: Prisma.SelectSubset<T, postagemFindUniqueArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends PostagemFindUniqueArgs>(args: Prisma.SelectSubset<T, PostagemFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Postagem that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {postagemFindUniqueOrThrowArgs} args - Arguments to find a Postagem
+   * @param {PostagemFindUniqueOrThrowArgs} args - Arguments to find a Postagem
    * @example
    * // Get one Postagem
    * const postagem = await prisma.postagem.findUniqueOrThrow({
@@ -772,13 +772,13 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findUniqueOrThrow<T extends postagemFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, postagemFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends PostagemFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PostagemFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Postagem that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {postagemFindFirstArgs} args - Arguments to find a Postagem
+   * @param {PostagemFindFirstArgs} args - Arguments to find a Postagem
    * @example
    * // Get one Postagem
    * const postagem = await prisma.postagem.findFirst({
@@ -787,14 +787,14 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirst<T extends postagemFindFirstArgs>(args?: Prisma.SelectSubset<T, postagemFindFirstArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends PostagemFindFirstArgs>(args?: Prisma.SelectSubset<T, PostagemFindFirstArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Postagem that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {postagemFindFirstOrThrowArgs} args - Arguments to find a Postagem
+   * @param {PostagemFindFirstOrThrowArgs} args - Arguments to find a Postagem
    * @example
    * // Get one Postagem
    * const postagem = await prisma.postagem.findFirstOrThrow({
@@ -803,13 +803,13 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  findFirstOrThrow<T extends postagemFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, postagemFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends PostagemFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PostagemFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Postagems that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {postagemFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {PostagemFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Postagems
    * const postagems = await prisma.postagem.findMany()
@@ -821,11 +821,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * const postagemWithIdOnly = await prisma.postagem.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends postagemFindManyArgs>(args?: Prisma.SelectSubset<T, postagemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends PostagemFindManyArgs>(args?: Prisma.SelectSubset<T, PostagemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Postagem.
-   * @param {postagemCreateArgs} args - Arguments to create a Postagem.
+   * @param {PostagemCreateArgs} args - Arguments to create a Postagem.
    * @example
    * // Create one Postagem
    * const Postagem = await prisma.postagem.create({
@@ -835,11 +835,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  create<T extends postagemCreateArgs>(args: Prisma.SelectSubset<T, postagemCreateArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends PostagemCreateArgs>(args: Prisma.SelectSubset<T, PostagemCreateArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Postagems.
-   * @param {postagemCreateManyArgs} args - Arguments to create many Postagems.
+   * @param {PostagemCreateManyArgs} args - Arguments to create many Postagems.
    * @example
    * // Create many Postagems
    * const postagem = await prisma.postagem.createMany({
@@ -849,11 +849,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    *     
    */
-  createMany<T extends postagemCreateManyArgs>(args?: Prisma.SelectSubset<T, postagemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends PostagemCreateManyArgs>(args?: Prisma.SelectSubset<T, PostagemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many Postagems and returns the data saved in the database.
-   * @param {postagemCreateManyAndReturnArgs} args - Arguments to create many Postagems.
+   * @param {PostagemCreateManyAndReturnArgs} args - Arguments to create many Postagems.
    * @example
    * // Create many Postagems
    * const postagem = await prisma.postagem.createManyAndReturn({
@@ -873,11 +873,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends postagemCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, postagemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends PostagemCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, PostagemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a Postagem.
-   * @param {postagemDeleteArgs} args - Arguments to delete one Postagem.
+   * @param {PostagemDeleteArgs} args - Arguments to delete one Postagem.
    * @example
    * // Delete one Postagem
    * const Postagem = await prisma.postagem.delete({
@@ -887,11 +887,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  delete<T extends postagemDeleteArgs>(args: Prisma.SelectSubset<T, postagemDeleteArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends PostagemDeleteArgs>(args: Prisma.SelectSubset<T, PostagemDeleteArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Postagem.
-   * @param {postagemUpdateArgs} args - Arguments to update one Postagem.
+   * @param {PostagemUpdateArgs} args - Arguments to update one Postagem.
    * @example
    * // Update one Postagem
    * const postagem = await prisma.postagem.update({
@@ -904,11 +904,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  update<T extends postagemUpdateArgs>(args: Prisma.SelectSubset<T, postagemUpdateArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends PostagemUpdateArgs>(args: Prisma.SelectSubset<T, PostagemUpdateArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Postagems.
-   * @param {postagemDeleteManyArgs} args - Arguments to filter Postagems to delete.
+   * @param {PostagemDeleteManyArgs} args - Arguments to filter Postagems to delete.
    * @example
    * // Delete a few Postagems
    * const { count } = await prisma.postagem.deleteMany({
@@ -918,13 +918,13 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  deleteMany<T extends postagemDeleteManyArgs>(args?: Prisma.SelectSubset<T, postagemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends PostagemDeleteManyArgs>(args?: Prisma.SelectSubset<T, PostagemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Postagems.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {postagemUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {PostagemUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Postagems
    * const postagem = await prisma.postagem.updateMany({
@@ -937,11 +937,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * })
    * 
    */
-  updateMany<T extends postagemUpdateManyArgs>(args: Prisma.SelectSubset<T, postagemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends PostagemUpdateManyArgs>(args: Prisma.SelectSubset<T, PostagemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Postagems and returns the data updated in the database.
-   * @param {postagemUpdateManyAndReturnArgs} args - Arguments to update many Postagems.
+   * @param {PostagemUpdateManyAndReturnArgs} args - Arguments to update many Postagems.
    * @example
    * // Update many Postagems
    * const postagem = await prisma.postagem.updateManyAndReturn({
@@ -967,11 +967,11 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends postagemUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, postagemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends PostagemUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, PostagemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one Postagem.
-   * @param {postagemUpsertArgs} args - Arguments to update or create a Postagem.
+   * @param {PostagemUpsertArgs} args - Arguments to update or create a Postagem.
    * @example
    * // Update or create a Postagem
    * const postagem = await prisma.postagem.upsert({
@@ -986,14 +986,14 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
    */
-  upsert<T extends postagemUpsertArgs>(args: Prisma.SelectSubset<T, postagemUpsertArgs<ExtArgs>>): Prisma.Prisma__postagemClient<runtime.Types.Result.GetResult<Prisma.$postagemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends PostagemUpsertArgs>(args: Prisma.SelectSubset<T, PostagemUpsertArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Postagems.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {postagemCountArgs} args - Arguments to filter Postagems to count.
+   * @param {PostagemCountArgs} args - Arguments to filter Postagems to count.
    * @example
    * // Count the number of Postagems
    * const count = await prisma.postagem.count({
@@ -1002,8 +1002,8 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    *   }
    * })
   **/
-  count<T extends postagemCountArgs>(
-    args?: Prisma.Subset<T, postagemCountArgs>,
+  count<T extends PostagemCountArgs>(
+    args?: Prisma.Subset<T, PostagemCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1042,7 +1042,7 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * Group by Postagem.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {postagemGroupByArgs} args - Group by arguments.
+   * @param {PostagemGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1057,14 +1057,14 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
    * 
   **/
   groupBy<
-    T extends postagemGroupByArgs,
+    T extends PostagemGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: postagemGroupByArgs['orderBy'] }
-      : { orderBy?: postagemGroupByArgs['orderBy'] },
+      ? { orderBy: PostagemGroupByArgs['orderBy'] }
+      : { orderBy?: PostagemGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1113,23 +1113,23 @@ export interface postagemDelegate<ExtArgs extends runtime.Types.Extensions.Inter
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, postagemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPostagemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, PostagemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPostagemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the postagem model
+ * Fields of the Postagem model
  */
-readonly fields: postagemFieldRefs;
+readonly fields: PostagemFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for postagem.
+ * The delegate class that acts as a "Promise-like" for Postagem.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__postagemClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__PostagemClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  dentista<T extends Prisma.dentistaDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.dentistaDefaultArgs<ExtArgs>>): Prisma.Prisma__dentistaClient<runtime.Types.Result.GetResult<Prisma.$dentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  imagem_postagem<T extends Prisma.postagem$imagem_postagemArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.postagem$imagem_postagemArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$imagem_postagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  dentista<T extends Prisma.DentistaDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DentistaDefaultArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  imagem_postagem<T extends Prisma.Postagem$imagem_postagemArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Postagem$imagem_postagemArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ImagemPostagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1156,454 +1156,454 @@ export interface Prisma__postagemClient<T, Null = never, ExtArgs extends runtime
 
 
 /**
- * Fields of the postagem model
+ * Fields of the Postagem model
  */
-export interface postagemFieldRefs {
-  readonly id: Prisma.FieldRef<"postagem", 'Int'>
-  readonly id_postagem: Prisma.FieldRef<"postagem", 'Int'>
-  readonly titulo: Prisma.FieldRef<"postagem", 'String'>
-  readonly mensagem: Prisma.FieldRef<"postagem", 'String'>
-  readonly tipo: Prisma.FieldRef<"postagem", 'String'>
-  readonly data: Prisma.FieldRef<"postagem", 'DateTime'>
-  readonly id_dentista: Prisma.FieldRef<"postagem", 'Int'>
+export interface PostagemFieldRefs {
+  readonly id: Prisma.FieldRef<"Postagem", 'Int'>
+  readonly id_postagem: Prisma.FieldRef<"Postagem", 'Int'>
+  readonly titulo: Prisma.FieldRef<"Postagem", 'String'>
+  readonly mensagem: Prisma.FieldRef<"Postagem", 'String'>
+  readonly tipo: Prisma.FieldRef<"Postagem", 'String'>
+  readonly data: Prisma.FieldRef<"Postagem", 'DateTime'>
+  readonly id_dentista: Prisma.FieldRef<"Postagem", 'Int'>
 }
     
 
 // Custom InputTypes
 /**
- * postagem findUnique
+ * Postagem findUnique
  */
-export type postagemFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * Filter, which postagem to fetch.
+   * Filter, which Postagem to fetch.
    */
-  where: Prisma.postagemWhereUniqueInput
+  where: Prisma.PostagemWhereUniqueInput
 }
 
 /**
- * postagem findUniqueOrThrow
+ * Postagem findUniqueOrThrow
  */
-export type postagemFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * Filter, which postagem to fetch.
+   * Filter, which Postagem to fetch.
    */
-  where: Prisma.postagemWhereUniqueInput
+  where: Prisma.PostagemWhereUniqueInput
 }
 
 /**
- * postagem findFirst
+ * Postagem findFirst
  */
-export type postagemFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * Filter, which postagem to fetch.
+   * Filter, which Postagem to fetch.
    */
-  where?: Prisma.postagemWhereInput
+  where?: Prisma.PostagemWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of postagems to fetch.
+   * Determine the order of Postagems to fetch.
    */
-  orderBy?: Prisma.postagemOrderByWithRelationInput | Prisma.postagemOrderByWithRelationInput[]
+  orderBy?: Prisma.PostagemOrderByWithRelationInput | Prisma.PostagemOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for postagems.
+   * Sets the position for searching for Postagems.
    */
-  cursor?: Prisma.postagemWhereUniqueInput
+  cursor?: Prisma.PostagemWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` postagems from the position of the cursor.
+   * Take `±n` Postagems from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` postagems.
+   * Skip the first `n` Postagems.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of postagems.
+   * Filter by unique combinations of Postagems.
    */
   distinct?: Prisma.PostagemScalarFieldEnum | Prisma.PostagemScalarFieldEnum[]
 }
 
 /**
- * postagem findFirstOrThrow
+ * Postagem findFirstOrThrow
  */
-export type postagemFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * Filter, which postagem to fetch.
+   * Filter, which Postagem to fetch.
    */
-  where?: Prisma.postagemWhereInput
+  where?: Prisma.PostagemWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of postagems to fetch.
+   * Determine the order of Postagems to fetch.
    */
-  orderBy?: Prisma.postagemOrderByWithRelationInput | Prisma.postagemOrderByWithRelationInput[]
+  orderBy?: Prisma.PostagemOrderByWithRelationInput | Prisma.PostagemOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for postagems.
+   * Sets the position for searching for Postagems.
    */
-  cursor?: Prisma.postagemWhereUniqueInput
+  cursor?: Prisma.PostagemWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` postagems from the position of the cursor.
+   * Take `±n` Postagems from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` postagems.
+   * Skip the first `n` Postagems.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of postagems.
+   * Filter by unique combinations of Postagems.
    */
   distinct?: Prisma.PostagemScalarFieldEnum | Prisma.PostagemScalarFieldEnum[]
 }
 
 /**
- * postagem findMany
+ * Postagem findMany
  */
-export type postagemFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * Filter, which postagems to fetch.
+   * Filter, which Postagems to fetch.
    */
-  where?: Prisma.postagemWhereInput
+  where?: Prisma.PostagemWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of postagems to fetch.
+   * Determine the order of Postagems to fetch.
    */
-  orderBy?: Prisma.postagemOrderByWithRelationInput | Prisma.postagemOrderByWithRelationInput[]
+  orderBy?: Prisma.PostagemOrderByWithRelationInput | Prisma.PostagemOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing postagems.
+   * Sets the position for listing Postagems.
    */
-  cursor?: Prisma.postagemWhereUniqueInput
+  cursor?: Prisma.PostagemWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` postagems from the position of the cursor.
+   * Take `±n` Postagems from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` postagems.
+   * Skip the first `n` Postagems.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of postagems.
+   * Filter by unique combinations of Postagems.
    */
   distinct?: Prisma.PostagemScalarFieldEnum | Prisma.PostagemScalarFieldEnum[]
 }
 
 /**
- * postagem create
+ * Postagem create
  */
-export type postagemCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * The data needed to create a postagem.
+   * The data needed to create a Postagem.
    */
-  data: Prisma.XOR<Prisma.postagemCreateInput, Prisma.postagemUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.PostagemCreateInput, Prisma.PostagemUncheckedCreateInput>
 }
 
 /**
- * postagem createMany
+ * Postagem createMany
  */
-export type postagemCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many postagems.
+   * The data used to create many Postagems.
    */
-  data: Prisma.postagemCreateManyInput | Prisma.postagemCreateManyInput[]
+  data: Prisma.PostagemCreateManyInput | Prisma.PostagemCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * postagem createManyAndReturn
+ * Postagem createManyAndReturn
  */
-export type postagemCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.PostagemSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
-   * The data used to create many postagems.
+   * The data used to create many Postagems.
    */
-  data: Prisma.postagemCreateManyInput | Prisma.postagemCreateManyInput[]
+  data: Prisma.PostagemCreateManyInput | Prisma.PostagemCreateManyInput[]
   skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemIncludeCreateManyAndReturn<ExtArgs> | null
+  include?: Prisma.PostagemIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * postagem update
+ * Postagem update
  */
-export type postagemUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * The data needed to update a postagem.
+   * The data needed to update a Postagem.
    */
-  data: Prisma.XOR<Prisma.postagemUpdateInput, Prisma.postagemUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.PostagemUpdateInput, Prisma.PostagemUncheckedUpdateInput>
   /**
-   * Choose, which postagem to update.
+   * Choose, which Postagem to update.
    */
-  where: Prisma.postagemWhereUniqueInput
+  where: Prisma.PostagemWhereUniqueInput
 }
 
 /**
- * postagem updateMany
+ * Postagem updateMany
  */
-export type postagemUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update postagems.
+   * The data used to update Postagems.
    */
-  data: Prisma.XOR<Prisma.postagemUpdateManyMutationInput, Prisma.postagemUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PostagemUpdateManyMutationInput, Prisma.PostagemUncheckedUpdateManyInput>
   /**
-   * Filter which postagems to update
+   * Filter which Postagems to update
    */
-  where?: Prisma.postagemWhereInput
+  where?: Prisma.PostagemWhereInput
   /**
-   * Limit how many postagems to update.
+   * Limit how many Postagems to update.
    */
   limit?: number
 }
 
 /**
- * postagem updateManyAndReturn
+ * Postagem updateManyAndReturn
  */
-export type postagemUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.PostagemSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
-   * The data used to update postagems.
+   * The data used to update Postagems.
    */
-  data: Prisma.XOR<Prisma.postagemUpdateManyMutationInput, Prisma.postagemUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PostagemUpdateManyMutationInput, Prisma.PostagemUncheckedUpdateManyInput>
   /**
-   * Filter which postagems to update
+   * Filter which Postagems to update
    */
-  where?: Prisma.postagemWhereInput
+  where?: Prisma.PostagemWhereInput
   /**
-   * Limit how many postagems to update.
+   * Limit how many Postagems to update.
    */
   limit?: number
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemIncludeUpdateManyAndReturn<ExtArgs> | null
+  include?: Prisma.PostagemIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * postagem upsert
+ * Postagem upsert
  */
-export type postagemUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * The filter to search for the postagem to update in case it exists.
+   * The filter to search for the Postagem to update in case it exists.
    */
-  where: Prisma.postagemWhereUniqueInput
+  where: Prisma.PostagemWhereUniqueInput
   /**
-   * In case the postagem found by the `where` argument doesn't exist, create a new postagem with this data.
+   * In case the Postagem found by the `where` argument doesn't exist, create a new Postagem with this data.
    */
-  create: Prisma.XOR<Prisma.postagemCreateInput, Prisma.postagemUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.PostagemCreateInput, Prisma.PostagemUncheckedCreateInput>
   /**
-   * In case the postagem was found with the provided `where` argument, update it with this data.
+   * In case the Postagem was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.postagemUpdateInput, Prisma.postagemUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.PostagemUpdateInput, Prisma.PostagemUncheckedUpdateInput>
 }
 
 /**
- * postagem delete
+ * Postagem delete
  */
-export type postagemDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
   /**
-   * Filter which postagem to delete.
+   * Filter which Postagem to delete.
    */
-  where: Prisma.postagemWhereUniqueInput
+  where: Prisma.PostagemWhereUniqueInput
 }
 
 /**
- * postagem deleteMany
+ * Postagem deleteMany
  */
-export type postagemDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which postagems to delete
+   * Filter which Postagems to delete
    */
-  where?: Prisma.postagemWhereInput
+  where?: Prisma.PostagemWhereInput
   /**
-   * Limit how many postagems to delete.
+   * Limit how many Postagems to delete.
    */
   limit?: number
 }
 
 /**
- * postagem.imagem_postagem
+ * Postagem.imagem_postagem
  */
-export type postagem$imagem_postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Postagem$imagem_postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the imagem_postagem
+   * Select specific fields to fetch from the ImagemPostagem
    */
-  select?: Prisma.imagem_postagemSelect<ExtArgs> | null
+  select?: Prisma.ImagemPostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the imagem_postagem
+   * Omit specific fields from the ImagemPostagem
    */
-  omit?: Prisma.imagem_postagemOmit<ExtArgs> | null
+  omit?: Prisma.ImagemPostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.imagem_postagemInclude<ExtArgs> | null
-  where?: Prisma.imagem_postagemWhereInput
-  orderBy?: Prisma.imagem_postagemOrderByWithRelationInput | Prisma.imagem_postagemOrderByWithRelationInput[]
-  cursor?: Prisma.imagem_postagemWhereUniqueInput
+  include?: Prisma.ImagemPostagemInclude<ExtArgs> | null
+  where?: Prisma.ImagemPostagemWhereInput
+  orderBy?: Prisma.ImagemPostagemOrderByWithRelationInput | Prisma.ImagemPostagemOrderByWithRelationInput[]
+  cursor?: Prisma.ImagemPostagemWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.Imagem_postagemScalarFieldEnum | Prisma.Imagem_postagemScalarFieldEnum[]
+  distinct?: Prisma.ImagemPostagemScalarFieldEnum | Prisma.ImagemPostagemScalarFieldEnum[]
 }
 
 /**
- * postagem without action
+ * Postagem without action
  */
-export type postagemDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PostagemDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the postagem
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.postagemSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the postagem
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.postagemOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.postagemInclude<ExtArgs> | null
+  include?: Prisma.PostagemInclude<ExtArgs> | null
 }
