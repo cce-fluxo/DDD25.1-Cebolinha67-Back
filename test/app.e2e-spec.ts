@@ -3,11 +3,12 @@ import { INestApplication } from '@nestjs/common';
 import request from 'supertest';
 import { App } from 'supertest/types';
 import { AppModule } from './../src/app.module';
+import { describe, it } from 'node:test';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication<App>;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
@@ -23,3 +24,7 @@ describe('AppController (e2e)', () => {
       .expect('Hello World!');
   });
 });
+function beforeAll(arg0: () => Promise<void>) {
+  throw new Error('Function not implemented.');
+}
+
