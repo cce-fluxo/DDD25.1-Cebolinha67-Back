@@ -38,7 +38,7 @@ export type UsuarioMinAggregateOutputType = {
   id: number | null
   no_usuario: string | null
   email_usuario: string | null
-  CPF: string | null
+  cpf: string | null
   nu_celular: string | null
   genero: string | null
   data_nascimento: Date | null
@@ -49,7 +49,7 @@ export type UsuarioMaxAggregateOutputType = {
   id: number | null
   no_usuario: string | null
   email_usuario: string | null
-  CPF: string | null
+  cpf: string | null
   nu_celular: string | null
   genero: string | null
   data_nascimento: Date | null
@@ -60,7 +60,7 @@ export type UsuarioCountAggregateOutputType = {
   id: number
   no_usuario: number
   email_usuario: number
-  CPF: number
+  cpf: number
   nu_celular: number
   genero: number
   data_nascimento: number
@@ -81,7 +81,7 @@ export type UsuarioMinAggregateInputType = {
   id?: true
   no_usuario?: true
   email_usuario?: true
-  CPF?: true
+  cpf?: true
   nu_celular?: true
   genero?: true
   data_nascimento?: true
@@ -92,7 +92,7 @@ export type UsuarioMaxAggregateInputType = {
   id?: true
   no_usuario?: true
   email_usuario?: true
-  CPF?: true
+  cpf?: true
   nu_celular?: true
   genero?: true
   data_nascimento?: true
@@ -103,7 +103,7 @@ export type UsuarioCountAggregateInputType = {
   id?: true
   no_usuario?: true
   email_usuario?: true
-  CPF?: true
+  cpf?: true
   nu_celular?: true
   genero?: true
   data_nascimento?: true
@@ -201,7 +201,7 @@ export type UsuarioGroupByOutputType = {
   id: number
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date
@@ -235,7 +235,7 @@ export type UsuarioWhereInput = {
   id?: Prisma.IntFilter<"Usuario"> | number
   no_usuario?: Prisma.StringFilter<"Usuario"> | string
   email_usuario?: Prisma.StringFilter<"Usuario"> | string
-  CPF?: Prisma.StringFilter<"Usuario"> | string
+  cpf?: Prisma.StringFilter<"Usuario"> | string
   nu_celular?: Prisma.StringFilter<"Usuario"> | string
   genero?: Prisma.StringFilter<"Usuario"> | string
   data_nascimento?: Prisma.DateTimeFilter<"Usuario"> | Date | string
@@ -250,7 +250,7 @@ export type UsuarioOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
-  CPF?: Prisma.SortOrder
+  cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
@@ -264,7 +264,7 @@ export type UsuarioOrderByWithRelationInput = {
 export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   email_usuario?: string
-  CPF?: string
+  cpf?: string
   nu_celular?: string
   AND?: Prisma.UsuarioWhereInput | Prisma.UsuarioWhereInput[]
   OR?: Prisma.UsuarioWhereInput[]
@@ -277,13 +277,13 @@ export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
   imagem_usuario?: Prisma.XOR<Prisma.ImagemUsuarioNullableScalarRelationFilter, Prisma.ImagemUsuarioWhereInput> | null
   paciente?: Prisma.XOR<Prisma.PacienteNullableScalarRelationFilter, Prisma.PacienteWhereInput> | null
   dentista?: Prisma.XOR<Prisma.DentistaNullableScalarRelationFilter, Prisma.DentistaWhereInput> | null
-}, "id" | "email_usuario" | "CPF" | "nu_celular">
+}, "id" | "email_usuario" | "cpf" | "nu_celular">
 
 export type UsuarioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
-  CPF?: Prisma.SortOrder
+  cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
@@ -302,7 +302,7 @@ export type UsuarioScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Usuario"> | number
   no_usuario?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   email_usuario?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
-  CPF?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  cpf?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   nu_celular?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   genero?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   data_nascimento?: Prisma.DateTimeWithAggregatesFilter<"Usuario"> | Date | string
@@ -312,7 +312,7 @@ export type UsuarioScalarWhereWithAggregatesInput = {
 export type UsuarioCreateInput = {
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -327,7 +327,7 @@ export type UsuarioUncheckedCreateInput = {
   id?: number
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -341,7 +341,7 @@ export type UsuarioUncheckedCreateInput = {
 export type UsuarioUpdateInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -356,7 +356,7 @@ export type UsuarioUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -371,7 +371,7 @@ export type UsuarioCreateManyInput = {
   id?: number
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -381,7 +381,7 @@ export type UsuarioCreateManyInput = {
 export type UsuarioUpdateManyMutationInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -392,7 +392,7 @@ export type UsuarioUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -403,7 +403,7 @@ export type UsuarioCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
-  CPF?: Prisma.SortOrder
+  cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
@@ -418,7 +418,7 @@ export type UsuarioMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
-  CPF?: Prisma.SortOrder
+  cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
@@ -429,7 +429,7 @@ export type UsuarioMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
-  CPF?: Prisma.SortOrder
+  cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
@@ -520,7 +520,7 @@ export type UsuarioUpdateOneRequiredWithoutImagem_usuarioNestedInput = {
 export type UsuarioCreateWithoutDentistaInput = {
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -534,7 +534,7 @@ export type UsuarioUncheckedCreateWithoutDentistaInput = {
   id?: number
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -563,7 +563,7 @@ export type UsuarioUpdateToOneWithWhereWithoutDentistaInput = {
 export type UsuarioUpdateWithoutDentistaInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -577,7 +577,7 @@ export type UsuarioUncheckedUpdateWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -590,7 +590,7 @@ export type UsuarioUncheckedUpdateWithoutDentistaInput = {
 export type UsuarioCreateWithoutPacienteInput = {
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -604,7 +604,7 @@ export type UsuarioUncheckedCreateWithoutPacienteInput = {
   id?: number
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -633,7 +633,7 @@ export type UsuarioUpdateToOneWithWhereWithoutPacienteInput = {
 export type UsuarioUpdateWithoutPacienteInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -647,7 +647,7 @@ export type UsuarioUncheckedUpdateWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -660,7 +660,7 @@ export type UsuarioUncheckedUpdateWithoutPacienteInput = {
 export type UsuarioCreateWithoutNotificacao_usuarioInput = {
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -674,7 +674,7 @@ export type UsuarioUncheckedCreateWithoutNotificacao_usuarioInput = {
   id?: number
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -703,7 +703,7 @@ export type UsuarioUpdateToOneWithWhereWithoutNotificacao_usuarioInput = {
 export type UsuarioUpdateWithoutNotificacao_usuarioInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -717,7 +717,7 @@ export type UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -730,7 +730,7 @@ export type UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput = {
 export type UsuarioCreateWithoutImagem_usuarioInput = {
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -744,7 +744,7 @@ export type UsuarioUncheckedCreateWithoutImagem_usuarioInput = {
   id?: number
   no_usuario: string
   email_usuario: string
-  CPF: string
+  cpf: string
   nu_celular: string
   genero: string
   data_nascimento: Date | string
@@ -773,7 +773,7 @@ export type UsuarioUpdateToOneWithWhereWithoutImagem_usuarioInput = {
 export type UsuarioUpdateWithoutImagem_usuarioInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -787,7 +787,7 @@ export type UsuarioUncheckedUpdateWithoutImagem_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
-  CPF?: Prisma.StringFieldUpdateOperationsInput | string
+  cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.StringFieldUpdateOperationsInput | string
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -832,7 +832,7 @@ export type UsuarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
-  CPF?: boolean
+  cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
   data_nascimento?: boolean
@@ -848,7 +848,7 @@ export type UsuarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
-  CPF?: boolean
+  cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
   data_nascimento?: boolean
@@ -859,7 +859,7 @@ export type UsuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
-  CPF?: boolean
+  cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
   data_nascimento?: boolean
@@ -870,14 +870,14 @@ export type UsuarioSelectScalar = {
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
-  CPF?: boolean
+  cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
   data_nascimento?: boolean
   token_esqueci_senha?: boolean
 }
 
-export type UsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_usuario" | "email_usuario" | "CPF" | "nu_celular" | "genero" | "data_nascimento" | "token_esqueci_senha", ExtArgs["result"]["usuario"]>
+export type UsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_usuario" | "email_usuario" | "cpf" | "nu_celular" | "genero" | "data_nascimento" | "token_esqueci_senha", ExtArgs["result"]["usuario"]>
 export type UsuarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   notificacao_usuario?: boolean | Prisma.Usuario$notificacao_usuarioArgs<ExtArgs>
   imagem_usuario?: boolean | Prisma.Usuario$imagem_usuarioArgs<ExtArgs>
@@ -900,7 +900,7 @@ export type $UsuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: number
     no_usuario: string
     email_usuario: string
-    CPF: string
+    cpf: string
     nu_celular: string
     genero: string
     data_nascimento: Date
@@ -1335,7 +1335,7 @@ export interface UsuarioFieldRefs {
   readonly id: Prisma.FieldRef<"Usuario", 'Int'>
   readonly no_usuario: Prisma.FieldRef<"Usuario", 'String'>
   readonly email_usuario: Prisma.FieldRef<"Usuario", 'String'>
-  readonly CPF: Prisma.FieldRef<"Usuario", 'String'>
+  readonly cpf: Prisma.FieldRef<"Usuario", 'String'>
   readonly nu_celular: Prisma.FieldRef<"Usuario", 'String'>
   readonly genero: Prisma.FieldRef<"Usuario", 'String'>
   readonly data_nascimento: Prisma.FieldRef<"Usuario", 'DateTime'>

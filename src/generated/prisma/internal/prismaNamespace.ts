@@ -1496,7 +1496,7 @@ export const UsuarioScalarFieldEnum = {
   id: 'id',
   no_usuario: 'no_usuario',
   email_usuario: 'email_usuario',
-  CPF: 'CPF',
+  cpf: 'cpf',
   nu_celular: 'nu_celular',
   genero: 'genero',
   data_nascimento: 'data_nascimento',
