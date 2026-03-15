@@ -28,19 +28,16 @@ export type AggregatePostagem = {
 
 export type PostagemAvgAggregateOutputType = {
   id: number | null
-  id_postagem: number | null
   id_dentista: number | null
 }
 
 export type PostagemSumAggregateOutputType = {
   id: number | null
-  id_postagem: number | null
   id_dentista: number | null
 }
 
 export type PostagemMinAggregateOutputType = {
   id: number | null
-  id_postagem: number | null
   titulo: string | null
   mensagem: string | null
   tipo: string | null
@@ -50,7 +47,6 @@ export type PostagemMinAggregateOutputType = {
 
 export type PostagemMaxAggregateOutputType = {
   id: number | null
-  id_postagem: number | null
   titulo: string | null
   mensagem: string | null
   tipo: string | null
@@ -60,7 +56,6 @@ export type PostagemMaxAggregateOutputType = {
 
 export type PostagemCountAggregateOutputType = {
   id: number
-  id_postagem: number
   titulo: number
   mensagem: number
   tipo: number
@@ -72,19 +67,16 @@ export type PostagemCountAggregateOutputType = {
 
 export type PostagemAvgAggregateInputType = {
   id?: true
-  id_postagem?: true
   id_dentista?: true
 }
 
 export type PostagemSumAggregateInputType = {
   id?: true
-  id_postagem?: true
   id_dentista?: true
 }
 
 export type PostagemMinAggregateInputType = {
   id?: true
-  id_postagem?: true
   titulo?: true
   mensagem?: true
   tipo?: true
@@ -94,7 +86,6 @@ export type PostagemMinAggregateInputType = {
 
 export type PostagemMaxAggregateInputType = {
   id?: true
-  id_postagem?: true
   titulo?: true
   mensagem?: true
   tipo?: true
@@ -104,7 +95,6 @@ export type PostagemMaxAggregateInputType = {
 
 export type PostagemCountAggregateInputType = {
   id?: true
-  id_postagem?: true
   titulo?: true
   mensagem?: true
   tipo?: true
@@ -201,7 +191,6 @@ export type PostagemGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 
 export type PostagemGroupByOutputType = {
   id: number
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -234,7 +223,6 @@ export type PostagemWhereInput = {
   OR?: Prisma.PostagemWhereInput[]
   NOT?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
   id?: Prisma.IntFilter<"Postagem"> | number
-  id_postagem?: Prisma.IntFilter<"Postagem"> | number
   titulo?: Prisma.StringFilter<"Postagem"> | string
   mensagem?: Prisma.StringFilter<"Postagem"> | string
   tipo?: Prisma.StringFilter<"Postagem"> | string
@@ -246,7 +234,6 @@ export type PostagemWhereInput = {
 
 export type PostagemOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
   tipo?: Prisma.SortOrder
@@ -262,7 +249,6 @@ export type PostagemWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
   OR?: Prisma.PostagemWhereInput[]
   NOT?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
-  id_postagem?: Prisma.IntFilter<"Postagem"> | number
   titulo?: Prisma.StringFilter<"Postagem"> | string
   mensagem?: Prisma.StringFilter<"Postagem"> | string
   tipo?: Prisma.StringFilter<"Postagem"> | string
@@ -273,7 +259,6 @@ export type PostagemWhereUniqueInput = Prisma.AtLeast<{
 
 export type PostagemOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
   tipo?: Prisma.SortOrder
@@ -291,7 +276,6 @@ export type PostagemScalarWhereWithAggregatesInput = {
   OR?: Prisma.PostagemScalarWhereWithAggregatesInput[]
   NOT?: Prisma.PostagemScalarWhereWithAggregatesInput | Prisma.PostagemScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Postagem"> | number
-  id_postagem?: Prisma.IntWithAggregatesFilter<"Postagem"> | number
   titulo?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
   mensagem?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
   tipo?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
@@ -300,7 +284,6 @@ export type PostagemScalarWhereWithAggregatesInput = {
 }
 
 export type PostagemCreateInput = {
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -311,7 +294,6 @@ export type PostagemCreateInput = {
 
 export type PostagemUncheckedCreateInput = {
   id?: number
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -321,7 +303,6 @@ export type PostagemUncheckedCreateInput = {
 }
 
 export type PostagemUpdateInput = {
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -332,7 +313,6 @@ export type PostagemUpdateInput = {
 
 export type PostagemUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -343,7 +323,6 @@ export type PostagemUncheckedUpdateInput = {
 
 export type PostagemCreateManyInput = {
   id?: number
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -352,7 +331,6 @@ export type PostagemCreateManyInput = {
 }
 
 export type PostagemUpdateManyMutationInput = {
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -361,7 +339,6 @@ export type PostagemUpdateManyMutationInput = {
 
 export type PostagemUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -386,7 +363,6 @@ export type PostagemScalarRelationFilter = {
 
 export type PostagemCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
   tipo?: Prisma.SortOrder
@@ -396,13 +372,11 @@ export type PostagemCountOrderByAggregateInput = {
 
 export type PostagemAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
 }
 
 export type PostagemMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
   tipo?: Prisma.SortOrder
@@ -412,7 +386,6 @@ export type PostagemMaxOrderByAggregateInput = {
 
 export type PostagemMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
   tipo?: Prisma.SortOrder
@@ -422,7 +395,6 @@ export type PostagemMinOrderByAggregateInput = {
 
 export type PostagemSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_postagem?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
 }
 
@@ -483,7 +455,6 @@ export type PostagemUpdateOneRequiredWithoutImagem_postagemNestedInput = {
 }
 
 export type PostagemCreateWithoutDentistaInput = {
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -493,7 +464,6 @@ export type PostagemCreateWithoutDentistaInput = {
 
 export type PostagemUncheckedCreateWithoutDentistaInput = {
   id?: number
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -532,7 +502,6 @@ export type PostagemScalarWhereInput = {
   OR?: Prisma.PostagemScalarWhereInput[]
   NOT?: Prisma.PostagemScalarWhereInput | Prisma.PostagemScalarWhereInput[]
   id?: Prisma.IntFilter<"Postagem"> | number
-  id_postagem?: Prisma.IntFilter<"Postagem"> | number
   titulo?: Prisma.StringFilter<"Postagem"> | string
   mensagem?: Prisma.StringFilter<"Postagem"> | string
   tipo?: Prisma.StringFilter<"Postagem"> | string
@@ -541,7 +510,6 @@ export type PostagemScalarWhereInput = {
 }
 
 export type PostagemCreateWithoutImagem_postagemInput = {
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -551,7 +519,6 @@ export type PostagemCreateWithoutImagem_postagemInput = {
 
 export type PostagemUncheckedCreateWithoutImagem_postagemInput = {
   id?: number
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -576,7 +543,6 @@ export type PostagemUpdateToOneWithWhereWithoutImagem_postagemInput = {
 }
 
 export type PostagemUpdateWithoutImagem_postagemInput = {
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -586,7 +552,6 @@ export type PostagemUpdateWithoutImagem_postagemInput = {
 
 export type PostagemUncheckedUpdateWithoutImagem_postagemInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -596,7 +561,6 @@ export type PostagemUncheckedUpdateWithoutImagem_postagemInput = {
 
 export type PostagemCreateManyDentistaInput = {
   id?: number
-  id_postagem: number
   titulo: string
   mensagem: string
   tipo: string
@@ -604,7 +568,6 @@ export type PostagemCreateManyDentistaInput = {
 }
 
 export type PostagemUpdateWithoutDentistaInput = {
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -614,7 +577,6 @@ export type PostagemUpdateWithoutDentistaInput = {
 
 export type PostagemUncheckedUpdateWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -624,7 +586,6 @@ export type PostagemUncheckedUpdateWithoutDentistaInput = {
 
 export type PostagemUncheckedUpdateManyWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   tipo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -664,7 +625,6 @@ export type PostagemCountOutputTypeCountImagem_postagemArgs<ExtArgs extends runt
 
 export type PostagemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_postagem?: boolean
   titulo?: boolean
   mensagem?: boolean
   tipo?: boolean
@@ -677,7 +637,6 @@ export type PostagemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
 
 export type PostagemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_postagem?: boolean
   titulo?: boolean
   mensagem?: boolean
   tipo?: boolean
@@ -688,7 +647,6 @@ export type PostagemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type PostagemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_postagem?: boolean
   titulo?: boolean
   mensagem?: boolean
   tipo?: boolean
@@ -699,7 +657,6 @@ export type PostagemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type PostagemSelectScalar = {
   id?: boolean
-  id_postagem?: boolean
   titulo?: boolean
   mensagem?: boolean
   tipo?: boolean
@@ -707,7 +664,7 @@ export type PostagemSelectScalar = {
   id_dentista?: boolean
 }
 
-export type PostagemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_postagem" | "titulo" | "mensagem" | "tipo" | "data" | "id_dentista", ExtArgs["result"]["postagem"]>
+export type PostagemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "titulo" | "mensagem" | "tipo" | "data" | "id_dentista", ExtArgs["result"]["postagem"]>
 export type PostagemInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
   imagem_postagem?: boolean | Prisma.Postagem$imagem_postagemArgs<ExtArgs>
@@ -728,7 +685,6 @@ export type $PostagemPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    id_postagem: number
     titulo: string
     mensagem: string
     tipo: string
@@ -1160,7 +1116,6 @@ export interface Prisma__PostagemClient<T, Null = never, ExtArgs extends runtime
  */
 export interface PostagemFieldRefs {
   readonly id: Prisma.FieldRef<"Postagem", 'Int'>
-  readonly id_postagem: Prisma.FieldRef<"Postagem", 'Int'>
   readonly titulo: Prisma.FieldRef<"Postagem", 'String'>
   readonly mensagem: Prisma.FieldRef<"Postagem", 'String'>
   readonly tipo: Prisma.FieldRef<"Postagem", 'String'>

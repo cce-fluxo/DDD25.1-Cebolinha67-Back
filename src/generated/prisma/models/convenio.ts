@@ -28,19 +28,16 @@ export type AggregateConvenio = {
 
 export type ConvenioAvgAggregateOutputType = {
   id: number | null
-  id_convenio: number | null
   id_paciente: number | null
 }
 
 export type ConvenioSumAggregateOutputType = {
   id: number | null
-  id_convenio: number | null
   id_paciente: number | null
 }
 
 export type ConvenioMinAggregateOutputType = {
   id: number | null
-  id_convenio: number | null
   no_operadora: string | null
   nu_carteirinha: string | null
   dt_val_carteirinha: Date | null
@@ -49,7 +46,6 @@ export type ConvenioMinAggregateOutputType = {
 
 export type ConvenioMaxAggregateOutputType = {
   id: number | null
-  id_convenio: number | null
   no_operadora: string | null
   nu_carteirinha: string | null
   dt_val_carteirinha: Date | null
@@ -58,7 +54,6 @@ export type ConvenioMaxAggregateOutputType = {
 
 export type ConvenioCountAggregateOutputType = {
   id: number
-  id_convenio: number
   no_operadora: number
   nu_carteirinha: number
   dt_val_carteirinha: number
@@ -69,19 +64,16 @@ export type ConvenioCountAggregateOutputType = {
 
 export type ConvenioAvgAggregateInputType = {
   id?: true
-  id_convenio?: true
   id_paciente?: true
 }
 
 export type ConvenioSumAggregateInputType = {
   id?: true
-  id_convenio?: true
   id_paciente?: true
 }
 
 export type ConvenioMinAggregateInputType = {
   id?: true
-  id_convenio?: true
   no_operadora?: true
   nu_carteirinha?: true
   dt_val_carteirinha?: true
@@ -90,7 +82,6 @@ export type ConvenioMinAggregateInputType = {
 
 export type ConvenioMaxAggregateInputType = {
   id?: true
-  id_convenio?: true
   no_operadora?: true
   nu_carteirinha?: true
   dt_val_carteirinha?: true
@@ -99,7 +90,6 @@ export type ConvenioMaxAggregateInputType = {
 
 export type ConvenioCountAggregateInputType = {
   id?: true
-  id_convenio?: true
   no_operadora?: true
   nu_carteirinha?: true
   dt_val_carteirinha?: true
@@ -195,7 +185,6 @@ export type ConvenioGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 
 export type ConvenioGroupByOutputType = {
   id: number
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date
@@ -227,7 +216,6 @@ export type ConvenioWhereInput = {
   OR?: Prisma.ConvenioWhereInput[]
   NOT?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
   id?: Prisma.IntFilter<"Convenio"> | number
-  id_convenio?: Prisma.IntFilter<"Convenio"> | number
   no_operadora?: Prisma.StringFilter<"Convenio"> | string
   nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
   dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
@@ -238,7 +226,6 @@ export type ConvenioWhereInput = {
 
 export type ConvenioOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
   no_operadora?: Prisma.SortOrder
   nu_carteirinha?: Prisma.SortOrder
   dt_val_carteirinha?: Prisma.SortOrder
@@ -253,7 +240,6 @@ export type ConvenioWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
   OR?: Prisma.ConvenioWhereInput[]
   NOT?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
-  id_convenio?: Prisma.IntFilter<"Convenio"> | number
   no_operadora?: Prisma.StringFilter<"Convenio"> | string
   nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
   dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
@@ -263,7 +249,6 @@ export type ConvenioWhereUniqueInput = Prisma.AtLeast<{
 
 export type ConvenioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
   no_operadora?: Prisma.SortOrder
   nu_carteirinha?: Prisma.SortOrder
   dt_val_carteirinha?: Prisma.SortOrder
@@ -280,7 +265,6 @@ export type ConvenioScalarWhereWithAggregatesInput = {
   OR?: Prisma.ConvenioScalarWhereWithAggregatesInput[]
   NOT?: Prisma.ConvenioScalarWhereWithAggregatesInput | Prisma.ConvenioScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Convenio"> | number
-  id_convenio?: Prisma.IntWithAggregatesFilter<"Convenio"> | number
   no_operadora?: Prisma.StringWithAggregatesFilter<"Convenio"> | string
   nu_carteirinha?: Prisma.StringWithAggregatesFilter<"Convenio"> | string
   dt_val_carteirinha?: Prisma.DateTimeWithAggregatesFilter<"Convenio"> | Date | string
@@ -288,7 +272,6 @@ export type ConvenioScalarWhereWithAggregatesInput = {
 }
 
 export type ConvenioCreateInput = {
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
@@ -298,7 +281,6 @@ export type ConvenioCreateInput = {
 
 export type ConvenioUncheckedCreateInput = {
   id?: number
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
@@ -307,7 +289,6 @@ export type ConvenioUncheckedCreateInput = {
 }
 
 export type ConvenioUpdateInput = {
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -317,7 +298,6 @@ export type ConvenioUpdateInput = {
 
 export type ConvenioUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -327,7 +307,6 @@ export type ConvenioUncheckedUpdateInput = {
 
 export type ConvenioCreateManyInput = {
   id?: number
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
@@ -335,7 +314,6 @@ export type ConvenioCreateManyInput = {
 }
 
 export type ConvenioUpdateManyMutationInput = {
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -343,7 +321,6 @@ export type ConvenioUpdateManyMutationInput = {
 
 export type ConvenioUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -367,7 +344,6 @@ export type ConvenioScalarRelationFilter = {
 
 export type ConvenioCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
   no_operadora?: Prisma.SortOrder
   nu_carteirinha?: Prisma.SortOrder
   dt_val_carteirinha?: Prisma.SortOrder
@@ -376,13 +352,11 @@ export type ConvenioCountOrderByAggregateInput = {
 
 export type ConvenioAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
 export type ConvenioMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
   no_operadora?: Prisma.SortOrder
   nu_carteirinha?: Prisma.SortOrder
   dt_val_carteirinha?: Prisma.SortOrder
@@ -391,7 +365,6 @@ export type ConvenioMaxOrderByAggregateInput = {
 
 export type ConvenioMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
   no_operadora?: Prisma.SortOrder
   nu_carteirinha?: Prisma.SortOrder
   dt_val_carteirinha?: Prisma.SortOrder
@@ -400,7 +373,6 @@ export type ConvenioMinOrderByAggregateInput = {
 
 export type ConvenioSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_convenio?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
@@ -461,7 +433,6 @@ export type ConvenioUpdateOneRequiredWithoutConsultasNestedInput = {
 }
 
 export type ConvenioCreateWithoutPacienteInput = {
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
@@ -470,7 +441,6 @@ export type ConvenioCreateWithoutPacienteInput = {
 
 export type ConvenioUncheckedCreateWithoutPacienteInput = {
   id?: number
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
@@ -508,7 +478,6 @@ export type ConvenioScalarWhereInput = {
   OR?: Prisma.ConvenioScalarWhereInput[]
   NOT?: Prisma.ConvenioScalarWhereInput | Prisma.ConvenioScalarWhereInput[]
   id?: Prisma.IntFilter<"Convenio"> | number
-  id_convenio?: Prisma.IntFilter<"Convenio"> | number
   no_operadora?: Prisma.StringFilter<"Convenio"> | string
   nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
   dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
@@ -516,7 +485,6 @@ export type ConvenioScalarWhereInput = {
 }
 
 export type ConvenioCreateWithoutConsultasInput = {
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
@@ -525,7 +493,6 @@ export type ConvenioCreateWithoutConsultasInput = {
 
 export type ConvenioUncheckedCreateWithoutConsultasInput = {
   id?: number
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
@@ -549,7 +516,6 @@ export type ConvenioUpdateToOneWithWhereWithoutConsultasInput = {
 }
 
 export type ConvenioUpdateWithoutConsultasInput = {
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -558,7 +524,6 @@ export type ConvenioUpdateWithoutConsultasInput = {
 
 export type ConvenioUncheckedUpdateWithoutConsultasInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -567,14 +532,12 @@ export type ConvenioUncheckedUpdateWithoutConsultasInput = {
 
 export type ConvenioCreateManyPacienteInput = {
   id?: number
-  id_convenio: number
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
 }
 
 export type ConvenioUpdateWithoutPacienteInput = {
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -583,7 +546,6 @@ export type ConvenioUpdateWithoutPacienteInput = {
 
 export type ConvenioUncheckedUpdateWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -592,7 +554,6 @@ export type ConvenioUncheckedUpdateWithoutPacienteInput = {
 
 export type ConvenioUncheckedUpdateManyWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_convenio?: Prisma.IntFieldUpdateOperationsInput | number
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -631,7 +592,6 @@ export type ConvenioCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Ty
 
 export type ConvenioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_convenio?: boolean
   no_operadora?: boolean
   nu_carteirinha?: boolean
   dt_val_carteirinha?: boolean
@@ -643,7 +603,6 @@ export type ConvenioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
 
 export type ConvenioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_convenio?: boolean
   no_operadora?: boolean
   nu_carteirinha?: boolean
   dt_val_carteirinha?: boolean
@@ -653,7 +612,6 @@ export type ConvenioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type ConvenioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_convenio?: boolean
   no_operadora?: boolean
   nu_carteirinha?: boolean
   dt_val_carteirinha?: boolean
@@ -663,14 +621,13 @@ export type ConvenioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type ConvenioSelectScalar = {
   id?: boolean
-  id_convenio?: boolean
   no_operadora?: boolean
   nu_carteirinha?: boolean
   dt_val_carteirinha?: boolean
   id_paciente?: boolean
 }
 
-export type ConvenioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_convenio" | "no_operadora" | "nu_carteirinha" | "dt_val_carteirinha" | "id_paciente", ExtArgs["result"]["convenio"]>
+export type ConvenioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_operadora" | "nu_carteirinha" | "dt_val_carteirinha" | "id_paciente", ExtArgs["result"]["convenio"]>
 export type ConvenioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
   consultas?: boolean | Prisma.Convenio$consultasArgs<ExtArgs>
@@ -691,7 +648,6 @@ export type $ConvenioPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    id_convenio: number
     no_operadora: string
     nu_carteirinha: string
     dt_val_carteirinha: Date
@@ -1122,7 +1078,6 @@ export interface Prisma__ConvenioClient<T, Null = never, ExtArgs extends runtime
  */
 export interface ConvenioFieldRefs {
   readonly id: Prisma.FieldRef<"Convenio", 'Int'>
-  readonly id_convenio: Prisma.FieldRef<"Convenio", 'Int'>
   readonly no_operadora: Prisma.FieldRef<"Convenio", 'String'>
   readonly nu_carteirinha: Prisma.FieldRef<"Convenio", 'String'>
   readonly dt_val_carteirinha: Prisma.FieldRef<"Convenio", 'DateTime'>

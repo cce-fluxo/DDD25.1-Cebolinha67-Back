@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { CreateConvenioDto } from './dto/create-convenio.dto';
 import { UpdateConvenioDto } from './dto/update-convenio.dto';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class ConvenioService {
+  constructor(private prisma: PrismaService) {}
   create(createConvenioDto: CreateConvenioDto) {
     return 'This action adds a new convenio';
   }

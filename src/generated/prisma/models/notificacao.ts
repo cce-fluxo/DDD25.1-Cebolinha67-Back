@@ -28,17 +28,14 @@ export type AggregateNotificacao = {
 
 export type NotificacaoAvgAggregateOutputType = {
   id: number | null
-  id_notificacao: number | null
 }
 
 export type NotificacaoSumAggregateOutputType = {
   id: number | null
-  id_notificacao: number | null
 }
 
 export type NotificacaoMinAggregateOutputType = {
   id: number | null
-  id_notificacao: number | null
   ds_mensagem: string | null
   lido: boolean | null
   titulo: string | null
@@ -47,7 +44,6 @@ export type NotificacaoMinAggregateOutputType = {
 
 export type NotificacaoMaxAggregateOutputType = {
   id: number | null
-  id_notificacao: number | null
   ds_mensagem: string | null
   lido: boolean | null
   titulo: string | null
@@ -56,7 +52,6 @@ export type NotificacaoMaxAggregateOutputType = {
 
 export type NotificacaoCountAggregateOutputType = {
   id: number
-  id_notificacao: number
   ds_mensagem: number
   lido: number
   titulo: number
@@ -67,17 +62,14 @@ export type NotificacaoCountAggregateOutputType = {
 
 export type NotificacaoAvgAggregateInputType = {
   id?: true
-  id_notificacao?: true
 }
 
 export type NotificacaoSumAggregateInputType = {
   id?: true
-  id_notificacao?: true
 }
 
 export type NotificacaoMinAggregateInputType = {
   id?: true
-  id_notificacao?: true
   ds_mensagem?: true
   lido?: true
   titulo?: true
@@ -86,7 +78,6 @@ export type NotificacaoMinAggregateInputType = {
 
 export type NotificacaoMaxAggregateInputType = {
   id?: true
-  id_notificacao?: true
   ds_mensagem?: true
   lido?: true
   titulo?: true
@@ -95,7 +86,6 @@ export type NotificacaoMaxAggregateInputType = {
 
 export type NotificacaoCountAggregateInputType = {
   id?: true
-  id_notificacao?: true
   ds_mensagem?: true
   lido?: true
   titulo?: true
@@ -191,7 +181,6 @@ export type NotificacaoGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 
 export type NotificacaoGroupByOutputType = {
   id: number
-  id_notificacao: number
   ds_mensagem: string
   lido: boolean
   titulo: string
@@ -223,7 +212,6 @@ export type NotificacaoWhereInput = {
   OR?: Prisma.NotificacaoWhereInput[]
   NOT?: Prisma.NotificacaoWhereInput | Prisma.NotificacaoWhereInput[]
   id?: Prisma.IntFilter<"Notificacao"> | number
-  id_notificacao?: Prisma.IntFilter<"Notificacao"> | number
   ds_mensagem?: Prisma.StringFilter<"Notificacao"> | string
   lido?: Prisma.BoolFilter<"Notificacao"> | boolean
   titulo?: Prisma.StringFilter<"Notificacao"> | string
@@ -233,7 +221,6 @@ export type NotificacaoWhereInput = {
 
 export type NotificacaoOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  id_notificacao?: Prisma.SortOrder
   ds_mensagem?: Prisma.SortOrder
   lido?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -246,7 +233,6 @@ export type NotificacaoWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.NotificacaoWhereInput | Prisma.NotificacaoWhereInput[]
   OR?: Prisma.NotificacaoWhereInput[]
   NOT?: Prisma.NotificacaoWhereInput | Prisma.NotificacaoWhereInput[]
-  id_notificacao?: Prisma.IntFilter<"Notificacao"> | number
   ds_mensagem?: Prisma.StringFilter<"Notificacao"> | string
   lido?: Prisma.BoolFilter<"Notificacao"> | boolean
   titulo?: Prisma.StringFilter<"Notificacao"> | string
@@ -256,7 +242,6 @@ export type NotificacaoWhereUniqueInput = Prisma.AtLeast<{
 
 export type NotificacaoOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  id_notificacao?: Prisma.SortOrder
   ds_mensagem?: Prisma.SortOrder
   lido?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -273,7 +258,6 @@ export type NotificacaoScalarWhereWithAggregatesInput = {
   OR?: Prisma.NotificacaoScalarWhereWithAggregatesInput[]
   NOT?: Prisma.NotificacaoScalarWhereWithAggregatesInput | Prisma.NotificacaoScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Notificacao"> | number
-  id_notificacao?: Prisma.IntWithAggregatesFilter<"Notificacao"> | number
   ds_mensagem?: Prisma.StringWithAggregatesFilter<"Notificacao"> | string
   lido?: Prisma.BoolWithAggregatesFilter<"Notificacao"> | boolean
   titulo?: Prisma.StringWithAggregatesFilter<"Notificacao"> | string
@@ -281,7 +265,6 @@ export type NotificacaoScalarWhereWithAggregatesInput = {
 }
 
 export type NotificacaoCreateInput = {
-  id_notificacao: number
   ds_mensagem: string
   lido: boolean
   titulo: string
@@ -291,7 +274,6 @@ export type NotificacaoCreateInput = {
 
 export type NotificacaoUncheckedCreateInput = {
   id?: number
-  id_notificacao: number
   ds_mensagem: string
   lido: boolean
   titulo: string
@@ -300,7 +282,6 @@ export type NotificacaoUncheckedCreateInput = {
 }
 
 export type NotificacaoUpdateInput = {
-  id_notificacao?: Prisma.IntFieldUpdateOperationsInput | number
   ds_mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   lido?: Prisma.BoolFieldUpdateOperationsInput | boolean
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -310,7 +291,6 @@ export type NotificacaoUpdateInput = {
 
 export type NotificacaoUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_notificacao?: Prisma.IntFieldUpdateOperationsInput | number
   ds_mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   lido?: Prisma.BoolFieldUpdateOperationsInput | boolean
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -320,7 +300,6 @@ export type NotificacaoUncheckedUpdateInput = {
 
 export type NotificacaoCreateManyInput = {
   id?: number
-  id_notificacao: number
   ds_mensagem: string
   lido: boolean
   titulo: string
@@ -328,7 +307,6 @@ export type NotificacaoCreateManyInput = {
 }
 
 export type NotificacaoUpdateManyMutationInput = {
-  id_notificacao?: Prisma.IntFieldUpdateOperationsInput | number
   ds_mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   lido?: Prisma.BoolFieldUpdateOperationsInput | boolean
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -337,7 +315,6 @@ export type NotificacaoUpdateManyMutationInput = {
 
 export type NotificacaoUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_notificacao?: Prisma.IntFieldUpdateOperationsInput | number
   ds_mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   lido?: Prisma.BoolFieldUpdateOperationsInput | boolean
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -346,7 +323,6 @@ export type NotificacaoUncheckedUpdateManyInput = {
 
 export type NotificacaoCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_notificacao?: Prisma.SortOrder
   ds_mensagem?: Prisma.SortOrder
   lido?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -355,12 +331,10 @@ export type NotificacaoCountOrderByAggregateInput = {
 
 export type NotificacaoAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_notificacao?: Prisma.SortOrder
 }
 
 export type NotificacaoMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_notificacao?: Prisma.SortOrder
   ds_mensagem?: Prisma.SortOrder
   lido?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -369,7 +343,6 @@ export type NotificacaoMaxOrderByAggregateInput = {
 
 export type NotificacaoMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_notificacao?: Prisma.SortOrder
   ds_mensagem?: Prisma.SortOrder
   lido?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
@@ -378,7 +351,6 @@ export type NotificacaoMinOrderByAggregateInput = {
 
 export type NotificacaoSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_notificacao?: Prisma.SortOrder
 }
 
 export type NotificacaoScalarRelationFilter = {
@@ -405,7 +377,6 @@ export type NotificacaoUpdateOneRequiredWithoutNotificacao_usuarioNestedInput = 
 }
 
 export type NotificacaoCreateWithoutNotificacao_usuarioInput = {
-  id_notificacao: number
   ds_mensagem: string
   lido: boolean
   titulo: string
@@ -414,7 +385,6 @@ export type NotificacaoCreateWithoutNotificacao_usuarioInput = {
 
 export type NotificacaoUncheckedCreateWithoutNotificacao_usuarioInput = {
   id?: number
-  id_notificacao: number
   ds_mensagem: string
   lido: boolean
   titulo: string
@@ -438,7 +408,6 @@ export type NotificacaoUpdateToOneWithWhereWithoutNotificacao_usuarioInput = {
 }
 
 export type NotificacaoUpdateWithoutNotificacao_usuarioInput = {
-  id_notificacao?: Prisma.IntFieldUpdateOperationsInput | number
   ds_mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   lido?: Prisma.BoolFieldUpdateOperationsInput | boolean
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -447,7 +416,6 @@ export type NotificacaoUpdateWithoutNotificacao_usuarioInput = {
 
 export type NotificacaoUncheckedUpdateWithoutNotificacao_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_notificacao?: Prisma.IntFieldUpdateOperationsInput | number
   ds_mensagem?: Prisma.StringFieldUpdateOperationsInput | string
   lido?: Prisma.BoolFieldUpdateOperationsInput | boolean
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
@@ -458,7 +426,6 @@ export type NotificacaoUncheckedUpdateWithoutNotificacao_usuarioInput = {
 
 export type NotificacaoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_notificacao?: boolean
   ds_mensagem?: boolean
   lido?: boolean
   titulo?: boolean
@@ -468,7 +435,6 @@ export type NotificacaoSelect<ExtArgs extends runtime.Types.Extensions.InternalA
 
 export type NotificacaoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_notificacao?: boolean
   ds_mensagem?: boolean
   lido?: boolean
   titulo?: boolean
@@ -477,7 +443,6 @@ export type NotificacaoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
 
 export type NotificacaoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_notificacao?: boolean
   ds_mensagem?: boolean
   lido?: boolean
   titulo?: boolean
@@ -486,14 +451,13 @@ export type NotificacaoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
 
 export type NotificacaoSelectScalar = {
   id?: boolean
-  id_notificacao?: boolean
   ds_mensagem?: boolean
   lido?: boolean
   titulo?: boolean
   simbolo?: boolean
 }
 
-export type NotificacaoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_notificacao" | "ds_mensagem" | "lido" | "titulo" | "simbolo", ExtArgs["result"]["notificacao"]>
+export type NotificacaoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ds_mensagem" | "lido" | "titulo" | "simbolo", ExtArgs["result"]["notificacao"]>
 export type NotificacaoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   notificacao_usuario?: boolean | Prisma.Notificacao$notificacao_usuarioArgs<ExtArgs>
 }
@@ -507,7 +471,6 @@ export type $NotificacaoPayload<ExtArgs extends runtime.Types.Extensions.Interna
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    id_notificacao: number
     ds_mensagem: string
     lido: boolean
     titulo: string
@@ -937,7 +900,6 @@ export interface Prisma__NotificacaoClient<T, Null = never, ExtArgs extends runt
  */
 export interface NotificacaoFieldRefs {
   readonly id: Prisma.FieldRef<"Notificacao", 'Int'>
-  readonly id_notificacao: Prisma.FieldRef<"Notificacao", 'Int'>
   readonly ds_mensagem: Prisma.FieldRef<"Notificacao", 'String'>
   readonly lido: Prisma.FieldRef<"Notificacao", 'Boolean'>
   readonly titulo: Prisma.FieldRef<"Notificacao", 'String'>

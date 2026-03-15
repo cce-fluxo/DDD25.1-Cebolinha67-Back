@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { CreatePostagemDto } from './dto/create-postagem.dto';
 import { UpdatePostagemDto } from './dto/update-postagem.dto';
-import { PrismaModule } from 'src/prisma/prisma.module';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class PostagemService {
-  constructor(private readonly prisma: PrismaModule) {}
+  constructor(private readonly prisma: PrismaService) {}
   create(createPostagemDto: CreatePostagemDto) {
     return this.prisma.Postagem.create({
       data: { ...createPostagemDto, data: new Date(createPostagemDto.data) },

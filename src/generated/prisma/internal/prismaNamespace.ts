@@ -1532,7 +1532,6 @@ export type PacienteScalarFieldEnum = (typeof PacienteScalarFieldEnum)[keyof typ
 
 export const NotificacaoScalarFieldEnum = {
   id: 'id',
-  id_notificacao: 'id_notificacao',
   ds_mensagem: 'ds_mensagem',
   lido: 'lido',
   titulo: 'titulo',
@@ -1621,7 +1620,6 @@ export type DetalheDaConsultaScalarFieldEnum = (typeof DetalheDaConsultaScalarFi
 
 export const PostagemScalarFieldEnum = {
   id: 'id',
-  id_postagem: 'id_postagem',
   titulo: 'titulo',
   mensagem: 'mensagem',
   tipo: 'tipo',
@@ -1634,7 +1632,6 @@ export type PostagemScalarFieldEnum = (typeof PostagemScalarFieldEnum)[keyof typ
 
 export const ConvenioScalarFieldEnum = {
   id: 'id',
-  id_convenio: 'id_convenio',
   no_operadora: 'no_operadora',
   nu_carteirinha: 'nu_carteirinha',
   dt_val_carteirinha: 'dt_val_carteirinha',
@@ -1646,7 +1643,6 @@ export type ConvenioScalarFieldEnum = (typeof ConvenioScalarFieldEnum)[keyof typ
 
 export const DocumentoScalarFieldEnum = {
   id: 'id',
-  id_documento: 'id_documento',
   nome_doc: 'nome_doc',
   tipo_doc: 'tipo_doc',
   extensao: 'extensao',

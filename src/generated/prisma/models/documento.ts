@@ -28,21 +28,18 @@ export type AggregateDocumento = {
 
 export type DocumentoAvgAggregateOutputType = {
   id: number | null
-  id_documento: number | null
   tamanho_doc: number | null
   id_consulta: number | null
 }
 
 export type DocumentoSumAggregateOutputType = {
   id: number | null
-  id_documento: number | null
   tamanho_doc: number | null
   id_consulta: number | null
 }
 
 export type DocumentoMinAggregateOutputType = {
   id: number | null
-  id_documento: number | null
   nome_doc: string | null
   tipo_doc: string | null
   extensao: string | null
@@ -52,7 +49,6 @@ export type DocumentoMinAggregateOutputType = {
 
 export type DocumentoMaxAggregateOutputType = {
   id: number | null
-  id_documento: number | null
   nome_doc: string | null
   tipo_doc: string | null
   extensao: string | null
@@ -62,7 +58,6 @@ export type DocumentoMaxAggregateOutputType = {
 
 export type DocumentoCountAggregateOutputType = {
   id: number
-  id_documento: number
   nome_doc: number
   tipo_doc: number
   extensao: number
@@ -74,21 +69,18 @@ export type DocumentoCountAggregateOutputType = {
 
 export type DocumentoAvgAggregateInputType = {
   id?: true
-  id_documento?: true
   tamanho_doc?: true
   id_consulta?: true
 }
 
 export type DocumentoSumAggregateInputType = {
   id?: true
-  id_documento?: true
   tamanho_doc?: true
   id_consulta?: true
 }
 
 export type DocumentoMinAggregateInputType = {
   id?: true
-  id_documento?: true
   nome_doc?: true
   tipo_doc?: true
   extensao?: true
@@ -98,7 +90,6 @@ export type DocumentoMinAggregateInputType = {
 
 export type DocumentoMaxAggregateInputType = {
   id?: true
-  id_documento?: true
   nome_doc?: true
   tipo_doc?: true
   extensao?: true
@@ -108,7 +99,6 @@ export type DocumentoMaxAggregateInputType = {
 
 export type DocumentoCountAggregateInputType = {
   id?: true
-  id_documento?: true
   nome_doc?: true
   tipo_doc?: true
   extensao?: true
@@ -205,7 +195,6 @@ export type DocumentoGroupByArgs<ExtArgs extends runtime.Types.Extensions.Intern
 
 export type DocumentoGroupByOutputType = {
   id: number
-  id_documento: number
   nome_doc: string
   tipo_doc: string
   extensao: string
@@ -238,7 +227,6 @@ export type DocumentoWhereInput = {
   OR?: Prisma.DocumentoWhereInput[]
   NOT?: Prisma.DocumentoWhereInput | Prisma.DocumentoWhereInput[]
   id?: Prisma.IntFilter<"Documento"> | number
-  id_documento?: Prisma.IntFilter<"Documento"> | number
   nome_doc?: Prisma.StringFilter<"Documento"> | string
   tipo_doc?: Prisma.StringFilter<"Documento"> | string
   extensao?: Prisma.StringFilter<"Documento"> | string
@@ -249,7 +237,6 @@ export type DocumentoWhereInput = {
 
 export type DocumentoOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  id_documento?: Prisma.SortOrder
   nome_doc?: Prisma.SortOrder
   tipo_doc?: Prisma.SortOrder
   extensao?: Prisma.SortOrder
@@ -264,7 +251,6 @@ export type DocumentoWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.DocumentoWhereInput | Prisma.DocumentoWhereInput[]
   OR?: Prisma.DocumentoWhereInput[]
   NOT?: Prisma.DocumentoWhereInput | Prisma.DocumentoWhereInput[]
-  id_documento?: Prisma.IntFilter<"Documento"> | number
   nome_doc?: Prisma.StringFilter<"Documento"> | string
   tipo_doc?: Prisma.StringFilter<"Documento"> | string
   extensao?: Prisma.StringFilter<"Documento"> | string
@@ -274,7 +260,6 @@ export type DocumentoWhereUniqueInput = Prisma.AtLeast<{
 
 export type DocumentoOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  id_documento?: Prisma.SortOrder
   nome_doc?: Prisma.SortOrder
   tipo_doc?: Prisma.SortOrder
   extensao?: Prisma.SortOrder
@@ -292,7 +277,6 @@ export type DocumentoScalarWhereWithAggregatesInput = {
   OR?: Prisma.DocumentoScalarWhereWithAggregatesInput[]
   NOT?: Prisma.DocumentoScalarWhereWithAggregatesInput | Prisma.DocumentoScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Documento"> | number
-  id_documento?: Prisma.IntWithAggregatesFilter<"Documento"> | number
   nome_doc?: Prisma.StringWithAggregatesFilter<"Documento"> | string
   tipo_doc?: Prisma.StringWithAggregatesFilter<"Documento"> | string
   extensao?: Prisma.StringWithAggregatesFilter<"Documento"> | string
@@ -301,7 +285,6 @@ export type DocumentoScalarWhereWithAggregatesInput = {
 }
 
 export type DocumentoCreateInput = {
-  id_documento: number
   nome_doc: string
   tipo_doc: string
   extensao: string
@@ -311,7 +294,6 @@ export type DocumentoCreateInput = {
 
 export type DocumentoUncheckedCreateInput = {
   id?: number
-  id_documento: number
   nome_doc: string
   tipo_doc: string
   extensao: string
@@ -320,7 +302,6 @@ export type DocumentoUncheckedCreateInput = {
 }
 
 export type DocumentoUpdateInput = {
-  id_documento?: Prisma.IntFieldUpdateOperationsInput | number
   nome_doc?: Prisma.StringFieldUpdateOperationsInput | string
   tipo_doc?: Prisma.StringFieldUpdateOperationsInput | string
   extensao?: Prisma.StringFieldUpdateOperationsInput | string
@@ -330,7 +311,6 @@ export type DocumentoUpdateInput = {
 
 export type DocumentoUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_documento?: Prisma.IntFieldUpdateOperationsInput | number
   nome_doc?: Prisma.StringFieldUpdateOperationsInput | string
   tipo_doc?: Prisma.StringFieldUpdateOperationsInput | string
   extensao?: Prisma.StringFieldUpdateOperationsInput | string
@@ -340,7 +320,6 @@ export type DocumentoUncheckedUpdateInput = {
 
 export type DocumentoCreateManyInput = {
   id?: number
-  id_documento: number
   nome_doc: string
   tipo_doc: string
   extensao: string
@@ -349,7 +328,6 @@ export type DocumentoCreateManyInput = {
 }
 
 export type DocumentoUpdateManyMutationInput = {
-  id_documento?: Prisma.IntFieldUpdateOperationsInput | number
   nome_doc?: Prisma.StringFieldUpdateOperationsInput | string
   tipo_doc?: Prisma.StringFieldUpdateOperationsInput | string
   extensao?: Prisma.StringFieldUpdateOperationsInput | string
@@ -358,7 +336,6 @@ export type DocumentoUpdateManyMutationInput = {
 
 export type DocumentoUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_documento?: Prisma.IntFieldUpdateOperationsInput | number
   nome_doc?: Prisma.StringFieldUpdateOperationsInput | string
   tipo_doc?: Prisma.StringFieldUpdateOperationsInput | string
   extensao?: Prisma.StringFieldUpdateOperationsInput | string
@@ -378,7 +355,6 @@ export type DocumentoOrderByRelationAggregateInput = {
 
 export type DocumentoCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_documento?: Prisma.SortOrder
   nome_doc?: Prisma.SortOrder
   tipo_doc?: Prisma.SortOrder
   extensao?: Prisma.SortOrder
@@ -388,14 +364,12 @@ export type DocumentoCountOrderByAggregateInput = {
 
 export type DocumentoAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_documento?: Prisma.SortOrder
   tamanho_doc?: Prisma.SortOrder
   id_consulta?: Prisma.SortOrder
 }
 
 export type DocumentoMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_documento?: Prisma.SortOrder
   nome_doc?: Prisma.SortOrder
   tipo_doc?: Prisma.SortOrder
   extensao?: Prisma.SortOrder
@@ -405,7 +379,6 @@ export type DocumentoMaxOrderByAggregateInput = {
 
 export type DocumentoMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_documento?: Prisma.SortOrder
   nome_doc?: Prisma.SortOrder
   tipo_doc?: Prisma.SortOrder
   extensao?: Prisma.SortOrder
@@ -415,7 +388,6 @@ export type DocumentoMinOrderByAggregateInput = {
 
 export type DocumentoSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  id_documento?: Prisma.SortOrder
   tamanho_doc?: Prisma.SortOrder
   id_consulta?: Prisma.SortOrder
 }
@@ -471,7 +443,6 @@ export type FloatFieldUpdateOperationsInput = {
 }
 
 export type DocumentoCreateWithoutConsultaInput = {
-  id_documento: number
   nome_doc: string
   tipo_doc: string
   extensao: string
@@ -480,7 +451,6 @@ export type DocumentoCreateWithoutConsultaInput = {
 
 export type DocumentoUncheckedCreateWithoutConsultaInput = {
   id?: number
-  id_documento: number
   nome_doc: string
   tipo_doc: string
   extensao: string
@@ -518,7 +488,6 @@ export type DocumentoScalarWhereInput = {
   OR?: Prisma.DocumentoScalarWhereInput[]
   NOT?: Prisma.DocumentoScalarWhereInput | Prisma.DocumentoScalarWhereInput[]
   id?: Prisma.IntFilter<"Documento"> | number
-  id_documento?: Prisma.IntFilter<"Documento"> | number
   nome_doc?: Prisma.StringFilter<"Documento"> | string
   tipo_doc?: Prisma.StringFilter<"Documento"> | string
   extensao?: Prisma.StringFilter<"Documento"> | string
@@ -528,7 +497,6 @@ export type DocumentoScalarWhereInput = {
 
 export type DocumentoCreateManyConsultaInput = {
   id?: number
-  id_documento: number
   nome_doc: string
   tipo_doc: string
   extensao: string
@@ -536,7 +504,6 @@ export type DocumentoCreateManyConsultaInput = {
 }
 
 export type DocumentoUpdateWithoutConsultaInput = {
-  id_documento?: Prisma.IntFieldUpdateOperationsInput | number
   nome_doc?: Prisma.StringFieldUpdateOperationsInput | string
   tipo_doc?: Prisma.StringFieldUpdateOperationsInput | string
   extensao?: Prisma.StringFieldUpdateOperationsInput | string
@@ -545,7 +512,6 @@ export type DocumentoUpdateWithoutConsultaInput = {
 
 export type DocumentoUncheckedUpdateWithoutConsultaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_documento?: Prisma.IntFieldUpdateOperationsInput | number
   nome_doc?: Prisma.StringFieldUpdateOperationsInput | string
   tipo_doc?: Prisma.StringFieldUpdateOperationsInput | string
   extensao?: Prisma.StringFieldUpdateOperationsInput | string
@@ -554,7 +520,6 @@ export type DocumentoUncheckedUpdateWithoutConsultaInput = {
 
 export type DocumentoUncheckedUpdateManyWithoutConsultaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  id_documento?: Prisma.IntFieldUpdateOperationsInput | number
   nome_doc?: Prisma.StringFieldUpdateOperationsInput | string
   tipo_doc?: Prisma.StringFieldUpdateOperationsInput | string
   extensao?: Prisma.StringFieldUpdateOperationsInput | string
@@ -565,7 +530,6 @@ export type DocumentoUncheckedUpdateManyWithoutConsultaInput = {
 
 export type DocumentoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_documento?: boolean
   nome_doc?: boolean
   tipo_doc?: boolean
   extensao?: boolean
@@ -576,7 +540,6 @@ export type DocumentoSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
 
 export type DocumentoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_documento?: boolean
   nome_doc?: boolean
   tipo_doc?: boolean
   extensao?: boolean
@@ -587,7 +550,6 @@ export type DocumentoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
 
 export type DocumentoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  id_documento?: boolean
   nome_doc?: boolean
   tipo_doc?: boolean
   extensao?: boolean
@@ -598,7 +560,6 @@ export type DocumentoSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 
 export type DocumentoSelectScalar = {
   id?: boolean
-  id_documento?: boolean
   nome_doc?: boolean
   tipo_doc?: boolean
   extensao?: boolean
@@ -606,7 +567,7 @@ export type DocumentoSelectScalar = {
   id_consulta?: boolean
 }
 
-export type DocumentoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_documento" | "nome_doc" | "tipo_doc" | "extensao" | "tamanho_doc" | "id_consulta", ExtArgs["result"]["documento"]>
+export type DocumentoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nome_doc" | "tipo_doc" | "extensao" | "tamanho_doc" | "id_consulta", ExtArgs["result"]["documento"]>
 export type DocumentoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   consulta?: boolean | Prisma.ConsultaDefaultArgs<ExtArgs>
 }
@@ -624,7 +585,6 @@ export type $DocumentoPayload<ExtArgs extends runtime.Types.Extensions.InternalA
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    id_documento: number
     nome_doc: string
     tipo_doc: string
     extensao: string
@@ -1055,7 +1015,6 @@ export interface Prisma__DocumentoClient<T, Null = never, ExtArgs extends runtim
  */
 export interface DocumentoFieldRefs {
   readonly id: Prisma.FieldRef<"Documento", 'Int'>
-  readonly id_documento: Prisma.FieldRef<"Documento", 'Int'>
   readonly nome_doc: Prisma.FieldRef<"Documento", 'String'>
   readonly tipo_doc: Prisma.FieldRef<"Documento", 'String'>
   readonly extensao: Prisma.FieldRef<"Documento", 'String'>

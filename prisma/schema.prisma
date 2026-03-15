@@ -140,7 +140,6 @@ model Paciente{
 
 model Notificacao{
   id Int @id @default(autoincrement())
-  id_notificacao Int
   ds_mensagem String
   lido Boolean
   titulo String
@@ -255,7 +254,6 @@ enum TipoPagamento {
 
 model Postagem{
   id Int @id @default(autoincrement())
-  id_postagem Int
   titulo String
   mensagem String
   tipo String
@@ -271,7 +269,6 @@ model Postagem{
 
 model Convenio{
   id Int @id @default(autoincrement())
-  id_convenio Int
   no_operadora String
   nu_carteirinha String
   dt_val_carteirinha DateTime
@@ -286,7 +283,6 @@ model Convenio{
 
 model Documento{
   id Int @id @default(autoincrement())
-  id_documento Int
   nome_doc String
   tipo_doc String
   extensao String
