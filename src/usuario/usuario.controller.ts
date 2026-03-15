@@ -1,34 +1,55 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+// quem esteve aqui (coloca seu nome smp que entrar pf): motta 
+
+import { Controller, Get, Post, Body, Patch, Param, Put} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 
-@Controller('usuario')
+
+// vou colocar as URLs todas em cima do que eu fizer pra não me perder
+
+// vou usar o mesmo modelo de @metodo -- funcao-do-service(){...} pra todos 
+
+//usar this.prisma.usuarioService
+
+@Controller('usuarios')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
-  @Post()
-  create(@Body() createUsuarioDto: CreateUsuarioDto) {
-    return this.usuarioService.create(createUsuarioDto);
+  // /usuarios/unico/id
+  @Get('unico/id')
+  getDados(@Param('id') id:string){
+    return this.usuarioService.getDados(+id);
   }
 
-  @Get()
-  findAll() {
-    return this.usuarioService.findAll();
+  // /usuarios/ver-todos
+  @Get('ver-todos')
+  getUsuarios(){
+    return this.usuarioService.getUsuarios();
+  } // não preciso de um ID específico aqui, eu to vendo todos 
+
+  // /usuarios/unico/editar/id 
+
+  @Patch('unico/editar/id')
+  editarDadosUsuario(@Param('id') id:string, @Body() updateUsuarioDto: UpdateUsuarioDto)
+  // precisei puxar id e update, usar param pra id e body pra update
+  {
+    return this.usuarioService.editarDadosUsuario(+id, updateUsuarioDto);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usuarioService.findOne(+id);
+  // /usuarios/unico/atualizar/id
+  @Put('unico/atualizar/id')
+  atualizarTodosOsDadosUsuario(@Param('id') id:string, @Body() updateUsuarioDto: UpdateUsuarioDto)
+  {
+    return this.usuarioService.editarDadosUsuario(+id, updateUsuarioDto);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
-    return this.usuarioService.update(+id, updateUsuarioDto);
+  // /usuarios/mensagem/id
+
+  @Post('mensagem/id')
+  enviarMensagem(@Param('id') id:string , @Body() createUsuarioDto : CreateUsuarioDto){
+    return this.usuarioService.enviarMensagem(+id, createUsuarioDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.usuarioService.remove(+id);
-  }
 }
+
