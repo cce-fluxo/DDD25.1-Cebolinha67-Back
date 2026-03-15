@@ -93,7 +93,7 @@ model Usuario{
   id Int @id @default(autoincrement())
   no_usuario String
   email_usuario String @unique
-  CPF String @unique
+  cpf String @unique
   nu_celular String @unique
   genero String
   data_nascimento DateTime
