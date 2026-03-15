@@ -6,19 +6,31 @@
 
 //usar this.prisma.notificacaoService
 
+// tá tudo da minha lógica bem comentado e explicado no usuario.controller.ts, vale a pena dar uma olhada lá, que ai eu não fico me repetindo nos comentários de código
+
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { NotificacaoService } from './notificacao.service';
-import { CreateNotificacaoDto } from './dto/create-notificacao.dto';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
 
 @Controller('notificacoes')
 export class NotificacaoController {
   constructor(private readonly notificacaoService: NotificacaoService) {}
 
-  @Get
+  // /notificacoes/id
+  @Get('/id')
+  getDados(@Param('id') id:string){
+    return this.notificacaoService.getDados(+id)
+  }
 
-  // /notificacao/
-  pegarDados(){
-    
+  // /notificacoes/lida
+
+  @Get('/lida')
+  listarNotificacoes(){
+    return this.notificacaoService.listarNotificacoes()
+  }
+
+  @Patch("/status/id")
+  mudarStatus(@Param('id') id:string, @Body() updateNotificacaoDto: UpdateNotificacaoDto){
+    return this.notificacaoService.mudarStatus(+id, updateNotificacaoDto)
   }
 }

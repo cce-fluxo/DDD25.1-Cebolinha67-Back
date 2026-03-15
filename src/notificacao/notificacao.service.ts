@@ -1,7 +1,6 @@
 // quem esteve aqui (coloca seu nome smp que entrar pf): motta 
 
 import { Injectable } from '@nestjs/common';
-import { CreateNotificacaoDto } from './dto/create-notificacao.dto';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
