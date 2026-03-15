@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { PacienteService } from './paciente.service';
+import { describe, beforeEach, it, expect } from '@jest/globals';
 
 describe('PacienteService', () => {
   let service: PacienteService;
@@ -16,3 +17,4 @@ describe('PacienteService', () => {
     expect(service).toBeDefined();
   });
 });
+
