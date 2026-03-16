@@ -32,17 +32,12 @@ export class ConsultasController {
     return this.consultasService.criarConsulta(createConsultaDto);
   }
 
-  @Delete('remover-consulta/:id')
-  removerConsulta(@Param('id') id: string) {
-    return this.consultasService.removerConsulta(+id);
-  }
-
-  @Patch(':id')
+  @Patch('/editar-consulta/:id')
   update(@Param('id') id: string, @Body() updateConsultaDto: UpdateConsultaDto) {
     return this.consultasService.editarConsulta(+id, updateConsultaDto);
   }
 
-  @Delete(':id')
+  @Delete('/remover-consulta/:id')
   remove(@Param('id') id: string) {
     return this.consultasService.removerConsulta(+id);
   }
