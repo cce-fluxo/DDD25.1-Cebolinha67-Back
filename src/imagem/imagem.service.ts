@@ -12,7 +12,7 @@
 
 // tem vários comentários úteis no usuario.service.ts , eu não vou reescrever tudo em todos pra não ficar maçante mas a lógica de pensamento pra fazer tá bem falada lá
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { UpdateImagemDto } from './dto/update-imagem.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
@@ -23,28 +23,57 @@ export class ImagemService {
   constructor(private readonly prisma: PrismaService){}
 
   async mostrarImagens(){
-    this.prisma.imagem.findMany()
+    const imagens = this.prisma.imagem.findMany()
+
+    if(!imagens){
+      throw new NotFoundException("Não encontramos nenhuma imagem")
+    }
+
+    return imagens
   }
 
   async fazerUpload(id:number) {
-    this.prisma.imagem.findUnique({
-      where:{id}
+    
+    const imagem = this.prisma.imagem.findUnique({
+      where: {id}
     })
 
-  }; // revisar esse cara aqui
+    if(!imagem){
+      throw new NotFoundException("Não encontramos nenhuma imagem")
+    } 
+
+    return imagem
+
+  }; // revisar esse cara aqui, ele provavelmente tá errado
 
 
   async editarImagem(id:number, updateImagemDto : UpdateImagemDto){
-    this.prisma.imagem.update({
+   
+    const imagem = this.prisma.imagem.update({
       where: {id},
-      data: updateImagemDto 
+      data: updateImagemDto
     })
+
+    if(!imagem){
+      throw new NotFoundException("Não há foto a ser editada")
+    }
+
+    return imagem
+
   }
 
   async removerImagem(id:number){
-    this.prisma.imagem.delete({
-      where: {id}
+
+    const imagem = this.prisma.imagem.delete({
+      where:{id}
     })
+
+    if(!imagem){
+      throw new NotFoundException("Não há imagem a ser deletada")
+    }
+
+    return imagem
+    }
   }
   
-}
+
