@@ -6,6 +6,10 @@ import {
   Patch,
   Param,
   Delete,
+  UsePipes,
+  ValidationPipe,
+  ParseIntPipe,
+  HttpException,
 } from '@nestjs/common';
 import { PostagemService } from './postagem.service';
 import { CreatePostagemDto } from './dto/create-postagem.dto';
@@ -26,25 +30,36 @@ export class PostagemController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.postagemService.findOne(+id);
+  async findOne(@Param('id', ParseIntPipe) id: string) {
+    const user = await this.postagemService.findOne(+id);
+    if (!user) {
+      throw new HttpException('Postagem não encontrada', 404);
+    }
+    return user;
   }
 
   @Get('/dentista/:id')
-  findDentista(@Param('id') id: string) {
-    return this.postagemService.findDentista(+id);
+  async findDentista(@Param('id', ParseIntPipe) id: string) {
+    const users = await this.postagemService.findDentista(+id);
+    if (!users || users.length === 0) {
+      throw new HttpException(
+        'Nenhuma postagem encontrada para o dentista especificado',
+        404,
+      );
+    }
+    return users;
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: string,
     @Body() updatePostagemDto: UpdatePostagemDto,
   ) {
     return this.postagemService.update(+id, updatePostagemDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
+  remove(@Param('id', ParseIntPipe) id: string) {
     return this.postagemService.remove(+id);
   }
 }

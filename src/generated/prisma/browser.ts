@@ -78,6 +78,11 @@ export type DetalheDaConsulta = Prisma.DetalheDaConsultaModel
  */
 export type Postagem = Prisma.PostagemModel
 /**
+ * Model PostagemPaciente
+ * 
+ */
+export type PostagemPaciente = Prisma.PostagemPacienteModel
+/**
  * Model Convenio
  * 
  */

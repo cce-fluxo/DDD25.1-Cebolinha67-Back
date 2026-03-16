@@ -63,6 +63,7 @@ export const ModelName = {
   Consulta: 'Consulta',
   DetalheDaConsulta: 'DetalheDaConsulta',
   Postagem: 'Postagem',
+  PostagemPaciente: 'PostagemPaciente',
   Convenio: 'Convenio',
   Documento: 'Documento'
 } as const
@@ -214,11 +215,20 @@ export const PostagemScalarFieldEnum = {
   titulo: 'titulo',
   mensagem: 'mensagem',
   tipo: 'tipo',
-  data: 'data',
+  data_criacao: 'data_criacao',
   id_dentista: 'id_dentista'
 } as const
 
 export type PostagemScalarFieldEnum = (typeof PostagemScalarFieldEnum)[keyof typeof PostagemScalarFieldEnum]
+
+
+export const PostagemPacienteScalarFieldEnum = {
+  id: 'id',
+  id_postagem: 'id_postagem',
+  id_paciente: 'id_paciente'
+} as const
+
+export type PostagemPacienteScalarFieldEnum = (typeof PostagemPacienteScalarFieldEnum)[keyof typeof PostagemPacienteScalarFieldEnum]
 
 
 export const ConvenioScalarFieldEnum = {

@@ -222,14 +222,15 @@ export type ImagemUsuarioOrderByWithRelationInput = {
 
 export type ImagemUsuarioWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  id_imagem?: number
   id_usuario?: number
+  id_imagem_id_usuario?: Prisma.ImagemUsuarioId_imagemId_usuarioCompoundUniqueInput
   AND?: Prisma.ImagemUsuarioWhereInput | Prisma.ImagemUsuarioWhereInput[]
   OR?: Prisma.ImagemUsuarioWhereInput[]
   NOT?: Prisma.ImagemUsuarioWhereInput | Prisma.ImagemUsuarioWhereInput[]
+  id_imagem?: Prisma.IntFilter<"ImagemUsuario"> | number
   imagem?: Prisma.XOR<Prisma.ImagemScalarRelationFilter, Prisma.ImagemWhereInput>
   usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
-}, "id" | "id_imagem" | "id_usuario">
+}, "id" | "id_usuario" | "id_imagem_id_usuario">
 
 export type ImagemUsuarioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -302,6 +303,11 @@ export type ImagemUsuarioListRelationFilter = {
 
 export type ImagemUsuarioOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type ImagemUsuarioId_imagemId_usuarioCompoundUniqueInput = {
+  id_imagem: number
+  id_usuario: number
 }
 
 export type ImagemUsuarioCountOrderByAggregateInput = {

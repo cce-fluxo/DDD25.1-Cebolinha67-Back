@@ -1,42 +1,47 @@
-import { Injectable } from '@nestjs/common';
-import { CreatePostagemDto } from './dto/create-postagem.dto';
+import { HttpException, Injectable } from '@nestjs/common';
+// import { CreatePostagemDto } from './dto/create-postagem.dto';
 import { UpdatePostagemDto } from './dto/update-postagem.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { Prisma } from 'src/generated/prisma/browser';
+import { get } from 'http';
 
 @Injectable()
 export class PostagemService {
   constructor(private readonly prisma: PrismaService) {}
-  create(createPostagemDto: CreatePostagemDto) {
-    return this.prisma.Postagem.create({
-      data: { ...createPostagemDto, data: new Date(createPostagemDto.data) },
-    });
+  create(dataPosta: Prisma.PostagemCreateInput) {
+    return this.prisma.postagem.create({ data: dataPosta });
   }
 
   findAll() {
-    return this.prisma.Postagem.findMany();
+    return this.prisma.postagem.findMany();
   }
 
   findOne(id: number) {
-    return this.prisma.Postagem.findUnique({
+    return this.prisma.postagem.findUnique({
       where: { id: id },
     });
   }
 
   findDentista(id: number) {
-    return this.prisma.Postagem.findMany({
-      where: { id: id },
+    return this.prisma.postagem.findMany({
+      where: { id_dentista: id },
     });
   }
 
-  update(id: number, updatePostagemDto: UpdatePostagemDto) {
-    return this.prisma.Postagem.update({
+  async update(id: number, updatePostagemDto: Prisma.PostagemUpdateInput) {
+    const findPostagem = await this.findOne(id);
+    if (!findPostagem) {
+      throw new HttpException('Postagem não encontrada', 404);
+    }
+
+    return this.prisma.postagem.update({
       where: { id: id },
       data: updatePostagemDto,
     });
   }
 
   remove(id: number) {
-    return this.prisma.Postagem.delete({
+    return this.prisma.postagem.delete({
       where: { id: id },
     });
   }

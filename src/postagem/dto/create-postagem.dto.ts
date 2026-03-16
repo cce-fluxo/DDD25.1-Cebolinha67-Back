@@ -1,21 +1,27 @@
-import { IsDateString, IsInt, IsString } from 'class-validator';
+import { Type } from 'class-transformer';
+import {
+  IsEnum,
+  IsInt,
+  IsNotEmpty,
+  IsString,
+  MaxLength,
+} from 'class-validator';
+import { TipoPostagem } from 'src/generated/prisma/browser';
 
 export class CreatePostagemDto {
-  @IsInt()
-  id_postagem: number;
-
   @IsString()
+  @IsNotEmpty()
+  @MaxLength(150)
   titulo: string;
 
   @IsString()
+  @IsNotEmpty()
   mensagem: string;
 
-  @IsString()
-  tipo: string;
+  @IsEnum(TipoPostagem as object)
+  tipo: TipoPostagem;
 
-  @IsDateString()
-  data: string;
-
+  @Type(() => Number)
   @IsInt()
-  id_dentista: number;
+  dentista: number;
 }

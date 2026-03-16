@@ -258,13 +258,13 @@ export type ConsultaOrderByWithRelationInput = {
 
 export type ConsultaWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  id_paciente?: number
   id_dentista?: number
   id_convenio?: number
   id_endereco?: number
   AND?: Prisma.ConsultaWhereInput | Prisma.ConsultaWhereInput[]
   OR?: Prisma.ConsultaWhereInput[]
   NOT?: Prisma.ConsultaWhereInput | Prisma.ConsultaWhereInput[]
+  id_paciente?: Prisma.IntFilter<"Consulta"> | number
   paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
   dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
   convenio?: Prisma.XOR<Prisma.ConvenioScalarRelationFilter, Prisma.ConvenioWhereInput>
@@ -272,7 +272,7 @@ export type ConsultaWhereUniqueInput = Prisma.AtLeast<{
   detalhe_da_consulta?: Prisma.XOR<Prisma.DetalheDaConsultaNullableScalarRelationFilter, Prisma.DetalheDaConsultaWhereInput> | null
   documentos?: Prisma.DocumentoListRelationFilter
   notificacao_usuario?: Prisma.NotificacaoUsuarioListRelationFilter
-}, "id" | "id_paciente" | "id_dentista" | "id_convenio" | "id_endereco">
+}, "id" | "id_dentista" | "id_convenio" | "id_endereco">
 
 export type ConsultaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder

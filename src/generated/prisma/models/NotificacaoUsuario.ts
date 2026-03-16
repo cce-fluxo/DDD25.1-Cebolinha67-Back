@@ -238,15 +238,16 @@ export type NotificacaoUsuarioOrderByWithRelationInput = {
 export type NotificacaoUsuarioWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   id_notificacao?: number
-  id_usuario?: number
-  id_consulta?: number
+  id_usuario_id_notificacao?: Prisma.NotificacaoUsuarioId_usuarioId_notificacaoCompoundUniqueInput
   AND?: Prisma.NotificacaoUsuarioWhereInput | Prisma.NotificacaoUsuarioWhereInput[]
   OR?: Prisma.NotificacaoUsuarioWhereInput[]
   NOT?: Prisma.NotificacaoUsuarioWhereInput | Prisma.NotificacaoUsuarioWhereInput[]
+  id_usuario?: Prisma.IntFilter<"NotificacaoUsuario"> | number
+  id_consulta?: Prisma.IntNullableFilter<"NotificacaoUsuario"> | number | null
   notificacao?: Prisma.XOR<Prisma.NotificacaoScalarRelationFilter, Prisma.NotificacaoWhereInput>
   usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
   consulta?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
-}, "id" | "id_notificacao" | "id_usuario" | "id_consulta">
+}, "id" | "id_notificacao" | "id_usuario_id_notificacao">
 
 export type NotificacaoUsuarioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -327,6 +328,11 @@ export type NotificacaoUsuarioOrderByRelationAggregateInput = {
 export type NotificacaoUsuarioNullableScalarRelationFilter = {
   is?: Prisma.NotificacaoUsuarioWhereInput | null
   isNot?: Prisma.NotificacaoUsuarioWhereInput | null
+}
+
+export type NotificacaoUsuarioId_usuarioId_notificacaoCompoundUniqueInput = {
+  id_usuario: number
+  id_notificacao: number
 }
 
 export type NotificacaoUsuarioCountOrderByAggregateInput = {

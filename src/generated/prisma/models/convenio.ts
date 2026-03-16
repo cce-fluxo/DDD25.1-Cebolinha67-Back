@@ -236,16 +236,16 @@ export type ConvenioOrderByWithRelationInput = {
 
 export type ConvenioWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  id_paciente?: number
   AND?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
   OR?: Prisma.ConvenioWhereInput[]
   NOT?: Prisma.ConvenioWhereInput | Prisma.ConvenioWhereInput[]
   no_operadora?: Prisma.StringFilter<"Convenio"> | string
   nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
   dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
+  id_paciente?: Prisma.IntFilter<"Convenio"> | number
   paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
   consultas?: Prisma.ConsultaListRelationFilter
-}, "id" | "id_paciente">
+}, "id">
 
 export type ConvenioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
