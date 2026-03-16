@@ -205,7 +205,7 @@ model ImagemPostagem{
 
 model Endereco{
   id Int @id @default(autoincrement())
-  data_criacao_endereco DateTime
+  data_criacao_endereco DateTime @default(now())
   logradouro String
   cidade String
   estado String
@@ -240,7 +240,7 @@ model Consulta {
 
 model DetalheDaConsulta {
   id Int @id @default(autoincrement())
-  DH DateTime
+  DH DateTime 
   valor Int
   tipo_pagamento TipoPagamento
   status String
