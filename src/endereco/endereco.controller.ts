@@ -7,28 +7,28 @@ import { UpdateEnderecoDto } from './dto/update-endereco.dto';
 export class EnderecoController {
   constructor(private readonly enderecoService: EnderecoService) {}
 
-  @Post()
+  @Post('/cadastrar-novo-endereco')
   create(@Body() createEnderecoDto: CreateEnderecoDto) {
-    return this.enderecoService.create(createEnderecoDto);
+    return this.enderecoService.criarEndereco(createEnderecoDto);
   }
 
-  @Get()
+  @Get('/ver-enderecos')
   findAll() {
-    return this.enderecoService.findAll();
+    return this.enderecoService.verEnderecos();
   }
 
-  @Get(':id')
+  @Get('/ver-endereco/:id')
   findOne(@Param('id') id: string) {
-    return this.enderecoService.findOne(+id);
+    return this.enderecoService.verEnderecoUnico(+id);
   }
 
-  @Patch(':id')
+  @Patch('/editar-endereco/:id')
   update(@Param('id') id: string, @Body() updateEnderecoDto: UpdateEnderecoDto) {
-    return this.enderecoService.update(+id, updateEnderecoDto);
+    return this.enderecoService.editarEndereco(+id, updateEnderecoDto);
   }
 
-  @Delete(':id')
+  @Delete('/remover-enderco/:id')
   remove(@Param('id') id: string) {
-    return this.enderecoService.remove(+id);
+    return this.enderecoService.removerEndereco(+id);
   }
 }

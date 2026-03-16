@@ -1,26 +1,65 @@
 import { Injectable } from '@nestjs/common';
 import { CreateEnderecoDto } from './dto/create-endereco.dto';
 import { UpdateEnderecoDto } from './dto/update-endereco.dto';
+import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
 export class EnderecoService {
-  create(createEnderecoDto: CreateEnderecoDto) {
-    return 'This action adds a new endereco';
+
+  constructor(private prisma: PrismaService){}
+
+  async verEnderecos() {
+    return this.prisma.endereco.findMany();
   }
 
-  findAll() {
-    return `This action returns all endereco`;
+  async verEnderecoUnico(id_endereco: number) {
+    return this.prisma.endereco.findUnique({
+      where: {id: id_endereco}
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} endereco`;
+  async criarEndereco(createEnderecoDto: CreateEnderecoDto) {
+  
+    return this.prisma.endereco.create({
+
+      data: { //AJUSTAR MIGRATE PARA AUTOMATIZAR REGISTRO DE DATA
+
+        logradouro: createEnderecoDto.logradouro,
+        cidade: createEnderecoDto.cidade,
+        estado: createEnderecoDto.estado,
+        bairro: createEnderecoDto.bairro,
+        complemento: createEnderecoDto.complemento,
+        cep: createEnderecoDto.cep,
+        id_dentista: createEnderecoDto.id_dentista,
+      }
+
+    });
+
   }
 
-  update(id: number, updateEnderecoDto: UpdateEnderecoDto) {
-    return `This action updates a #${id} endereco`;
+  async editarEndereco(id: number, updateEnderecoDto: UpdateEnderecoDto) {
+
+    return this.prisma.endereco.update({
+
+      where: {id},
+
+      data: {
+
+        logradouro: updateEnderecoDto.logradouro,
+        cidade: updateEnderecoDto.cidade,
+        estado: updateEnderecoDto.estado,
+        bairro: updateEnderecoDto.bairro,
+        complemento: updateEnderecoDto.complemento,
+        cep: updateEnderecoDto.cep,
+        id_dentista: updateEnderecoDto.id_dentista,
+      }
+
+    });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} endereco`;
+  removerEndereco(id: number) {
+    return this.prisma.endereco.delete({
+      where: {id: id}
+    })
   }
 }
