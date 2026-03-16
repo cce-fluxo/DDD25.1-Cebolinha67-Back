@@ -1,4 +1,4 @@
-// quem esteve aqui (coloca seu nome smp que entrar pf): motta 
+// quem esteve aqui (coloca seu nome smp que entrar pf): motta -> 
 
 // vou colocar as URLs todas em cima do que eu fizer pra não me perder
 
@@ -8,7 +8,7 @@
 
 // tá tudo da minha lógica bem comentado e explicado no usuario.controller.ts, vale a pena dar uma olhada lá, que ai eu não fico me repetindo nos comentários de código
 
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Body, Patch, Param} from '@nestjs/common';
 import { NotificacaoService } from './notificacao.service';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
 
@@ -34,3 +34,5 @@ export class NotificacaoController {
     return this.notificacaoService.mudarStatus(+id, updateNotificacaoDto)
   }
 }
+
+

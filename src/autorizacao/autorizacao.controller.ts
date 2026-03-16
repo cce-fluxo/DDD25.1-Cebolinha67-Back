@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { AutorizacaoService } from './autorizacao.service';
-import { CreateAutorizacaoDto } from './dto/create-autorizacao.dto';
-import { UpdateAutorizacaoDto } from './dto/update-autorizacao.dto';
+import { CreateAutorizacaoDto } from './dto/login.dto';
+import { UpdateAutorizacaoDto } from './dto/update-paciente.dto';
 
 @Controller('autorizacao')
 export class AutorizacaoController {
