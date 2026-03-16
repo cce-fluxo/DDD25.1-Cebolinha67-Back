@@ -7,36 +7,36 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class PostagemService {
   constructor(private readonly prisma: PrismaService) {}
   create(createPostagemDto: CreatePostagemDto) {
-    return this.prisma.Postagem.create({
+    return this.prisma.postagem.create({
       data: { ...createPostagemDto, data: new Date(createPostagemDto.data) },
     });
   }
 
   findAll() {
-    return this.prisma.Postagem.findMany();
+    return this.prisma.postagem.findMany();
   }
 
   findOne(id: number) {
-    return this.prisma.Postagem.findUnique({
+    return this.prisma.postagem.findUnique({
       where: { id: id },
     });
   }
 
   findDentista(id: number) {
-    return this.prisma.Postagem.findMany({
-      where: { id: id },
+    return this.prisma.postagem.findMany({
+      where: { id_dentista: id },
     });
   }
 
   update(id: number, updatePostagemDto: UpdatePostagemDto) {
-    return this.prisma.Postagem.update({
+    return this.prisma.postagem.update({
       where: { id: id },
       data: updatePostagemDto,
     });
   }
 
   remove(id: number) {
-    return this.prisma.Postagem.delete({
+    return this.prisma.postagem.delete({
       where: { id: id },
     });
   }
