@@ -17,7 +17,6 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class UsuarioService {
-
   constructor(private readonly prisma: PrismaService){}
 
    async getDados(id:number){

@@ -1,3 +1,5 @@
+// quem esteve aqui (coloca seu nome smp que entrar pf): arthur -> motta
+
 import {
   Controller,
   Get,
@@ -6,8 +8,6 @@ import {
   Patch,
   Param,
   Delete,
-  UsePipes,
-  ValidationPipe,
   ParseIntPipe,
   HttpException,
 } from '@nestjs/common';
@@ -22,7 +22,13 @@ export class PostagemController {
 
   @Post()
   create(@Body() createPostagemDto: CreatePostagemDto) {
-    return this.postagemService.create(createPostagemDto);
+    const input: any = {
+      ...createPostagemDto,
+    };
+    if (createPostagemDto.dentista) {
+      input.dentista = { connect: { id: createPostagemDto.dentista } };
+    }
+    return this.postagemService.create(input);
   }
 
   @Get()
@@ -56,7 +62,13 @@ export class PostagemController {
     @Param('id', ParseIntPipe) id: string,
     @Body() updatePostagemDto: UpdatePostagemDto,
   ) {
-    return this.postagemService.update(+id, updatePostagemDto);
+    const input: any = {
+      ...updatePostagemDto,
+    };
+    if (updatePostagemDto.dentista) {
+      input.dentista = { connect: { id: updatePostagemDto.dentista } };
+    }
+    return this.postagemService.update(+id, input);
   }
 
   @Delete(':id')
@@ -64,3 +76,26 @@ export class PostagemController {
     return this.postagemService.remove(+id);
   }
 }
+
+/*
+---------------------------------------------------------------
+
+Era o 1o decorator embaixo de controller
+@Post()
+  create(@Body() createPostagemDto: CreatePostagemDto) {
+    return this.postagemService.create(createPostagemDto);
+  }
+
+--------------------------------------------------------------
+
+Era o penúltimo decorator embaixo de controller, logo acima do @Delete
+  @Patch(':id')
+  update(
+    @Param('id', ParseIntPipe) id: string,
+    @Body() updatePostagemDto: UpdatePostagemDto,
+  ) {
+    return this.postagemService.update(+id, updatePostagemDto);
+  }
+
+
+*/

@@ -12,7 +12,7 @@ async function bootstrap() {
     .setTitle('Cats example')
     .setDescription('The cats API description')
     .setVersion('1.0')
-    .addTag('usuarios') // colocar todas as nossas tags em diferentes addTag
+  .addTag('usuarios') // colocar todas as nossas tags em diferentes addTag
 	.addTag('notificacoes')
 	.addTag('imagens')
     .build();
@@ -22,3 +22,5 @@ async function bootstrap() {
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();
+
+
