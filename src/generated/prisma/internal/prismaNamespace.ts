@@ -396,6 +396,7 @@ export const ModelName = {
   Consulta: 'Consulta',
   DetalheDaConsulta: 'DetalheDaConsulta',
   Postagem: 'Postagem',
+  PostagemPaciente: 'PostagemPaciente',
   Convenio: 'Convenio',
   Documento: 'Documento'
 } as const
@@ -413,7 +414,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "usuario" | "dentista" | "paciente" | "notificacao" | "notificacaoUsuario" | "imagem" | "imagemUsuario" | "imagemPostagem" | "endereco" | "consulta" | "detalheDaConsulta" | "postagem" | "convenio" | "documento"
+    modelProps: "usuario" | "dentista" | "paciente" | "notificacao" | "notificacaoUsuario" | "imagem" | "imagemUsuario" | "imagemPostagem" | "endereco" | "consulta" | "detalheDaConsulta" | "postagem" | "postagemPaciente" | "convenio" | "documento"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1305,6 +1306,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    PostagemPaciente: {
+      payload: Prisma.$PostagemPacientePayload<ExtArgs>
+      fields: Prisma.PostagemPacienteFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.PostagemPacienteFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.PostagemPacienteFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>
+        }
+        findFirst: {
+          args: Prisma.PostagemPacienteFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.PostagemPacienteFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>
+        }
+        findMany: {
+          args: Prisma.PostagemPacienteFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>[]
+        }
+        create: {
+          args: Prisma.PostagemPacienteCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>
+        }
+        createMany: {
+          args: Prisma.PostagemPacienteCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.PostagemPacienteCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>[]
+        }
+        delete: {
+          args: Prisma.PostagemPacienteDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>
+        }
+        update: {
+          args: Prisma.PostagemPacienteUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>
+        }
+        deleteMany: {
+          args: Prisma.PostagemPacienteDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.PostagemPacienteUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.PostagemPacienteUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>[]
+        }
+        upsert: {
+          args: Prisma.PostagemPacienteUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PostagemPacientePayload>
+        }
+        aggregate: {
+          args: Prisma.PostagemPacienteAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregatePostagemPaciente>
+        }
+        groupBy: {
+          args: Prisma.PostagemPacienteGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PostagemPacienteGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.PostagemPacienteCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.PostagemPacienteCountAggregateOutputType> | number
+        }
+      }
+    }
     Convenio: {
       payload: Prisma.$ConvenioPayload<ExtArgs>
       fields: Prisma.ConvenioFieldRefs
@@ -1623,11 +1698,20 @@ export const PostagemScalarFieldEnum = {
   titulo: 'titulo',
   mensagem: 'mensagem',
   tipo: 'tipo',
-  data: 'data',
+  data_criacao: 'data_criacao',
   id_dentista: 'id_dentista'
 } as const
 
 export type PostagemScalarFieldEnum = (typeof PostagemScalarFieldEnum)[keyof typeof PostagemScalarFieldEnum]
+
+
+export const PostagemPacienteScalarFieldEnum = {
+  id: 'id',
+  id_postagem: 'id_postagem',
+  id_paciente: 'id_paciente'
+} as const
+
+export type PostagemPacienteScalarFieldEnum = (typeof PostagemPacienteScalarFieldEnum)[keyof typeof PostagemPacienteScalarFieldEnum]
 
 
 export const ConvenioScalarFieldEnum = {
@@ -1743,6 +1827,20 @@ export type EnumTipoPagamentoFieldRefInput<$PrismaModel> = FieldRefInputType<$Pr
  * Reference to a field of type 'TipoPagamento[]'
  */
 export type ListEnumTipoPagamentoFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TipoPagamento[]'>
+    
+
+
+/**
+ * Reference to a field of type 'TipoPostagem'
+ */
+export type EnumTipoPostagemFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TipoPostagem'>
+    
+
+
+/**
+ * Reference to a field of type 'TipoPostagem[]'
+ */
+export type ListEnumTipoPostagemFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'TipoPostagem[]'>
     
 
 
@@ -1866,6 +1964,7 @@ export type GlobalOmitConfig = {
   consulta?: Prisma.ConsultaOmit
   detalheDaConsulta?: Prisma.DetalheDaConsultaOmit
   postagem?: Prisma.PostagemOmit
+  postagemPaciente?: Prisma.PostagemPacienteOmit
   convenio?: Prisma.ConvenioOmit
   documento?: Prisma.DocumentoOmit
 }

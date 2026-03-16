@@ -247,7 +247,6 @@ export type DocumentoOrderByWithRelationInput = {
 
 export type DocumentoWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  id_consulta?: number
   AND?: Prisma.DocumentoWhereInput | Prisma.DocumentoWhereInput[]
   OR?: Prisma.DocumentoWhereInput[]
   NOT?: Prisma.DocumentoWhereInput | Prisma.DocumentoWhereInput[]
@@ -255,8 +254,9 @@ export type DocumentoWhereUniqueInput = Prisma.AtLeast<{
   tipo_doc?: Prisma.StringFilter<"Documento"> | string
   extensao?: Prisma.StringFilter<"Documento"> | string
   tamanho_doc?: Prisma.FloatFilter<"Documento"> | number
+  id_consulta?: Prisma.IntFilter<"Documento"> | number
   consulta?: Prisma.XOR<Prisma.ConsultaScalarRelationFilter, Prisma.ConsultaWhereInput>
-}, "id" | "id_consulta">
+}, "id">
 
 export type DocumentoOrderByWithAggregationInput = {
   id?: Prisma.SortOrder

@@ -265,18 +265,18 @@ export type DetalheDaConsultaOrderByWithRelationInput = {
 
 export type DetalheDaConsultaWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  tipo_pagamento?: $Enums.TipoPagamento
   id_consulta?: number
   AND?: Prisma.DetalheDaConsultaWhereInput | Prisma.DetalheDaConsultaWhereInput[]
   OR?: Prisma.DetalheDaConsultaWhereInput[]
   NOT?: Prisma.DetalheDaConsultaWhereInput | Prisma.DetalheDaConsultaWhereInput[]
   DH?: Prisma.DateTimeFilter<"DetalheDaConsulta"> | Date | string
   valor?: Prisma.IntFilter<"DetalheDaConsulta"> | number
+  tipo_pagamento?: Prisma.EnumTipoPagamentoFilter<"DetalheDaConsulta"> | $Enums.TipoPagamento
   status?: Prisma.StringFilter<"DetalheDaConsulta"> | string
   tipo_consulta?: Prisma.StringFilter<"DetalheDaConsulta"> | string
   motivo?: Prisma.StringFilter<"DetalheDaConsulta"> | string
   consulta?: Prisma.XOR<Prisma.ConsultaScalarRelationFilter, Prisma.ConsultaWhereInput>
-}, "id" | "tipo_pagamento" | "id_consulta">
+}, "id" | "id_consulta">
 
 export type DetalheDaConsultaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder

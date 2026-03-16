@@ -161,6 +161,23 @@ export type EnumTipoPagamentoWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedEnumTipoPagamentoFilter<$PrismaModel>
 }
 
+export type EnumTipoPostagemFilter<$PrismaModel = never> = {
+  equals?: $Enums.TipoPostagem | Prisma.EnumTipoPostagemFieldRefInput<$PrismaModel>
+  in?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTipoPostagemFilter<$PrismaModel> | $Enums.TipoPostagem
+}
+
+export type EnumTipoPostagemWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TipoPostagem | Prisma.EnumTipoPostagemFieldRefInput<$PrismaModel>
+  in?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTipoPostagemWithAggregatesFilter<$PrismaModel> | $Enums.TipoPostagem
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTipoPostagemFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTipoPostagemFilter<$PrismaModel>
+}
+
 export type FloatFilter<$PrismaModel = never> = {
   equals?: number | Prisma.FloatFieldRefInput<$PrismaModel>
   in?: number[] | Prisma.ListFloatFieldRefInput<$PrismaModel>
@@ -348,6 +365,23 @@ export type NestedEnumTipoPagamentoWithAggregatesFilter<$PrismaModel = never> = 
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumTipoPagamentoFilter<$PrismaModel>
   _max?: Prisma.NestedEnumTipoPagamentoFilter<$PrismaModel>
+}
+
+export type NestedEnumTipoPostagemFilter<$PrismaModel = never> = {
+  equals?: $Enums.TipoPostagem | Prisma.EnumTipoPostagemFieldRefInput<$PrismaModel>
+  in?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTipoPostagemFilter<$PrismaModel> | $Enums.TipoPostagem
+}
+
+export type NestedEnumTipoPostagemWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.TipoPostagem | Prisma.EnumTipoPostagemFieldRefInput<$PrismaModel>
+  in?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  notIn?: $Enums.TipoPostagem[] | Prisma.ListEnumTipoPostagemFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumTipoPostagemWithAggregatesFilter<$PrismaModel> | $Enums.TipoPostagem
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumTipoPostagemFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumTipoPostagemFilter<$PrismaModel>
 }
 
 export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {

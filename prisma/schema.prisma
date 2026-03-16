@@ -134,6 +134,7 @@ model Paciente{
   usuario Usuario @relation(fields:[id_usuario], references: [id])
   convenios Convenio[]
   consultas Consulta[]
+  postagem_paciente PostagemPaciente[]
 }
 
 // NOTIFICAÇÕES 
@@ -155,17 +156,19 @@ model NotificacaoUsuario{
   // RELACIONAMENTOS
   id_notificacao Int @unique
   notificacao Notificacao @relation(fields: [id_notificacao], references: [id])
-  id_usuario Int @unique
+  id_usuario Int 
   usuario Usuario @relation(fields: [id_usuario], references: [id])
-  id_consulta Int? @unique
+  id_consulta Int? 
   consulta Consulta? @relation(fields: [id_consulta], references: [id])
+
+  @@unique([id_usuario, id_notificacao])
 }
 
 // IMAGENS
 
 model Imagem{
   id Int @id @default(autoincrement())
-  url String
+  url String @unique
   nome String
 
   // RELACIONAMENTOS
@@ -177,20 +180,24 @@ model ImagemUsuario{
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_imagem Int @unique
+  id_imagem Int 
   imagem Imagem @relation(fields: [id_imagem], references: [id])
   id_usuario Int @unique
   usuario Usuario @relation(fields: [id_usuario], references: [id])
+
+  @@unique([id_imagem, id_usuario])
 }
 
 model ImagemPostagem{
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_imagem Int @unique
+  id_imagem Int 
   imagem Imagem @relation(fields: [id_imagem], references: [id])
-  id_postagem Int @unique
+  id_postagem Int 
   postagem Postagem @relation(fields: [id_postagem], references: [id])
+
+  @@unique([id_imagem, id_postagem])
 }
 
 // ENDERECO
@@ -217,7 +224,7 @@ model Consulta {
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_paciente Int @unique
+  id_paciente Int 
   paciente Paciente @relation(fields: [id_paciente], references: [id])
   id_dentista Int @unique
   dentista Dentista @relation(fields: [id_dentista], references: [id])
@@ -234,7 +241,7 @@ model DetalheDaConsulta {
   id Int @id @default(autoincrement())
   DH DateTime
   valor Int
-  tipo_pagamento TipoPagamento @unique
+  tipo_pagamento TipoPagamento
   status String
   tipo_consulta String
   motivo String
@@ -254,15 +261,34 @@ enum TipoPagamento {
 
 model Postagem{
   id Int @id @default(autoincrement())
-  titulo String
-  mensagem String
-  tipo String
-  data DateTime
+  titulo String @db.VarChar(150)
+  mensagem String @db.Text
+  tipo TipoPostagem 
+  data_criacao DateTime @default(now())
   
   // RELACIONAMENTOS
-  id_dentista Int @unique
+  id_dentista Int
   dentista Dentista @relation(fields: [id_dentista], references: [id])
   imagem_postagem ImagemPostagem[]
+  postagem_paciente PostagemPaciente[]
+
+  @@index([tipo])
+}
+
+enum TipoPostagem {
+  geral
+  individual
+}
+
+model PostagemPaciente{
+  id Int @id @default(autoincrement())
+
+  // RELACIONAMENTOS
+  id_postagem Int 
+  postagem Postagem @relation(fields: [id_postagem], references: [id])
+  id_paciente Int 
+  paciente Paciente @relation(fields: [id_paciente], references: [id])
+  @@unique([id_paciente, id_postagem])
 }
 
 // CONVÊNIO
@@ -274,7 +300,7 @@ model Convenio{
   dt_val_carteirinha DateTime
 
   // RELACIONAMENTOS
-  id_paciente Int @unique
+  id_paciente Int 
   paciente Paciente @relation(fields: [id_paciente], references: [id])
   consultas Consulta[]
 }
@@ -289,7 +315,7 @@ model Documento{
   tamanho_doc Float
 
   // RELACIONAMENTOS
-  id_consulta Int @unique
+  id_consulta Int 
   consulta Consulta @relation(fields: [id_consulta], references: [id])
 }
 

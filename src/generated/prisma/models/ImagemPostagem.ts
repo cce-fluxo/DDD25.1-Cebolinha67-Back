@@ -222,14 +222,15 @@ export type ImagemPostagemOrderByWithRelationInput = {
 
 export type ImagemPostagemWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  id_imagem?: number
-  id_postagem?: number
+  id_imagem_id_postagem?: Prisma.ImagemPostagemId_imagemId_postagemCompoundUniqueInput
   AND?: Prisma.ImagemPostagemWhereInput | Prisma.ImagemPostagemWhereInput[]
   OR?: Prisma.ImagemPostagemWhereInput[]
   NOT?: Prisma.ImagemPostagemWhereInput | Prisma.ImagemPostagemWhereInput[]
+  id_imagem?: Prisma.IntFilter<"ImagemPostagem"> | number
+  id_postagem?: Prisma.IntFilter<"ImagemPostagem"> | number
   imagem?: Prisma.XOR<Prisma.ImagemScalarRelationFilter, Prisma.ImagemWhereInput>
   postagem?: Prisma.XOR<Prisma.PostagemScalarRelationFilter, Prisma.PostagemWhereInput>
-}, "id" | "id_imagem" | "id_postagem">
+}, "id" | "id_imagem_id_postagem">
 
 export type ImagemPostagemOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -297,6 +298,11 @@ export type ImagemPostagemListRelationFilter = {
 
 export type ImagemPostagemOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type ImagemPostagemId_imagemId_postagemCompoundUniqueInput = {
+  id_imagem: number
+  id_postagem: number
 }
 
 export type ImagemPostagemCountOrderByAggregateInput = {

@@ -15,3 +15,11 @@ export const TipoPagamento = {
 } as const
 
 export type TipoPagamento = (typeof TipoPagamento)[keyof typeof TipoPagamento]
+
+
+export const TipoPostagem = {
+  geral: 'geral',
+  individual: 'individual'
+} as const
+
+export type TipoPostagem = (typeof TipoPostagem)[keyof typeof TipoPostagem]

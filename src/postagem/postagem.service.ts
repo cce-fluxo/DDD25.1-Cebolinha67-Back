@@ -1,15 +1,15 @@
-import { Injectable } from '@nestjs/common';
-import { CreatePostagemDto } from './dto/create-postagem.dto';
+import { HttpException, Injectable } from '@nestjs/common';
+// import { CreatePostagemDto } from './dto/create-postagem.dto';
 import { UpdatePostagemDto } from './dto/update-postagem.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { Prisma } from 'src/generated/prisma/browser';
+import { get } from 'http';
 
 @Injectable()
 export class PostagemService {
   constructor(private readonly prisma: PrismaService) {}
-  create(createPostagemDto: CreatePostagemDto) {
-    return this.prisma.postagem.create({
-      data: { ...createPostagemDto, data: new Date(createPostagemDto.data) },
-    });
+  create(dataPosta: Prisma.PostagemCreateInput) {
+    return this.prisma.postagem.create({ data: dataPosta });
   }
 
   findAll() {
@@ -28,7 +28,12 @@ export class PostagemService {
     });
   }
 
-  update(id: number, updatePostagemDto: UpdatePostagemDto) {
+  async update(id: number, updatePostagemDto: Prisma.PostagemUpdateInput) {
+    const findPostagem = await this.findOne(id);
+    if (!findPostagem) {
+      throw new HttpException('Postagem não encontrada', 404);
+    }
+
     return this.prisma.postagem.update({
       where: { id: id },
       data: updatePostagemDto,

@@ -214,14 +214,14 @@ export type ImagemOrderByWithRelationInput = {
 
 export type ImagemWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  url?: string
   AND?: Prisma.ImagemWhereInput | Prisma.ImagemWhereInput[]
   OR?: Prisma.ImagemWhereInput[]
   NOT?: Prisma.ImagemWhereInput | Prisma.ImagemWhereInput[]
-  url?: Prisma.StringFilter<"Imagem"> | string
   nome?: Prisma.StringFilter<"Imagem"> | string
   imagem_usuario?: Prisma.ImagemUsuarioListRelationFilter
   imagem_postagem?: Prisma.ImagemPostagemListRelationFilter
-}, "id">
+}, "id" | "url">
 
 export type ImagemOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
