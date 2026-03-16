@@ -1,26 +1,20 @@
-import { Injectable } from '@nestjs/common';
-import { CreateAutorizacaoDto } from './dto/login.dto';
-import { UpdateAutorizacaoDto } from './dto/update-paciente.dto';
+// quem esteve aqui (coloca seu nome smp que entrar pf): motta ->
 
-@Injectable()
-export class AutorizacaoService {
-  create(createAutorizacaoDto: CreateAutorizacaoDto) {
-    return 'This action adds a new autorizacao';
-  }
+// aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
 
-  findAll() {
-    return `This action returns all autorizacao`;
-  }
+// e vou usar camelCase no nome das funções, além de dar prioridade a escrever em pt
 
-  findOne(id: number) {
-    return `This action returns a #${id} autorizacao`;
-  }
+// vou tentar explicar ao máximo o que eu fizer rpzd
 
-  update(id: number, updateAutorizacaoDto: UpdateAutorizacaoDto) {
-    return `This action updates a #${id} autorizacao`;
-  }
+// usar this.prisma.usuario
 
-  remove(id: number) {
-    return `This action removes a #${id} autorizacao`;
-  }
-}
+// funções uteis (prov vou colar isso em todos kkkk) : findUnique , findMany , update , create
+
+// tem vários comentários úteis no usuario.service.ts , eu não vou reescrever tudo mas a lógica de pensamento pra fazer tá bem falada lá
+
+// vou assistir a trilha antes de fazer a parte de auth
+
+export class AutorizacaoService{}
+
+
+

@@ -15,6 +15,7 @@ import { PostagemService } from './postagem.service';
 import { CreatePostagemDto } from './dto/create-postagem.dto';
 import { UpdatePostagemDto } from './dto/update-postagem.dto';
 
+
 @Controller('postagem')
 export class PostagemController {
   constructor(private readonly postagemService: PostagemService) {}

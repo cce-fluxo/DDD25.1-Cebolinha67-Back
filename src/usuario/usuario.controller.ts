@@ -4,6 +4,7 @@ import { Controller, Get, Post, Body, Patch, Param, Put} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 
 // vou colocar as URLs todas em cima do que eu fizer pra não me perder
@@ -12,6 +13,7 @@ import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 
 //usar this.prisma.usuarioService
 
+@ApiTags('usuarios') 
 @Controller('usuarios')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}

@@ -1,6 +1,7 @@
-
+// quem esteve aqui (coloca seu nome smp que entrar pf): motta ->
 
 import { PartialType, OmitType } from '@nestjs/mapped-types';
-import { RegisterDentistaDto } from './register.dto';
+import { RegistrarDentistaDto } from './register.dto';
 
-export class UpdateDentistaDto extends OmitType(PartialType(RegisterDentistaDto), ['senha']) {}
+export class UpdateDentistaDto extends OmitType(PartialType(RegistrarDentistaDto), ['senha']) {}
+

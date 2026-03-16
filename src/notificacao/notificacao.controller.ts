@@ -11,7 +11,9 @@
 import { Controller, Get, Body, Patch, Param} from '@nestjs/common';
 import { NotificacaoService } from './notificacao.service';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('notficacoes')
 @Controller('notificacoes')
 export class NotificacaoController {
   constructor(private readonly notificacaoService: NotificacaoService) {}

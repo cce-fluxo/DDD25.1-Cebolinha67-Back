@@ -11,7 +11,7 @@ export class LoginRequestDto{
     senha!:string
 }
 
-export enum Role{
+export enum TipoDeUsuario{
     Paciente = "PACIENTE",
     Dentista = "DENTISTA"
 }
