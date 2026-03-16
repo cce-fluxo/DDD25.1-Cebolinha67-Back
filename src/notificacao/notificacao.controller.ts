@@ -1,34 +1,36 @@
+// quem esteve aqui (coloca seu nome smp que entrar pf): motta 
+
+// vou colocar as URLs todas em cima do que eu fizer pra não me perder
+
+// vou usar o mesmo modelo de @metodo -- funcao-do-service(){...} pra todos 
+
+//usar this.prisma.notificacaoService
+
+// tá tudo da minha lógica bem comentado e explicado no usuario.controller.ts, vale a pena dar uma olhada lá, que ai eu não fico me repetindo nos comentários de código
+
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { NotificacaoService } from './notificacao.service';
-import { CreateNotificacaoDto } from './dto/create-notificacao.dto';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
 
-@Controller('notificacao')
+@Controller('notificacoes')
 export class NotificacaoController {
   constructor(private readonly notificacaoService: NotificacaoService) {}
 
-  @Post()
-  create(@Body() createNotificacaoDto: CreateNotificacaoDto) {
-    return this.notificacaoService.create(createNotificacaoDto);
+  // /notificacoes/id
+  @Get('/id')
+  getDados(@Param('id') id:string){
+    return this.notificacaoService.getDados(+id)
   }
 
-  @Get()
-  findAll() {
-    return this.notificacaoService.findAll();
+  // /notificacoes/lida
+
+  @Get('/lida')
+  listarNotificacoes(){
+    return this.notificacaoService.listarNotificacoes()
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.notificacaoService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateNotificacaoDto: UpdateNotificacaoDto) {
-    return this.notificacaoService.update(+id, updateNotificacaoDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.notificacaoService.remove(+id);
+  @Patch("/status/id")
+  mudarStatus(@Param('id') id:string, @Body() updateNotificacaoDto: UpdateNotificacaoDto){
+    return this.notificacaoService.mudarStatus(+id, updateNotificacaoDto)
   }
 }
