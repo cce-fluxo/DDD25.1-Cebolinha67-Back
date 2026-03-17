@@ -282,14 +282,12 @@ enum TipoPostagem {
 }
 
 model PostagemPaciente{
-  id Int @id @default(autoincrement())
-
   // RELACIONAMENTOS
   id_postagem Int 
   postagem Postagem @relation(fields: [id_postagem], references: [id])
   id_paciente Int 
   paciente Paciente @relation(fields: [id_paciente], references: [id])
-  @@unique([id_paciente, id_postagem])
+  @@id([id_paciente, id_postagem])
 }
 
 // CONVÊNIO
