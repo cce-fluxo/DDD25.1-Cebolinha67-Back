@@ -9,7 +9,6 @@ import {
   Param,
   Delete,
   ParseIntPipe,
-  HttpException,
 } from '@nestjs/common';
 import { PostagemService } from './postagem.service';
 import { CreatePostagemDto } from './dto/create-postagem.dto';
