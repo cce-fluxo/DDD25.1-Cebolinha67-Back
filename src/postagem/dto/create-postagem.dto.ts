@@ -1,12 +1,14 @@
 import { Type } from 'class-transformer';
 import {
-  IsEnum,
+  IsArray,
   IsInt,
   IsNotEmpty,
+  IsOptional,
   IsString,
   MaxLength,
+  ValidateNested,
 } from 'class-validator';
-import { TipoPostagem } from 'src/generated/prisma/browser';
+import { CreateImagemDto } from './create-imagem.dto';
 
 export class CreatePostagemDto {
   @IsString()
@@ -18,10 +20,19 @@ export class CreatePostagemDto {
   @IsNotEmpty()
   mensagem: string;
 
-  @IsEnum(TipoPostagem as object)
-  tipo: TipoPostagem;
-
-  @Type(() => Number)
   @IsInt()
+  @Type(() => Number)
   dentista: number;
+
+  @IsOptional()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => CreateImagemDto)
+  imagens?: CreateImagemDto[];
+
+  @IsOptional()
+  @IsArray()
+  @IsInt({ each: true })
+  @Type(() => Number)
+  pacientes?: number[];
 }

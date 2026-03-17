@@ -1,12 +1,28 @@
 import { PartialType } from '@nestjs/mapped-types';
 import { CreatePostagemDto } from './create-postagem.dto';
-import { IsString, MaxLength } from 'class-validator';
+import {
+  IsArray,
+  IsOptional,
+  IsString,
+  MaxLength,
+  ValidateNested,
+} from 'class-validator';
+import { Type } from 'class-transformer';
+import { CreateImagemDto } from './create-imagem.dto';
 
 export class UpdatePostagemDto extends PartialType(CreatePostagemDto) {
+  @IsOptional()
   @IsString()
   @MaxLength(150)
   titulo: string;
 
+  @IsOptional()
   @IsString()
   mensagem: string;
+
+  @IsOptional()
+  @IsArray()
+  @ValidateNested({ each: true })
+  @Type(() => CreateImagemDto)
+  imagens?: CreateImagemDto[];
 }

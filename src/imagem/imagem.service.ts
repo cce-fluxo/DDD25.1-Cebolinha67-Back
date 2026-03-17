@@ -1,4 +1,4 @@
-// quem esteve aqui (coloca seu nome smp que entrar pf): motta 
+// quem esteve aqui (coloca seu nome smp que entrar pf): motta
 
 // aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
 
@@ -16,64 +16,54 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { UpdateImagemDto } from './dto/update-imagem.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
-
 @Injectable()
 export class ImagemService {
+  constructor(private readonly prisma: PrismaService) {}
 
-  constructor(private readonly prisma: PrismaService){}
+  async mostrarImagens() {
+    const imagens = this.prisma.imagem.findMany();
 
-  async mostrarImagens(){
-    const imagens = this.prisma.imagem.findMany()
-
-    if(!imagens){
-      throw new NotFoundException("Não encontramos nenhuma imagem")
+    if (!imagens) {
+      throw new NotFoundException('Não encontramos nenhuma imagem');
     }
 
-    return imagens
+    return imagens;
   }
 
-  async fazerUpload(id:number) {
-    
+  async fazerUpload(id: number) {
     const imagem = this.prisma.imagem.findUnique({
-      where: {id}
-    })
+      where: { id },
+    });
 
-    if(!imagem){
-      throw new NotFoundException("Não encontramos nenhuma imagem")
-    } 
+    if (!imagem) {
+      throw new NotFoundException('Não encontramos nenhuma imagem');
+    }
 
-    return imagem
+    return imagem;
+  } // revisar esse cara aqui, ele provavelmente tá errado
 
-  }; // revisar esse cara aqui, ele provavelmente tá errado
-
-
-  async editarImagem(id:number, updateImagemDto : UpdateImagemDto){
-   
+  async editarImagem(id: number, updateImagemDto: UpdateImagemDto) {
     const imagem = this.prisma.imagem.update({
-      where: {id},
-      data: updateImagemDto
-    })
+      where: { id },
+      data: updateImagemDto,
+    });
 
-    if(!imagem){
-      throw new NotFoundException("Não há foto a ser editada")
+    if (!imagem) {
+      throw new NotFoundException('Não há foto a ser editada');
     }
 
-    return imagem
-
+    return imagem;
   }
 
-  async removerImagem(id:number){
-
+  async removerImagem(id: number) {
     const imagem = this.prisma.imagem.delete({
-      where:{id}
-    })
+      where: { id },
+    });
 
-    if(!imagem){
-      throw new NotFoundException("Não há imagem a ser deletada")
+    if (!imagem) {
+      throw new NotFoundException('Não há imagem a ser deletada');
     }
 
-    return imagem
-    }
+    return imagem;
   }
-  
-
+}

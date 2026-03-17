@@ -1,6 +1,6 @@
-// quem esteve aqui (coloca seu nome smp que entrar pf): motta 
+// quem esteve aqui (coloca seu nome smp que entrar pf): motta
 
-import {Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -17,93 +17,81 @@ import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class UsuarioService {
-  constructor(private readonly prisma: PrismaService){}
+  constructor(private readonly prisma: PrismaService) {}
 
-   async getDados(id:number){
+  async getDados(id: number) {
     const usuario = await this.prisma.usuario.findUnique({
-      where:{id}
-    }); 
-    if(!usuario){
+      where: { id },
+    });
+    if (!usuario) {
       throw new NotFoundException('Usuário não encontrado');
     }
     return usuario;
     // usei uma função pra pegar os dados de um usuário específico, vai dar pra notar esse tipo de lógica ao longo do resto
   }
 
-  async getUsuarios(){
-
-    const usuarios = await this.prisma.usuario.findMany({})
-    if(!usuarios.length){
-      throw new NotFoundException("Nenhum usuário encontrado")
+  async getUsuarios() {
+    const usuarios = await this.prisma.usuario.findMany({});
+    if (!usuarios.length) {
+      throw new NotFoundException('Nenhum usuário encontrado');
     }
 
-    return usuarios
+    return usuarios;
 
     // não preciso passar um argumento, ele já vai listar todos
   }
 
-  async getUsuarioByEmail(email_usuario:string){
-    const usuario = this.prisma.usuario.findUnique(
-      {where:{email_usuario}
-    })
-
-    if(!usuario){
-      throw new Error('Email não encontrado')
-    }
-
-    return usuario
-  }   // tentativa de fazer o que o arthur pediu de achar um usuário pelo email dele
-  
-
-   async editarDadosUsuario(id:number, updateUsuarioDto:UpdateUsuarioDto){
+  async editarDadosUsuario(id: number, updateUsuarioDto: UpdateUsuarioDto) {
     const usuario = await this.prisma.usuario.findUnique({
-      where: {id}
-    })
+      where: { id },
+    });
 
-    if(!usuario){
-      throw new NotFoundException("Usuário não encontrado")
+    if (!usuario) {
+      throw new NotFoundException('Usuário não encontrado');
     }
-    
+
     return this.prisma.usuario.update({
-      where:{id},
-      data:updateUsuarioDto
-    })
-    }
+      where: { id },
+      data: updateUsuarioDto,
+    });
+  }
 
-   async atualizarTodosOsDadosUuario(id:number, updateUsuarioDto: UpdateUsuarioDto){
-
+  async atualizarTodosOsDadosUuario(
+    id: number,
+    updateUsuarioDto: UpdateUsuarioDto,
+  ) {
     // primeiro vc vai achar o usuário
     const usuario = await this.prisma.usuario.findUnique({
-      where:{id}
-    })
+      where: { id },
+    });
 
-    if(!usuario){
-      throw new NotFoundException("Usuário não encontrado")
+    if (!usuario) {
+      throw new NotFoundException('Usuário não encontrado');
     }
 
     // depois vai dar update nos dados do paizão
     return this.prisma.usuario.update({
-      where:{id},
-      data: updateUsuarioDto
-    })
-   }
+      where: { id },
+      data: updateUsuarioDto,
+    });
+  }
 
-   async enviarMensagem(id: number, createUsuarioDto: CreateUsuarioDto){
+  async enviarMensagem(id: number, createUsuarioDto: CreateUsuarioDto) {
     const usuarioExistente = await this.prisma.usuario.findUnique({
-      where:{id}
-    })
+      where: { id },
+    });
 
-    if(!usuarioExistente){
-      throw new Error("Usuário não existente")
+    if (!usuarioExistente) {
+      throw new Error('Usuário não existente');
     }
 
     return this.prisma.usuario.create({
-      data:{
+      data: {
         ...createUsuarioDto,
-        data_nascimento: new Date(createUsuarioDto.dt_nascimento)
-      }
-    })
-    }
-
-    // pesquisei essa loucura ai pq ele não queria aceitar data:createUsuarioDto
+        data_nascimento: new Date(createUsuarioDto.dt_nascimento),
+      },
+    });
   }
+
+  // pesquisei essa loucura ai pq ele não queria aceitar data:createUsuarioDto
+}
