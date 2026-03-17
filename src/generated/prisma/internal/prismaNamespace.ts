@@ -1706,7 +1706,6 @@ export type PostagemScalarFieldEnum = (typeof PostagemScalarFieldEnum)[keyof typ
 
 
 export const PostagemPacienteScalarFieldEnum = {
-  id: 'id',
   id_postagem: 'id_postagem',
   id_paciente: 'id_paciente'
 } as const
