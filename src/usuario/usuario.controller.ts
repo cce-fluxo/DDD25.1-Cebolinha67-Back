@@ -4,7 +4,7 @@ import { Controller, Get, Post, Body, Patch, Param, Put} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiParam, ApiTags, ApiResponse } from '@nestjs/swagger';
 
 
 // vou colocar as URLs todas em cima do que eu fizer pra não me perder
@@ -20,6 +20,11 @@ export class UsuarioController {
 
   // /usuarios/unico/id
   @Get('unico/id')
+  // ai agora vai ser chuva de decorador swagger
+  @ApiOperation({summary: "Buscar os dados de um usuário pelo ID"})
+  @ApiParam({name:'id', type:Number})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   getDados(@Param('id') id:string){
     return this.usuarioService.getDados(+id);
   }

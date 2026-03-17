@@ -3,7 +3,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
-import { Notificacao } from '../../dist/src/generated/prisma/models/Notificacao';
 
 // aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
 
