@@ -31,11 +31,20 @@ export class UsuarioController {
 
   // /usuarios/ver-todos
   @Get('ver-todos')
+  //swagger
+  @ApiOperation({summary: "Ver uma lista com todos os usuarios"})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   getUsuarios(){
     return this.usuarioService.getUsuarios();
   } // não preciso de um ID específico aqui, eu to vendo todos 
 
   @Get('/pegar-pelo-email')
+  //swagger 
+  @ApiOperation({summary: "Encontrar um usuário a partir do email dele"})
+  @ApiParam({name:'email_usuario', type:String})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   getUsuarioByEmail(@Param('email_usuario') email_usuario: string){
     return this.usuarioService.getUsuarioByEmail(email_usuario)
   } // menor ideia se tá certo esse cara aqui
@@ -43,6 +52,12 @@ export class UsuarioController {
   // /usuarios/unico/editar/id 
 
   @Patch('unico/editar/id')
+  // swagger
+  @ApiOperation({summary: "Editar parcialmente os dados de um usuário"})
+  @ApiParam({name:'id', type:Number})
+  @ApiParam({name: 'updateUsuarioDto', type: UpdateUsuarioDto})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   editarDadosUsuario(@Param('id') id:string, @Body() updateUsuarioDto: UpdateUsuarioDto)
   // precisei puxar id e update, usar param pra id e body pra update
   {
@@ -51,6 +66,12 @@ export class UsuarioController {
 
   // /usuarios/unico/atualizar/id
   @Put('unico/atualizar/id')
+  //swagger 
+  @ApiOperation({summary: "Atualizar totalmente os dados de um usuário"})
+  @ApiParam({name:'id', type:Number})
+  @ApiParam({name:'updateUsuarioDto', type:UpdateUsuarioDto})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   atualizarTodosOsDadosUsuario(@Param('id') id:string, @Body() updateUsuarioDto: UpdateUsuarioDto)
   {
     return this.usuarioService.editarDadosUsuario(+id, updateUsuarioDto);
@@ -59,9 +80,14 @@ export class UsuarioController {
   // /usuarios/mensagem/id
 
   @Post('mensagem/id')
+  // swagger
+  @ApiOperation({summary: "Permite o envio de mensagens por parte do usuário"})
+  @ApiParam({name:'id', type:Number})
+  @ApiParam({name:'createUsuarioDto', type: CreateUsuarioDto})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   enviarMensagem(@Param('id') id:string , @Body() createUsuarioDto : CreateUsuarioDto){
     return this.usuarioService.enviarMensagem(+id, createUsuarioDto);
   }
 
 }
-
