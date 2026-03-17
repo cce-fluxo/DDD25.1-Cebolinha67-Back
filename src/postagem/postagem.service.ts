@@ -167,12 +167,10 @@ export class PostagemService {
   }
 
   async remove(id: number) {
-    const postagem = await this.prisma.postagem.delete({
-      where: { id: id },
-    });
+    const postagem = await this.findOne(id);
     if (!postagem) {
       throw new HttpException('Postagem não encontrada', 404);
     }
-    return postagem;
+    return this.prisma.postagem.delete({ where: { id } });
   }
 }

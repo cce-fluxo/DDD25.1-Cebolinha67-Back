@@ -1,5 +1,3 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreatePostagemDto } from './create-postagem.dto';
 import {
   IsArray,
   IsOptional,
@@ -10,7 +8,7 @@ import {
 import { Type } from 'class-transformer';
 import { CreateImagemDto } from './create-imagem.dto';
 
-export class UpdatePostagemDto extends PartialType(CreatePostagemDto) {
+export class UpdatePostagemDto {
   @IsOptional()
   @IsString()
   @MaxLength(150)

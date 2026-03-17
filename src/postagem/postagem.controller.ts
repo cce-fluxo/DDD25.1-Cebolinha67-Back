@@ -34,25 +34,25 @@ export class PostagemController {
   }
 
   @Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: string) {
-    return this.postagemService.findOne(+id);
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.postagemService.findOne(id);
   }
 
   @Get('/dentista/:id')
-  findDentista(@Param('id', ParseIntPipe) id: string) {
-    return this.postagemService.findDentista(+id);
+  findDentista(@Param('id', ParseIntPipe) id: number) {
+    return this.postagemService.findDentista(id);
   }
 
   @Patch(':id')
   update(
-    @Param('id', ParseIntPipe) id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() updatePostagemDto: UpdatePostagemDto,
   ) {
-    return this.postagemService.update(+id, updatePostagemDto);
+    return this.postagemService.update(id, updatePostagemDto);
   }
 
   @Delete(':id')
-  remove(@Param('id', ParseIntPipe) id: string) {
-    return this.postagemService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.postagemService.remove(id);
   }
 }

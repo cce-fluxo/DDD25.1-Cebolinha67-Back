@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { PacienteService } from './paciente.service';
 import { CreatePacienteDto } from './dto/create-paciente.dto';
@@ -26,30 +27,35 @@ export class PacienteController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.pacienteService.findOne(+id);
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.pacienteService.findOne(id);
   }
 
   @Get('ver-notificacoes/:id')
-  findNotificacoes(@Param('id') id: string) {
-    return this.pacienteService.findNotificacoes(+id);
+  findNotificacoes(@Param('id', ParseIntPipe) id: number) {
+    return this.pacienteService.findNotificacoes(id);
   }
 
   @Get('ver-consultas/:id')
-  findConsultas(@Param('id') id: string) {
-    return this.pacienteService.findConsultas(+id);
+  findConsultas(@Param('id', ParseIntPipe) id: number) {
+    return this.pacienteService.findConsultas(id);
+  }
+
+  @Get('ver-convenios/:id')
+  findConvenios(@Param('id', ParseIntPipe) id: number) {
+    return this.pacienteService.findConvenio(id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() updatePacienteDto: UpdatePacienteDto,
   ) {
-    return this.pacienteService.update(+id, updatePacienteDto);
+    return this.pacienteService.update(id, updatePacienteDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.pacienteService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.pacienteService.remove(id);
   }
 }

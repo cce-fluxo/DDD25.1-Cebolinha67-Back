@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  ParseIntPipe,
 } from '@nestjs/common';
 import { ConvenioService } from './convenio.service';
 import { CreateConvenioDto } from './dto/create-convenio.dto';
@@ -26,25 +27,25 @@ export class ConvenioController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.convenioService.findOne(+id);
+  findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.convenioService.findOne(id);
   }
 
   @Get('paciente/:id')
-  findPaciente(@Param('id') id: string) {
-    return this.convenioService.findPaciente(+id);
+  findPaciente(@Param('id', ParseIntPipe) id: number) {
+    return this.convenioService.findPaciente(id);
   }
 
   @Patch(':id')
   update(
-    @Param('id') id: string,
+    @Param('id', ParseIntPipe) id: number,
     @Body() updateConvenioDto: UpdateConvenioDto,
   ) {
-    return this.convenioService.update(+id, updateConvenioDto);
+    return this.convenioService.update(id, updateConvenioDto);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.convenioService.remove(+id);
+  remove(@Param('id', ParseIntPipe) id: number) {
+    return this.convenioService.remove(id);
   }
 }

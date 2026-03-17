@@ -1,34 +1,104 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { CreatePacienteDto } from './dto/create-paciente.dto';
 import { UpdatePacienteDto } from './dto/update-paciente.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class PacienteService {
+  constructor(private prisma: PrismaService) {}
   create(createPacienteDto: CreatePacienteDto) {
-    return 'This action adds a new paciente';
+    return this.prisma.paciente.create({
+      data: {
+        senha_paciente: createPacienteDto.senha_paciente,
+        rg: createPacienteDto.rg,
+        id_usuario: createPacienteDto.usuario,
+      },
+    });
   }
 
   findAll() {
-    return `This action returns all paciente`;
+    return this.prisma.paciente.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} paciente`;
+  async findOne(id: number) {
+    const paciente = await this.prisma.paciente.findUnique({
+      where: { id },
+    });
+    if (!paciente) {
+      throw new HttpException(`Paciente com id não encontrado`, 404);
+    }
+    return paciente;
   }
 
-  findNotificacoes(id: number) {
-    return `This action returns the notifications of paciente #${id}`;
+  async findNotificacoes(id: number) {
+    const paciente = await this.prisma.paciente.findUnique({
+      where: { id },
+    });
+    if (!paciente) {
+      throw new HttpException(`Paciente com id não encontrado`, 404);
+    }
+    const notificacoes = await this.prisma.notificacaoUsuario.findMany({
+      where: { id_usuario: paciente.id_usuario },
+    });
+    if (!notificacoes) {
+      throw new HttpException(`Nenhuma notificação associada ao paciente`, 404);
+    }
+    return notificacoes;
   }
 
-  findConsultas(id: number) {
-    return `This action returns the consultations of paciente #${id}`;
+  async findConsultas(id: number) {
+    const paciente = await this.prisma.paciente.findUnique({
+      where: { id },
+    });
+    if (!paciente) {
+      throw new HttpException(`Paciente com id não encontrado`, 404);
+    }
+    const consultas = await this.prisma.consulta.findMany({
+      where: { id_paciente: id },
+    });
+    if (!consultas) {
+      throw new HttpException(`Nenhuma consulta associada ao paciente`, 404);
+    }
+    return consultas;
   }
 
-  update(id: number, updatePacienteDto: UpdatePacienteDto) {
-    return `This action updates a #${id} paciente`;
+  async findConvenio(id: number) {
+    const paciente = await this.prisma.paciente.findUnique({
+      where: { id },
+    });
+    if (!paciente) {
+      throw new HttpException(`Paciente com id não encontrado`, 404);
+    }
+    const convenios = await this.prisma.convenio.findMany({
+      where: { id_paciente: id },
+    });
+    if (!convenios) {
+      throw new HttpException(`Nenhuma convenio associada ao paciente`, 404);
+    }
+    return convenios;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} paciente`;
+  async update(id: number, updatePacienteDto: UpdatePacienteDto) {
+    const paciente = await this.findOne(id);
+    if (!paciente) {
+      throw new HttpException(`Paciente com id não encontrado`, 404);
+    }
+    return this.prisma.paciente.update({
+      where: { id },
+      data: {
+        senha_paciente: updatePacienteDto.senha_paciente,
+        rg: updatePacienteDto.rg,
+      },
+    });
+  }
+
+  async remove(id: number) {
+    const paciente = await this.findOne(id);
+    if (!paciente) {
+      throw new HttpException(`Paciente com id não encontrado`, 404);
+    }
+    return this.prisma.paciente.delete({
+      where: { id },
+    });
   }
 }

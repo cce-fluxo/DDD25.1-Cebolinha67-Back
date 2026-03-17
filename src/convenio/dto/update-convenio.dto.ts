@@ -1,4 +1,14 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreateConvenioDto } from './create-convenio.dto';
+import { IsDateString, IsNotEmpty, IsString } from 'class-validator';
 
-export class UpdateConvenioDto extends PartialType(CreateConvenioDto) {}
+export class UpdateConvenioDto {
+  @IsString()
+  @IsNotEmpty()
+  no_operadora: string;
+
+  @IsString()
+  @IsNotEmpty()
+  nu_carteirinha: string;
+
+  @IsDateString()
+  dt_val_carteirinha: string;
+}
