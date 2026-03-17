@@ -11,7 +11,7 @@
 import { Controller, Get, Body, Patch, Param} from '@nestjs/common';
 import { NotificacaoService } from './notificacao.service';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiParam, ApiTags, ApiResponse } from '@nestjs/swagger';
 
 @ApiTags('notficacoes')
 @Controller('notificacoes')
@@ -20,18 +20,33 @@ export class NotificacaoController {
 
   // /notificacoes/id
   @Get('/id')
+  //swagger 
+  @ApiOperation({summary: 'pega uma notificação pelo ID dela'})
+  @ApiParam({name: 'id' , type:Number})
+  @ApiResponse({status: 200, description: "Notificação encontrada"})
+  @ApiResponse({status:404, description: 'Notificação não encontrada' })
   getDados(@Param('id') id:string){
     return this.notificacaoService.getDados(+id)
   }
 
-  // /notificacoes/lida
+  // /notificacoes/lista
 
-  @Get('/lida')
+  @Get('/lista')
+  //swagger
+  @ApiOperation({summary: 'lista todas as notificações'})
+  @ApiResponse({status: 200, description: "Notificação encontrada"})
+  @ApiResponse({status:404, description: 'Notificação não encontrada' })
   listarNotificacoes(){
     return this.notificacaoService.listarNotificacoes()
   }
 
   @Patch("/status/id")
+  // swagger 
+  @ApiOperation({summary: 'muda o status de uma notificação'})
+  @ApiParam({name:'id', type:Number})
+  @ApiParam({name: 'updateNotificacaoDto', type: UpdateNotificacaoDto})
+  @ApiResponse({status: 200, description: "Notificação encontrada"})
+  @ApiResponse({status:404, description: 'Notificação não encontrada' })
   mudarStatus(@Param('id') id:string, @Body() updateNotificacaoDto: UpdateNotificacaoDto){
     return this.notificacaoService.mudarStatus(+id, updateNotificacaoDto)
   }

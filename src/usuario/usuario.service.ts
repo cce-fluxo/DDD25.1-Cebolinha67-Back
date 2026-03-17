@@ -41,6 +41,18 @@ export class UsuarioService {
     // não preciso passar um argumento, ele já vai listar todos
   }
 
+  async getUsuarioByEmail(email_usuario: string){
+    const usuario = this.prisma.usuario.findUnique({
+      where:{email_usuario}
+    })
+
+    if(!email_usuario){
+      throw new NotFoundException("Nenhum email encontrado")
+    }
+
+    return usuario 
+  }  // isso aqui provavelmente não tá legal
+
   async editarDadosUsuario(id: number, updateUsuarioDto: UpdateUsuarioDto) {
     const usuario = await this.prisma.usuario.findUnique({
       where: { id },
@@ -95,3 +107,4 @@ export class UsuarioService {
 
   // pesquisei essa loucura ai pq ele não queria aceitar data:createUsuarioDto
 }
+
