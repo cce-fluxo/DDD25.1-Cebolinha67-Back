@@ -42,6 +42,19 @@ export class UsuarioService {
     // não preciso passar um argumento, ele já vai listar todos
   }
 
+  async getUsuarioByEmail(email_usuario:string){
+    const usuario = this.prisma.usuario.findUnique(
+      {where:{email_usuario}
+    })
+
+    if(!usuario){
+      throw new Error('Email não encontrado')
+    }
+
+    return usuario
+  }   // tentativa de fazer o que o arthur pediu de achar um usuário pelo email dele
+  
+
    async editarDadosUsuario(id:number, updateUsuarioDto:UpdateUsuarioDto){
     const usuario = await this.prisma.usuario.findUnique({
       where: {id}

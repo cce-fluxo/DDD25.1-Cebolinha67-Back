@@ -35,6 +35,11 @@ export class UsuarioController {
     return this.usuarioService.getUsuarios();
   } // não preciso de um ID específico aqui, eu to vendo todos 
 
+  @Get('/pegar-pelo-email')
+  getUsuarioByEmail(@Param('email_usuario') email_usuario: string){
+    return this.usuarioService.getUsuarioByEmail(email_usuario)
+  } // menor ideia se tá certo esse cara aqui
+
   // /usuarios/unico/editar/id 
 
   @Patch('unico/editar/id')
