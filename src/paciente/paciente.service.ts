@@ -11,7 +11,7 @@ export class PacienteService {
       data: {
         senha_paciente: createPacienteDto.senha_paciente,
         rg: createPacienteDto.rg,
-        id_usuario: createPacienteDto.usuario,
+        id_usuario: createPacienteDto.usuarioId,
       },
     });
   }
