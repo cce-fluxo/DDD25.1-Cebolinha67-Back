@@ -23,10 +23,9 @@ export class ImagemService {
   async mostrarImagens() {
     const imagens = this.prisma.imagem.findMany();
 
-    if (!imagens) {
+    if (!imagens || (await imagens).length=== 0) {
       throw new NotFoundException('Não encontramos nenhuma imagem');
     }
-
     return imagens;
   }
 
@@ -51,7 +50,6 @@ export class ImagemService {
     if (!imagem) {
       throw new NotFoundException('Não há foto a ser editada');
     }
-
     return imagem;
   }
 
@@ -63,7 +61,7 @@ export class ImagemService {
     if (!imagem) {
       throw new NotFoundException('Não há imagem a ser deletada');
     }
-
     return imagem;
   }
 }
+
