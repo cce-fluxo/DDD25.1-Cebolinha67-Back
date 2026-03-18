@@ -8,7 +8,7 @@ export class ConsultasService {
   constructor(private readonly prisma: PrismaService) {}
 
   async verConsultas() {
-    return this.prisma.consulta.findMany({
+    return await this.prisma.consulta.findMany({
       include: {
         detalhe_da_consulta: true
       }
@@ -16,7 +16,7 @@ export class ConsultasService {
   }
 
   async verConsultasPaciente(id_paciente: number) {
-    return this.prisma.consulta.findMany({
+    return await this.prisma.consulta.findMany({
       where: { id_paciente: id_paciente },
       include: {
         detalhe_da_consulta: true
@@ -25,7 +25,7 @@ export class ConsultasService {
   }
 
   async verConsultasDentista(id_dentista: number) {
-    return this.prisma.consulta.findMany({
+    return await this.prisma.consulta.findMany({
       where: { id_dentista: id_dentista },
       include: {
         detalhe_da_consulta: true
@@ -34,7 +34,7 @@ export class ConsultasService {
   }
 
   async verConsultaUnica(id_consulta: number) {
-    return this.prisma.consulta.findUnique({
+    return await this.prisma.consulta.findUnique({
       where: { id: id_consulta },
       include: {
         detalhe_da_consulta: true
@@ -44,7 +44,7 @@ export class ConsultasService {
 
   async criarConsulta(createConsultaDto: CreateConsultaDto) {
 
-    return this.prisma.consulta.create({
+    return await this.prisma.consulta.create({
 
       data: {
 
@@ -74,7 +74,7 @@ export class ConsultasService {
 
   async editarConsulta(id: number, updateConsultaDto: UpdateConsultaDto) {
 
-    return this.prisma.consulta.update({
+    return await this.prisma.consulta.update({
 
       where: { id },
 
@@ -110,7 +110,7 @@ export class ConsultasService {
   }
 
   async removerConsulta(id: number){
-    return this.prisma.consulta.delete({
+    return await this.prisma.consulta.delete({
       where: { id: id }
     })
   }

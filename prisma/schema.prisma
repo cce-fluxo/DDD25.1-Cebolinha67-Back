@@ -96,7 +96,7 @@ model Usuario{
   email_usuario String @unique
   cpf String @unique
   nu_celular String @unique
-  genero String
+  genero Genero
   data_nascimento DateTime
   token_esqueci_senha String
 
@@ -107,6 +107,13 @@ model Usuario{
   paciente Paciente?
   dentista Dentista? 
   } 
+
+enum Genero {
+  Masculino
+  Feminino
+  Outros
+  NaoInformado
+}
 
 model Dentista{
   id Int @id @default(autoincrement())

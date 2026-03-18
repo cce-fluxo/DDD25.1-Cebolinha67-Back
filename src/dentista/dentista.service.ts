@@ -9,8 +9,8 @@ export class DentistaService {
 
   constructor(private readonly prisma: PrismaService) {}
 
-  criarDentista(createDentistaDto: CreateDentistaDto) {
-    return this.prisma.dentista.create({
+  async criarDentista(createDentistaDto: CreateDentistaDto) {
+    return await this.prisma.dentista.create({
 
       data: {
         senha_dentista: createDentistaDto.senha_dentista,
@@ -19,18 +19,34 @@ export class DentistaService {
         datainicio: createDentistaDto.datainicio,
         datatermino: createDentistaDto.datatermino,
         especializacao: createDentistaDto.especializacao,
+
         id_usuario: createDentistaDto.id_usuario,
+
+      //   usuario: {
+      //     create: {
+      //       no_usuario: createDentistaDto.no_usuario,
+      //       email_usuario: createDentistaDto.email_usuario,
+      //       cpf: createDentistaDto.cpf,
+      //       nu_celular: createDentistaDto.no_usuario,
+      //       genero: createDentistaDto.genero,
+      //       data_nascimento: createDentistaDto.datainicio,
+      //       token_esqueci_senha: createDentistaDto.token_esqueci_senha,
+      //     }
+      //   }
+      // },
+      // include: {
+      //   usuario: true
       }
 
     });
   }
 
-  verDentistas() {
-    return this.prisma.dentista.findMany();
+  async verDentistas() {
+    return await this.prisma.dentista.findMany();
   }
 
-  verDentistaUnico(id: number) {
-    return this.prisma.dentista.findUnique({
+  async verDentistaUnico(id: number) {
+    return await this.prisma.dentista.findUnique({
       where: {id}
     });
   }
@@ -55,8 +71,8 @@ export class DentistaService {
     return dentistaComConsultasEPacientes.consultas.map((c) => c.paciente);
   }
 
-  editarDentista(id: number, updateDentistaDto: UpdateDentistaDto) {
-    return this.prisma.dentista.update({
+  async editarDentista(id: number, updateDentistaDto: UpdateDentistaDto) {
+    return await this.prisma.dentista.update({
       where: {id},
 
       data: {
@@ -66,13 +82,12 @@ export class DentistaService {
         datainicio: updateDentistaDto.datainicio,
         datatermino: updateDentistaDto.datatermino,
         especializacao: updateDentistaDto.especializacao,
-        id_usuario: updateDentistaDto.id_usuario,
       }
     });
   }
 
-  removerDentista(id: number) {
-    return this.prisma.dentista.delete({
+  async removerDentista(id: number) {
+    return await this.prisma.dentista.delete({
       where: {id}
     });
   }
