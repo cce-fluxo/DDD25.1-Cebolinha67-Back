@@ -9,26 +9,26 @@ export class DentistaController {
 
   @Post()
   create(@Body() createDentistaDto: CreateDentistaDto) {
-    return this.dentistaService.create(createDentistaDto);
+    return this.dentistaService.criarDentista(createDentistaDto);
   }
 
   @Get()
   findAll() {
-    return this.dentistaService.findAll();
+    return this.dentistaService.verDentistas();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.dentistaService.findOne(+id);
+    return this.dentistaService.verDentistaUnico(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateDentistaDto: UpdateDentistaDto) {
-    return this.dentistaService.update(+id, updateDentistaDto);
+    return this.dentistaService.editarDentista(+id, updateDentistaDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.dentistaService.remove(+id);
+    return this.dentistaService.removerDentista(+id);
   }
 }

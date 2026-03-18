@@ -22,7 +22,7 @@ export class EnderecoService {
   
     return this.prisma.endereco.create({
 
-      data: { //AJUSTAR MIGRATE PARA AUTOMATIZAR REGISTRO DE DATA
+      data: { 
 
         logradouro: createEnderecoDto.logradouro,
         cidade: createEnderecoDto.cidade,
