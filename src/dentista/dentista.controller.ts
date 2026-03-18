@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { DentistaService } from './dentista.service';
 import { CreateDentistaDto } from './dto/create-dentista.dto';
 import { UpdateDentistaDto } from './dto/update-dentista.dto';
-import { ApiTags , ApiOperation , ApiParam , ApiResponse} from '@nestjs/swagger';
+import { ApiTags , ApiOperation , ApiParam , ApiResponse, ApiBody} from '@nestjs/swagger';
 
 @ApiTags('dentistas')
 @Controller('dentista')
@@ -10,6 +10,7 @@ export class DentistaController {
   constructor(private readonly dentistaService: DentistaService) {}
 
   @Post('criar')
+  @ApiBody({ type: CreateDentistaDto })
   @ApiOperation({summary: "Permite a criacao de dentista"})
   @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Dentista encontrado'})

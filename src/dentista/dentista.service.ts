@@ -19,7 +19,23 @@ export class DentistaService {
         datainicio: createDentistaDto.datainicio,
         datatermino: createDentistaDto.datatermino,
         especializacao: createDentistaDto.especializacao,
+
         id_usuario: createDentistaDto.id_usuario,
+
+      //   usuario: {
+      //     create: {
+      //       no_usuario: createDentistaDto.no_usuario,
+      //       email_usuario: createDentistaDto.email_usuario,
+      //       cpf: createDentistaDto.cpf,
+      //       nu_celular: createDentistaDto.no_usuario,
+      //       genero: createDentistaDto.genero,
+      //       data_nascimento: createDentistaDto.datainicio,
+      //       token_esqueci_senha: createDentistaDto.token_esqueci_senha,
+      //     }
+      //   }
+      // },
+      // include: {
+      //   usuario: true
       }
 
     });
@@ -66,7 +82,6 @@ export class DentistaService {
         datainicio: updateDentistaDto.datainicio,
         datatermino: updateDentistaDto.datatermino,
         especializacao: updateDentistaDto.especializacao,
-        id_usuario: updateDentistaDto.id_usuario,
       }
     });
   }

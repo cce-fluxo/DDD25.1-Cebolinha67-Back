@@ -1,6 +1,7 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsNumber, IsString } from "class-validator";
-import { Genero } from "src/generated/prisma/enums";
+import { Type } from "class-transformer";
+import { IsDate, IsInt, IsString } from "class-validator";
+//import { Genero } from "src/generated/prisma/enums";
 
 export class CreateDentistaDto {
 
@@ -29,19 +30,27 @@ export class CreateDentistaDto {
     especializacao!: string;
 
     @ApiProperty()
-    no_usuario!: string;
+    @IsInt()
+    @Type(() => Number)
+    id_usuario!: number;
 
-    email_usuario!: string;
+    // @ApiProperty()
+    // no_usuario!: string;
 
-    cpf!: string;
 
-    nu_celular!: string;
+    // @ApiProperty()
+    // email_usuario!: string;
 
-    genero: Genero;
-
-    dt_nascimento: Date;
-
-    token_esqueci_senha: string;
+    // @ApiProperty()
+    // cpf!: string;
+    // @ApiProperty()
+    // nu_celular!: string;
+    // @ApiProperty()
+    // genero: Genero;
+    // @ApiProperty()
+    // dt_nascimento: Date;
+    // @ApiProperty()
+    // token_esqueci_senha: string;
 
 
 }

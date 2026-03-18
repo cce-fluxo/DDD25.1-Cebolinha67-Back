@@ -1,7 +1,8 @@
 // quem esteve aqui (coloca seu nome smp que entrar pf): motta
 
-import { IsDateString, IsInt, IsString } from 'class-validator';
+import { IsDateString, IsEnum, IsInt, IsString } from 'class-validator';
 import { ApiProperty, ApiTags } from '@nestjs/swagger';
+import { Genero } from "src/generated/prisma/enums";
 
 export class CreateUsuarioDto {
   @ApiProperty({
@@ -48,10 +49,11 @@ export class CreateUsuarioDto {
 
   @ApiProperty({
     description: 'esse campo é o gênero do usuário',
-    example: 'genero : M',
+    example: 'Masculino',
   })
-  @IsString()
-  genero!: string;
+  @IsEnum(Genero)
+  genero!: Genero;
+
   @ApiProperty({
     description: 'esse campo é a data de nascimento do usuário',
     example: 'dt_nascimento : 2000-01-01',
