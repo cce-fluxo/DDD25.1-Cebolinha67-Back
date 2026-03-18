@@ -8,6 +8,7 @@ export class CreateUsuarioDto {
     description: 'esse campo é o id do usuário',
     example: 'id : 1',
   })
+  
   @IsInt()
   id_usuario!: number;
 

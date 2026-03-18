@@ -99,6 +99,7 @@ export class UsuarioService {
 
     return this.prisma.usuario.create({
       data: {
+        
         ...createUsuarioDto,
         data_nascimento: new Date(createUsuarioDto.dt_nascimento),
       },
