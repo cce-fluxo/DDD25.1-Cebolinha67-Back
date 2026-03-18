@@ -9,18 +9,18 @@ export class EnderecoService {
   constructor(private prisma: PrismaService){}
 
   async verEnderecos() {
-    return this.prisma.endereco.findMany();
+    return await this.prisma.endereco.findMany();
   }
 
   async verEnderecoUnico(id_endereco: number) {
-    return this.prisma.endereco.findUnique({
+    return await this.prisma.endereco.findUnique({
       where: {id: id_endereco}
     });
   }
 
   async criarEndereco(createEnderecoDto: CreateEnderecoDto) {
   
-    return this.prisma.endereco.create({
+    return await this.prisma.endereco.create({
 
       data: { 
 
@@ -39,7 +39,7 @@ export class EnderecoService {
 
   async editarEndereco(id: number, updateEnderecoDto: UpdateEnderecoDto) {
 
-    return this.prisma.endereco.update({
+    return await this.prisma.endereco.update({
 
       where: {id},
 
@@ -57,8 +57,8 @@ export class EnderecoService {
     });
   }
 
-  removerEndereco(id: number) {
-    return this.prisma.endereco.delete({
+  async removerEndereco(id: number) {
+    return await this.prisma.endereco.delete({
       where: {id: id}
     })
   }

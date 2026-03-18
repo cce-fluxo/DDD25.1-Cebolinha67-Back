@@ -9,8 +9,8 @@ export class DentistaService {
 
   constructor(private readonly prisma: PrismaService) {}
 
-  criarDentista(createDentistaDto: CreateDentistaDto) {
-    return this.prisma.dentista.create({
+  async criarDentista(createDentistaDto: CreateDentistaDto) {
+    return await this.prisma.dentista.create({
 
       data: {
         senha_dentista: createDentistaDto.senha_dentista,
@@ -25,12 +25,12 @@ export class DentistaService {
     });
   }
 
-  verDentistas() {
-    return this.prisma.dentista.findMany();
+  async verDentistas() {
+    return await this.prisma.dentista.findMany();
   }
 
-  verDentistaUnico(id: number) {
-    return this.prisma.dentista.findUnique({
+  async verDentistaUnico(id: number) {
+    return await this.prisma.dentista.findUnique({
       where: {id}
     });
   }
@@ -55,8 +55,8 @@ export class DentistaService {
     return dentistaComConsultasEPacientes.consultas.map((c) => c.paciente);
   }
 
-  editarDentista(id: number, updateDentistaDto: UpdateDentistaDto) {
-    return this.prisma.dentista.update({
+  async editarDentista(id: number, updateDentistaDto: UpdateDentistaDto) {
+    return await this.prisma.dentista.update({
       where: {id},
 
       data: {
@@ -71,8 +71,8 @@ export class DentistaService {
     });
   }
 
-  removerDentista(id: number) {
-    return this.prisma.dentista.delete({
+  async removerDentista(id: number) {
+    return await this.prisma.dentista.delete({
       where: {id}
     });
   }

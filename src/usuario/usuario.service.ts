@@ -40,7 +40,7 @@ export class UsuarioService {
 
     // não preciso passar um argumento, ele já vai listar todos
   }
-
+  
   async getUsuarioByEmail(email_usuario: string){
     const usuario = this.prisma.usuario.findUnique({
       where:{email_usuario}
@@ -107,4 +107,3 @@ export class UsuarioService {
 
   // pesquisei essa loucura ai pq ele não queria aceitar data:createUsuarioDto
 }
-

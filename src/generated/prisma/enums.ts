@@ -9,6 +9,16 @@
 * 🟢 You can import this file directly.
 */
 
+export const Genero = {
+  Masculino: 'Masculino',
+  Feminino: 'Feminino',
+  Outros: 'Outros',
+  NaoInformado: 'NaoInformado'
+} as const
+
+export type Genero = (typeof Genero)[keyof typeof Genero]
+
+
 export const TipoPagamento = {
   particular: 'particular',
   convenio: 'convenio'
