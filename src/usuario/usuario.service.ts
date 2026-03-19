@@ -46,7 +46,7 @@ export class UsuarioService {
   }
 
   async getUsuarios() {
-    const usuarios = await this.prisma.usuario.findMany({});
+    const usuarios = await this.prisma.usuario.findMany();
     if (!usuarios.length) {
       throw new NotFoundException('Nenhum usuário encontrado');
     }
@@ -61,7 +61,7 @@ export class UsuarioService {
       where:{email_usuario}
     })
 
-    if(!email_usuario){
+    if(!usuario){
       throw new NotFoundException("Nenhum email encontrado")
     }
 

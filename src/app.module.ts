@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config'; // 👈 ADICIONA
+
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DentistaModule } from './dentista/dentista.module';
@@ -14,8 +16,9 @@ import { PostagemModule } from './postagem/postagem.module';
 import { DetalheDaConsultaModule } from './detalhe_da_consulta/detalhe_da_consulta.module';
 import { PrismaModule } from './prisma/prisma.module';
 
+
 @Module({
-  imports: [DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule, DetalheDaConsultaModule, PrismaModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule, DetalheDaConsultaModule, PrismaModule],
   controllers: [AppController],
   providers: [AppService],
 })

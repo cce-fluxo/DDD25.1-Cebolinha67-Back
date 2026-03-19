@@ -28,13 +28,13 @@ export class UsuarioController {
   }
 
   // /usuarios/unico/id
-  @Get('unico/id')
+  @Get('unico/:id')
   // ai agora vai ser chuva de decorador swagger
   @ApiOperation({summary: "Buscar os dados de um usuário pelo ID"})
   @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Usuário encontrado'})
   @ApiResponse({status:404, description: 'Usuário não encontrado'})
-  getDados(@Param('id') id:string){
+  getDados(@Param('id') id:Number){
     return this.usuarioService.getDados(+id);
   }
 
@@ -60,7 +60,7 @@ export class UsuarioController {
 
   // /usuarios/unico/editar/id 
 
-  @Patch('unico/editar/id')
+  @Patch('unico/editar/:id')
   // swagger
   @ApiOperation({summary: "Editar parcialmente os dados de um usuário"})
   @ApiParam({name:'id', type:Number})
@@ -74,7 +74,7 @@ export class UsuarioController {
   }
 
   // /usuarios/unico/atualizar/id
-  @Put('unico/atualizar/id')
+  @Put('unico/atualizar/:id')
   //swagger 
   @ApiOperation({summary: "Atualizar totalmente os dados de um usuário"})
   @ApiParam({name:'id', type:Number})
@@ -88,7 +88,7 @@ export class UsuarioController {
 
   // /usuarios/mensagem/id
 
-  @Post('mensagem/id')
+  @Post('mensagem/:id')
   // swagger
   @ApiOperation({summary: "Permite o envio de mensagens por parte do usuário"})
   @ApiParam({name:'id', type:Number})
@@ -98,6 +98,5 @@ export class UsuarioController {
   enviarMensagem(@Param('id') id:string , @Body() createUsuarioDto : CreateUsuarioDto){
     return this.usuarioService.enviarMensagem(+id, createUsuarioDto);
   }
-
 }
 

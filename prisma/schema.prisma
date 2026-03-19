@@ -106,6 +106,7 @@ model Usuario{
   
   paciente Paciente?
   dentista Dentista? 
+
   } 
 
 enum Genero {
