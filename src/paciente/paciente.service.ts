@@ -18,7 +18,7 @@ export class PacienteService {
   }
 
   findAll() {
-    return this.prisma.paciente.findMany();
+    return this.prisma.paciente.findMany();           
   }
 
   async findOne(id: number) {
@@ -97,7 +97,7 @@ export class PacienteService {
     const paciente = await this.findOne(id);
     if (!paciente) {
       throw new HttpException(`Paciente com id não encontrado`, 404);
-    }
+    }            
     return this.prisma.paciente.delete({
       where: { id },
     });

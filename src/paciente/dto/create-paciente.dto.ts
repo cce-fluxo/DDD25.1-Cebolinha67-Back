@@ -27,4 +27,5 @@ export class CreatePacienteDto {
   @IsInt()
   @Type(() => Number)
   usuarioId: number;
+  no_usuario: any;
 }

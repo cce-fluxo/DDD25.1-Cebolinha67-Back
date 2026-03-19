@@ -19,7 +19,7 @@ export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
   // /usuarios/unico/id
-  @Get('unico/id')
+  @Get('unico/:id')
   // ai agora vai ser chuva de decorador swagger
   @ApiOperation({summary: "Buscar os dados de um usuário pelo ID"})
   @ApiParam({name:'id', type:Number})
