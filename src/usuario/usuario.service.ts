@@ -19,6 +19,21 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class UsuarioService {
   constructor(private readonly prisma: PrismaService) {}
 
+  async criarUsuario(createUsuarioDto: CreateUsuarioDto){
+    return this.prisma.usuario.create({
+      data: {
+        no_usuario: createUsuarioDto.no_usuario,
+        email_usuario: createUsuarioDto.email_usuario,
+        cpf: createUsuarioDto.cpf,
+        nu_celular: createUsuarioDto.nu_celular,
+        genero: createUsuarioDto.genero,
+        data_nascimento: createUsuarioDto.data_nascimento,
+        token_esqueci_senha: createUsuarioDto.token_esqueci_senha,
+
+      }
+    });  
+  }
+
   async getDados(id: number) {
     const usuario = await this.prisma.usuario.findUnique({
       where: { id },
@@ -42,7 +57,7 @@ export class UsuarioService {
   }
   
   async getUsuarioByEmail(email_usuario: string){
-    const usuario = this.prisma.usuario.findUnique({
+    const usuario = await this.prisma.usuario.findUnique({
       where:{email_usuario}
     })
 
@@ -100,7 +115,7 @@ export class UsuarioService {
     return this.prisma.usuario.create({
       data: {
         ...createUsuarioDto,
-        data_nascimento: new Date(createUsuarioDto.dt_nascimento),
+        data_nascimento: new Date(createUsuarioDto.data_nascimento),
       },
     });
   }

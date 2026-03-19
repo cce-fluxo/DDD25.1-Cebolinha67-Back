@@ -2,12 +2,17 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { EnderecoService } from './endereco.service';
 import { CreateEnderecoDto } from './dto/create-endereco.dto';
 import { UpdateEnderecoDto } from './dto/update-endereco.dto';
-import { ApiOperation, ApiResponse } from '@nestjs/swagger';
+import { ApiTags , ApiOperation , ApiParam , ApiResponse, ApiBody} from '@nestjs/swagger';
 
 @Controller('endereco')
 export class EnderecoController {
   constructor(private readonly enderecoService: EnderecoService) {}
 
+  @ApiBody({ type: CreateEnderecoDto })
+  @ApiOperation({summary: "Permite a criacao de endereco"})
+  @ApiParam({name:'id', type:Number})
+  @ApiResponse({status: 200, description: 'Endereco criado'})
+  @ApiResponse({status:404, description: 'Endereco não encontrado'})
   @Post('/cadastrar-novo-endereco')
   create(@Body() createEnderecoDto: CreateEnderecoDto) {
     return this.enderecoService.criarEndereco(createEnderecoDto);

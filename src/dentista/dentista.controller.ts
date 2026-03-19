@@ -12,14 +12,13 @@ export class DentistaController {
   @Post('criar')
   @ApiBody({ type: CreateDentistaDto })
   @ApiOperation({summary: "Permite a criacao de dentista"})
-  @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Dentista encontrado'})
   @ApiResponse({status:404, description: 'Dentista não encontrado'})
   create(@Body() createDentistaDto: CreateDentistaDto) {
     return this.dentistaService.criarDentista(createDentistaDto);
   }
 
-  @Get('dentista')
+  @Get()
   @ApiOperation({summary: "Lista todos os Dentistas"})
   @ApiResponse({status: 200, description: 'Dentista encontrado'})
   @ApiResponse({status:404, description: 'Dentista não encontrado'})
@@ -27,7 +26,7 @@ export class DentistaController {
     return this.dentistaService.verDentistas();
   }
 
-  @Get('/dentista/:id')
+  @Get(':id')
   @ApiOperation({summary: "Lista dentista específico"})
   @ApiParam({name: 'id', type: Number})
   @ApiResponse({status: 200, description: 'Dentista encontrado'})
@@ -36,7 +35,7 @@ export class DentistaController {
     return this.dentistaService.verDentistaUnico(+id);
   }
 
-  @Patch('dentista/mudar-dados/:id')
+  @Patch('mudar-dados/:id')
   @ApiOperation({summary: "Edita dentista específico"})
   @ApiParam({name: 'id', type: Number})
   @ApiResponse({status: 200, description: 'Dentista encontrado'})
@@ -45,7 +44,7 @@ export class DentistaController {
     return this.dentistaService.editarDentista(+id, updateDentistaDto);
   }
 
-  @Delete('dentista/deletar/:id')
+  @Delete('deletar/:id')
   @ApiOperation({summary: "Remove dentista específico"})
   @ApiParam({name: 'id', type: Number})
   @ApiResponse({status: 200, description: 'Dentista encontrado'})

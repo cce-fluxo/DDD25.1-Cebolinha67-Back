@@ -12,7 +12,7 @@ export class ConsultasController {
 
   @Get('ver-consulta')
   @ApiOperation({summary: "Lista todas as Consultas"})
-  @ApiResponse({status: 200, description: 'Consulta encontrada'})
+  @ApiResponse({status: 200, description: 'Consulta criada'})
   @ApiResponse({status:404, description: 'Consulta não encontrada'})
   verConsultas() {
     return this.consultasService.verConsultas();

@@ -4,7 +4,7 @@ import { Controller, Get, Post, Body, Patch, Param, Put} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
-import { ApiOperation, ApiParam, ApiTags, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiParam, ApiTags, ApiResponse, ApiBody } from '@nestjs/swagger';
 
 
 // vou colocar as URLs todas em cima do que eu fizer pra não me perder
@@ -17,6 +17,15 @@ import { ApiOperation, ApiParam, ApiTags, ApiResponse } from '@nestjs/swagger';
 @Controller('usuarios')
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
+
+  @Post('criar')
+  @ApiBody({ type: CreateUsuarioDto })
+  @ApiOperation({summary: "Permite a criacao de usuario"})
+  @ApiResponse({status: 200, description: 'Usuario encontrado'})
+  @ApiResponse({status:404, description: 'Usuario não encontrado'})
+  create(@Body() UsuarioDto: CreateUsuarioDto) {
+    return this.usuarioService.criarUsuario(UsuarioDto);
+  }
 
   // /usuarios/unico/id
   @Get('unico/id')
@@ -91,3 +100,4 @@ export class UsuarioController {
   }
 
 }
+

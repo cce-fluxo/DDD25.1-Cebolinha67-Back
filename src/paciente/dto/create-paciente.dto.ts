@@ -1,6 +1,7 @@
 import { Type } from 'class-transformer';
-import { IsInt, IsNotEmpty, IsString, MinLength } from 'class-validator';
+import { IsInt, IsNotEmpty, IsString, MinLength, ValidateNested } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { CreateUsuarioDto } from 'src/usuario/dto/create-usuario.dto';
 
 export class CreatePacienteDto {
   @ApiProperty({
@@ -20,11 +21,10 @@ export class CreatePacienteDto {
   @IsNotEmpty()
   rg: string;
 
-  @ApiProperty({
-    example: 1,
-    description: 'ID do usuário associado',
+  @ApiProperty({ 
+    type: CreateUsuarioDto, 
   })
-  @IsInt()
-  @Type(() => Number)
-  usuarioId: number;
+  @ValidateNested()
+  @Type(() => CreateUsuarioDto)
+  usuario!: CreateUsuarioDto;
 }

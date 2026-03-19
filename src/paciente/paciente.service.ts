@@ -12,8 +12,22 @@ export class PacienteService {
       data: {
         senha_paciente: createPacienteDto.senha_paciente,
         rg: createPacienteDto.rg,
-        id_usuario: createPacienteDto.usuarioId,
-      },
+        
+        usuario: {
+            create: {
+              no_usuario: createPacienteDto.usuario.no_usuario,
+              email_usuario: createPacienteDto.usuario.email_usuario,
+              cpf: createPacienteDto.usuario.cpf,
+              nu_celular: createPacienteDto.usuario.nu_celular,
+              genero: createPacienteDto.usuario.genero,
+              data_nascimento: createPacienteDto.usuario.data_nascimento,
+              token_esqueci_senha: createPacienteDto.usuario.token_esqueci_senha,
+            },
+          },
+        },
+        include: {
+          usuario: true,
+        },
     });
   }
 
