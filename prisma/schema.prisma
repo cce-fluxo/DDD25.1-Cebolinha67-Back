@@ -257,7 +257,7 @@ model DetalheDaConsulta {
 
   // RELACIONAMENTOS
   id_consulta Int @unique
-  consulta Consulta @relation(fields: [id_consulta], references: [id])
+  consulta Consulta @relation(fields: [id_consulta], references: [id], onDelete: Cascade) //add o onDelete para sempre que deletarmos uma consulta, um detalhe_da_consulta tb é deletad
 }
 
 // tipo_pagamento é atributo (enumerado) da entidade detalhe_da_consulta
