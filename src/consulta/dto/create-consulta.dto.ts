@@ -14,7 +14,7 @@ export class CreateConsultaDto {
 
   @ApiProperty()
   @IsInt()
-  id_convenio: number;
+  id_convenio?: number;
 
   @ApiProperty()
   @IsInt()

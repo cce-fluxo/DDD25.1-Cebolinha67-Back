@@ -237,8 +237,8 @@ model Consulta {
   paciente Paciente @relation(fields: [id_paciente], references: [id])
   id_dentista Int @unique
   dentista Dentista @relation(fields: [id_dentista], references: [id])
-  id_convenio Int @unique
-  convenio Convenio @relation(fields: [id_convenio], references: [id])
+  id_convenio Int? @unique
+  convenio Convenio? @relation(fields: [id_convenio], references: [id])
   id_endereco Int @unique
   endereco Endereco @relation(fields: [id_endereco], references: [id])
   detalhe_da_consulta DetalheDaConsulta?
