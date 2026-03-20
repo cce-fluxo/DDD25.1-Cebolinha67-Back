@@ -35,7 +35,7 @@ export class ImagemService {
     });
 
     if (!imagem) {
-      throw new NotFoundException('Não encontramos nenhuma imagem');
+      throw new NotFoundException('Imagem não encontrada para upload');
     }
 
     return imagem;
