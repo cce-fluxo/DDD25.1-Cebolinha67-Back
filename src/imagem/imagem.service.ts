@@ -30,6 +30,7 @@ export class ImagemService {
   }
 
   async fazerUpload(id: number) {
+    try{
     const imagem =  await this.prisma.imagem.findUnique({
       where: { id },
     });
@@ -37,9 +38,15 @@ export class ImagemService {
     if (!imagem) {
       throw new NotFoundException('Imagem não encontrada para upload');
     }
-
     return imagem;
-  } // revisar esse cara aqui, ele provavelmente tá errado
+  } 
+    catch(error: any){
+    if (error.code === 'P2025') {
+      throw new NotFoundException('Imagem não encontrada para upload');
+    }
+    throw error;
+  }
+}
 
   async editarImagem(id: number, updateImagemDto: UpdateImagemDto) {
     try{
