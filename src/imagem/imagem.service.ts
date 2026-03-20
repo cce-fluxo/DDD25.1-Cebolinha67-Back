@@ -30,7 +30,7 @@ export class ImagemService {
   }
 
   async fazerUpload(id: number) {
-    const imagem = this.prisma.imagem.findUnique({
+    const imagem =  await this.prisma.imagem.findUnique({
       where: { id },
     });
 
@@ -42,7 +42,8 @@ export class ImagemService {
   } // revisar esse cara aqui, ele provavelmente tá errado
 
   async editarImagem(id: number, updateImagemDto: UpdateImagemDto) {
-    const imagem = this.prisma.imagem.update({
+    try{
+    const imagem =  await this.prisma.imagem.update({
       where: { id },
       data: updateImagemDto,
     });
@@ -51,10 +52,17 @@ export class ImagemService {
       throw new NotFoundException('Não há foto a ser editada');
     }
     return imagem;
-  }
+  } catch(error: any){
+    if (error.code === 'P2025') {
+      throw new NotFoundException('Não há foto a ser editada');
+    }
+    throw error;
+   }
+}
 
   async removerImagem(id: number) {
-    const imagem = this.prisma.imagem.delete({
+    try{
+    const imagem =  await this.prisma.imagem.delete({
       where: { id },
     });
 
@@ -63,5 +71,11 @@ export class ImagemService {
     }
     return imagem;
   }
+  catch(error: any){
+  if (error.code === 'P2025') {
+    throw new NotFoundException('Não há imagem a ser deletada');
+  }
 }
 
+  } 
+}

@@ -19,7 +19,7 @@ export class NotificacaoController {
   constructor(private readonly notificacaoService: NotificacaoService) {}
 
   // /notificacoes/id
-  @Get('/id')
+  @Get('/:id')
   //swagger 
   @ApiOperation({summary: 'pega uma notificação pelo ID dela'})
   @ApiParam({name: 'id' , type:Number})
@@ -31,7 +31,7 @@ export class NotificacaoController {
 
   // /notificacoes/lista
 
-  @Get('/lista')
+  @Get('/lista/:id')
   //swagger
   @ApiOperation({summary: 'lista todas as notificações'})
   @ApiResponse({status: 200, description: "Notificação encontrada"})
@@ -40,7 +40,7 @@ export class NotificacaoController {
     return this.notificacaoService.listarNotificacoes()
   }
 
-  @Patch("/status/id")
+  @Patch("/status/:id")
   // swagger 
   @ApiOperation({summary: 'muda o status de uma notificação'})
   @ApiParam({name:'id', type:Number})
