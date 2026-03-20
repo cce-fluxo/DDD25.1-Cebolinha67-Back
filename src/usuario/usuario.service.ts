@@ -21,7 +21,8 @@ export class UsuarioService {
   constructor(private readonly prisma: PrismaService) {}
 
   async criarUsuario(createUsuarioDto: CreateUsuarioDto){
-    try{return  await this.prisma.usuario.create({
+    try{
+      return await this.prisma.usuario.create({
       data: {
         ...createUsuarioDto,
         data_nascimento: new Date(createUsuarioDto.data_nascimento),
@@ -128,6 +129,4 @@ export class UsuarioService {
       throw error;
     }
   }
-
-  // pesquisei essa loucura ai pq ele não queria aceitar data:createUsuarioDto
 }
