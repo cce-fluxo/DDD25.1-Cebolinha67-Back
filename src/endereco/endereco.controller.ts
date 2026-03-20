@@ -10,7 +10,6 @@ export class EnderecoController {
 
   @ApiBody({ type: CreateEnderecoDto })
   @ApiOperation({summary: "Permite a criacao de endereco"})
-  @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Endereco criado'})
   @ApiResponse({status:404, description: 'Endereco não encontrado'})
   @Post('/cadastrar-novo-endereco')

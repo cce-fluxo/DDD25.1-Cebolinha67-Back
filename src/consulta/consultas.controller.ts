@@ -45,7 +45,6 @@ export class ConsultasController {
   @Post('criar-consulta')
   @ApiBody({ type: CreateConsultaDto })
   @ApiOperation({summary: "Permite a criacao de consulta"})
-  @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Consulta encontrada'})
   @ApiResponse({status:404, description: 'Consulta não encontrada'})
   criarConsulta(@Body() createConsultaDto: CreateConsultaDto) {
