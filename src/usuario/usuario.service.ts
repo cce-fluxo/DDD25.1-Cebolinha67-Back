@@ -4,6 +4,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { BadRequestException } from '@nestjs/common';
 
 // aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
 
@@ -20,19 +21,21 @@ export class UsuarioService {
   constructor(private readonly prisma: PrismaService) {}
 
   async criarUsuario(createUsuarioDto: CreateUsuarioDto){
-    return this.prisma.usuario.create({
+    try{
+      return await this.prisma.usuario.create({
       data: {
-        no_usuario: createUsuarioDto.no_usuario,
-        email_usuario: createUsuarioDto.email_usuario,
-        cpf: createUsuarioDto.cpf,
-        nu_celular: createUsuarioDto.nu_celular,
-        genero: createUsuarioDto.genero,
-        data_nascimento: createUsuarioDto.data_nascimento,
-        token_esqueci_senha: createUsuarioDto.token_esqueci_senha,
-
+        ...createUsuarioDto,
+        data_nascimento: new Date(createUsuarioDto.data_nascimento),
       }
-    });  
-  }
+      }
+    )  }catch(error: any){
+      if (error.code === 'P2002') {
+        throw new BadRequestException('Email ou CPF já existe');
+      }
+
+      throw error;
+    }
+}
 
   async getDados(id: number) {
     const usuario = await this.prisma.usuario.findUnique({
@@ -112,13 +115,18 @@ export class UsuarioService {
       throw new Error('Usuário não existente');
     }
 
-    return this.prisma.usuario.create({
-      data: {
-        ...createUsuarioDto,
-        data_nascimento: new Date(createUsuarioDto.data_nascimento),
-      },
-    });
+    try {
+      return await this.prisma.usuario.create({
+        data: {
+          ...createUsuarioDto,
+          data_nascimento: new Date(createUsuarioDto.data_nascimento),
+        },
+      });
+    } catch (error: any) {
+      if (error.code === 'P2002') {
+        throw new BadRequestException('Email ou CPF já existe');
+      }
+      throw error;
+    }
   }
-
-  // pesquisei essa loucura ai pq ele não queria aceitar data:createUsuarioDto
 }
