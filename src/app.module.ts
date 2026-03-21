@@ -15,10 +15,11 @@ import { ImagemModule } from './imagem/imagem.module';
 import { PostagemModule } from './postagem/postagem.module';
 import { DetalheDaConsultaModule } from './detalhe_da_consulta/detalhe_da_consulta.module';
 import { PrismaModule } from './prisma/prisma.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule, DetalheDaConsultaModule, PrismaModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule, DetalheDaConsultaModule, PrismaModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

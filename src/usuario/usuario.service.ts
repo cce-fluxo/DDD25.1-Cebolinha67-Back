@@ -20,22 +20,22 @@ import { BadRequestException } from '@nestjs/common';
 export class UsuarioService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async criarUsuario(createUsuarioDto: CreateUsuarioDto){
-    try{
+  async criarUsuario(createUsuarioDto: CreateUsuarioDto) {
+    try {
       return await this.prisma.usuario.create({
-      data: {
-        ...createUsuarioDto,
-        data_nascimento: new Date(createUsuarioDto.data_nascimento),
-      }
-      }
-    )  }catch(error: any){
+        data: {
+          ...createUsuarioDto,
+          data_nascimento: new Date(createUsuarioDto.data_nascimento),
+        },
+      });
+    } catch (error: any) {
       if (error.code === 'P2002') {
         throw new BadRequestException('Email ou CPF já existe');
       }
 
       throw error;
     }
-}
+  }
 
   async getDados(id: number) {
     const usuario = await this.prisma.usuario.findUnique({
@@ -58,18 +58,22 @@ export class UsuarioService {
 
     // não preciso passar um argumento, ele já vai listar todos
   }
-  
-  async getUsuarioByEmail(email_usuario: string){
-    const usuario = await this.prisma.usuario.findUnique({
-      where:{email_usuario}
-    })
 
-    if(!usuario){
-      throw new NotFoundException("Nenhum email encontrado")
+  async getUsuarioByEmail(email_usuario: string) {
+    const usuario = await this.prisma.usuario.findUnique({
+      where: { email_usuario },
+      include: {
+        paciente: true,
+        dentista: true,
+      },
+    });
+
+    if (!usuario) {
+      throw new NotFoundException('Nenhum email encontrado');
     }
 
-    return usuario 
-  }  // isso aqui provavelmente não tá legal
+    return usuario;
+  } // isso aqui provavelmente não tá legal
 
   async editarDadosUsuario(id: number, updateUsuarioDto: UpdateUsuarioDto) {
     const usuario = await this.prisma.usuario.findUnique({
