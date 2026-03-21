@@ -88,6 +88,7 @@ export const UsuarioScalarFieldEnum = {
   id: 'id',
   no_usuario: 'no_usuario',
   email_usuario: 'email_usuario',
+  senha_usuario: 'senha_usuario',
   cpf: 'cpf',
   nu_celular: 'nu_celular',
   genero: 'genero',
@@ -100,7 +101,6 @@ export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeo
 
 export const DentistaScalarFieldEnum = {
   id: 'id',
-  senha_dentista: 'senha_dentista',
   formacao: 'formacao',
   instituto: 'instituto',
   datainicio: 'datainicio',
@@ -114,7 +114,6 @@ export type DentistaScalarFieldEnum = (typeof DentistaScalarFieldEnum)[keyof typ
 
 export const PacienteScalarFieldEnum = {
   id: 'id',
-  senha_paciente: 'senha_paciente',
   rg: 'rg',
   id_usuario: 'id_usuario'
 } as const

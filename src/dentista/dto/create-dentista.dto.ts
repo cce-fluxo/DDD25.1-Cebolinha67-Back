@@ -1,17 +1,9 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
-import { IsDate, IsInt, IsString, ValidateNested } from "class-validator";
+import { IsDate, IsString, ValidateNested } from "class-validator";
 import { CreateUsuarioDto } from "src/usuario/dto/create-usuario.dto";
-//import { Genero } from "src/generated/prisma/enums";
 
 export class CreateDentistaDto {
-
-    @ApiProperty({
-        description: 'esse campo é para senha_dentista',
-        example: 'fhjkfgh',
-    })
-    @IsString()
-    senha_dentista!: string;
 
     @ApiProperty({
         description: 'esse campo é para formacao',

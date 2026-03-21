@@ -10,13 +10,13 @@ export class PacienteService {
   create(createPacienteDto: CreatePacienteDto) {
     return this.prisma.paciente.create({
       data: {
-        senha_paciente: createPacienteDto.senha_paciente,
         rg: createPacienteDto.rg,
         
         usuario: {
             create: {
               no_usuario: createPacienteDto.usuario.no_usuario,
               email_usuario: createPacienteDto.usuario.email_usuario,
+              senha_usuario: createPacienteDto.usuario.senha_usuario,
               cpf: createPacienteDto.usuario.cpf,
               nu_celular: createPacienteDto.usuario.nu_celular,
               genero: createPacienteDto.usuario.genero,
@@ -101,8 +101,7 @@ export class PacienteService {
     return this.prisma.paciente.update({
       where: { id },
       data: {
-        senha_paciente: updatePacienteDto.senha_paciente,
-        rg: updatePacienteDto.rg,
+        rg: updatePacienteDto.rg
       },
     });
   }
