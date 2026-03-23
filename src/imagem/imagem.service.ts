@@ -17,43 +17,58 @@ export class ImagemService {
   }
 
   async fazerUpload(id: number) {
-    const imagem = await this.prisma.imagem.findUnique({
+    try{
+    const imagem =  await this.prisma.imagem.findUnique({
       where: { id },
     });
 
     if (!imagem) {
       throw new NotFoundException('Imagem não encontrada para upload');
     }
-
     return imagem;
+  } 
+    catch(error: any){
+    if (error.code === 'P2025') {
+      throw new NotFoundException('Imagem não encontrada para upload');
+    }
+    throw error;
   }
+}
 
   async editarImagem(id: number, updateImagemDto: UpdateImagemDto) {
-    const imagemExistente = await this.prisma.imagem.findUnique({
+    try{
+    const imagem =  await this.prisma.imagem.update({
       where: { id },
     });
 
     if (!imagemExistente) {
       throw new NotFoundException('Não há foto a ser editada');
     }
-
-    return this.prisma.imagem.update({
-      where: { id },
-      data: updateImagemDto,
-    });
-  }
+    return imagem;
+  } catch(error: any){
+    if (error.code === 'P2025') {
+      throw new NotFoundException('Não há foto a ser editada');
+    }
+    throw error;
+   }
+}
 
   async removerImagem(id: number) {
-    const imagemExistente = await this.prisma.imagem.findUnique({
+    try{
+    const imagem =  await this.prisma.imagem.delete({
       where: { id },
     });
 
     if (!imagemExistente) {
       throw new NotFoundException('Não há imagem a ser deletada');
     }
-
-    return this.prisma.imagem.delete({
-      where: { id },
-    });
+    return imagem;
   }
+  catch(error: any){
+  if (error.code === 'P2025') {
+    throw new NotFoundException('Não há imagem a ser deletada');
+  }
+}
+
+  } 
 }

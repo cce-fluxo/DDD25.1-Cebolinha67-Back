@@ -48,7 +48,7 @@ export class UsuarioController {
     return this.usuarioService.getUsuarios();
   } // não preciso de um ID específico aqui, eu to vendo todos 
 
-  @Get('/pegar-pelo-email')
+  @Get('/pegar-pelo-email/:email_usuario')
   //swagger 
   @ApiOperation({summary: "Encontrar um usuário a partir do email dele"})
   @ApiParam({name:'email_usuario', type:String})
