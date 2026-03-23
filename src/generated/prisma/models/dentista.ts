@@ -38,7 +38,6 @@ export type DentistaSumAggregateOutputType = {
 
 export type DentistaMinAggregateOutputType = {
   id: number | null
-  senha_dentista: string | null
   formacao: string | null
   instituto: string | null
   datainicio: Date | null
@@ -49,7 +48,6 @@ export type DentistaMinAggregateOutputType = {
 
 export type DentistaMaxAggregateOutputType = {
   id: number | null
-  senha_dentista: string | null
   formacao: string | null
   instituto: string | null
   datainicio: Date | null
@@ -60,7 +58,6 @@ export type DentistaMaxAggregateOutputType = {
 
 export type DentistaCountAggregateOutputType = {
   id: number
-  senha_dentista: number
   formacao: number
   instituto: number
   datainicio: number
@@ -83,7 +80,6 @@ export type DentistaSumAggregateInputType = {
 
 export type DentistaMinAggregateInputType = {
   id?: true
-  senha_dentista?: true
   formacao?: true
   instituto?: true
   datainicio?: true
@@ -94,7 +90,6 @@ export type DentistaMinAggregateInputType = {
 
 export type DentistaMaxAggregateInputType = {
   id?: true
-  senha_dentista?: true
   formacao?: true
   instituto?: true
   datainicio?: true
@@ -105,7 +100,6 @@ export type DentistaMaxAggregateInputType = {
 
 export type DentistaCountAggregateInputType = {
   id?: true
-  senha_dentista?: true
   formacao?: true
   instituto?: true
   datainicio?: true
@@ -203,7 +197,6 @@ export type DentistaGroupByArgs<ExtArgs extends runtime.Types.Extensions.Interna
 
 export type DentistaGroupByOutputType = {
   id: number
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date
@@ -237,7 +230,6 @@ export type DentistaWhereInput = {
   OR?: Prisma.DentistaWhereInput[]
   NOT?: Prisma.DentistaWhereInput | Prisma.DentistaWhereInput[]
   id?: Prisma.IntFilter<"Dentista"> | number
-  senha_dentista?: Prisma.StringFilter<"Dentista"> | string
   formacao?: Prisma.StringFilter<"Dentista"> | string
   instituto?: Prisma.StringFilter<"Dentista"> | string
   datainicio?: Prisma.DateTimeFilter<"Dentista"> | Date | string
@@ -252,7 +244,6 @@ export type DentistaWhereInput = {
 
 export type DentistaOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
   instituto?: Prisma.SortOrder
   datainicio?: Prisma.SortOrder
@@ -271,7 +262,6 @@ export type DentistaWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.DentistaWhereInput | Prisma.DentistaWhereInput[]
   OR?: Prisma.DentistaWhereInput[]
   NOT?: Prisma.DentistaWhereInput | Prisma.DentistaWhereInput[]
-  senha_dentista?: Prisma.StringFilter<"Dentista"> | string
   formacao?: Prisma.StringFilter<"Dentista"> | string
   instituto?: Prisma.StringFilter<"Dentista"> | string
   datainicio?: Prisma.DateTimeFilter<"Dentista"> | Date | string
@@ -285,7 +275,6 @@ export type DentistaWhereUniqueInput = Prisma.AtLeast<{
 
 export type DentistaOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
   instituto?: Prisma.SortOrder
   datainicio?: Prisma.SortOrder
@@ -304,7 +293,6 @@ export type DentistaScalarWhereWithAggregatesInput = {
   OR?: Prisma.DentistaScalarWhereWithAggregatesInput[]
   NOT?: Prisma.DentistaScalarWhereWithAggregatesInput | Prisma.DentistaScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Dentista"> | number
-  senha_dentista?: Prisma.StringWithAggregatesFilter<"Dentista"> | string
   formacao?: Prisma.StringWithAggregatesFilter<"Dentista"> | string
   instituto?: Prisma.StringWithAggregatesFilter<"Dentista"> | string
   datainicio?: Prisma.DateTimeWithAggregatesFilter<"Dentista"> | Date | string
@@ -314,7 +302,6 @@ export type DentistaScalarWhereWithAggregatesInput = {
 }
 
 export type DentistaCreateInput = {
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -328,7 +315,6 @@ export type DentistaCreateInput = {
 
 export type DentistaUncheckedCreateInput = {
   id?: number
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -341,7 +327,6 @@ export type DentistaUncheckedCreateInput = {
 }
 
 export type DentistaUpdateInput = {
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -355,7 +340,6 @@ export type DentistaUpdateInput = {
 
 export type DentistaUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -369,7 +353,6 @@ export type DentistaUncheckedUpdateInput = {
 
 export type DentistaCreateManyInput = {
   id?: number
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -379,7 +362,6 @@ export type DentistaCreateManyInput = {
 }
 
 export type DentistaUpdateManyMutationInput = {
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -389,7 +371,6 @@ export type DentistaUpdateManyMutationInput = {
 
 export type DentistaUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -405,7 +386,6 @@ export type DentistaNullableScalarRelationFilter = {
 
 export type DentistaCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
   instituto?: Prisma.SortOrder
   datainicio?: Prisma.SortOrder
@@ -421,7 +401,6 @@ export type DentistaAvgOrderByAggregateInput = {
 
 export type DentistaMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
   instituto?: Prisma.SortOrder
   datainicio?: Prisma.SortOrder
@@ -432,7 +411,6 @@ export type DentistaMaxOrderByAggregateInput = {
 
 export type DentistaMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  senha_dentista?: Prisma.SortOrder
   formacao?: Prisma.SortOrder
   instituto?: Prisma.SortOrder
   datainicio?: Prisma.SortOrder
@@ -526,7 +504,6 @@ export type DentistaUpdateOneRequiredWithoutPostagemNestedInput = {
 }
 
 export type DentistaCreateWithoutUsuarioInput = {
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -539,7 +516,6 @@ export type DentistaCreateWithoutUsuarioInput = {
 
 export type DentistaUncheckedCreateWithoutUsuarioInput = {
   id?: number
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -567,7 +543,6 @@ export type DentistaUpdateToOneWithWhereWithoutUsuarioInput = {
 }
 
 export type DentistaUpdateWithoutUsuarioInput = {
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -580,7 +555,6 @@ export type DentistaUpdateWithoutUsuarioInput = {
 
 export type DentistaUncheckedUpdateWithoutUsuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -592,7 +566,6 @@ export type DentistaUncheckedUpdateWithoutUsuarioInput = {
 }
 
 export type DentistaCreateWithoutEnderecoInput = {
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -605,7 +578,6 @@ export type DentistaCreateWithoutEnderecoInput = {
 
 export type DentistaUncheckedCreateWithoutEnderecoInput = {
   id?: number
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -633,7 +605,6 @@ export type DentistaUpdateToOneWithWhereWithoutEnderecoInput = {
 }
 
 export type DentistaUpdateWithoutEnderecoInput = {
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -646,7 +617,6 @@ export type DentistaUpdateWithoutEnderecoInput = {
 
 export type DentistaUncheckedUpdateWithoutEnderecoInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -658,7 +628,6 @@ export type DentistaUncheckedUpdateWithoutEnderecoInput = {
 }
 
 export type DentistaCreateWithoutConsultasInput = {
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -671,7 +640,6 @@ export type DentistaCreateWithoutConsultasInput = {
 
 export type DentistaUncheckedCreateWithoutConsultasInput = {
   id?: number
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -699,7 +667,6 @@ export type DentistaUpdateToOneWithWhereWithoutConsultasInput = {
 }
 
 export type DentistaUpdateWithoutConsultasInput = {
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -712,7 +679,6 @@ export type DentistaUpdateWithoutConsultasInput = {
 
 export type DentistaUncheckedUpdateWithoutConsultasInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -724,7 +690,6 @@ export type DentistaUncheckedUpdateWithoutConsultasInput = {
 }
 
 export type DentistaCreateWithoutPostagemInput = {
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -737,7 +702,6 @@ export type DentistaCreateWithoutPostagemInput = {
 
 export type DentistaUncheckedCreateWithoutPostagemInput = {
   id?: number
-  senha_dentista: string
   formacao: string
   instituto: string
   datainicio: Date | string
@@ -765,7 +729,6 @@ export type DentistaUpdateToOneWithWhereWithoutPostagemInput = {
 }
 
 export type DentistaUpdateWithoutPostagemInput = {
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -778,7 +741,6 @@ export type DentistaUpdateWithoutPostagemInput = {
 
 export type DentistaUncheckedUpdateWithoutPostagemInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
-  senha_dentista?: Prisma.StringFieldUpdateOperationsInput | string
   formacao?: Prisma.StringFieldUpdateOperationsInput | string
   instituto?: Prisma.StringFieldUpdateOperationsInput | string
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -831,7 +793,6 @@ export type DentistaCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Ty
 
 export type DentistaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  senha_dentista?: boolean
   formacao?: boolean
   instituto?: boolean
   datainicio?: boolean
@@ -847,7 +808,6 @@ export type DentistaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
 
 export type DentistaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  senha_dentista?: boolean
   formacao?: boolean
   instituto?: boolean
   datainicio?: boolean
@@ -859,7 +819,6 @@ export type DentistaSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type DentistaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  senha_dentista?: boolean
   formacao?: boolean
   instituto?: boolean
   datainicio?: boolean
@@ -871,7 +830,6 @@ export type DentistaSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
 
 export type DentistaSelectScalar = {
   id?: boolean
-  senha_dentista?: boolean
   formacao?: boolean
   instituto?: boolean
   datainicio?: boolean
@@ -880,7 +838,7 @@ export type DentistaSelectScalar = {
   id_usuario?: boolean
 }
 
-export type DentistaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "senha_dentista" | "formacao" | "instituto" | "datainicio" | "datatermino" | "especializacao" | "id_usuario", ExtArgs["result"]["dentista"]>
+export type DentistaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "formacao" | "instituto" | "datainicio" | "datatermino" | "especializacao" | "id_usuario", ExtArgs["result"]["dentista"]>
 export type DentistaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
   postagem?: boolean | Prisma.Dentista$postagemArgs<ExtArgs>
@@ -905,7 +863,6 @@ export type $DentistaPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
-    senha_dentista: string
     formacao: string
     instituto: string
     datainicio: Date
@@ -1340,7 +1297,6 @@ export interface Prisma__DentistaClient<T, Null = never, ExtArgs extends runtime
  */
 export interface DentistaFieldRefs {
   readonly id: Prisma.FieldRef<"Dentista", 'Int'>
-  readonly senha_dentista: Prisma.FieldRef<"Dentista", 'String'>
   readonly formacao: Prisma.FieldRef<"Dentista", 'String'>
   readonly instituto: Prisma.FieldRef<"Dentista", 'String'>
   readonly datainicio: Prisma.FieldRef<"Dentista", 'DateTime'>

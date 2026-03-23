@@ -1,3 +1,4 @@
+
 // quem esteve aqui (coloca seu nome smp que entrar pf): motta ->
 
 // aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
@@ -15,6 +16,8 @@
 // vou assistir a trilha antes de fazer a parte de auth
 
 export class AutorizacaoService{}
+
+
 
 
 

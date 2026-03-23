@@ -94,19 +94,19 @@ model Usuario{
   id Int @id @default(autoincrement())
   no_usuario String
   email_usuario String @unique
+  senha_usuario String
   cpf String @unique
   nu_celular String @unique
   genero Genero
   data_nascimento DateTime
-  token_esqueci_senha String
+  token_esqueci_senha String? // interrogação pq ele nem sempre vai ser chamado
 
   // RELACIONAMENTOS
-  notificacao_usuario NotificacaoUsuario[]
+  notificacao_usuario NotificacaoUsuario[]  
   imagem_usuario ImagemUsuario?
   
   paciente Paciente?
-  dentista Dentista? 
-
+  dentista Dentista?
   } 
 
 enum Genero {
@@ -118,7 +118,6 @@ enum Genero {
 
 model Dentista{
   id Int @id @default(autoincrement())
-  senha_dentista String
   formacao String
   instituto String
   datainicio DateTime
@@ -135,7 +134,6 @@ model Dentista{
 
 model Paciente{
   id Int @id @default(autoincrement())
-  senha_paciente String
   rg String @unique
 
   // RELACIONAMENTOS
