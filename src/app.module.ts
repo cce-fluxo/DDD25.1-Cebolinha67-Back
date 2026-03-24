@@ -21,11 +21,12 @@ import { AuthService } from './auth/auth.service';
 import { UsuarioService } from './usuario/usuario.service';
 import { LocalStrategy } from './auth/stratigies/local.strategy';
 import { JwtService } from '@nestjs/jwt';
+import { JwtStrategy } from './auth/stratigies/jwt-strategy';
 
 
 @Module({
   imports: [ConfigModule.forRoot({ isGlobal: true }), DentistaModule, ConsultasModule, EnderecoModule, PacienteModule, AutorizacaoModule, NotificacaoModule, ConvenioModule, UsuarioModule, ImagemModule, PostagemModule, DetalheDaConsultaModule, PrismaModule, AuthModule],
   controllers: [AppController],
-  providers: [AppService, PrismaService, AuthService, UsuarioService, LocalStrategy, JwtService ],
+  providers: [AppService, PrismaService, AuthService, UsuarioService, LocalStrategy, JwtService, JwtStrategy ],
 })
 export class AppModule {}
