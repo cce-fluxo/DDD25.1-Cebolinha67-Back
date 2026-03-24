@@ -28,6 +28,6 @@ export class AuthService {
     if (!user || user.senha_usuario !== password) {
       throw new Error('Credenciais inválidas');
     }
-    return { ...user, senha: undefined };
+    return { ...user, senha: undefined }; //confere isso aq MOTTA vê se n é senha_usuario
   }
 }
