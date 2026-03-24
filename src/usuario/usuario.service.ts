@@ -5,6 +5,7 @@ import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { BadRequestException } from '@nestjs/common';
+import * as bcrypt from 'bcrypt';
 
 // aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
 
@@ -26,6 +27,7 @@ export class UsuarioService {
         data: {
           ...createUsuarioDto,
           data_nascimento: new Date(createUsuarioDto.data_nascimento),
+          senha_usuario: await bcrypt.hash(createUsuarioDto.senha_usuario,10)
         },
       });
     } catch (error: any) {
