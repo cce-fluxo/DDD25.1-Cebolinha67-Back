@@ -65,7 +65,7 @@ export class ConsultasController {
   @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Consulta encontrada'})
   @ApiResponse({status:404, description: 'Consulta não encontrada'})
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: Number) {
     return this.consultasService.removerConsulta(+id);
   }
 }

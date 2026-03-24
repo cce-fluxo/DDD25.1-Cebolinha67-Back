@@ -49,8 +49,12 @@ export class ConsultasService {
       data: {
 
         id_paciente: createConsultaDto.id_paciente,
-        id_dentista: createConsultaDto.id_dentista,
-        id_convenio: createConsultaDto.id_convenio,
+        id_dentista: createConsultaDto.id_dentista, 
+        //garante id_convenio opcional
+        ...(createConsultaDto.id_convenio != null && { 
+          id_convenio: createConsultaDto.id_convenio 
+        }),
+
         id_endereco: createConsultaDto.id_endereco,
 
         detalhe_da_consulta: {
@@ -111,7 +115,7 @@ export class ConsultasService {
 
   async removerConsulta(id: number){
     return await this.prisma.consulta.delete({
-      where: { id: id }
+      where: { id }
     })
   }
 }

@@ -337,9 +337,9 @@ export type ConvenioOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type ConvenioScalarRelationFilter = {
-  is?: Prisma.ConvenioWhereInput
-  isNot?: Prisma.ConvenioWhereInput
+export type ConvenioNullableScalarRelationFilter = {
+  is?: Prisma.ConvenioWhereInput | null
+  isNot?: Prisma.ConvenioWhereInput | null
 }
 
 export type ConvenioCountOrderByAggregateInput = {
@@ -424,10 +424,12 @@ export type ConvenioCreateNestedOneWithoutConsultasInput = {
   connect?: Prisma.ConvenioWhereUniqueInput
 }
 
-export type ConvenioUpdateOneRequiredWithoutConsultasNestedInput = {
+export type ConvenioUpdateOneWithoutConsultasNestedInput = {
   create?: Prisma.XOR<Prisma.ConvenioCreateWithoutConsultasInput, Prisma.ConvenioUncheckedCreateWithoutConsultasInput>
   connectOrCreate?: Prisma.ConvenioCreateOrConnectWithoutConsultasInput
   upsert?: Prisma.ConvenioUpsertWithoutConsultasInput
+  disconnect?: Prisma.ConvenioWhereInput | boolean
+  delete?: Prisma.ConvenioWhereInput | boolean
   connect?: Prisma.ConvenioWhereUniqueInput
   update?: Prisma.XOR<Prisma.XOR<Prisma.ConvenioUpdateToOneWithWhereWithoutConsultasInput, Prisma.ConvenioUpdateWithoutConsultasInput>, Prisma.ConvenioUncheckedUpdateWithoutConsultasInput>
 }
