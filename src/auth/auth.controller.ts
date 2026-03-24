@@ -11,4 +11,5 @@ export class AuthController {
   login(@Request() req) {
     return this.authService.login(req.user);
   }
+  
 }

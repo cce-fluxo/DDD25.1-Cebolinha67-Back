@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { UsuarioService } from 'src/usuario/usuario.service';
 import { JwtService } from '@nestjs/jwt';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class AuthService {
@@ -25,9 +26,11 @@ export class AuthService {
   }
   async validateUser(email: string, password: string) {
     const user = await this.userService.getUsuarioByEmail(email);
-    if (!user || user.senha_usuario !== password) {
+    if (!user || !(await bcrypt.compare(user.senha_usuario, password))) {
       throw new Error('Credenciais inválidas');
     }
-    return { ...user, senha: undefined }; //confere isso aq MOTTA vê se n é senha_usuario
+    return { ...user, senha_usuario: undefined }; //confere isso aq MOTTA vê se n é senha_usuario
+
+    // calma paizao, vou ver ss
   }
 }
