@@ -1222,7 +1222,6 @@ export type ImagemUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
   /**
    * The data needed to update a Imagem.
    */
-  data: Prisma.XOR<Prisma.ImagemUpdateInput, Prisma.ImagemUncheckedUpdateInput>
   /**
    * Choose, which Imagem to update.
    */

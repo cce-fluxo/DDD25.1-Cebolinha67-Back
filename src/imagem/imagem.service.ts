@@ -41,7 +41,7 @@ export class ImagemService {
       where: { id },
     });
 
-    if (!imagemExistente) {
+    if (!imagem) {
       throw new NotFoundException('Não há foto a ser editada');
     }
     return imagem;
@@ -59,7 +59,7 @@ export class ImagemService {
       where: { id },
     });
 
-    if (!imagemExistente) {
+    if (!imagem) {
       throw new NotFoundException('Não há imagem a ser deletada');
     }
     return imagem;
