@@ -1,6 +1,6 @@
 // quem esteve aqui (coloca seu nome smp que entrar pf): motta
 
-import { IsDate, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsDate, IsEmail, IsEnum, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { Genero } from "src/generated/prisma/enums";
 import { Type } from "class-transformer";
@@ -15,6 +15,7 @@ export class CreateUsuarioDto {
   @IsNotEmpty()
   @ApiProperty({ description: 'email do usuário', example: 'cebola67@gmail.com' })
   @IsString()
+  @IsEmail()
   email_usuario!: string;
 
   @IsNotEmpty()
