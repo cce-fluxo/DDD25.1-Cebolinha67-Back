@@ -24,10 +24,10 @@ export class AuthService {
       access_token: jwtToken,
     };
   }
-  async validateUser(email: string, password: string) {
-    const user = await this.userService.getUsuarioByEmail(email);
-    if (!user || !(await bcrypt.compare(user.senha_usuario, password))) {
-      throw new Error('Credenciais inválidas');
+  async validateUser(email_usuario: string, senha_usuario: string) {
+    const user = await this.userService.getUsuarioByEmail(email_usuario);
+    if (!user || !(await bcrypt.compare(senha_usuario, user.senha_usuario))) {
+      return null;
     }
     return { ...user, senha_usuario: undefined }; //confere isso aq MOTTA vê se n é senha_usuario
 
