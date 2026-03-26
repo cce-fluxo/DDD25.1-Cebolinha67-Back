@@ -4,6 +4,7 @@ import { ApiProperty } from '@nestjs/swagger';
 import { CreateUsuarioDto } from 'src/usuario/dto/create-usuario.dto';
 
 export class CreatePacienteDto {
+
   @ApiProperty({
     example: '123456789',
     description: 'RG do paciente',
@@ -12,6 +13,7 @@ export class CreatePacienteDto {
   @IsNotEmpty()
   rg!: string;
 
+  @IsNotEmpty()
   @ApiProperty({ 
     type: CreateUsuarioDto, 
   })

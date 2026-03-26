@@ -100,6 +100,7 @@ model Usuario{
   genero Genero
   data_nascimento DateTime
   token_esqueci_senha String? // interrogação pq ele nem sempre vai ser chamado
+  reset_token_expiry  DateTime?
 
   // RELACIONAMENTOS
   notificacao_usuario NotificacaoUsuario[]  

@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateDentistaDto } from './dto/create-dentista.dto';
 import { UpdateDentistaDto } from './dto/update-dentista.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import * as bcrypt from 'bcrypt';
 
 
 @Injectable()
@@ -10,6 +11,10 @@ export class DentistaService {
   constructor(private readonly prisma: PrismaService) {}
 
   async criarDentista(createDentistaDto: CreateDentistaDto) {
+
+    console.log('DTO recebido:', JSON.stringify(createDentistaDto, null, 2));
+    console.log('Senha recebida:', createDentistaDto.usuario?.senha_usuario);
+
     try {
       return await this.prisma.dentista.create({
         data: {
@@ -22,7 +27,7 @@ export class DentistaService {
             create: {
               no_usuario: createDentistaDto.usuario.no_usuario,
               email_usuario: createDentistaDto.usuario.email_usuario,
-              senha_usuario: createDentistaDto.usuario.senha_usuario,
+              senha_usuario: await bcrypt.hash(createDentistaDto.usuario.senha_usuario,10),
               cpf: createDentistaDto.usuario.cpf,
               nu_celular: createDentistaDto.usuario.nu_celular,
               genero: createDentistaDto.usuario.genero,

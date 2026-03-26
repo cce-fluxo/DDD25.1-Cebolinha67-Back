@@ -1,10 +1,11 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
-import { IsDate, IsString, ValidateNested } from "class-validator";
+import { IsDate, IsNotEmpty, IsString, ValidateNested } from "class-validator";
 import { CreateUsuarioDto } from "src/usuario/dto/create-usuario.dto";
 
 export class CreateDentistaDto {
 
+    @IsNotEmpty()
     @ApiProperty({
         description: 'esse campo é para formacao',
         example: 'Odontologia',
@@ -12,6 +13,7 @@ export class CreateDentistaDto {
     @IsString()
     formacao!:string;
 
+    @IsNotEmpty()
     @ApiProperty({
         description: 'esse campo é para instituto',
         example: 'UFRJ',
@@ -19,6 +21,7 @@ export class CreateDentistaDto {
     @IsString()
     instituto!: string;
 
+    @IsNotEmpty()
     @ApiProperty({
         description: 'esse campo é para data de início',
         example: '2026-03-18T20:46:58.663Z',
@@ -27,6 +30,7 @@ export class CreateDentistaDto {
     @IsDate()
     datainicio!: Date;
 
+    @IsNotEmpty()
     @ApiProperty({
         description: 'esse campo é para data de término',
         example: '2028-03-18T20:46:58.663Z',
@@ -35,6 +39,7 @@ export class CreateDentistaDto {
     @IsDate()
     datatermino!: Date;
 
+    @IsNotEmpty()
     @ApiProperty({
         description: 'esse campo é para especializacao',
         example: 'Osteopatia',
@@ -42,6 +47,7 @@ export class CreateDentistaDto {
     @IsString()
     especializacao!: string;
 
+    @IsNotEmpty()
     @ApiProperty({ 
         type: CreateUsuarioDto, 
     })

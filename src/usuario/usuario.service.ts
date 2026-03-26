@@ -5,6 +5,7 @@ import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { BadRequestException } from '@nestjs/common';
+import * as bcrypt from 'bcrypt';
 
 // aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
 
@@ -20,22 +21,23 @@ import { BadRequestException } from '@nestjs/common';
 export class UsuarioService {
   constructor(private readonly prisma: PrismaService) {}
 
-  async criarUsuario(createUsuarioDto: CreateUsuarioDto){
-    try{
+  async criarUsuario(createUsuarioDto: CreateUsuarioDto) {
+    try {
       return await this.prisma.usuario.create({
-      data: {
-        ...createUsuarioDto,
-        data_nascimento: new Date(createUsuarioDto.data_nascimento),
-      }
-      }
-    )  }catch(error: any){
+        data: {
+          ...createUsuarioDto,
+          data_nascimento: new Date(createUsuarioDto.data_nascimento),
+          senha_usuario: await bcrypt.hash(createUsuarioDto.senha_usuario,10)
+        },
+      });
+    } catch (error: any) {
       if (error.code === 'P2002') {
         throw new BadRequestException('Email ou CPF já existe');
       }
 
       throw error;
     }
-}
+  }
 
   async getDados(id: number) {
     const usuario = await this.prisma.usuario.findUnique({
@@ -58,18 +60,17 @@ export class UsuarioService {
 
     // não preciso passar um argumento, ele já vai listar todos
   }
-  
-  async getUsuarioByEmail(email_usuario: string){
+
+  async getUsuarioByEmail(email_usuario: string) {
     const usuario = await this.prisma.usuario.findUnique({
-      where:{email_usuario}
-    })
-
-    if(!usuario){
-      throw new NotFoundException("Nenhum email encontrado")
-    }
-
-    return usuario 
-  }  // isso aqui provavelmente não tá legal
+      where: { email_usuario },
+      include: {
+        paciente: true,
+        dentista: true,
+      },
+    });
+    return usuario;
+  } // isso aqui provavelmente não tá legal
 
   async editarDadosUsuario(id: number, updateUsuarioDto: UpdateUsuarioDto) {
     const usuario = await this.prisma.usuario.findUnique({
