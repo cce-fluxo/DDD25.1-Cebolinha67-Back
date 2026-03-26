@@ -7,6 +7,7 @@ import {
   Param,
   Delete,
   ParseIntPipe,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiBadRequestResponse,
@@ -21,6 +22,7 @@ import {
 import { PacienteService } from './paciente.service';
 import { CreatePacienteDto } from './dto/create-paciente.dto';
 import { UpdatePacienteDto } from './dto/update-paciente.dto';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @ApiTags('Pacientes')
 @Controller('paciente')
@@ -40,6 +42,7 @@ export class PacienteController {
     return this.pacienteService.create(createPacienteDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get()
   @ApiOperation({ summary: 'Listar todos os pacientes' })
   @ApiOkResponse({
@@ -49,6 +52,7 @@ export class PacienteController {
     return this.pacienteService.findAll();
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('ver-notificacoes/:id')
   @ApiOperation({ summary: 'Listar notificações de um paciente' })
   @ApiParam({
@@ -70,6 +74,7 @@ export class PacienteController {
     return this.pacienteService.findNotificacoes(id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('ver-consultas/:id')
   @ApiOperation({ summary: 'Listar consultas de um paciente' })
   @ApiParam({
@@ -91,6 +96,7 @@ export class PacienteController {
     return this.pacienteService.findConsultas(id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('ver-convenios/:id')
   @ApiOperation({ summary: 'Listar convênios de um paciente' })
   @ApiParam({
@@ -112,6 +118,7 @@ export class PacienteController {
     return this.pacienteService.findConvenio(id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get(':id')
   @ApiOperation({ summary: 'Buscar um paciente pelo ID' })
   @ApiParam({
@@ -133,6 +140,7 @@ export class PacienteController {
     return this.pacienteService.findOne(id);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Patch(':id')
   @ApiOperation({ summary: 'Atualizar um paciente pelo ID' })
   @ApiParam({
@@ -158,6 +166,7 @@ export class PacienteController {
     return this.pacienteService.update(id, updatePacienteDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   @ApiOperation({ summary: 'Remover um paciente pelo ID' })
   @ApiParam({

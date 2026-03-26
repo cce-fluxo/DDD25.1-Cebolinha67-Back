@@ -1,10 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from '@nestjs/common';
 import { ConsultasService } from './consultas.service.js';
 import { CreateConsultaDto } from './dto/create-consulta.dto.js';
 import { UpdateConsultaDto } from './dto/update-consulta.dto.js';
 import { ApiTags , ApiOperation , ApiParam , ApiResponse, ApiBody} from '@nestjs/swagger';
 import { Consulta } from './entities/consulta.entity.js';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard.js';
 
+@UseGuards(JwtAuthGuard)
 @ApiTags('Consultas')
 @Controller('consultas')
 export class ConsultasController {

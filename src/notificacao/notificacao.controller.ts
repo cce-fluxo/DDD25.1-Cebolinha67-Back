@@ -8,11 +8,13 @@
 
 // tá tudo da minha lógica bem comentado e explicado no usuario.controller.ts, vale a pena dar uma olhada lá, que ai eu não fico me repetindo nos comentários de código
 
-import { Controller, Get, Body, Patch, Param} from '@nestjs/common';
+import { Controller, Get, Body, Patch, Param, UseGuards} from '@nestjs/common';
 import { NotificacaoService } from './notificacao.service';
 import { UpdateNotificacaoDto } from './dto/update-notificacao.dto';
 import { ApiOperation, ApiParam, ApiTags, ApiResponse } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
+@UseGuards(JwtAuthGuard)
 @ApiTags('notficacoes')
 @Controller('notificacoes')
 export class NotificacaoController {
