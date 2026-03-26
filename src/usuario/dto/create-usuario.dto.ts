@@ -44,7 +44,6 @@ export class CreateUsuarioDto {
   @IsDate()
   data_nascimento!: Date;
 
-  @IsNotEmpty()
   @ApiProperty({ description: 'token de recuperação de senha', example: 'abcdefg1234567' })
   @IsString()
   @IsOptional()          // opcional pois só existe quando o usuário solicita recuperação
