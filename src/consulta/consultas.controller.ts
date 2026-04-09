@@ -4,7 +4,7 @@ import { CreateConsultaDto } from './dto/create-consulta.dto.js';
 import { UpdateConsultaDto } from './dto/update-consulta.dto.js';
 import { ApiTags , ApiOperation , ApiParam , ApiResponse, ApiBody} from '@nestjs/swagger';
 import { Consulta } from './entities/consulta.entity.js';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard.js';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard.js';
 
 @UseGuards(JwtAuthGuard)
 @ApiTags('Consultas')

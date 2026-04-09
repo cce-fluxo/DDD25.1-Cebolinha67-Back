@@ -60,8 +60,6 @@ export class AuthService {
       },
     });
 
-    const link = `http://localhost:3100/auth/redefinir-senha?token=${token}`;
-
     await this.transporter.sendMail({
       from: process.env.GMAIL_USER,
       to: email_usuario,
@@ -69,7 +67,7 @@ export class AuthService {
       html: `
         <p>Você solicitou a redefinição de senha.</p>
         <p>O link expira em 1 hora.</p>
-        <a href="${link}">${link}</a>
+        <h2>${token}</h2>
         <p>Se não foi você, ignore este email.</p>
       `,
     });
