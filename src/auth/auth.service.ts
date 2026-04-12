@@ -75,6 +75,19 @@ export class AuthService {
     return { message: 'Se o email existir, você receberá um link de redefinição.' };
   }
 
+  async validarToken(token: string) {
+    const user = await this.prisma.usuario.findFirst({
+      where: {
+        token_esqueci_senha: token,
+        reset_token_expiry: { gt: new Date() },
+      },
+    });
+
+    if (!user) throw new BadRequestException('Token inválido ou expirado');
+
+    return { message: 'Token válido.' };
+  }
+
   async redefinirSenha(token: string, novaSenha: string) {
     const user = await this.prisma.usuario.findFirst({
       where: {

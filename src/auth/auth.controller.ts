@@ -1,6 +1,7 @@
 import { Controller, Post, Request, UseGuards, Body } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
+import { ApiResponse } from '@nestjs/swagger';
 
 @Controller('auth')
 export class AuthController {
@@ -12,9 +13,15 @@ export class AuthController {
     return this.authService.login(req.user);
   }
 
+  @ApiResponse({status:404, description: 'Email não encontrada'})
   @Post('esqueceu-senha')
   esqueceuSenha(@Body() body: { email_usuario: string }) {
     return this.authService.esqueceuSenha(body.email_usuario);
+  }
+
+  @Post('validar-token')
+  validarToken(@Body() body: { token: string }) {
+    return this.authService.validarToken(body.token);
   }
 
   @Post('redefinir-senha')
