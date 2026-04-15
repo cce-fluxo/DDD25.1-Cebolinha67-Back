@@ -1,21 +1,9 @@
-// quem esteve aqui (coloca seu nome smp que entrar pf): motta
-
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { BadRequestException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
-
-// aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
-
-// e vou usar camelCase no nome das funções, além de dar prioridade a escrever em pt
-
-// vou tentar explicar ao máximo o que eu fizer rpzd
-
-// usar this.prisma.usuario
-
-// funções uteis (prov vou colar isso em todos kkkk) : findUnique , findMany , update , create
 
 @Injectable()
 export class UsuarioService {
@@ -32,6 +20,13 @@ export class UsuarioService {
       });
     } catch (error: any) {
       if (error.code === 'P2002') {
+        const campo = error.meta?.target as string[];
+        if (campo?.includes('email_usuario')) {
+          throw new BadRequestException('Este e-mail já está cadastrado');
+        }
+        if (campo?.includes('cpf_usuario')) {
+          throw new BadRequestException('Este CPF já está cadastrado');
+        }
         throw new BadRequestException('Email ou CPF já existe');
       }
 

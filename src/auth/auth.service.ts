@@ -26,7 +26,7 @@ export class AuthService {
   }
   async validateUser(email: string, password: string) {
     const user = await this.userService.getUsuarioByEmail(email);
-    if (!user || !(await bcrypt.compare(user.senha_usuario, password))) {
+    if (!user || !(await bcrypt.compare(password, user.senha_usuario))) {
       throw new Error('Credenciais inválidas');
     }
     return { ...user, senha_usuario: undefined }; //confere isso aq MOTTA vê se n é senha_usuario
