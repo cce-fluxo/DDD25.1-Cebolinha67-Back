@@ -49,7 +49,7 @@ export class AuthService {
     const user = await this.userService.getUsuarioByEmail(email_usuario);
     if (!user) return { message: 'Se o email existir, você receberá um link de redefinição.' };
 
-    const token = crypto.randomBytes(32).toString('hex');
+    const token = crypto.randomBytes(6).toString('hex');
     const expiry = new Date(Date.now() + 1000 * 60 * 60); // 1 hora
 
     await this.prisma.usuario.update({
