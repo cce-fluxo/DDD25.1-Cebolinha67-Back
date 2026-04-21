@@ -24,7 +24,7 @@ export class UsuarioService {
         if (campo?.includes('email_usuario')) {
           throw new BadRequestException('Este e-mail já está cadastrado');
         }
-        if (campo?.includes('cpf_usuario')) {
+        if (campo?.includes('cpf')) {
           throw new BadRequestException('Este CPF já está cadastrado');
         }
         throw new BadRequestException('Email ou CPF já existe');

@@ -15,7 +15,7 @@ export class AuthService {
 
   login(user) {
     //Cria o JWT a partir do usuario na request
-    const payload = { id: user.id, email: user.email };
+    const payload = { id: user.id, email: user.email_usuario};
     const jwtToken = this.jwtService.sign(payload, {
       secret: process.env.JWT_SECRET,
       expiresIn: '1d',
@@ -24,13 +24,21 @@ export class AuthService {
       access_token: jwtToken,
     };
   }
-  async validateUser(email: string, password: string) {
-    const user = await this.userService.getUsuarioByEmail(email);
-    if (!user || !(await bcrypt.compare(password, user.senha_usuario))) {
-      throw new Error('Credenciais inválidas');
+  
+  async validateUser(email:string , senha_usuario: string){
+    let user;
+    try{
+      user = await this.userService.getUsuarioByEmail(email);
     }
-    return { ...user, senha_usuario: undefined }; //confere isso aq MOTTA vê se n é senha_usuario
+     catch{
+      return null;
+    } return user;
+  
 
-    // calma paizao, vou ver ss
+    const senhaCorreta = await bcrypt.compare(senha_usuario, user.senha_usuario);
+    if(!senhaCorreta){
+      return null;
+    }
+    
   }
 }
