@@ -27,31 +27,26 @@ export type AggregatePostagemPaciente = {
 }
 
 export type PostagemPacienteAvgAggregateOutputType = {
-  id: number | null
   id_postagem: number | null
   id_paciente: number | null
 }
 
 export type PostagemPacienteSumAggregateOutputType = {
-  id: number | null
   id_postagem: number | null
   id_paciente: number | null
 }
 
 export type PostagemPacienteMinAggregateOutputType = {
-  id: number | null
   id_postagem: number | null
   id_paciente: number | null
 }
 
 export type PostagemPacienteMaxAggregateOutputType = {
-  id: number | null
   id_postagem: number | null
   id_paciente: number | null
 }
 
 export type PostagemPacienteCountAggregateOutputType = {
-  id: number
   id_postagem: number
   id_paciente: number
   _all: number
@@ -59,31 +54,26 @@ export type PostagemPacienteCountAggregateOutputType = {
 
 
 export type PostagemPacienteAvgAggregateInputType = {
-  id?: true
   id_postagem?: true
   id_paciente?: true
 }
 
 export type PostagemPacienteSumAggregateInputType = {
-  id?: true
   id_postagem?: true
   id_paciente?: true
 }
 
 export type PostagemPacienteMinAggregateInputType = {
-  id?: true
   id_postagem?: true
   id_paciente?: true
 }
 
 export type PostagemPacienteMaxAggregateInputType = {
-  id?: true
   id_postagem?: true
   id_paciente?: true
 }
 
 export type PostagemPacienteCountAggregateInputType = {
-  id?: true
   id_postagem?: true
   id_paciente?: true
   _all?: true
@@ -176,7 +166,6 @@ export type PostagemPacienteGroupByArgs<ExtArgs extends runtime.Types.Extensions
 }
 
 export type PostagemPacienteGroupByOutputType = {
-  id: number
   id_postagem: number
   id_paciente: number
   _count: PostagemPacienteCountAggregateOutputType | null
@@ -205,7 +194,6 @@ export type PostagemPacienteWhereInput = {
   AND?: Prisma.PostagemPacienteWhereInput | Prisma.PostagemPacienteWhereInput[]
   OR?: Prisma.PostagemPacienteWhereInput[]
   NOT?: Prisma.PostagemPacienteWhereInput | Prisma.PostagemPacienteWhereInput[]
-  id?: Prisma.IntFilter<"PostagemPaciente"> | number
   id_postagem?: Prisma.IntFilter<"PostagemPaciente"> | number
   id_paciente?: Prisma.IntFilter<"PostagemPaciente"> | number
   postagem?: Prisma.XOR<Prisma.PostagemScalarRelationFilter, Prisma.PostagemWhereInput>
@@ -213,7 +201,6 @@ export type PostagemPacienteWhereInput = {
 }
 
 export type PostagemPacienteOrderByWithRelationInput = {
-  id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   postagem?: Prisma.PostagemOrderByWithRelationInput
@@ -221,7 +208,6 @@ export type PostagemPacienteOrderByWithRelationInput = {
 }
 
 export type PostagemPacienteWhereUniqueInput = Prisma.AtLeast<{
-  id?: number
   id_paciente_id_postagem?: Prisma.PostagemPacienteId_pacienteId_postagemCompoundUniqueInput
   AND?: Prisma.PostagemPacienteWhereInput | Prisma.PostagemPacienteWhereInput[]
   OR?: Prisma.PostagemPacienteWhereInput[]
@@ -230,10 +216,9 @@ export type PostagemPacienteWhereUniqueInput = Prisma.AtLeast<{
   id_paciente?: Prisma.IntFilter<"PostagemPaciente"> | number
   postagem?: Prisma.XOR<Prisma.PostagemScalarRelationFilter, Prisma.PostagemWhereInput>
   paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
-}, "id" | "id_paciente_id_postagem">
+}, "id_paciente_id_postagem">
 
 export type PostagemPacienteOrderByWithAggregationInput = {
-  id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
   _count?: Prisma.PostagemPacienteCountOrderByAggregateInput
@@ -247,7 +232,6 @@ export type PostagemPacienteScalarWhereWithAggregatesInput = {
   AND?: Prisma.PostagemPacienteScalarWhereWithAggregatesInput | Prisma.PostagemPacienteScalarWhereWithAggregatesInput[]
   OR?: Prisma.PostagemPacienteScalarWhereWithAggregatesInput[]
   NOT?: Prisma.PostagemPacienteScalarWhereWithAggregatesInput | Prisma.PostagemPacienteScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"PostagemPaciente"> | number
   id_postagem?: Prisma.IntWithAggregatesFilter<"PostagemPaciente"> | number
   id_paciente?: Prisma.IntWithAggregatesFilter<"PostagemPaciente"> | number
 }
@@ -258,7 +242,6 @@ export type PostagemPacienteCreateInput = {
 }
 
 export type PostagemPacienteUncheckedCreateInput = {
-  id?: number
   id_postagem: number
   id_paciente: number
 }
@@ -269,13 +252,11 @@ export type PostagemPacienteUpdateInput = {
 }
 
 export type PostagemPacienteUncheckedUpdateInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PostagemPacienteCreateManyInput = {
-  id?: number
   id_postagem: number
   id_paciente: number
 }
@@ -285,7 +266,6 @@ export type PostagemPacienteUpdateManyMutationInput = {
 }
 
 export type PostagemPacienteUncheckedUpdateManyInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
 }
@@ -306,31 +286,26 @@ export type PostagemPacienteId_pacienteId_postagemCompoundUniqueInput = {
 }
 
 export type PostagemPacienteCountOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
 export type PostagemPacienteAvgOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
 export type PostagemPacienteMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
 export type PostagemPacienteMinOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
 
 export type PostagemPacienteSumOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
 }
@@ -424,7 +399,6 @@ export type PostagemPacienteCreateWithoutPacienteInput = {
 }
 
 export type PostagemPacienteUncheckedCreateWithoutPacienteInput = {
-  id?: number
   id_postagem: number
 }
 
@@ -458,7 +432,6 @@ export type PostagemPacienteScalarWhereInput = {
   AND?: Prisma.PostagemPacienteScalarWhereInput | Prisma.PostagemPacienteScalarWhereInput[]
   OR?: Prisma.PostagemPacienteScalarWhereInput[]
   NOT?: Prisma.PostagemPacienteScalarWhereInput | Prisma.PostagemPacienteScalarWhereInput[]
-  id?: Prisma.IntFilter<"PostagemPaciente"> | number
   id_postagem?: Prisma.IntFilter<"PostagemPaciente"> | number
   id_paciente?: Prisma.IntFilter<"PostagemPaciente"> | number
 }
@@ -468,7 +441,6 @@ export type PostagemPacienteCreateWithoutPostagemInput = {
 }
 
 export type PostagemPacienteUncheckedCreateWithoutPostagemInput = {
-  id?: number
   id_paciente: number
 }
 
@@ -499,7 +471,6 @@ export type PostagemPacienteUpdateManyWithWhereWithoutPostagemInput = {
 }
 
 export type PostagemPacienteCreateManyPacienteInput = {
-  id?: number
   id_postagem: number
 }
 
@@ -508,17 +479,14 @@ export type PostagemPacienteUpdateWithoutPacienteInput = {
 }
 
 export type PostagemPacienteUncheckedUpdateWithoutPacienteInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PostagemPacienteUncheckedUpdateManyWithoutPacienteInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   id_postagem?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PostagemPacienteCreateManyPostagemInput = {
-  id?: number
   id_paciente: number
 }
 
@@ -527,19 +495,16 @@ export type PostagemPacienteUpdateWithoutPostagemInput = {
 }
 
 export type PostagemPacienteUncheckedUpdateWithoutPostagemInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type PostagemPacienteUncheckedUpdateManyWithoutPostagemInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 
 
 export type PostagemPacienteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  id?: boolean
   id_postagem?: boolean
   id_paciente?: boolean
   postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
@@ -547,7 +512,6 @@ export type PostagemPacienteSelect<ExtArgs extends runtime.Types.Extensions.Inte
 }, ExtArgs["result"]["postagemPaciente"]>
 
 export type PostagemPacienteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  id?: boolean
   id_postagem?: boolean
   id_paciente?: boolean
   postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
@@ -555,7 +519,6 @@ export type PostagemPacienteSelectCreateManyAndReturn<ExtArgs extends runtime.Ty
 }, ExtArgs["result"]["postagemPaciente"]>
 
 export type PostagemPacienteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  id?: boolean
   id_postagem?: boolean
   id_paciente?: boolean
   postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
@@ -563,12 +526,11 @@ export type PostagemPacienteSelectUpdateManyAndReturn<ExtArgs extends runtime.Ty
 }, ExtArgs["result"]["postagemPaciente"]>
 
 export type PostagemPacienteSelectScalar = {
-  id?: boolean
   id_postagem?: boolean
   id_paciente?: boolean
 }
 
-export type PostagemPacienteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_postagem" | "id_paciente", ExtArgs["result"]["postagemPaciente"]>
+export type PostagemPacienteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id_postagem" | "id_paciente", ExtArgs["result"]["postagemPaciente"]>
 export type PostagemPacienteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
@@ -589,7 +551,6 @@ export type $PostagemPacientePayload<ExtArgs extends runtime.Types.Extensions.In
     paciente: Prisma.$PacientePayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    id: number
     id_postagem: number
     id_paciente: number
   }, ExtArgs["result"]["postagemPaciente"]>
@@ -675,8 +636,8 @@ export interface PostagemPacienteDelegate<ExtArgs extends runtime.Types.Extensio
    * // Get first 10 PostagemPacientes
    * const postagemPacientes = await prisma.postagemPaciente.findMany({ take: 10 })
    * 
-   * // Only select the `id`
-   * const postagemPacienteWithIdOnly = await prisma.postagemPaciente.findMany({ select: { id: true } })
+   * // Only select the `id_postagem`
+   * const postagemPacienteWithId_postagemOnly = await prisma.postagemPaciente.findMany({ select: { id_postagem: true } })
    * 
    */
   findMany<T extends PostagemPacienteFindManyArgs>(args?: Prisma.SelectSubset<T, PostagemPacienteFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPacientePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
@@ -720,9 +681,9 @@ export interface PostagemPacienteDelegate<ExtArgs extends runtime.Types.Extensio
    *   ]
    * })
    * 
-   * // Create many PostagemPacientes and only return the `id`
-   * const postagemPacienteWithIdOnly = await prisma.postagemPaciente.createManyAndReturn({
-   *   select: { id: true },
+   * // Create many PostagemPacientes and only return the `id_postagem`
+   * const postagemPacienteWithId_postagemOnly = await prisma.postagemPaciente.createManyAndReturn({
+   *   select: { id_postagem: true },
    *   data: [
    *     // ... provide data here
    *   ]
@@ -811,9 +772,9 @@ export interface PostagemPacienteDelegate<ExtArgs extends runtime.Types.Extensio
    *   ]
    * })
    * 
-   * // Update zero or more PostagemPacientes and only return the `id`
-   * const postagemPacienteWithIdOnly = await prisma.postagemPaciente.updateManyAndReturn({
-   *   select: { id: true },
+   * // Update zero or more PostagemPacientes and only return the `id_postagem`
+   * const postagemPacienteWithId_postagemOnly = await prisma.postagemPaciente.updateManyAndReturn({
+   *   select: { id_postagem: true },
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1017,7 +978,6 @@ export interface Prisma__PostagemPacienteClient<T, Null = never, ExtArgs extends
  * Fields of the PostagemPaciente model
  */
 export interface PostagemPacienteFieldRefs {
-  readonly id: Prisma.FieldRef<"PostagemPaciente", 'Int'>
   readonly id_postagem: Prisma.FieldRef<"PostagemPaciente", 'Int'>
   readonly id_paciente: Prisma.FieldRef<"PostagemPaciente", 'Int'>
 }

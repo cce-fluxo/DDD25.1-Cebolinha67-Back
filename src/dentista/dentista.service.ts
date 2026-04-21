@@ -1,26 +1,98 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateDentistaDto } from './dto/create-dentista.dto';
 import { UpdateDentistaDto } from './dto/update-dentista.dto';
+import { PrismaService } from 'src/prisma/prisma.service';
+import * as bcrypt from 'bcrypt';
+
 
 @Injectable()
 export class DentistaService {
-  create(createDentistaDto: CreateDentistaDto) {
-    return 'This action adds a new dentista';
+
+  constructor(private readonly prisma: PrismaService) {}
+
+  async criarDentista(createDentistaDto: CreateDentistaDto) {
+
+    console.log('DTO recebido:', JSON.stringify(createDentistaDto, null, 2));
+    console.log('Senha recebida:', createDentistaDto.usuario?.senha_usuario);
+
+    try {
+      return await this.prisma.dentista.create({
+        data: {
+          formacao: createDentistaDto.formacao,
+          instituto: createDentistaDto.instituto,
+          datainicio: createDentistaDto.datainicio,
+          datatermino: createDentistaDto.datatermino,
+          especializacao: createDentistaDto.especializacao,
+          usuario: {
+            create: {
+              no_usuario: createDentistaDto.usuario.no_usuario,
+              email_usuario: createDentistaDto.usuario.email_usuario,
+              senha_usuario: await bcrypt.hash(createDentistaDto.usuario.senha_usuario,10),
+              cpf: createDentistaDto.usuario.cpf,
+              nu_celular: createDentistaDto.usuario.nu_celular,
+              genero: createDentistaDto.usuario.genero,
+              data_nascimento: createDentistaDto.usuario.data_nascimento,
+              token_esqueci_senha: createDentistaDto.usuario.token_esqueci_senha,
+            },
+          },
+        },
+        include: {
+          usuario: true,
+        },
+      });
+    } catch (error:any) {
+      console.error("ERRO NO PRISMA:", error); // Verifique o terminal após isso!
+      throw new Error(error.message);
+    }
   }
 
-  findAll() {
-    return `This action returns all dentista`;
+  async verDentistas() {
+    return await this.prisma.dentista.findMany();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} dentista`;
+  async verDentistaUnico(id: number) {
+    return await this.prisma.dentista.findUnique({
+      where: {id}
+    });
   }
 
-  update(id: number, updateDentistaDto: UpdateDentistaDto) {
-    return `This action updates a #${id} dentista`;
+  async verPacientesDentista(id_dentista: number) {
+  
+    const dentistaComConsultasEPacientes = await this.prisma.dentista.findUnique({
+      where: { id: id_dentista },
+      include: {
+        consultas: {
+          include: {
+            paciente: true, 
+          },
+        },
+      },
+    });
+
+    // Se o dentista não existir, retorna null
+    if (!dentistaComConsultasEPacientes) return null;
+
+    // Opcional: Extrair apenas a lista de pacientes das consultas
+    return dentistaComConsultasEPacientes.consultas.map((c) => c.paciente);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} dentista`;
+  async editarDentista(id: number, updateDentistaDto: UpdateDentistaDto) {
+    return await this.prisma.dentista.update({
+      where: {id},
+
+      data: {
+        formacao: updateDentistaDto.formacao,
+        instituto: updateDentistaDto.instituto,
+        datainicio: updateDentistaDto.datainicio,
+        datatermino: updateDentistaDto.datatermino,
+        especializacao: updateDentistaDto.especializacao,
+      }
+    });
+  }
+
+  async removerDentista(id: number) {
+    return await this.prisma.dentista.delete({
+      where: {id}
+    });
   }
 }

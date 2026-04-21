@@ -4,7 +4,7 @@ import { Controller, Get, Post, Body, Patch, Param, Put} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiOperation, ApiParam, ApiTags, ApiResponse, ApiBody } from '@nestjs/swagger';
 
 
 // vou colocar as URLs todas em cima do que eu fizer pra não me perder
@@ -18,21 +18,55 @@ import { ApiTags } from '@nestjs/swagger';
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
+  @Post('criar')
+  @ApiBody({ type: CreateUsuarioDto })
+  @ApiOperation({summary: "Permite a criacao de usuario"})
+  @ApiResponse({status: 200, description: 'Usuario encontrado'})
+  @ApiResponse({status:404, description: 'Usuario não encontrado'})
+  create(@Body() UsuarioDto: CreateUsuarioDto) {
+    return this.usuarioService.criarUsuario(UsuarioDto);
+  }
+
   // /usuarios/unico/id
-  @Get('unico/id')
-  getDados(@Param('id') id:string){
+  @Get('unico/:id')
+  // ai agora vai ser chuva de decorador swagger
+  @ApiOperation({summary: "Buscar os dados de um usuário pelo ID"})
+  @ApiParam({name:'id', type:Number})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
+  getDados(@Param('id') id:Number){
     return this.usuarioService.getDados(+id);
   }
 
   // /usuarios/ver-todos
   @Get('ver-todos')
+  //swagger
+  @ApiOperation({summary: "Ver uma lista com todos os usuarios"})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   getUsuarios(){
     return this.usuarioService.getUsuarios();
   } // não preciso de um ID específico aqui, eu to vendo todos 
 
+  @Get('/pegar-pelo-email/:email_usuario')
+  //swagger 
+  @ApiOperation({summary: "Encontrar um usuário a partir do email dele"})
+  @ApiParam({name:'email_usuario', type:String})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
+  getUsuarioByEmail(@Param('email_usuario') email_usuario: string){
+    return this.usuarioService.getUsuarioByEmail(email_usuario)
+  } // menor ideia se tá certo esse cara aqui
+
   // /usuarios/unico/editar/id 
 
-  @Patch('unico/editar/id')
+  @Patch('unico/editar/:id')
+  // swagger
+  @ApiOperation({summary: "Editar parcialmente os dados de um usuário"})
+  @ApiParam({name:'id', type:Number})
+  @ApiParam({name: 'updateUsuarioDto', type: UpdateUsuarioDto})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   editarDadosUsuario(@Param('id') id:string, @Body() updateUsuarioDto: UpdateUsuarioDto)
   // precisei puxar id e update, usar param pra id e body pra update
   {
@@ -40,7 +74,13 @@ export class UsuarioController {
   }
 
   // /usuarios/unico/atualizar/id
-  @Put('unico/atualizar/id')
+  @Put('unico/atualizar/:id')
+  //swagger 
+  @ApiOperation({summary: "Atualizar totalmente os dados de um usuário"})
+  @ApiParam({name:'id', type:Number})
+  @ApiParam({name:'updateUsuarioDto', type:UpdateUsuarioDto})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   atualizarTodosOsDadosUsuario(@Param('id') id:string, @Body() updateUsuarioDto: UpdateUsuarioDto)
   {
     return this.usuarioService.editarDadosUsuario(+id, updateUsuarioDto);
@@ -48,10 +88,15 @@ export class UsuarioController {
 
   // /usuarios/mensagem/id
 
-  @Post('mensagem/id')
+  @Post('mensagem/:id')
+  // swagger
+  @ApiOperation({summary: "Permite o envio de mensagens por parte do usuário"})
+  @ApiParam({name:'id', type:Number})
+  @ApiParam({name:'createUsuarioDto', type: CreateUsuarioDto})
+  @ApiResponse({status: 200, description: 'Usuário encontrado'})
+  @ApiResponse({status:404, description: 'Usuário não encontrado'})
   enviarMensagem(@Param('id') id:string , @Body() createUsuarioDto : CreateUsuarioDto){
     return this.usuarioService.enviarMensagem(+id, createUsuarioDto);
   }
-
 }
 

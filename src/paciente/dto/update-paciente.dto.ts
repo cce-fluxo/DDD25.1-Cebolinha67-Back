@@ -1,4 +1,13 @@
-import { PartialType } from '@nestjs/mapped-types';
-import { CreatePacienteDto } from './create-paciente.dto';
+import { IsNotEmpty, IsOptional, IsString, MinLength } from 'class-validator';
+import { ApiPropertyOptional } from '@nestjs/swagger';
 
-export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {}
+export class UpdatePacienteDto {
+  @ApiPropertyOptional({
+    example: '123456789',
+    description: 'RG do paciente',
+  })
+  @IsOptional()
+  @IsString()
+  @IsNotEmpty()
+  rg?: string;
+}

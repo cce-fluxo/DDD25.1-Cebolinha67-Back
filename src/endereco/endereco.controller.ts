@@ -2,33 +2,50 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { EnderecoService } from './endereco.service';
 import { CreateEnderecoDto } from './dto/create-endereco.dto';
 import { UpdateEnderecoDto } from './dto/update-endereco.dto';
+import { ApiTags , ApiOperation , ApiParam , ApiResponse, ApiBody} from '@nestjs/swagger';
 
 @Controller('endereco')
 export class EnderecoController {
   constructor(private readonly enderecoService: EnderecoService) {}
 
-  @Post()
+  @ApiBody({ type: CreateEnderecoDto })
+  @ApiOperation({summary: "Permite a criacao de endereco"})
+  @ApiResponse({status: 200, description: 'Endereco criado'})
+  @ApiResponse({status:404, description: 'Endereco não encontrado'})
+  @Post('/cadastrar-novo-endereco')
   create(@Body() createEnderecoDto: CreateEnderecoDto) {
-    return this.enderecoService.create(createEnderecoDto);
+    return this.enderecoService.criarEndereco(createEnderecoDto);
   }
 
-  @Get()
+  @ApiOperation({summary: "Lista todos os Enderecos"})
+  @ApiResponse({status: 200, description: 'Endereco encontrado'})
+  @ApiResponse({status:404, description: 'Endereco não encontrado'})
+  @Get('/ver-enderecos')
   findAll() {
-    return this.enderecoService.findAll();
+    return this.enderecoService.verEnderecos();
   }
 
-  @Get(':id')
+  @ApiOperation({summary: "Ver Endereco"})
+  @ApiResponse({status: 200, description: 'Endereco encontrado'})
+  @ApiResponse({status:404, description: 'Endereco não encontrado'})  
+  @Get('/ver-endereco/:id')
   findOne(@Param('id') id: string) {
-    return this.enderecoService.findOne(+id);
+    return this.enderecoService.verEnderecoUnico(+id);
   }
 
-  @Patch(':id')
+  @ApiOperation({summary: "Edita um endereco"})
+  @ApiResponse({status: 200, description: 'Endereco encontrado'})
+  @ApiResponse({status:404, description: 'Endereco não encontrado'})
+  @Patch('/editar-endereco/:id')
   update(@Param('id') id: string, @Body() updateEnderecoDto: UpdateEnderecoDto) {
-    return this.enderecoService.update(+id, updateEnderecoDto);
+    return this.enderecoService.editarEndereco(+id, updateEnderecoDto);
   }
 
-  @Delete(':id')
+  @ApiOperation({summary: "Deleta endereco"})
+  @ApiResponse({status: 200, description: 'Endereco encontrado'})
+  @ApiResponse({status:404, description: 'Endereco não encontrado'})
+  @Delete('/remover-enderco/:id')
   remove(@Param('id') id: string) {
-    return this.enderecoService.remove(+id);
+    return this.enderecoService.removerEndereco(+id);
   }
 }

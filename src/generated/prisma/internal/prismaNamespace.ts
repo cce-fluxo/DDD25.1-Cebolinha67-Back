@@ -1571,6 +1571,7 @@ export const UsuarioScalarFieldEnum = {
   id: 'id',
   no_usuario: 'no_usuario',
   email_usuario: 'email_usuario',
+  senha_usuario: 'senha_usuario',
   cpf: 'cpf',
   nu_celular: 'nu_celular',
   genero: 'genero',
@@ -1583,7 +1584,6 @@ export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeo
 
 export const DentistaScalarFieldEnum = {
   id: 'id',
-  senha_dentista: 'senha_dentista',
   formacao: 'formacao',
   instituto: 'instituto',
   datainicio: 'datainicio',
@@ -1597,7 +1597,6 @@ export type DentistaScalarFieldEnum = (typeof DentistaScalarFieldEnum)[keyof typ
 
 export const PacienteScalarFieldEnum = {
   id: 'id',
-  senha_paciente: 'senha_paciente',
   rg: 'rg',
   id_usuario: 'id_usuario'
 } as const
@@ -1706,7 +1705,6 @@ export type PostagemScalarFieldEnum = (typeof PostagemScalarFieldEnum)[keyof typ
 
 
 export const PostagemPacienteScalarFieldEnum = {
-  id: 'id',
   id_postagem: 'id_postagem',
   id_paciente: 'id_paciente'
 } as const
@@ -1792,6 +1790,20 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Genero'
+ */
+export type EnumGeneroFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Genero'>
+    
+
+
+/**
+ * Reference to a field of type 'Genero[]'
+ */
+export type ListEnumGeneroFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Genero[]'>
     
 
 

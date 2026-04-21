@@ -320,7 +320,7 @@ export type EnderecoScalarWhereWithAggregatesInput = {
 }
 
 export type EnderecoCreateInput = {
-  data_criacao_endereco: Date | string
+  data_criacao_endereco?: Date | string
   logradouro: string
   cidade: string
   estado: string
@@ -333,7 +333,7 @@ export type EnderecoCreateInput = {
 
 export type EnderecoUncheckedCreateInput = {
   id?: number
-  data_criacao_endereco: Date | string
+  data_criacao_endereco?: Date | string
   logradouro: string
   cidade: string
   estado: string
@@ -371,7 +371,7 @@ export type EnderecoUncheckedUpdateInput = {
 
 export type EnderecoCreateManyInput = {
   id?: number
-  data_criacao_endereco: Date | string
+  data_criacao_endereco?: Date | string
   logradouro: string
   cidade: string
   estado: string
@@ -506,7 +506,7 @@ export type EnderecoUpdateOneRequiredWithoutConsultasNestedInput = {
 }
 
 export type EnderecoCreateWithoutDentistaInput = {
-  data_criacao_endereco: Date | string
+  data_criacao_endereco?: Date | string
   logradouro: string
   cidade: string
   estado: string
@@ -518,7 +518,7 @@ export type EnderecoCreateWithoutDentistaInput = {
 
 export type EnderecoUncheckedCreateWithoutDentistaInput = {
   id?: number
-  data_criacao_endereco: Date | string
+  data_criacao_endereco?: Date | string
   logradouro: string
   cidade: string
   estado: string
@@ -568,7 +568,7 @@ export type EnderecoUncheckedUpdateWithoutDentistaInput = {
 }
 
 export type EnderecoCreateWithoutConsultasInput = {
-  data_criacao_endereco: Date | string
+  data_criacao_endereco?: Date | string
   logradouro: string
   cidade: string
   estado: string
@@ -580,7 +580,7 @@ export type EnderecoCreateWithoutConsultasInput = {
 
 export type EnderecoUncheckedCreateWithoutConsultasInput = {
   id?: number
-  data_criacao_endereco: Date | string
+  data_criacao_endereco?: Date | string
   logradouro: string
   cidade: string
   estado: string

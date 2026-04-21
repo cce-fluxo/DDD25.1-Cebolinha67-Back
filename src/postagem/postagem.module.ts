@@ -7,3 +7,5 @@ import { PostagemController } from './postagem.controller';
   providers: [PostagemService],
 })
 export class PostagemModule {}
+
+
