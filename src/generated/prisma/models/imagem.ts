@@ -1221,9 +1221,6 @@ export type ImagemUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
   include?: Prisma.ImagemInclude<ExtArgs> | null
   /**
    * The data needed to update a Imagem.
-   */
-  data: Prisma.XOR<Prisma.ImagemUpdateInput, Prisma.ImagemUncheckedUpdateInput>
-  /**
    * Choose, which Imagem to update.
    */
   where: Prisma.ImagemWhereUniqueInput

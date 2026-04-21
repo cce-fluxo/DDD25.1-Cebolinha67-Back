@@ -7,7 +7,7 @@ import {
 } from 'class-validator';
 import { Type } from 'class-transformer';
 import { ApiPropertyOptional } from '@nestjs/swagger';
-import { CreateImagemDto } from './create-imagem.dto';
+import { CreateImagemDto } from 'src/imagem/dto/create-imagem.dto';
 
 export class UpdatePostagemDto {
   @ApiPropertyOptional({

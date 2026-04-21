@@ -1,11 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
   moduleFormat = "cjs"
 }
 
@@ -13,83 +8,9 @@ datasource db {
   provider = "postgresql"
 }
 
-
-// pessoal (vulgo arthur e danilo kkkk), vou enviar no grupo mas só pra deixar aqui, vou tentar agrupar tudo seguindo uma lógica, tipo, 
-// as entidades relacionadas a consulta, depois as relacionadas a usuario, e por aí vai, pra facilitar a leitura e organização do código, 
-// espero que gostem kkkk
-
-/*
-
-TODOS OS RELACIONAMENTOS MER
-
-USUÁRIO 
-
-Usuário 1 : 1 Imagem_usuario ok
-
-Usuário 1 : 1 Paciente ok
-
-Usuário 1 : 1 dentista 
-
-Usuário 1 : N notificao_to_usuario
-
-IMAGEM
-
-Imagem 1 : N imagem_usuário
-
-Imagem 1 : N imagem postagem
-
-IMAGEM POSTAGEM
-
-imagem postagem 1 : N postagem
-
-PACIENTE
-
-paciente 1 : N consultas
-
-paciente 1 : N convenio
-
-
-DENTISTA
-
-dentista 1 : 1 endereço
-
-dentista 1 : N consultas
-
-dentista 1 : N postagens
-
-NOTIFICACAO
-
-notificação 1 : 1 notificacao_to_usuario
-
-ENDERECO
-
-endereço 1 : N consulta
-
-CONSULTA
-
-1 consulta : N documento
-
-1 consulta: 1 detalhes_da_consulta
-
-CONVENIO
-
-1 convenio : N consulta
-
-
-*/
-
-/*
-
-entidade : PascalCase
-
-atributos: snake_case
-
-*/
-
-
-
 // SEÇÃO DE PESSOAS (DENTISTA, PACIENTE, USUÁRIO)
 
+<<<<<<< HEAD
 model Usuario{
   id Int @id @default(autoincrement())
   no_usuario String
@@ -99,15 +20,27 @@ model Usuario{
   genero String
   data_nascimento DateTime
   token_esqueci_senha String
+=======
+model Usuario {
+  id                  Int      @id @default(autoincrement())
+  no_usuario          String
+  email_usuario       String   @unique
+  senha_usuario       String
+  cpf                 String   @unique
+  nu_celular          String   @unique
+  genero              Genero
+  data_nascimento     DateTime
+  token_esqueci_senha String?
+>>>>>>> 105fa27a775154a1fe7cc7247da924234f02d708
 
   // RELACIONAMENTOS
   notificacao_usuario NotificacaoUsuario[]
-  imagem_usuario ImagemUsuario?
-  
-  paciente Paciente?
-  dentista Dentista? 
-  } 
+  imagem_usuario      ImagemUsuario?
+  paciente            Paciente?
+  dentista            Dentista?
+}
 
+<<<<<<< HEAD
 model Dentista{
   id Int @id @default(autoincrement())
   senha_dentista String
@@ -115,108 +48,122 @@ model Dentista{
   instituto String
   datainicio DateTime
   datatermino DateTime
+=======
+enum Genero {
+  Masculino
+  Feminino
+  Outros
+  NaoInformado
+}
+
+model Dentista {
+  id             Int      @id @default(autoincrement())
+  formacao       String
+  instituto      String
+  datainicio     DateTime
+  datatermino    DateTime
+>>>>>>> 105fa27a775154a1fe7cc7247da924234f02d708
   especializacao String
 
   // RELACIONAMENTOS
-  id_usuario Int @unique
-  usuario Usuario @relation(fields:[id_usuario], references: [id])
-  postagem Postagem[]
-  endereco Endereco?
-  consultas Consulta[]
+  id_usuario Int       @unique
+  usuario    Usuario   @relation(fields: [id_usuario], references: [id])
+  postagem   Postagem[]
+  endereco   Endereco?
+  consultas  Consulta[]
 }
 
-model Paciente{
+model Paciente {
   id Int @id @default(autoincrement())
-  senha_paciente String
   rg String @unique
 
   // RELACIONAMENTOS
-  id_usuario Int @unique
-  usuario Usuario @relation(fields:[id_usuario], references: [id])
-  convenios Convenio[]
-  consultas Consulta[]
+  id_usuario        Int                @unique
+  usuario           Usuario            @relation(fields: [id_usuario], references: [id])
+  convenios         Convenio[]
+  consultas         Consulta[]
   postagem_paciente PostagemPaciente[]
 }
 
-// NOTIFICAÇÕES 
+// NOTIFICAÇÕES
 
-model Notificacao{
-  id Int @id @default(autoincrement())
+model Notificacao {
+  id          Int     @id @default(autoincrement())
   ds_mensagem String
-  lido Boolean
-  titulo String
-  simbolo String
+  lido        Boolean
+  titulo      String
+  simbolo     String
 
   // RELACIONAMENTOS
   notificacao_usuario NotificacaoUsuario?
 }
 
-model NotificacaoUsuario{
+model NotificacaoUsuario {
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_notificacao Int @unique
-  notificacao Notificacao @relation(fields: [id_notificacao], references: [id])
-  id_usuario Int 
-  usuario Usuario @relation(fields: [id_usuario], references: [id])
-  id_consulta Int? 
-  consulta Consulta? @relation(fields: [id_consulta], references: [id])
+  id_notificacao Int         @unique
+  notificacao    Notificacao @relation(fields: [id_notificacao], references: [id])
+  id_usuario     Int
+  usuario        Usuario     @relation(fields: [id_usuario], references: [id])
+  id_consulta    Int?
+  consulta       Consulta?   @relation(fields: [id_consulta], references: [id])
 
   @@unique([id_usuario, id_notificacao])
 }
 
 // IMAGENS
 
-model Imagem{
-  id Int @id @default(autoincrement())
-  url String @unique
+model Imagem {
+  id   Int    @id @default(autoincrement())
+  url  String @unique
   nome String
 
   // RELACIONAMENTOS
-  imagem_usuario ImagemUsuario[]
+  imagem_usuario  ImagemUsuario[]
   imagem_postagem ImagemPostagem[]
 }
 
-model ImagemUsuario{
+model ImagemUsuario {
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_imagem Int 
-  imagem Imagem @relation(fields: [id_imagem], references: [id])
-  id_usuario Int @unique
-  usuario Usuario @relation(fields: [id_usuario], references: [id])
+  id_imagem  Int
+  imagem     Imagem  @relation(fields: [id_imagem], references: [id])
+  id_usuario Int     @unique
+  usuario    Usuario @relation(fields: [id_usuario], references: [id])
 
   @@unique([id_imagem, id_usuario])
 }
 
-model ImagemPostagem{
+model ImagemPostagem {
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_imagem Int 
-  imagem Imagem @relation(fields: [id_imagem], references: [id])
-  id_postagem Int 
-  postagem Postagem @relation(fields: [id_postagem], references: [id])
+  id_imagem   Int
+  imagem      Imagem   @relation(fields: [id_imagem], references: [id])
+  id_postagem Int
+  postagem    Postagem @relation(fields: [id_postagem], references: [id])
 
   @@unique([id_imagem, id_postagem])
 }
 
 // ENDERECO
 
-model Endereco{
-  id Int @id @default(autoincrement())
+model Endereco {
+  id                    Int      @id @default(autoincrement())
   data_criacao_endereco DateTime @default(now())
-  logradouro String
-  cidade String
-  estado String
-  bairro String
-  complemento String
-  cep String
+  logradouro            String
+  cidade                String
+  estado                String
+  bairro                String
+  complemento           String
+  cep                   String
 
   // RELACIONAMENTOS
-  id_dentista Int @unique
-  dentista Dentista @relation(fields: [id_dentista], references: [id])
-  consultas Consulta[]
+  id_dentista Int      @unique
+  dentista    Dentista  @relation(fields: [id_dentista], references: [id])
+  consultas   Consulta[]
 }
 
 // CONSULTA
@@ -225,34 +172,34 @@ model Consulta {
   id Int @id @default(autoincrement())
 
   // RELACIONAMENTOS
-  id_paciente Int 
-  paciente Paciente @relation(fields: [id_paciente], references: [id])
-  id_dentista Int @unique
-  dentista Dentista @relation(fields: [id_dentista], references: [id])
-  id_convenio Int @unique
-  convenio Convenio @relation(fields: [id_convenio], references: [id])
-  id_endereco Int @unique
-  endereco Endereco @relation(fields: [id_endereco], references: [id])
+  id_paciente Int
+  paciente    Paciente  @relation(fields: [id_paciente], references: [id])
+  id_dentista Int       @unique
+  dentista    Dentista  @relation(fields: [id_dentista], references: [id])
+  id_convenio Int?      @unique
+  convenio    Convenio? @relation(fields: [id_convenio], references: [id])
+  id_endereco Int       @unique
+  endereco    Endereco  @relation(fields: [id_endereco], references: [id])
+
   detalhe_da_consulta DetalheDaConsulta?
-  documentos Documento[]
+  documentos          Documento[]
   notificacao_usuario NotificacaoUsuario[]
 }
 
 model DetalheDaConsulta {
-  id Int @id @default(autoincrement())
-  DH DateTime 
-  valor Int
+  id             Int           @id @default(autoincrement())
+  DH             DateTime
+  valor          Int
   tipo_pagamento TipoPagamento
-  status String
-  tipo_consulta String
-  motivo String
+  status         String
+  tipo_consulta  String
+  motivo         String
 
   // RELACIONAMENTOS
-  id_consulta Int @unique
-  consulta Consulta @relation(fields: [id_consulta], references: [id])
+  id_consulta Int      @unique
+  consulta    Consulta @relation(fields: [id_consulta], references: [id], onDelete: Cascade)
 }
 
-// tipo_pagamento é atributo (enumerado) da entidade detalhe_da_consulta
 enum TipoPagamento {
   particular
   convenio
@@ -260,17 +207,17 @@ enum TipoPagamento {
 
 // POSTAGEM
 
-model Postagem{
-  id Int @id @default(autoincrement())
-  titulo String @db.VarChar(150)
-  mensagem String @db.Text
-  tipo TipoPostagem 
-  data_criacao DateTime @default(now())
-  
+model Postagem {
+  id           Int          @id @default(autoincrement())
+  titulo       String       @db.VarChar(150)
+  mensagem     String       @db.Text
+  tipo         TipoPostagem
+  data_criacao DateTime     @default(now())
+
   // RELACIONAMENTOS
-  id_dentista Int
-  dentista Dentista @relation(fields: [id_dentista], references: [id])
-  imagem_postagem ImagemPostagem[]
+  id_dentista       Int
+  dentista          Dentista          @relation(fields: [id_dentista], references: [id])
+  imagem_postagem   ImagemPostagem[]
   postagem_paciente PostagemPaciente[]
 
   @@index([tipo])
@@ -281,40 +228,40 @@ enum TipoPostagem {
   individual
 }
 
-model PostagemPaciente{
+model PostagemPaciente {
   // RELACIONAMENTOS
-  id_postagem Int 
-  postagem Postagem @relation(fields: [id_postagem], references: [id])
-  id_paciente Int 
-  paciente Paciente @relation(fields: [id_paciente], references: [id])
+  id_postagem Int
+  postagem    Postagem @relation(fields: [id_postagem], references: [id])
+  id_paciente Int
+  paciente    Paciente @relation(fields: [id_paciente], references: [id])
+
   @@id([id_paciente, id_postagem])
 }
 
 // CONVÊNIO
 
-model Convenio{
-  id Int @id @default(autoincrement())
-  no_operadora String
-  nu_carteirinha String
+model Convenio {
+  id                 Int      @id @default(autoincrement())
+  no_operadora       String
+  nu_carteirinha     String
   dt_val_carteirinha DateTime
 
   // RELACIONAMENTOS
-  id_paciente Int 
-  paciente Paciente @relation(fields: [id_paciente], references: [id])
-  consultas Consulta[]
+  id_paciente Int
+  paciente    Paciente   @relation(fields: [id_paciente], references: [id])
+  consultas   Consulta[]
 }
 
 // DOCUMENTO
 
-model Documento{
-  id Int @id @default(autoincrement())
-  nome_doc String
-  tipo_doc String
-  extensao String
+model Documento {
+  id          Int    @id @default(autoincrement())
+  nome_doc    String
+  tipo_doc    String
+  extensao    String
   tamanho_doc Float
 
   // RELACIONAMENTOS
-  id_consulta Int 
-  consulta Consulta @relation(fields: [id_consulta], references: [id])
+  id_consulta Int
+  consulta    Consulta @relation(fields: [id_consulta], references: [id])
 }
-

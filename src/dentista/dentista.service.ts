@@ -2,6 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateDentistaDto } from './dto/create-dentista.dto';
 import { UpdateDentistaDto } from './dto/update-dentista.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import * as bcrypt from 'bcrypt';
 
 
 @Injectable()
@@ -10,35 +11,39 @@ export class DentistaService {
   constructor(private readonly prisma: PrismaService) {}
 
   async criarDentista(createDentistaDto: CreateDentistaDto) {
-    return await this.prisma.dentista.create({
 
-      data: {
-        senha_dentista: createDentistaDto.senha_dentista,
-        formacao: createDentistaDto.formacao,
-        instituto: createDentistaDto.instituto,
-        datainicio: createDentistaDto.datainicio,
-        datatermino: createDentistaDto.datatermino,
-        especializacao: createDentistaDto.especializacao,
+    console.log('DTO recebido:', JSON.stringify(createDentistaDto, null, 2));
+    console.log('Senha recebida:', createDentistaDto.usuario?.senha_usuario);
 
-        id_usuario: createDentistaDto.id_usuario,
-
-      //   usuario: {
-      //     create: {
-      //       no_usuario: createDentistaDto.no_usuario,
-      //       email_usuario: createDentistaDto.email_usuario,
-      //       cpf: createDentistaDto.cpf,
-      //       nu_celular: createDentistaDto.no_usuario,
-      //       genero: createDentistaDto.genero,
-      //       data_nascimento: createDentistaDto.datainicio,
-      //       token_esqueci_senha: createDentistaDto.token_esqueci_senha,
-      //     }
-      //   }
-      // },
-      // include: {
-      //   usuario: true
-      }
-
-    });
+    try {
+      return await this.prisma.dentista.create({
+        data: {
+          formacao: createDentistaDto.formacao,
+          instituto: createDentistaDto.instituto,
+          datainicio: createDentistaDto.datainicio,
+          datatermino: createDentistaDto.datatermino,
+          especializacao: createDentistaDto.especializacao,
+          usuario: {
+            create: {
+              no_usuario: createDentistaDto.usuario.no_usuario,
+              email_usuario: createDentistaDto.usuario.email_usuario,
+              senha_usuario: await bcrypt.hash(createDentistaDto.usuario.senha_usuario,10),
+              cpf: createDentistaDto.usuario.cpf,
+              nu_celular: createDentistaDto.usuario.nu_celular,
+              genero: createDentistaDto.usuario.genero,
+              data_nascimento: createDentistaDto.usuario.data_nascimento,
+              token_esqueci_senha: createDentistaDto.usuario.token_esqueci_senha,
+            },
+          },
+        },
+        include: {
+          usuario: true,
+        },
+      });
+    } catch (error:any) {
+      console.error("ERRO NO PRISMA:", error); // Verifique o terminal após isso!
+      throw new Error(error.message);
+    }
   }
 
   async verDentistas() {
@@ -76,7 +81,6 @@ export class DentistaService {
       where: {id},
 
       data: {
-        senha_dentista: updateDentistaDto.senha_dentista,
         formacao: updateDentistaDto.formacao,
         instituto: updateDentistaDto.instituto,
         datainicio: updateDentistaDto.datainicio,

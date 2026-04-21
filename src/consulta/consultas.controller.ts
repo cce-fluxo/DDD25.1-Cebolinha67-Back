@@ -12,7 +12,7 @@ export class ConsultasController {
 
   @Get('ver-consulta')
   @ApiOperation({summary: "Lista todas as Consultas"})
-  @ApiResponse({status: 200, description: 'Consulta encontrada'})
+  @ApiResponse({status: 200, description: 'Consulta criada'})
   @ApiResponse({status:404, description: 'Consulta não encontrada'})
   verConsultas() {
     return this.consultasService.verConsultas();
@@ -45,7 +45,6 @@ export class ConsultasController {
   @Post('criar-consulta')
   @ApiBody({ type: CreateConsultaDto })
   @ApiOperation({summary: "Permite a criacao de consulta"})
-  @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Consulta encontrada'})
   @ApiResponse({status:404, description: 'Consulta não encontrada'})
   criarConsulta(@Body() createConsultaDto: CreateConsultaDto) {
@@ -66,7 +65,7 @@ export class ConsultasController {
   @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Consulta encontrada'})
   @ApiResponse({status:404, description: 'Consulta não encontrada'})
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: Number) {
     return this.consultasService.removerConsulta(+id);
   }
 }

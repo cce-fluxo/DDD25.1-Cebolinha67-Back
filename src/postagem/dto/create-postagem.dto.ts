@@ -9,7 +9,8 @@ import {
   ValidateNested,
 } from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { CreateImagemDto } from './create-imagem.dto';
+import { CreateImagemDto } from 'src/imagem/dto/create-imagem.dto';
+
 
 export class CreatePostagemDto {
   @ApiProperty({

@@ -2,23 +2,43 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { CreatePacienteDto } from './dto/create-paciente.dto';
 import { UpdatePacienteDto } from './dto/update-paciente.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class PacienteService {
   constructor(private prisma: PrismaService) {}
   
-  create(createPacienteDto: CreatePacienteDto) {
-    return this.prisma.paciente.create({
+  async create(createPacienteDto: CreatePacienteDto) {
+    return await this.prisma.paciente.create({
       data: {
-        senha_paciente: createPacienteDto.senha_paciente,
         rg: createPacienteDto.rg,
-        id_usuario: createPacienteDto.usuarioId,
-      },
+        
+        usuario: {
+            create: {
+              no_usuario: createPacienteDto.usuario.no_usuario,
+              email_usuario: createPacienteDto.usuario.email_usuario,
+              senha_usuario: await bcrypt.hash(createPacienteDto.usuario.senha_usuario,10),
+              cpf: createPacienteDto.usuario.cpf,
+              nu_celular: createPacienteDto.usuario.nu_celular,
+              genero: createPacienteDto.usuario.genero,
+              data_nascimento: createPacienteDto.usuario.data_nascimento,
+              token_esqueci_senha: createPacienteDto.usuario.token_esqueci_senha,
+            },
+          },
+        },
+        include: {
+          usuario: true,
+        },
     });
   }
 
+<<<<<<< HEAD
   findAll() {
     return this.prisma.paciente.findMany();           
+=======
+  async findAll() {
+    return await this.prisma.paciente.findMany();
+>>>>>>> 105fa27a775154a1fe7cc7247da924234f02d708
   }
 
   async findOne(id: number) {
@@ -87,8 +107,7 @@ export class PacienteService {
     return this.prisma.paciente.update({
       where: { id },
       data: {
-        senha_paciente: updatePacienteDto.senha_paciente,
-        rg: updatePacienteDto.rg,
+        rg: updatePacienteDto.rg
       },
     });
   }

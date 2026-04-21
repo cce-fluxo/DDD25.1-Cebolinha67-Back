@@ -28,7 +28,7 @@ export class ImagemController {
   }
   
   // /imagens/upload 
-  @Post('/upload')
+  @Post('/upload/:id')
   //swagger
   @ApiOperation({summary: "faz upload das imagens"})
   @ApiParam({name:'id', type:Number})
@@ -40,7 +40,7 @@ export class ImagemController {
 
 
   // /iamgens/editar/id
-  @Patch('/editar/id')
+  @Patch('/editar/:id')
   // swagger 
   @ApiOperation({summary: "editar as imagens"})
   @ApiParam({name: 'id', type:Number})
@@ -53,7 +53,7 @@ export class ImagemController {
 
 
   // /imagens/remover-imagem/id
-  @Delete('/remover-imagem/id')
+  @Delete('/remover-imagem/:id')
   //swagger 
   @ApiOperation({summary: 'remover as imagens'})
   @ApiParam({name: 'id', type: String})

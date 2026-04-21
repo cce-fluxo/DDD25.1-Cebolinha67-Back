@@ -38,6 +38,7 @@ export type UsuarioMinAggregateOutputType = {
   id: number | null
   no_usuario: string | null
   email_usuario: string | null
+  senha_usuario: string | null
   cpf: string | null
   nu_celular: string | null
   genero: $Enums.Genero | null
@@ -49,6 +50,7 @@ export type UsuarioMaxAggregateOutputType = {
   id: number | null
   no_usuario: string | null
   email_usuario: string | null
+  senha_usuario: string | null
   cpf: string | null
   nu_celular: string | null
   genero: $Enums.Genero | null
@@ -60,6 +62,7 @@ export type UsuarioCountAggregateOutputType = {
   id: number
   no_usuario: number
   email_usuario: number
+  senha_usuario: number
   cpf: number
   nu_celular: number
   genero: number
@@ -81,6 +84,7 @@ export type UsuarioMinAggregateInputType = {
   id?: true
   no_usuario?: true
   email_usuario?: true
+  senha_usuario?: true
   cpf?: true
   nu_celular?: true
   genero?: true
@@ -92,6 +96,7 @@ export type UsuarioMaxAggregateInputType = {
   id?: true
   no_usuario?: true
   email_usuario?: true
+  senha_usuario?: true
   cpf?: true
   nu_celular?: true
   genero?: true
@@ -103,6 +108,7 @@ export type UsuarioCountAggregateInputType = {
   id?: true
   no_usuario?: true
   email_usuario?: true
+  senha_usuario?: true
   cpf?: true
   nu_celular?: true
   genero?: true
@@ -201,11 +207,12 @@ export type UsuarioGroupByOutputType = {
   id: number
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date
-  token_esqueci_senha: string
+  token_esqueci_senha: string | null
   _count: UsuarioCountAggregateOutputType | null
   _avg: UsuarioAvgAggregateOutputType | null
   _sum: UsuarioSumAggregateOutputType | null
@@ -235,11 +242,12 @@ export type UsuarioWhereInput = {
   id?: Prisma.IntFilter<"Usuario"> | number
   no_usuario?: Prisma.StringFilter<"Usuario"> | string
   email_usuario?: Prisma.StringFilter<"Usuario"> | string
+  senha_usuario?: Prisma.StringFilter<"Usuario"> | string
   cpf?: Prisma.StringFilter<"Usuario"> | string
   nu_celular?: Prisma.StringFilter<"Usuario"> | string
   genero?: Prisma.EnumGeneroFilter<"Usuario"> | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFilter<"Usuario"> | Date | string
-  token_esqueci_senha?: Prisma.StringFilter<"Usuario"> | string
+  token_esqueci_senha?: Prisma.StringNullableFilter<"Usuario"> | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioListRelationFilter
   imagem_usuario?: Prisma.XOR<Prisma.ImagemUsuarioNullableScalarRelationFilter, Prisma.ImagemUsuarioWhereInput> | null
   paciente?: Prisma.XOR<Prisma.PacienteNullableScalarRelationFilter, Prisma.PacienteWhereInput> | null
@@ -250,11 +258,12 @@ export type UsuarioOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
+  senha_usuario?: Prisma.SortOrder
   cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
-  token_esqueci_senha?: Prisma.SortOrder
+  token_esqueci_senha?: Prisma.SortOrderInput | Prisma.SortOrder
   notificacao_usuario?: Prisma.NotificacaoUsuarioOrderByRelationAggregateInput
   imagem_usuario?: Prisma.ImagemUsuarioOrderByWithRelationInput
   paciente?: Prisma.PacienteOrderByWithRelationInput
@@ -270,9 +279,10 @@ export type UsuarioWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.UsuarioWhereInput[]
   NOT?: Prisma.UsuarioWhereInput | Prisma.UsuarioWhereInput[]
   no_usuario?: Prisma.StringFilter<"Usuario"> | string
+  senha_usuario?: Prisma.StringFilter<"Usuario"> | string
   genero?: Prisma.EnumGeneroFilter<"Usuario"> | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFilter<"Usuario"> | Date | string
-  token_esqueci_senha?: Prisma.StringFilter<"Usuario"> | string
+  token_esqueci_senha?: Prisma.StringNullableFilter<"Usuario"> | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioListRelationFilter
   imagem_usuario?: Prisma.XOR<Prisma.ImagemUsuarioNullableScalarRelationFilter, Prisma.ImagemUsuarioWhereInput> | null
   paciente?: Prisma.XOR<Prisma.PacienteNullableScalarRelationFilter, Prisma.PacienteWhereInput> | null
@@ -283,11 +293,12 @@ export type UsuarioOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
+  senha_usuario?: Prisma.SortOrder
   cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
   data_nascimento?: Prisma.SortOrder
-  token_esqueci_senha?: Prisma.SortOrder
+  token_esqueci_senha?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.UsuarioCountOrderByAggregateInput
   _avg?: Prisma.UsuarioAvgOrderByAggregateInput
   _max?: Prisma.UsuarioMaxOrderByAggregateInput
@@ -302,21 +313,23 @@ export type UsuarioScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Usuario"> | number
   no_usuario?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   email_usuario?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  senha_usuario?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   cpf?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   nu_celular?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
   genero?: Prisma.EnumGeneroWithAggregatesFilter<"Usuario"> | $Enums.Genero
   data_nascimento?: Prisma.DateTimeWithAggregatesFilter<"Usuario"> | Date | string
-  token_esqueci_senha?: Prisma.StringWithAggregatesFilter<"Usuario"> | string
+  token_esqueci_senha?: Prisma.StringNullableWithAggregatesFilter<"Usuario"> | string | null
 }
 
 export type UsuarioCreateInput = {
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
   imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
   paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
@@ -327,11 +340,12 @@ export type UsuarioUncheckedCreateInput = {
   id?: number
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
   paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
@@ -341,11 +355,12 @@ export type UsuarioUncheckedCreateInput = {
 export type UsuarioUpdateInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
   imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
@@ -356,11 +371,12 @@ export type UsuarioUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
@@ -371,38 +387,42 @@ export type UsuarioCreateManyInput = {
   id?: number
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
 }
 
 export type UsuarioUpdateManyMutationInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UsuarioUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UsuarioCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
+  senha_usuario?: Prisma.SortOrder
   cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
@@ -418,6 +438,7 @@ export type UsuarioMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
+  senha_usuario?: Prisma.SortOrder
   cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
@@ -429,6 +450,7 @@ export type UsuarioMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   no_usuario?: Prisma.SortOrder
   email_usuario?: Prisma.SortOrder
+  senha_usuario?: Prisma.SortOrder
   cpf?: Prisma.SortOrder
   nu_celular?: Prisma.SortOrder
   genero?: Prisma.SortOrder
@@ -455,6 +477,10 @@ export type EnumGeneroFieldUpdateOperationsInput = {
 
 export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string
+}
+
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -524,11 +550,12 @@ export type UsuarioUpdateOneRequiredWithoutImagem_usuarioNestedInput = {
 export type UsuarioCreateWithoutDentistaInput = {
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
   imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
   paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
@@ -538,11 +565,12 @@ export type UsuarioUncheckedCreateWithoutDentistaInput = {
   id?: number
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
   paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
@@ -567,11 +595,12 @@ export type UsuarioUpdateToOneWithWhereWithoutDentistaInput = {
 export type UsuarioUpdateWithoutDentistaInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
   imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
@@ -581,11 +610,12 @@ export type UsuarioUncheckedUpdateWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
@@ -594,11 +624,12 @@ export type UsuarioUncheckedUpdateWithoutDentistaInput = {
 export type UsuarioCreateWithoutPacienteInput = {
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
   imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
   dentista?: Prisma.DentistaCreateNestedOneWithoutUsuarioInput
@@ -608,11 +639,12 @@ export type UsuarioUncheckedCreateWithoutPacienteInput = {
   id?: number
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
   dentista?: Prisma.DentistaUncheckedCreateNestedOneWithoutUsuarioInput
@@ -637,11 +669,12 @@ export type UsuarioUpdateToOneWithWhereWithoutPacienteInput = {
 export type UsuarioUpdateWithoutPacienteInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
   imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
   dentista?: Prisma.DentistaUpdateOneWithoutUsuarioNestedInput
@@ -651,11 +684,12 @@ export type UsuarioUncheckedUpdateWithoutPacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
   dentista?: Prisma.DentistaUncheckedUpdateOneWithoutUsuarioNestedInput
@@ -664,11 +698,12 @@ export type UsuarioUncheckedUpdateWithoutPacienteInput = {
 export type UsuarioCreateWithoutNotificacao_usuarioInput = {
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   imagem_usuario?: Prisma.ImagemUsuarioCreateNestedOneWithoutUsuarioInput
   paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
   dentista?: Prisma.DentistaCreateNestedOneWithoutUsuarioInput
@@ -678,11 +713,12 @@ export type UsuarioUncheckedCreateWithoutNotificacao_usuarioInput = {
   id?: number
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedOneWithoutUsuarioInput
   paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
   dentista?: Prisma.DentistaUncheckedCreateNestedOneWithoutUsuarioInput
@@ -707,11 +743,12 @@ export type UsuarioUpdateToOneWithWhereWithoutNotificacao_usuarioInput = {
 export type UsuarioUpdateWithoutNotificacao_usuarioInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   imagem_usuario?: Prisma.ImagemUsuarioUpdateOneWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
   dentista?: Prisma.DentistaUpdateOneWithoutUsuarioNestedInput
@@ -721,11 +758,12 @@ export type UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateOneWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
   dentista?: Prisma.DentistaUncheckedUpdateOneWithoutUsuarioNestedInput
@@ -734,11 +772,12 @@ export type UsuarioUncheckedUpdateWithoutNotificacao_usuarioInput = {
 export type UsuarioCreateWithoutImagem_usuarioInput = {
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioCreateNestedManyWithoutUsuarioInput
   paciente?: Prisma.PacienteCreateNestedOneWithoutUsuarioInput
   dentista?: Prisma.DentistaCreateNestedOneWithoutUsuarioInput
@@ -748,11 +787,12 @@ export type UsuarioUncheckedCreateWithoutImagem_usuarioInput = {
   id?: number
   no_usuario: string
   email_usuario: string
+  senha_usuario: string
   cpf: string
   nu_celular: string
   genero: $Enums.Genero
   data_nascimento: Date | string
-  token_esqueci_senha: string
+  token_esqueci_senha?: string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedCreateNestedManyWithoutUsuarioInput
   paciente?: Prisma.PacienteUncheckedCreateNestedOneWithoutUsuarioInput
   dentista?: Prisma.DentistaUncheckedCreateNestedOneWithoutUsuarioInput
@@ -777,11 +817,12 @@ export type UsuarioUpdateToOneWithWhereWithoutImagem_usuarioInput = {
 export type UsuarioUpdateWithoutImagem_usuarioInput = {
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUpdateManyWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUpdateOneWithoutUsuarioNestedInput
   dentista?: Prisma.DentistaUpdateOneWithoutUsuarioNestedInput
@@ -791,11 +832,12 @@ export type UsuarioUncheckedUpdateWithoutImagem_usuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   no_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   email_usuario?: Prisma.StringFieldUpdateOperationsInput | string
+  senha_usuario?: Prisma.StringFieldUpdateOperationsInput | string
   cpf?: Prisma.StringFieldUpdateOperationsInput | string
   nu_celular?: Prisma.StringFieldUpdateOperationsInput | string
   genero?: Prisma.EnumGeneroFieldUpdateOperationsInput | $Enums.Genero
   data_nascimento?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  token_esqueci_senha?: Prisma.StringFieldUpdateOperationsInput | string
+  token_esqueci_senha?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   notificacao_usuario?: Prisma.NotificacaoUsuarioUncheckedUpdateManyWithoutUsuarioNestedInput
   paciente?: Prisma.PacienteUncheckedUpdateOneWithoutUsuarioNestedInput
   dentista?: Prisma.DentistaUncheckedUpdateOneWithoutUsuarioNestedInput
@@ -836,6 +878,7 @@ export type UsuarioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
+  senha_usuario?: boolean
   cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
@@ -852,6 +895,7 @@ export type UsuarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
+  senha_usuario?: boolean
   cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
@@ -863,6 +907,7 @@ export type UsuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
+  senha_usuario?: boolean
   cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
@@ -874,6 +919,7 @@ export type UsuarioSelectScalar = {
   id?: boolean
   no_usuario?: boolean
   email_usuario?: boolean
+  senha_usuario?: boolean
   cpf?: boolean
   nu_celular?: boolean
   genero?: boolean
@@ -881,7 +927,7 @@ export type UsuarioSelectScalar = {
   token_esqueci_senha?: boolean
 }
 
-export type UsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_usuario" | "email_usuario" | "cpf" | "nu_celular" | "genero" | "data_nascimento" | "token_esqueci_senha", ExtArgs["result"]["usuario"]>
+export type UsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_usuario" | "email_usuario" | "senha_usuario" | "cpf" | "nu_celular" | "genero" | "data_nascimento" | "token_esqueci_senha", ExtArgs["result"]["usuario"]>
 export type UsuarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   notificacao_usuario?: boolean | Prisma.Usuario$notificacao_usuarioArgs<ExtArgs>
   imagem_usuario?: boolean | Prisma.Usuario$imagem_usuarioArgs<ExtArgs>
@@ -904,11 +950,12 @@ export type $UsuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     id: number
     no_usuario: string
     email_usuario: string
+    senha_usuario: string
     cpf: string
     nu_celular: string
     genero: $Enums.Genero
     data_nascimento: Date
-    token_esqueci_senha: string
+    token_esqueci_senha: string | null
   }, ExtArgs["result"]["usuario"]>
   composites: {}
 }
@@ -1339,6 +1386,7 @@ export interface UsuarioFieldRefs {
   readonly id: Prisma.FieldRef<"Usuario", 'Int'>
   readonly no_usuario: Prisma.FieldRef<"Usuario", 'String'>
   readonly email_usuario: Prisma.FieldRef<"Usuario", 'String'>
+  readonly senha_usuario: Prisma.FieldRef<"Usuario", 'String'>
   readonly cpf: Prisma.FieldRef<"Usuario", 'String'>
   readonly nu_celular: Prisma.FieldRef<"Usuario", 'String'>
   readonly genero: Prisma.FieldRef<"Usuario", 'Genero'>

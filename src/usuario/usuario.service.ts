@@ -1,23 +1,38 @@
-// quem esteve aqui (coloca seu nome smp que entrar pf): motta
-
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
-
-// aqui no service, vou fazer as funções que estão listadas na nossa tabela de configuração dos endpoints no lucid chart, na ordem em que elas aparecem lá, obviamente vou manter a ordem no controller
-
-// e vou usar camelCase no nome das funções, além de dar prioridade a escrever em pt
-
-// vou tentar explicar ao máximo o que eu fizer rpzd
-
-// usar this.prisma.usuario
-
-// funções uteis (prov vou colar isso em todos kkkk) : findUnique , findMany , update , create
+import { BadRequestException } from '@nestjs/common';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UsuarioService {
   constructor(private readonly prisma: PrismaService) {}
+
+  async criarUsuario(createUsuarioDto: CreateUsuarioDto) {
+    try {
+      return await this.prisma.usuario.create({
+        data: {
+          ...createUsuarioDto,
+          data_nascimento: new Date(createUsuarioDto.data_nascimento),
+          senha_usuario: await bcrypt.hash(createUsuarioDto.senha_usuario,10)
+        },
+      });
+    } catch (error: any) {
+      if (error.code === 'P2002') {
+        const campo = error.meta?.target as string[];
+        if (campo?.includes('email_usuario')) {
+          throw new BadRequestException('Este e-mail já está cadastrado');
+        }
+        if (campo?.includes('cpf')) {
+          throw new BadRequestException('Este CPF já está cadastrado');
+        }
+        throw new BadRequestException('Email ou CPF já existe');
+      }
+
+      throw error;
+    }
+  }
 
   async getDados(id: number) {
     const usuario = await this.prisma.usuario.findUnique({
@@ -31,7 +46,7 @@ export class UsuarioService {
   }
 
   async getUsuarios() {
-    const usuarios = await this.prisma.usuario.findMany({});
+    const usuarios = await this.prisma.usuario.findMany();
     if (!usuarios.length) {
       throw new NotFoundException('Nenhum usuário encontrado');
     }
@@ -40,23 +55,22 @@ export class UsuarioService {
 
     // não preciso passar um argumento, ele já vai listar todos
   }
-  
+
   async getUsuarioByEmail(email_usuario: string) {
-  const usuario = await this.prisma.usuario.findUnique({
-    where: { email_usuario },
+    const usuario = await this.prisma.usuario.findUnique({
+      where: { email_usuario },
+      include: {
+        paciente: true,
+        dentista: true,
+      },
+    });
 
-  });
+    if (!usuario) {
+      throw new NotFoundException('Nenhum email encontrado');
+    }
 
-  if (!usuario) {
-    throw new NotFoundException('Usuário não encontrado');
-  }
-
-  return usuario;
-}
-
-async criarUsuario(createUsuarioDto: CreateUsuarioDto ){
-  
-}
+    return usuario;
+  } // isso aqui provavelmente não tá legal
 
   async editarDadosUsuario(id: number, updateUsuarioDto: UpdateUsuarioDto) {
     const usuario = await this.prisma.usuario.findUnique({
@@ -102,14 +116,18 @@ async criarUsuario(createUsuarioDto: CreateUsuarioDto ){
       throw new Error('Usuário não existente');
     }
 
-    return this.prisma.usuario.create({
-      data: {
-        
-        ...createUsuarioDto,
-        data_nascimento: new Date(createUsuarioDto.dt_nascimento),
-      },
-    });
+    try {
+      return await this.prisma.usuario.create({
+        data: {
+          ...createUsuarioDto,
+          data_nascimento: new Date(createUsuarioDto.data_nascimento),
+        },
+      });
+    } catch (error: any) {
+      if (error.code === 'P2002') {
+        throw new BadRequestException('Email ou CPF já existe');
+      }
+      throw error;
+    }
   }
-
-  // pesquisei essa loucura ai pq ele não queria aceitar data:createUsuarioDto
 }

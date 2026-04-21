@@ -4,7 +4,7 @@ import { Controller, Get, Post, Body, Patch, Param, Put} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
-import { ApiOperation, ApiParam, ApiTags, ApiResponse } from '@nestjs/swagger';
+import { ApiOperation, ApiParam, ApiTags, ApiResponse, ApiBody } from '@nestjs/swagger';
 
 
 // vou colocar as URLs todas em cima do que eu fizer pra não me perder
@@ -18,6 +18,15 @@ import { ApiOperation, ApiParam, ApiTags, ApiResponse } from '@nestjs/swagger';
 export class UsuarioController {
   constructor(private readonly usuarioService: UsuarioService) {}
 
+  @Post('criar')
+  @ApiBody({ type: CreateUsuarioDto })
+  @ApiOperation({summary: "Permite a criacao de usuario"})
+  @ApiResponse({status: 200, description: 'Usuario encontrado'})
+  @ApiResponse({status:404, description: 'Usuario não encontrado'})
+  create(@Body() UsuarioDto: CreateUsuarioDto) {
+    return this.usuarioService.criarUsuario(UsuarioDto);
+  }
+
   // /usuarios/unico/id
   @Get('unico/:id')
   // ai agora vai ser chuva de decorador swagger
@@ -25,7 +34,7 @@ export class UsuarioController {
   @ApiParam({name:'id', type:Number})
   @ApiResponse({status: 200, description: 'Usuário encontrado'})
   @ApiResponse({status:404, description: 'Usuário não encontrado'})
-  getDados(@Param('id') id:string){
+  getDados(@Param('id') id:Number){
     return this.usuarioService.getDados(+id);
   }
 
@@ -39,7 +48,7 @@ export class UsuarioController {
     return this.usuarioService.getUsuarios();
   } // não preciso de um ID específico aqui, eu to vendo todos 
 
-  @Get('/pegar-pelo-email')
+  @Get('/pegar-pelo-email/:email_usuario')
   //swagger 
   @ApiOperation({summary: "Encontrar um usuário a partir do email dele"})
   @ApiParam({name:'email_usuario', type:String})
@@ -51,7 +60,7 @@ export class UsuarioController {
 
   // /usuarios/unico/editar/id 
 
-  @Patch('unico/editar/id')
+  @Patch('unico/editar/:id')
   // swagger
   @ApiOperation({summary: "Editar parcialmente os dados de um usuário"})
   @ApiParam({name:'id', type:Number})
@@ -65,7 +74,7 @@ export class UsuarioController {
   }
 
   // /usuarios/unico/atualizar/id
-  @Put('unico/atualizar/id')
+  @Put('unico/atualizar/:id')
   //swagger 
   @ApiOperation({summary: "Atualizar totalmente os dados de um usuário"})
   @ApiParam({name:'id', type:Number})
@@ -79,7 +88,7 @@ export class UsuarioController {
 
   // /usuarios/mensagem/id
 
-  @Post('mensagem/id')
+  @Post('mensagem/:id')
   // swagger
   @ApiOperation({summary: "Permite o envio de mensagens por parte do usuário"})
   @ApiParam({name:'id', type:Number})
@@ -89,5 +98,5 @@ export class UsuarioController {
   enviarMensagem(@Param('id') id:string , @Body() createUsuarioDto : CreateUsuarioDto){
     return this.usuarioService.enviarMensagem(+id, createUsuarioDto);
   }
-
 }
+

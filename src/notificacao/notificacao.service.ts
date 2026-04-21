@@ -23,7 +23,8 @@ export class NotificacaoService {
   constructor (private readonly prisma: PrismaService){}
   
   async getDados(id:number){
-    const notificacao = this.prisma.notificacao.findUnique({
+    try{
+    const notificacao = await this.prisma.notificacao.findUnique({
       where: {id}
     })
 
@@ -33,19 +34,33 @@ export class NotificacaoService {
 
     return notificacao
   }
+ catch(error: any){
+    if (error.code === 'P2025') {
+      throw new NotFoundException('Notificação não encontrada');
+    }
+    throw error;
+  }
+}
 
   async listarNotificacoes(){
-    const notificacoes = this.prisma.notificacao.findMany()
+    try{
+    const notificacoes =  await this.prisma.notificacao.findMany()
 
-    if(!(await notificacoes).length){
+    if(!notificacoes || notificacoes.length === 0){
       throw new NotFoundException("Não há notificações por enquanto")
     }
 
     return notificacoes
-  } 
-
+  } catch(error: any){
+    if (error.code === 'P2025') {
+      throw new NotFoundException('Não há notificações por enquanto');
+    }   
+    throw error;
+  }
+}
   async mudarStatus(id:number , updateNotificacaoDto: UpdateNotificacaoDto){
-    const notificacao = this.prisma.notificacao.update({
+    try{
+    const notificacao =  await this.prisma.notificacao.update({
       where: {id},
       data: updateNotificacaoDto
     })
@@ -58,5 +73,11 @@ export class NotificacaoService {
       where: {id},
       data:updateNotificacaoDto
     })
-  }
+  } catch(error: any){
+    if (error.code === 'P2025') {
+      throw new NotFoundException('Notificação não encontrada');
+    }
+    throw error;
+   }
+}
 }
