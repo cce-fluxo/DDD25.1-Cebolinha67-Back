@@ -51,7 +51,7 @@ export class PostagemService {
         mensagem: dataPosta.mensagem,
         tipo: 'geral',
         id_dentista: dataPosta.dentista,
-        imagem_postagem: dataPosta.imagens
+        imagem_postagem: dataPosta.imagens 
           ? {
               create: dataPosta.imagens.map((imagem) => ({
                 imagem: {
@@ -66,7 +66,7 @@ export class PostagemService {
               })),
             }
           : undefined,
-        postagem_paciente: {},
+          postagem_paciente: {}
       },
       include: {
         imagem_postagem: { include: { imagem: true } },
