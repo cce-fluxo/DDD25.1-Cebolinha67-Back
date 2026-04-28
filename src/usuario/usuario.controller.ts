@@ -1,10 +1,11 @@
 // quem esteve aqui (coloca seu nome smp que entrar pf): motta 
 
-import { Controller, Get, Post, Body, Patch, Param, Put} from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Put, UseGuards} from '@nestjs/common';
 import { UsuarioService } from './usuario.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { ApiOperation, ApiParam, ApiTags, ApiResponse, ApiBody } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 
 // vou colocar as URLs todas em cima do que eu fizer pra não me perder
@@ -27,6 +28,7 @@ export class UsuarioController {
     return this.usuarioService.criarUsuario(UsuarioDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   // /usuarios/unico/id
   @Get('unico/:id')
   // ai agora vai ser chuva de decorador swagger
@@ -38,6 +40,7 @@ export class UsuarioController {
     return this.usuarioService.getDados(+id);
   }
 
+  @UseGuards(JwtAuthGuard)
   // /usuarios/ver-todos
   @Get('ver-todos')
   //swagger
@@ -48,6 +51,7 @@ export class UsuarioController {
     return this.usuarioService.getUsuarios();
   } // não preciso de um ID específico aqui, eu to vendo todos 
 
+  @UseGuards(JwtAuthGuard)
   @Get('/pegar-pelo-email/:email_usuario')
   //swagger 
   @ApiOperation({summary: "Encontrar um usuário a partir do email dele"})
@@ -60,6 +64,7 @@ export class UsuarioController {
 
   // /usuarios/unico/editar/id 
 
+  @UseGuards(JwtAuthGuard)
   @Patch('unico/editar/:id')
   // swagger
   @ApiOperation({summary: "Editar parcialmente os dados de um usuário"})
@@ -73,6 +78,7 @@ export class UsuarioController {
     return this.usuarioService.editarDadosUsuario(+id, updateUsuarioDto);
   }
 
+  @UseGuards(JwtAuthGuard)
   // /usuarios/unico/atualizar/id
   @Put('unico/atualizar/:id')
   //swagger 
@@ -88,6 +94,7 @@ export class UsuarioController {
 
   // /usuarios/mensagem/id
 
+  @UseGuards(JwtAuthGuard)
   @Post('mensagem/:id')
   // swagger
   @ApiOperation({summary: "Permite o envio de mensagens por parte do usuário"})

@@ -1576,7 +1576,8 @@ export const UsuarioScalarFieldEnum = {
   nu_celular: 'nu_celular',
   genero: 'genero',
   data_nascimento: 'data_nascimento',
-  token_esqueci_senha: 'token_esqueci_senha'
+  token_esqueci_senha: 'token_esqueci_senha',
+  reset_token_expiry: 'reset_token_expiry'
 } as const
 
 export type UsuarioScalarFieldEnum = (typeof UsuarioScalarFieldEnum)[keyof typeof UsuarioScalarFieldEnum]

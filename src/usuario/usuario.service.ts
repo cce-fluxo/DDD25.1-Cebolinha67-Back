@@ -64,11 +64,6 @@ export class UsuarioService {
         dentista: true,
       },
     });
-
-    if (!usuario) {
-      throw new NotFoundException('Nenhum email encontrado');
-    }
-
     return usuario;
   } // isso aqui provavelmente não tá legal
 
