@@ -6,6 +6,16 @@ import { Genero } from "src/generated/prisma/enums";
 import { Type } from "class-transformer";
 
 export class CreateUsuarioDto {
+<<<<<<< HEAD
+  @ApiProperty({
+    description: 'esse campo é o id do usuário',
+    example: 'id : 1',
+  })
+  
+  @IsInt()
+  id_usuario!: number;
+=======
+>>>>>>> 105fa27a775154a1fe7cc7247da924234f02d708
 
   @IsNotEmpty()
   @ApiProperty({ description: 'nome do usuário', example: 'João' })
