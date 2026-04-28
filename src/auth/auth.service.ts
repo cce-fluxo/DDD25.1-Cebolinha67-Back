@@ -15,7 +15,7 @@ export class AuthService {
 
   login(user) {
     //Cria o JWT a partir do usuario na request
-    const payload = { id: user.id, email: user.email_usuario};
+    const payload = { id: user.id, email: user.email_usuario , dentista_id : user.dentista?.id}; // coloquei o id do dentista no payload 
     const jwtToken = this.jwtService.sign(payload, {
       secret: process.env.JWT_SECRET,
       expiresIn: '1d',
@@ -32,13 +32,13 @@ export class AuthService {
     }
      catch{
       return null;
-    } return user;
+    } 
   
 
     const senhaCorreta = await bcrypt.compare(senha_usuario, user.senha_usuario);
     if(!senhaCorreta){
       return null;
     }
-    
+    return user;
   }
 }
