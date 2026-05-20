@@ -10,16 +10,16 @@ datasource db {
 
 // SEÇÃO DE PESSOAS (DENTISTA, PACIENTE, USUÁRIO)
 
-model Usuario {
-  id                  Int      @id @default(autoincrement())
-  no_usuario          String
-  email_usuario       String   @unique
-  senha_usuario       String
-  cpf                 String   @unique
-  nu_celular          String   @unique
-  genero              Genero
-  data_nascimento     DateTime
-  token_esqueci_senha String?
+<<<<<<< HEAD
+model Usuario{
+  id Int @id @default(autoincrement())
+  no_usuario String
+  email_usuario String @unique
+  cpf String @unique
+  nu_celular String @unique
+  genero String
+  data_nascimento DateTime
+  token_esqueci_senha String? // interrogação pq ele nem sempre vai ser chamado
   reset_token_expiry  DateTime?
 
   // RELACIONAMENTOS
@@ -29,6 +29,15 @@ model Usuario {
   dentista            Dentista?
 }
 
+<<<<<<< HEAD
+model Dentista{
+  id Int @id @default(autoincrement())
+  senha_dentista String
+  formacao String
+  instituto String
+  datainicio DateTime
+  datatermino DateTime
+=======
 enum Genero {
   Masculino
   Feminino
@@ -42,6 +51,7 @@ model Dentista {
   instituto      String
   datainicio     DateTime
   datatermino    DateTime
+>>>>>>> 105fa27a775154a1fe7cc7247da924234f02d708
   especializacao String
 
   // RELACIONAMENTOS

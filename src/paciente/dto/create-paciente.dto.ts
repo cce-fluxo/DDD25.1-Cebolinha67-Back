@@ -17,7 +17,14 @@ export class CreatePacienteDto {
   @ApiProperty({ 
     type: CreateUsuarioDto, 
   })
+<<<<<<< HEAD
+  @IsInt()
+  @Type(() => Number)
+  usuarioId: number;
+  no_usuario: any;
+=======
   @ValidateNested()
   @Type(() => CreateUsuarioDto)
   usuario!: CreateUsuarioDto;
+>>>>>>> 105fa27a775154a1fe7cc7247da924234f02d708
 }
