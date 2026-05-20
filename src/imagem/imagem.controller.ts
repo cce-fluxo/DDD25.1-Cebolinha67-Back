@@ -8,11 +8,13 @@
 
 // tá tudo da minha lógica bem comentado e explicado no usuario.controller.ts, vale a pena dar uma olhada lá, que ai eu não fico me repetindo nos comentários de código
 
-import { Controller, Get, Post,Patch,Delete, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post,Patch,Delete, Param, Body, UseGuards } from '@nestjs/common';
 import { ImagemService } from './imagem.service';
 import { UpdateImagemDto } from './dto/update-imagem.dto';
 import { ApiOperation, ApiParam, ApiResponse } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
+@UseGuards(JwtAuthGuard)
 @Controller('imagens')
 export class ImagemController {
   constructor(private readonly imagemService: ImagemService) {}

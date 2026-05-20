@@ -8,7 +8,8 @@ async function bootstrap() {
 
   app.enableCors({
     origin: 'http://localhost:3000',
-    credentials: true, //passo 1 da integração: o CORS foi habilitado aqui no main.ts
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+    credentials: true,
   });
 
   app.useGlobalPipes(
