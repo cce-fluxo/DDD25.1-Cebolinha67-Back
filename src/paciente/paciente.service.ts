@@ -39,6 +39,18 @@ export class PacienteService {
   async findOne(id: number) {
     const paciente = await this.prisma.paciente.findUnique({
       where: { id },
+      include: { usuario: true },
+    });
+    if (!paciente) {
+      throw new HttpException(`Paciente com id não encontrado`, 404);
+    }
+    return paciente;
+  }
+
+  async findByUsuarioId(idUsuario: number) {
+    const paciente = await this.prisma.paciente.findFirst({
+      where: { id_usuario: idUsuario },
+      include: { usuario: true },
     });
     if (!paciente) {
       throw new HttpException(`Paciente com id não encontrado`, 404);

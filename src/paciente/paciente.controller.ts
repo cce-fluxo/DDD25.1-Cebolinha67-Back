@@ -119,6 +119,16 @@ export class PacienteController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @Get('usuario/:id')
+  @ApiOperation({ summary: 'Buscar um paciente pelo ID do usuário' })
+  @ApiParam({ name: 'id', type: Number, description: 'ID do usuário', example: 1 })
+  @ApiOkResponse({ description: 'Paciente encontrado com sucesso' })
+  @ApiNotFoundResponse({ description: 'Paciente não encontrado' })
+  findByUsuarioId(@Param('id', ParseIntPipe) id: number) {
+    return this.pacienteService.findByUsuarioId(id);
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Get(':id')
   @ApiOperation({ summary: 'Buscar um paciente pelo ID' })
   @ApiParam({
