@@ -32,13 +32,8 @@ export class PacienteService {
     });
   }
 
-<<<<<<< HEAD
   findAll() {
     return this.prisma.paciente.findMany();           
-=======
-  async findAll() {
-    return await this.prisma.paciente.findMany();
->>>>>>> 105fa27a775154a1fe7cc7247da924234f02d708
   }
 
   async findOne(id: number) {
