@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Postagem
@@ -40,27 +40,27 @@ export type PostagemMinAggregateOutputType = {
   id: number | null
   titulo: string | null
   mensagem: string | null
-  tipo: $Enums.TipoPostagem | null
-  data_criacao: Date | null
   id_dentista: number | null
+  data_criacao: Date | null
+  tipo: $Enums.TipoPostagem | null
 }
 
 export type PostagemMaxAggregateOutputType = {
   id: number | null
   titulo: string | null
   mensagem: string | null
-  tipo: $Enums.TipoPostagem | null
-  data_criacao: Date | null
   id_dentista: number | null
+  data_criacao: Date | null
+  tipo: $Enums.TipoPostagem | null
 }
 
 export type PostagemCountAggregateOutputType = {
   id: number
   titulo: number
   mensagem: number
-  tipo: number
-  data_criacao: number
   id_dentista: number
+  data_criacao: number
+  tipo: number
   _all: number
 }
 
@@ -79,27 +79,27 @@ export type PostagemMinAggregateInputType = {
   id?: true
   titulo?: true
   mensagem?: true
-  tipo?: true
-  data_criacao?: true
   id_dentista?: true
+  data_criacao?: true
+  tipo?: true
 }
 
 export type PostagemMaxAggregateInputType = {
   id?: true
   titulo?: true
   mensagem?: true
-  tipo?: true
-  data_criacao?: true
   id_dentista?: true
+  data_criacao?: true
+  tipo?: true
 }
 
 export type PostagemCountAggregateInputType = {
   id?: true
   titulo?: true
   mensagem?: true
-  tipo?: true
-  data_criacao?: true
   id_dentista?: true
+  data_criacao?: true
+  tipo?: true
   _all?: true
 }
 
@@ -193,9 +193,9 @@ export type PostagemGroupByOutputType = {
   id: number
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
-  data_criacao: Date
   id_dentista: number
+  data_criacao: Date
+  tipo: $Enums.TipoPostagem
   _count: PostagemCountAggregateOutputType | null
   _avg: PostagemAvgAggregateOutputType | null
   _sum: PostagemSumAggregateOutputType | null
@@ -225,11 +225,11 @@ export type PostagemWhereInput = {
   id?: Prisma.IntFilter<"Postagem"> | number
   titulo?: Prisma.StringFilter<"Postagem"> | string
   mensagem?: Prisma.StringFilter<"Postagem"> | string
-  tipo?: Prisma.EnumTipoPostagemFilter<"Postagem"> | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeFilter<"Postagem"> | Date | string
   id_dentista?: Prisma.IntFilter<"Postagem"> | number
-  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
+  data_criacao?: Prisma.DateTimeFilter<"Postagem"> | Date | string
+  tipo?: Prisma.EnumTipoPostagemFilter<"Postagem"> | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemListRelationFilter
+  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
   postagem_paciente?: Prisma.PostagemPacienteListRelationFilter
 }
 
@@ -237,11 +237,11 @@ export type PostagemOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  data_criacao?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
-  dentista?: Prisma.DentistaOrderByWithRelationInput
+  data_criacao?: Prisma.SortOrder
+  tipo?: Prisma.SortOrder
   imagem_postagem?: Prisma.ImagemPostagemOrderByRelationAggregateInput
+  dentista?: Prisma.DentistaOrderByWithRelationInput
   postagem_paciente?: Prisma.PostagemPacienteOrderByRelationAggregateInput
 }
 
@@ -252,11 +252,11 @@ export type PostagemWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.PostagemWhereInput | Prisma.PostagemWhereInput[]
   titulo?: Prisma.StringFilter<"Postagem"> | string
   mensagem?: Prisma.StringFilter<"Postagem"> | string
-  tipo?: Prisma.EnumTipoPostagemFilter<"Postagem"> | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeFilter<"Postagem"> | Date | string
   id_dentista?: Prisma.IntFilter<"Postagem"> | number
-  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
+  data_criacao?: Prisma.DateTimeFilter<"Postagem"> | Date | string
+  tipo?: Prisma.EnumTipoPostagemFilter<"Postagem"> | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemListRelationFilter
+  dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
   postagem_paciente?: Prisma.PostagemPacienteListRelationFilter
 }, "id">
 
@@ -264,9 +264,9 @@ export type PostagemOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  data_criacao?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
+  data_criacao?: Prisma.SortOrder
+  tipo?: Prisma.SortOrder
   _count?: Prisma.PostagemCountOrderByAggregateInput
   _avg?: Prisma.PostagemAvgOrderByAggregateInput
   _max?: Prisma.PostagemMaxOrderByAggregateInput
@@ -281,18 +281,18 @@ export type PostagemScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Postagem"> | number
   titulo?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
   mensagem?: Prisma.StringWithAggregatesFilter<"Postagem"> | string
-  tipo?: Prisma.EnumTipoPostagemWithAggregatesFilter<"Postagem"> | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeWithAggregatesFilter<"Postagem"> | Date | string
   id_dentista?: Prisma.IntWithAggregatesFilter<"Postagem"> | number
+  data_criacao?: Prisma.DateTimeWithAggregatesFilter<"Postagem"> | Date | string
+  tipo?: Prisma.EnumTipoPostagemWithAggregatesFilter<"Postagem"> | $Enums.TipoPostagem
 }
 
 export type PostagemCreateInput = {
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
   data_criacao?: Date | string
-  dentista: Prisma.DentistaCreateNestedOneWithoutPostagemInput
+  tipo: $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemCreateNestedManyWithoutPostagemInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutPostagemInput
   postagem_paciente?: Prisma.PostagemPacienteCreateNestedManyWithoutPostagemInput
 }
 
@@ -300,9 +300,9 @@ export type PostagemUncheckedCreateInput = {
   id?: number
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
-  data_criacao?: Date | string
   id_dentista: number
+  data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUncheckedCreateNestedManyWithoutPostagemInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedCreateNestedManyWithoutPostagemInput
 }
@@ -310,10 +310,10 @@ export type PostagemUncheckedCreateInput = {
 export type PostagemUpdateInput = {
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dentista?: Prisma.DentistaUpdateOneRequiredWithoutPostagemNestedInput
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUpdateManyWithoutPostagemNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutPostagemNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUpdateManyWithoutPostagemNestedInput
 }
 
@@ -321,9 +321,9 @@ export type PostagemUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
+  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUncheckedUpdateManyWithoutPostagemNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedUpdateManyWithoutPostagemNestedInput
 }
@@ -332,25 +332,25 @@ export type PostagemCreateManyInput = {
   id?: number
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
-  data_criacao?: Date | string
   id_dentista: number
+  data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
 }
 
 export type PostagemUpdateManyMutationInput = {
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
 }
 
 export type PostagemUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
+  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
 }
 
 export type PostagemListRelationFilter = {
@@ -372,9 +372,9 @@ export type PostagemCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  data_criacao?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
+  data_criacao?: Prisma.SortOrder
+  tipo?: Prisma.SortOrder
 }
 
 export type PostagemAvgOrderByAggregateInput = {
@@ -386,18 +386,18 @@ export type PostagemMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  data_criacao?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
+  data_criacao?: Prisma.SortOrder
+  tipo?: Prisma.SortOrder
 }
 
 export type PostagemMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   titulo?: Prisma.SortOrder
   mensagem?: Prisma.SortOrder
-  tipo?: Prisma.SortOrder
-  data_criacao?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
+  data_criacao?: Prisma.SortOrder
+  tipo?: Prisma.SortOrder
 }
 
 export type PostagemSumOrderByAggregateInput = {
@@ -482,8 +482,8 @@ export type PostagemUpdateOneRequiredWithoutPostagem_pacienteNestedInput = {
 export type PostagemCreateWithoutDentistaInput = {
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
   data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemCreateNestedManyWithoutPostagemInput
   postagem_paciente?: Prisma.PostagemPacienteCreateNestedManyWithoutPostagemInput
 }
@@ -492,8 +492,8 @@ export type PostagemUncheckedCreateWithoutDentistaInput = {
   id?: number
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
   data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUncheckedCreateNestedManyWithoutPostagemInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedCreateNestedManyWithoutPostagemInput
 }
@@ -531,16 +531,16 @@ export type PostagemScalarWhereInput = {
   id?: Prisma.IntFilter<"Postagem"> | number
   titulo?: Prisma.StringFilter<"Postagem"> | string
   mensagem?: Prisma.StringFilter<"Postagem"> | string
-  tipo?: Prisma.EnumTipoPostagemFilter<"Postagem"> | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeFilter<"Postagem"> | Date | string
   id_dentista?: Prisma.IntFilter<"Postagem"> | number
+  data_criacao?: Prisma.DateTimeFilter<"Postagem"> | Date | string
+  tipo?: Prisma.EnumTipoPostagemFilter<"Postagem"> | $Enums.TipoPostagem
 }
 
 export type PostagemCreateWithoutImagem_postagemInput = {
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
   data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
   dentista: Prisma.DentistaCreateNestedOneWithoutPostagemInput
   postagem_paciente?: Prisma.PostagemPacienteCreateNestedManyWithoutPostagemInput
 }
@@ -549,9 +549,9 @@ export type PostagemUncheckedCreateWithoutImagem_postagemInput = {
   id?: number
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
-  data_criacao?: Date | string
   id_dentista: number
+  data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
   postagem_paciente?: Prisma.PostagemPacienteUncheckedCreateNestedManyWithoutPostagemInput
 }
 
@@ -574,8 +574,8 @@ export type PostagemUpdateToOneWithWhereWithoutImagem_postagemInput = {
 export type PostagemUpdateWithoutImagem_postagemInput = {
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   dentista?: Prisma.DentistaUpdateOneRequiredWithoutPostagemNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUpdateManyWithoutPostagemNestedInput
 }
@@ -584,28 +584,28 @@ export type PostagemUncheckedUpdateWithoutImagem_postagemInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
+  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   postagem_paciente?: Prisma.PostagemPacienteUncheckedUpdateManyWithoutPostagemNestedInput
 }
 
 export type PostagemCreateWithoutPostagem_pacienteInput = {
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
   data_criacao?: Date | string
-  dentista: Prisma.DentistaCreateNestedOneWithoutPostagemInput
+  tipo: $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemCreateNestedManyWithoutPostagemInput
+  dentista: Prisma.DentistaCreateNestedOneWithoutPostagemInput
 }
 
 export type PostagemUncheckedCreateWithoutPostagem_pacienteInput = {
   id?: number
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
-  data_criacao?: Date | string
   id_dentista: number
+  data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUncheckedCreateNestedManyWithoutPostagemInput
 }
 
@@ -628,19 +628,19 @@ export type PostagemUpdateToOneWithWhereWithoutPostagem_pacienteInput = {
 export type PostagemUpdateWithoutPostagem_pacienteInput = {
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  dentista?: Prisma.DentistaUpdateOneRequiredWithoutPostagemNestedInput
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUpdateManyWithoutPostagemNestedInput
+  dentista?: Prisma.DentistaUpdateOneRequiredWithoutPostagemNestedInput
 }
 
 export type PostagemUncheckedUpdateWithoutPostagem_pacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
-  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
+  data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUncheckedUpdateManyWithoutPostagemNestedInput
 }
 
@@ -648,15 +648,15 @@ export type PostagemCreateManyDentistaInput = {
   id?: number
   titulo: string
   mensagem: string
-  tipo: $Enums.TipoPostagem
   data_criacao?: Date | string
+  tipo: $Enums.TipoPostagem
 }
 
 export type PostagemUpdateWithoutDentistaInput = {
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUpdateManyWithoutPostagemNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUpdateManyWithoutPostagemNestedInput
 }
@@ -665,8 +665,8 @@ export type PostagemUncheckedUpdateWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   imagem_postagem?: Prisma.ImagemPostagemUncheckedUpdateManyWithoutPostagemNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedUpdateManyWithoutPostagemNestedInput
 }
@@ -675,8 +675,8 @@ export type PostagemUncheckedUpdateManyWithoutDentistaInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   titulo?: Prisma.StringFieldUpdateOperationsInput | string
   mensagem?: Prisma.StringFieldUpdateOperationsInput | string
-  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
   data_criacao?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  tipo?: Prisma.EnumTipoPostagemFieldUpdateOperationsInput | $Enums.TipoPostagem
 }
 
 
@@ -723,11 +723,11 @@ export type PostagemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   id?: boolean
   titulo?: boolean
   mensagem?: boolean
-  tipo?: boolean
-  data_criacao?: boolean
   id_dentista?: boolean
-  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
+  data_criacao?: boolean
+  tipo?: boolean
   imagem_postagem?: boolean | Prisma.Postagem$imagem_postagemArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
   postagem_paciente?: boolean | Prisma.Postagem$postagem_pacienteArgs<ExtArgs>
   _count?: boolean | Prisma.PostagemCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagem"]>
@@ -736,9 +736,9 @@ export type PostagemSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   id?: boolean
   titulo?: boolean
   mensagem?: boolean
-  tipo?: boolean
-  data_criacao?: boolean
   id_dentista?: boolean
+  data_criacao?: boolean
+  tipo?: boolean
   dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagem"]>
 
@@ -746,9 +746,9 @@ export type PostagemSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   id?: boolean
   titulo?: boolean
   mensagem?: boolean
-  tipo?: boolean
-  data_criacao?: boolean
   id_dentista?: boolean
+  data_criacao?: boolean
+  tipo?: boolean
   dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagem"]>
 
@@ -756,15 +756,15 @@ export type PostagemSelectScalar = {
   id?: boolean
   titulo?: boolean
   mensagem?: boolean
-  tipo?: boolean
-  data_criacao?: boolean
   id_dentista?: boolean
+  data_criacao?: boolean
+  tipo?: boolean
 }
 
-export type PostagemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "titulo" | "mensagem" | "tipo" | "data_criacao" | "id_dentista", ExtArgs["result"]["postagem"]>
+export type PostagemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "titulo" | "mensagem" | "id_dentista" | "data_criacao" | "tipo", ExtArgs["result"]["postagem"]>
 export type PostagemInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
   imagem_postagem?: boolean | Prisma.Postagem$imagem_postagemArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
   postagem_paciente?: boolean | Prisma.Postagem$postagem_pacienteArgs<ExtArgs>
   _count?: boolean | Prisma.PostagemCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -778,17 +778,17 @@ export type PostagemIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $PostagemPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Postagem"
   objects: {
-    dentista: Prisma.$DentistaPayload<ExtArgs>
     imagem_postagem: Prisma.$ImagemPostagemPayload<ExtArgs>[]
+    dentista: Prisma.$DentistaPayload<ExtArgs>
     postagem_paciente: Prisma.$PostagemPacientePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
     titulo: string
     mensagem: string
-    tipo: $Enums.TipoPostagem
-    data_criacao: Date
     id_dentista: number
+    data_criacao: Date
+    tipo: $Enums.TipoPostagem
   }, ExtArgs["result"]["postagem"]>
   composites: {}
 }
@@ -1183,8 +1183,8 @@ readonly fields: PostagemFieldRefs;
  */
 export interface Prisma__PostagemClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  dentista<T extends Prisma.DentistaDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DentistaDefaultArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   imagem_postagem<T extends Prisma.Postagem$imagem_postagemArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Postagem$imagem_postagemArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ImagemPostagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  dentista<T extends Prisma.DentistaDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DentistaDefaultArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   postagem_paciente<T extends Prisma.Postagem$postagem_pacienteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Postagem$postagem_pacienteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPacientePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1218,9 +1218,9 @@ export interface PostagemFieldRefs {
   readonly id: Prisma.FieldRef<"Postagem", 'Int'>
   readonly titulo: Prisma.FieldRef<"Postagem", 'String'>
   readonly mensagem: Prisma.FieldRef<"Postagem", 'String'>
-  readonly tipo: Prisma.FieldRef<"Postagem", 'TipoPostagem'>
-  readonly data_criacao: Prisma.FieldRef<"Postagem", 'DateTime'>
   readonly id_dentista: Prisma.FieldRef<"Postagem", 'Int'>
+  readonly data_criacao: Prisma.FieldRef<"Postagem", 'DateTime'>
+  readonly tipo: Prisma.FieldRef<"Postagem", 'TipoPostagem'>
 }
     
 

@@ -17,8 +17,8 @@
 
 import * as runtime from "@prisma/client/runtime/index-browser"
 
-export type * from '../models.js'
-export type * from './prismaNamespace.js'
+export type * from '../models'
+export type * from './prismaNamespace'
 
 export const Decimal = runtime.Decimal
 
@@ -88,12 +88,12 @@ export const UsuarioScalarFieldEnum = {
   id: 'id',
   no_usuario: 'no_usuario',
   email_usuario: 'email_usuario',
-  senha_usuario: 'senha_usuario',
   cpf: 'cpf',
   nu_celular: 'nu_celular',
   genero: 'genero',
   data_nascimento: 'data_nascimento',
   token_esqueci_senha: 'token_esqueci_senha',
+  senha_usuario: 'senha_usuario',
   reset_token_expiry: 'reset_token_expiry'
 } as const
 
@@ -214,9 +214,9 @@ export const PostagemScalarFieldEnum = {
   id: 'id',
   titulo: 'titulo',
   mensagem: 'mensagem',
-  tipo: 'tipo',
+  id_dentista: 'id_dentista',
   data_criacao: 'data_criacao',
-  id_dentista: 'id_dentista'
+  tipo: 'tipo'
 } as const
 
 export type PostagemScalarFieldEnum = (typeof PostagemScalarFieldEnum)[keyof typeof PostagemScalarFieldEnum]

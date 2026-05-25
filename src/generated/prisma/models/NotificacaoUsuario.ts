@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model NotificacaoUsuario
@@ -220,9 +220,9 @@ export type NotificacaoUsuarioWhereInput = {
   id_notificacao?: Prisma.IntFilter<"NotificacaoUsuario"> | number
   id_usuario?: Prisma.IntFilter<"NotificacaoUsuario"> | number
   id_consulta?: Prisma.IntNullableFilter<"NotificacaoUsuario"> | number | null
+  consulta?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   notificacao?: Prisma.XOR<Prisma.NotificacaoScalarRelationFilter, Prisma.NotificacaoWhereInput>
   usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
-  consulta?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
 }
 
 export type NotificacaoUsuarioOrderByWithRelationInput = {
@@ -230,9 +230,9 @@ export type NotificacaoUsuarioOrderByWithRelationInput = {
   id_notificacao?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
   id_consulta?: Prisma.SortOrderInput | Prisma.SortOrder
+  consulta?: Prisma.ConsultaOrderByWithRelationInput
   notificacao?: Prisma.NotificacaoOrderByWithRelationInput
   usuario?: Prisma.UsuarioOrderByWithRelationInput
-  consulta?: Prisma.ConsultaOrderByWithRelationInput
 }
 
 export type NotificacaoUsuarioWhereUniqueInput = Prisma.AtLeast<{
@@ -244,9 +244,9 @@ export type NotificacaoUsuarioWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.NotificacaoUsuarioWhereInput | Prisma.NotificacaoUsuarioWhereInput[]
   id_usuario?: Prisma.IntFilter<"NotificacaoUsuario"> | number
   id_consulta?: Prisma.IntNullableFilter<"NotificacaoUsuario"> | number | null
+  consulta?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   notificacao?: Prisma.XOR<Prisma.NotificacaoScalarRelationFilter, Prisma.NotificacaoWhereInput>
   usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
-  consulta?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
 }, "id" | "id_notificacao" | "id_usuario_id_notificacao">
 
 export type NotificacaoUsuarioOrderByWithAggregationInput = {
@@ -272,9 +272,9 @@ export type NotificacaoUsuarioScalarWhereWithAggregatesInput = {
 }
 
 export type NotificacaoUsuarioCreateInput = {
+  consulta?: Prisma.ConsultaCreateNestedOneWithoutNotificacao_usuarioInput
   notificacao: Prisma.NotificacaoCreateNestedOneWithoutNotificacao_usuarioInput
   usuario: Prisma.UsuarioCreateNestedOneWithoutNotificacao_usuarioInput
-  consulta?: Prisma.ConsultaCreateNestedOneWithoutNotificacao_usuarioInput
 }
 
 export type NotificacaoUsuarioUncheckedCreateInput = {
@@ -285,9 +285,9 @@ export type NotificacaoUsuarioUncheckedCreateInput = {
 }
 
 export type NotificacaoUsuarioUpdateInput = {
+  consulta?: Prisma.ConsultaUpdateOneWithoutNotificacao_usuarioNestedInput
   notificacao?: Prisma.NotificacaoUpdateOneRequiredWithoutNotificacao_usuarioNestedInput
   usuario?: Prisma.UsuarioUpdateOneRequiredWithoutNotificacao_usuarioNestedInput
-  consulta?: Prisma.ConsultaUpdateOneWithoutNotificacao_usuarioNestedInput
 }
 
 export type NotificacaoUsuarioUncheckedUpdateInput = {
@@ -495,8 +495,8 @@ export type NotificacaoUsuarioUncheckedUpdateManyWithoutConsultaNestedInput = {
 }
 
 export type NotificacaoUsuarioCreateWithoutUsuarioInput = {
-  notificacao: Prisma.NotificacaoCreateNestedOneWithoutNotificacao_usuarioInput
   consulta?: Prisma.ConsultaCreateNestedOneWithoutNotificacao_usuarioInput
+  notificacao: Prisma.NotificacaoCreateNestedOneWithoutNotificacao_usuarioInput
 }
 
 export type NotificacaoUsuarioUncheckedCreateWithoutUsuarioInput = {
@@ -542,8 +542,8 @@ export type NotificacaoUsuarioScalarWhereInput = {
 }
 
 export type NotificacaoUsuarioCreateWithoutNotificacaoInput = {
-  usuario: Prisma.UsuarioCreateNestedOneWithoutNotificacao_usuarioInput
   consulta?: Prisma.ConsultaCreateNestedOneWithoutNotificacao_usuarioInput
+  usuario: Prisma.UsuarioCreateNestedOneWithoutNotificacao_usuarioInput
 }
 
 export type NotificacaoUsuarioUncheckedCreateWithoutNotificacaoInput = {
@@ -569,8 +569,8 @@ export type NotificacaoUsuarioUpdateToOneWithWhereWithoutNotificacaoInput = {
 }
 
 export type NotificacaoUsuarioUpdateWithoutNotificacaoInput = {
-  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutNotificacao_usuarioNestedInput
   consulta?: Prisma.ConsultaUpdateOneWithoutNotificacao_usuarioNestedInput
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutNotificacao_usuarioNestedInput
 }
 
 export type NotificacaoUsuarioUncheckedUpdateWithoutNotificacaoInput = {
@@ -623,8 +623,8 @@ export type NotificacaoUsuarioCreateManyUsuarioInput = {
 }
 
 export type NotificacaoUsuarioUpdateWithoutUsuarioInput = {
-  notificacao?: Prisma.NotificacaoUpdateOneRequiredWithoutNotificacao_usuarioNestedInput
   consulta?: Prisma.ConsultaUpdateOneWithoutNotificacao_usuarioNestedInput
+  notificacao?: Prisma.NotificacaoUpdateOneRequiredWithoutNotificacao_usuarioNestedInput
 }
 
 export type NotificacaoUsuarioUncheckedUpdateWithoutUsuarioInput = {
@@ -669,9 +669,9 @@ export type NotificacaoUsuarioSelect<ExtArgs extends runtime.Types.Extensions.In
   id_notificacao?: boolean
   id_usuario?: boolean
   id_consulta?: boolean
+  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
   notificacao?: boolean | Prisma.NotificacaoDefaultArgs<ExtArgs>
   usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
 }, ExtArgs["result"]["notificacaoUsuario"]>
 
 export type NotificacaoUsuarioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -679,9 +679,9 @@ export type NotificacaoUsuarioSelectCreateManyAndReturn<ExtArgs extends runtime.
   id_notificacao?: boolean
   id_usuario?: boolean
   id_consulta?: boolean
+  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
   notificacao?: boolean | Prisma.NotificacaoDefaultArgs<ExtArgs>
   usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
 }, ExtArgs["result"]["notificacaoUsuario"]>
 
 export type NotificacaoUsuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -689,9 +689,9 @@ export type NotificacaoUsuarioSelectUpdateManyAndReturn<ExtArgs extends runtime.
   id_notificacao?: boolean
   id_usuario?: boolean
   id_consulta?: boolean
+  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
   notificacao?: boolean | Prisma.NotificacaoDefaultArgs<ExtArgs>
   usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
 }, ExtArgs["result"]["notificacaoUsuario"]>
 
 export type NotificacaoUsuarioSelectScalar = {
@@ -703,27 +703,27 @@ export type NotificacaoUsuarioSelectScalar = {
 
 export type NotificacaoUsuarioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "id_notificacao" | "id_usuario" | "id_consulta", ExtArgs["result"]["notificacaoUsuario"]>
 export type NotificacaoUsuarioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
   notificacao?: boolean | Prisma.NotificacaoDefaultArgs<ExtArgs>
   usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
 }
 export type NotificacaoUsuarioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
   notificacao?: boolean | Prisma.NotificacaoDefaultArgs<ExtArgs>
   usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
 }
 export type NotificacaoUsuarioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
   notificacao?: boolean | Prisma.NotificacaoDefaultArgs<ExtArgs>
   usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  consulta?: boolean | Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>
 }
 
 export type $NotificacaoUsuarioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "NotificacaoUsuario"
   objects: {
+    consulta: Prisma.$ConsultaPayload<ExtArgs> | null
     notificacao: Prisma.$NotificacaoPayload<ExtArgs>
     usuario: Prisma.$UsuarioPayload<ExtArgs>
-    consulta: Prisma.$ConsultaPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1124,9 +1124,9 @@ readonly fields: NotificacaoUsuarioFieldRefs;
  */
 export interface Prisma__NotificacaoUsuarioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  consulta<T extends Prisma.NotificacaoUsuario$consultaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   notificacao<T extends Prisma.NotificacaoDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.NotificacaoDefaultArgs<ExtArgs>>): Prisma.Prisma__NotificacaoClient<runtime.Types.Result.GetResult<Prisma.$NotificacaoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   usuario<T extends Prisma.UsuarioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UsuarioDefaultArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  consulta<T extends Prisma.NotificacaoUsuario$consultaArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.NotificacaoUsuario$consultaArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

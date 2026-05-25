@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Convenio
@@ -220,8 +220,8 @@ export type ConvenioWhereInput = {
   nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
   dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
   id_paciente?: Prisma.IntFilter<"Convenio"> | number
+  consultas?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
-  consultas?: Prisma.ConsultaListRelationFilter
 }
 
 export type ConvenioOrderByWithRelationInput = {
@@ -230,8 +230,8 @@ export type ConvenioOrderByWithRelationInput = {
   nu_carteirinha?: Prisma.SortOrder
   dt_val_carteirinha?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
+  consultas?: Prisma.ConsultaOrderByWithRelationInput
   paciente?: Prisma.PacienteOrderByWithRelationInput
-  consultas?: Prisma.ConsultaOrderByRelationAggregateInput
 }
 
 export type ConvenioWhereUniqueInput = Prisma.AtLeast<{
@@ -243,8 +243,8 @@ export type ConvenioWhereUniqueInput = Prisma.AtLeast<{
   nu_carteirinha?: Prisma.StringFilter<"Convenio"> | string
   dt_val_carteirinha?: Prisma.DateTimeFilter<"Convenio"> | Date | string
   id_paciente?: Prisma.IntFilter<"Convenio"> | number
+  consultas?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
-  consultas?: Prisma.ConsultaListRelationFilter
 }, "id">
 
 export type ConvenioOrderByWithAggregationInput = {
@@ -275,8 +275,8 @@ export type ConvenioCreateInput = {
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutConvenioInput
   paciente: Prisma.PacienteCreateNestedOneWithoutConveniosInput
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutConvenioInput
 }
 
 export type ConvenioUncheckedCreateInput = {
@@ -285,15 +285,15 @@ export type ConvenioUncheckedCreateInput = {
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
   id_paciente: number
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutConvenioInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutConvenioInput
 }
 
 export type ConvenioUpdateInput = {
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  consultas?: Prisma.ConsultaUpdateOneWithoutConvenioNestedInput
   paciente?: Prisma.PacienteUpdateOneRequiredWithoutConveniosNestedInput
-  consultas?: Prisma.ConsultaUpdateManyWithoutConvenioNestedInput
 }
 
 export type ConvenioUncheckedUpdateInput = {
@@ -302,7 +302,7 @@ export type ConvenioUncheckedUpdateInput = {
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   id_paciente?: Prisma.IntFieldUpdateOperationsInput | number
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutConvenioNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutConvenioNestedInput
 }
 
 export type ConvenioCreateManyInput = {
@@ -438,7 +438,7 @@ export type ConvenioCreateWithoutPacienteInput = {
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutConvenioInput
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutConvenioInput
 }
 
 export type ConvenioUncheckedCreateWithoutPacienteInput = {
@@ -446,7 +446,7 @@ export type ConvenioUncheckedCreateWithoutPacienteInput = {
   no_operadora: string
   nu_carteirinha: string
   dt_val_carteirinha: Date | string
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutConvenioInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutConvenioInput
 }
 
 export type ConvenioCreateOrConnectWithoutPacienteInput = {
@@ -543,7 +543,7 @@ export type ConvenioUpdateWithoutPacienteInput = {
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  consultas?: Prisma.ConsultaUpdateManyWithoutConvenioNestedInput
+  consultas?: Prisma.ConsultaUpdateOneWithoutConvenioNestedInput
 }
 
 export type ConvenioUncheckedUpdateWithoutPacienteInput = {
@@ -551,7 +551,7 @@ export type ConvenioUncheckedUpdateWithoutPacienteInput = {
   no_operadora?: Prisma.StringFieldUpdateOperationsInput | string
   nu_carteirinha?: Prisma.StringFieldUpdateOperationsInput | string
   dt_val_carteirinha?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutConvenioNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutConvenioNestedInput
 }
 
 export type ConvenioUncheckedUpdateManyWithoutPacienteInput = {
@@ -562,35 +562,6 @@ export type ConvenioUncheckedUpdateManyWithoutPacienteInput = {
 }
 
 
-/**
- * Count Type ConvenioCountOutputType
- */
-
-export type ConvenioCountOutputType = {
-  consultas: number
-}
-
-export type ConvenioCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  consultas?: boolean | ConvenioCountOutputTypeCountConsultasArgs
-}
-
-/**
- * ConvenioCountOutputType without action
- */
-export type ConvenioCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ConvenioCountOutputType
-   */
-  select?: Prisma.ConvenioCountOutputTypeSelect<ExtArgs> | null
-}
-
-/**
- * ConvenioCountOutputType without action
- */
-export type ConvenioCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConsultaWhereInput
-}
-
 
 export type ConvenioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -598,9 +569,8 @@ export type ConvenioSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   nu_carteirinha?: boolean
   dt_val_carteirinha?: boolean
   id_paciente?: boolean
-  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
   consultas?: boolean | Prisma.Convenio$consultasArgs<ExtArgs>
-  _count?: boolean | Prisma.ConvenioCountOutputTypeDefaultArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["convenio"]>
 
 export type ConvenioSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -631,9 +601,8 @@ export type ConvenioSelectScalar = {
 
 export type ConvenioOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "no_operadora" | "nu_carteirinha" | "dt_val_carteirinha" | "id_paciente", ExtArgs["result"]["convenio"]>
 export type ConvenioInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
   consultas?: boolean | Prisma.Convenio$consultasArgs<ExtArgs>
-  _count?: boolean | Prisma.ConvenioCountOutputTypeDefaultArgs<ExtArgs>
+  paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
 }
 export type ConvenioIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
@@ -645,8 +614,8 @@ export type ConvenioIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $ConvenioPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Convenio"
   objects: {
+    consultas: Prisma.$ConsultaPayload<ExtArgs> | null
     paciente: Prisma.$PacientePayload<ExtArgs>
-    consultas: Prisma.$ConsultaPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1048,8 +1017,8 @@ readonly fields: ConvenioFieldRefs;
  */
 export interface Prisma__ConvenioClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  consultas<T extends Prisma.Convenio$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Convenio$consultasArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   paciente<T extends Prisma.PacienteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PacienteDefaultArgs<ExtArgs>>): Prisma.Prisma__PacienteClient<runtime.Types.Result.GetResult<Prisma.$PacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  consultas<T extends Prisma.Convenio$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Convenio$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1501,11 +1470,6 @@ export type Convenio$consultasArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   include?: Prisma.ConsultaInclude<ExtArgs> | null
   where?: Prisma.ConsultaWhereInput
-  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
-  cursor?: Prisma.ConsultaWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
 }
 
 /**

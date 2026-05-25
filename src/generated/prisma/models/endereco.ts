@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Endereco
@@ -252,8 +252,8 @@ export type EnderecoWhereInput = {
   complemento?: Prisma.StringFilter<"Endereco"> | string
   cep?: Prisma.StringFilter<"Endereco"> | string
   id_dentista?: Prisma.IntFilter<"Endereco"> | number
+  consultas?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
-  consultas?: Prisma.ConsultaListRelationFilter
 }
 
 export type EnderecoOrderByWithRelationInput = {
@@ -266,8 +266,8 @@ export type EnderecoOrderByWithRelationInput = {
   complemento?: Prisma.SortOrder
   cep?: Prisma.SortOrder
   id_dentista?: Prisma.SortOrder
+  consultas?: Prisma.ConsultaOrderByWithRelationInput
   dentista?: Prisma.DentistaOrderByWithRelationInput
-  consultas?: Prisma.ConsultaOrderByRelationAggregateInput
 }
 
 export type EnderecoWhereUniqueInput = Prisma.AtLeast<{
@@ -283,8 +283,8 @@ export type EnderecoWhereUniqueInput = Prisma.AtLeast<{
   bairro?: Prisma.StringFilter<"Endereco"> | string
   complemento?: Prisma.StringFilter<"Endereco"> | string
   cep?: Prisma.StringFilter<"Endereco"> | string
+  consultas?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   dentista?: Prisma.XOR<Prisma.DentistaScalarRelationFilter, Prisma.DentistaWhereInput>
-  consultas?: Prisma.ConsultaListRelationFilter
 }, "id" | "id_dentista">
 
 export type EnderecoOrderByWithAggregationInput = {
@@ -327,8 +327,8 @@ export type EnderecoCreateInput = {
   bairro: string
   complemento: string
   cep: string
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutEnderecoInput
   dentista: Prisma.DentistaCreateNestedOneWithoutEnderecoInput
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutEnderecoInput
 }
 
 export type EnderecoUncheckedCreateInput = {
@@ -341,7 +341,7 @@ export type EnderecoUncheckedCreateInput = {
   complemento: string
   cep: string
   id_dentista: number
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutEnderecoInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutEnderecoInput
 }
 
 export type EnderecoUpdateInput = {
@@ -352,8 +352,8 @@ export type EnderecoUpdateInput = {
   bairro?: Prisma.StringFieldUpdateOperationsInput | string
   complemento?: Prisma.StringFieldUpdateOperationsInput | string
   cep?: Prisma.StringFieldUpdateOperationsInput | string
+  consultas?: Prisma.ConsultaUpdateOneWithoutEnderecoNestedInput
   dentista?: Prisma.DentistaUpdateOneRequiredWithoutEnderecoNestedInput
-  consultas?: Prisma.ConsultaUpdateManyWithoutEnderecoNestedInput
 }
 
 export type EnderecoUncheckedUpdateInput = {
@@ -366,7 +366,7 @@ export type EnderecoUncheckedUpdateInput = {
   complemento?: Prisma.StringFieldUpdateOperationsInput | string
   cep?: Prisma.StringFieldUpdateOperationsInput | string
   id_dentista?: Prisma.IntFieldUpdateOperationsInput | number
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutEnderecoNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutEnderecoNestedInput
 }
 
 export type EnderecoCreateManyInput = {
@@ -513,7 +513,7 @@ export type EnderecoCreateWithoutDentistaInput = {
   bairro: string
   complemento: string
   cep: string
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutEnderecoInput
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutEnderecoInput
 }
 
 export type EnderecoUncheckedCreateWithoutDentistaInput = {
@@ -525,7 +525,7 @@ export type EnderecoUncheckedCreateWithoutDentistaInput = {
   bairro: string
   complemento: string
   cep: string
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutEnderecoInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutEnderecoInput
 }
 
 export type EnderecoCreateOrConnectWithoutDentistaInput = {
@@ -552,7 +552,7 @@ export type EnderecoUpdateWithoutDentistaInput = {
   bairro?: Prisma.StringFieldUpdateOperationsInput | string
   complemento?: Prisma.StringFieldUpdateOperationsInput | string
   cep?: Prisma.StringFieldUpdateOperationsInput | string
-  consultas?: Prisma.ConsultaUpdateManyWithoutEnderecoNestedInput
+  consultas?: Prisma.ConsultaUpdateOneWithoutEnderecoNestedInput
 }
 
 export type EnderecoUncheckedUpdateWithoutDentistaInput = {
@@ -564,7 +564,7 @@ export type EnderecoUncheckedUpdateWithoutDentistaInput = {
   bairro?: Prisma.StringFieldUpdateOperationsInput | string
   complemento?: Prisma.StringFieldUpdateOperationsInput | string
   cep?: Prisma.StringFieldUpdateOperationsInput | string
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutEnderecoNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutEnderecoNestedInput
 }
 
 export type EnderecoCreateWithoutConsultasInput = {
@@ -630,35 +630,6 @@ export type EnderecoUncheckedUpdateWithoutConsultasInput = {
 }
 
 
-/**
- * Count Type EnderecoCountOutputType
- */
-
-export type EnderecoCountOutputType = {
-  consultas: number
-}
-
-export type EnderecoCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  consultas?: boolean | EnderecoCountOutputTypeCountConsultasArgs
-}
-
-/**
- * EnderecoCountOutputType without action
- */
-export type EnderecoCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the EnderecoCountOutputType
-   */
-  select?: Prisma.EnderecoCountOutputTypeSelect<ExtArgs> | null
-}
-
-/**
- * EnderecoCountOutputType without action
- */
-export type EnderecoCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConsultaWhereInput
-}
-
 
 export type EnderecoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -670,9 +641,8 @@ export type EnderecoSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   complemento?: boolean
   cep?: boolean
   id_dentista?: boolean
-  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
   consultas?: boolean | Prisma.Endereco$consultasArgs<ExtArgs>
-  _count?: boolean | Prisma.EnderecoCountOutputTypeDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["endereco"]>
 
 export type EnderecoSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -715,9 +685,8 @@ export type EnderecoSelectScalar = {
 
 export type EnderecoOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "data_criacao_endereco" | "logradouro" | "cidade" | "estado" | "bairro" | "complemento" | "cep" | "id_dentista", ExtArgs["result"]["endereco"]>
 export type EnderecoInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
   consultas?: boolean | Prisma.Endereco$consultasArgs<ExtArgs>
-  _count?: boolean | Prisma.EnderecoCountOutputTypeDefaultArgs<ExtArgs>
+  dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
 }
 export type EnderecoIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   dentista?: boolean | Prisma.DentistaDefaultArgs<ExtArgs>
@@ -729,8 +698,8 @@ export type EnderecoIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $EnderecoPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Endereco"
   objects: {
+    consultas: Prisma.$ConsultaPayload<ExtArgs> | null
     dentista: Prisma.$DentistaPayload<ExtArgs>
-    consultas: Prisma.$ConsultaPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1136,8 +1105,8 @@ readonly fields: EnderecoFieldRefs;
  */
 export interface Prisma__EnderecoClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  consultas<T extends Prisma.Endereco$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Endereco$consultasArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   dentista<T extends Prisma.DentistaDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.DentistaDefaultArgs<ExtArgs>>): Prisma.Prisma__DentistaClient<runtime.Types.Result.GetResult<Prisma.$DentistaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  consultas<T extends Prisma.Endereco$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Endereco$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1593,11 +1562,6 @@ export type Endereco$consultasArgs<ExtArgs extends runtime.Types.Extensions.Inte
    */
   include?: Prisma.ConsultaInclude<ExtArgs> | null
   where?: Prisma.ConsultaWhereInput
-  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
-  cursor?: Prisma.ConsultaWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
 }
 
 /**

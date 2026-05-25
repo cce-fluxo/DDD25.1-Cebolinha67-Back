@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model PostagemPaciente
@@ -196,15 +196,15 @@ export type PostagemPacienteWhereInput = {
   NOT?: Prisma.PostagemPacienteWhereInput | Prisma.PostagemPacienteWhereInput[]
   id_postagem?: Prisma.IntFilter<"PostagemPaciente"> | number
   id_paciente?: Prisma.IntFilter<"PostagemPaciente"> | number
-  postagem?: Prisma.XOR<Prisma.PostagemScalarRelationFilter, Prisma.PostagemWhereInput>
   paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
+  postagem?: Prisma.XOR<Prisma.PostagemScalarRelationFilter, Prisma.PostagemWhereInput>
 }
 
 export type PostagemPacienteOrderByWithRelationInput = {
   id_postagem?: Prisma.SortOrder
   id_paciente?: Prisma.SortOrder
-  postagem?: Prisma.PostagemOrderByWithRelationInput
   paciente?: Prisma.PacienteOrderByWithRelationInput
+  postagem?: Prisma.PostagemOrderByWithRelationInput
 }
 
 export type PostagemPacienteWhereUniqueInput = Prisma.AtLeast<{
@@ -214,8 +214,8 @@ export type PostagemPacienteWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.PostagemPacienteWhereInput | Prisma.PostagemPacienteWhereInput[]
   id_postagem?: Prisma.IntFilter<"PostagemPaciente"> | number
   id_paciente?: Prisma.IntFilter<"PostagemPaciente"> | number
-  postagem?: Prisma.XOR<Prisma.PostagemScalarRelationFilter, Prisma.PostagemWhereInput>
   paciente?: Prisma.XOR<Prisma.PacienteScalarRelationFilter, Prisma.PacienteWhereInput>
+  postagem?: Prisma.XOR<Prisma.PostagemScalarRelationFilter, Prisma.PostagemWhereInput>
 }, "id_paciente_id_postagem">
 
 export type PostagemPacienteOrderByWithAggregationInput = {
@@ -237,8 +237,8 @@ export type PostagemPacienteScalarWhereWithAggregatesInput = {
 }
 
 export type PostagemPacienteCreateInput = {
-  postagem: Prisma.PostagemCreateNestedOneWithoutPostagem_pacienteInput
   paciente: Prisma.PacienteCreateNestedOneWithoutPostagem_pacienteInput
+  postagem: Prisma.PostagemCreateNestedOneWithoutPostagem_pacienteInput
 }
 
 export type PostagemPacienteUncheckedCreateInput = {
@@ -247,8 +247,8 @@ export type PostagemPacienteUncheckedCreateInput = {
 }
 
 export type PostagemPacienteUpdateInput = {
-  postagem?: Prisma.PostagemUpdateOneRequiredWithoutPostagem_pacienteNestedInput
   paciente?: Prisma.PacienteUpdateOneRequiredWithoutPostagem_pacienteNestedInput
+  postagem?: Prisma.PostagemUpdateOneRequiredWithoutPostagem_pacienteNestedInput
 }
 
 export type PostagemPacienteUncheckedUpdateInput = {
@@ -507,22 +507,22 @@ export type PostagemPacienteUncheckedUpdateManyWithoutPostagemInput = {
 export type PostagemPacienteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id_postagem?: boolean
   id_paciente?: boolean
-  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagemPaciente"]>
 
 export type PostagemPacienteSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id_postagem?: boolean
   id_paciente?: boolean
-  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagemPaciente"]>
 
 export type PostagemPacienteSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id_postagem?: boolean
   id_paciente?: boolean
-  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["postagemPaciente"]>
 
 export type PostagemPacienteSelectScalar = {
@@ -532,23 +532,23 @@ export type PostagemPacienteSelectScalar = {
 
 export type PostagemPacienteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id_postagem" | "id_paciente", ExtArgs["result"]["postagemPaciente"]>
 export type PostagemPacienteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
 }
 export type PostagemPacienteIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
 }
 export type PostagemPacienteIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
   paciente?: boolean | Prisma.PacienteDefaultArgs<ExtArgs>
+  postagem?: boolean | Prisma.PostagemDefaultArgs<ExtArgs>
 }
 
 export type $PostagemPacientePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "PostagemPaciente"
   objects: {
-    postagem: Prisma.$PostagemPayload<ExtArgs>
     paciente: Prisma.$PacientePayload<ExtArgs>
+    postagem: Prisma.$PostagemPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id_postagem: number
@@ -947,8 +947,8 @@ readonly fields: PostagemPacienteFieldRefs;
  */
 export interface Prisma__PostagemPacienteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  postagem<T extends Prisma.PostagemDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PostagemDefaultArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   paciente<T extends Prisma.PacienteDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PacienteDefaultArgs<ExtArgs>>): Prisma.Prisma__PacienteClient<runtime.Types.Result.GetResult<Prisma.$PacientePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  postagem<T extends Prisma.PostagemDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PostagemDefaultArgs<ExtArgs>>): Prisma.Prisma__PostagemClient<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.

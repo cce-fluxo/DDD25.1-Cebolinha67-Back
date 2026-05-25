@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Imagem
@@ -200,16 +200,16 @@ export type ImagemWhereInput = {
   id?: Prisma.IntFilter<"Imagem"> | number
   url?: Prisma.StringFilter<"Imagem"> | string
   nome?: Prisma.StringFilter<"Imagem"> | string
-  imagem_usuario?: Prisma.ImagemUsuarioListRelationFilter
   imagem_postagem?: Prisma.ImagemPostagemListRelationFilter
+  imagem_usuario?: Prisma.ImagemUsuarioListRelationFilter
 }
 
 export type ImagemOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   url?: Prisma.SortOrder
   nome?: Prisma.SortOrder
-  imagem_usuario?: Prisma.ImagemUsuarioOrderByRelationAggregateInput
   imagem_postagem?: Prisma.ImagemPostagemOrderByRelationAggregateInput
+  imagem_usuario?: Prisma.ImagemUsuarioOrderByRelationAggregateInput
 }
 
 export type ImagemWhereUniqueInput = Prisma.AtLeast<{
@@ -219,8 +219,8 @@ export type ImagemWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.ImagemWhereInput[]
   NOT?: Prisma.ImagemWhereInput | Prisma.ImagemWhereInput[]
   nome?: Prisma.StringFilter<"Imagem"> | string
-  imagem_usuario?: Prisma.ImagemUsuarioListRelationFilter
   imagem_postagem?: Prisma.ImagemPostagemListRelationFilter
+  imagem_usuario?: Prisma.ImagemUsuarioListRelationFilter
 }, "id" | "url">
 
 export type ImagemOrderByWithAggregationInput = {
@@ -246,31 +246,31 @@ export type ImagemScalarWhereWithAggregatesInput = {
 export type ImagemCreateInput = {
   url: string
   nome: string
-  imagem_usuario?: Prisma.ImagemUsuarioCreateNestedManyWithoutImagemInput
   imagem_postagem?: Prisma.ImagemPostagemCreateNestedManyWithoutImagemInput
+  imagem_usuario?: Prisma.ImagemUsuarioCreateNestedManyWithoutImagemInput
 }
 
 export type ImagemUncheckedCreateInput = {
   id?: number
   url: string
   nome: string
-  imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedManyWithoutImagemInput
   imagem_postagem?: Prisma.ImagemPostagemUncheckedCreateNestedManyWithoutImagemInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedCreateNestedManyWithoutImagemInput
 }
 
 export type ImagemUpdateInput = {
   url?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
-  imagem_usuario?: Prisma.ImagemUsuarioUpdateManyWithoutImagemNestedInput
   imagem_postagem?: Prisma.ImagemPostagemUpdateManyWithoutImagemNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUpdateManyWithoutImagemNestedInput
 }
 
 export type ImagemUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   url?: Prisma.StringFieldUpdateOperationsInput | string
   nome?: Prisma.StringFieldUpdateOperationsInput | string
-  imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateManyWithoutImagemNestedInput
   imagem_postagem?: Prisma.ImagemPostagemUncheckedUpdateManyWithoutImagemNestedInput
+  imagem_usuario?: Prisma.ImagemUsuarioUncheckedUpdateManyWithoutImagemNestedInput
 }
 
 export type ImagemCreateManyInput = {
@@ -439,13 +439,13 @@ export type ImagemUncheckedUpdateWithoutImagem_postagemInput = {
  */
 
 export type ImagemCountOutputType = {
-  imagem_usuario: number
   imagem_postagem: number
+  imagem_usuario: number
 }
 
 export type ImagemCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  imagem_usuario?: boolean | ImagemCountOutputTypeCountImagem_usuarioArgs
   imagem_postagem?: boolean | ImagemCountOutputTypeCountImagem_postagemArgs
+  imagem_usuario?: boolean | ImagemCountOutputTypeCountImagem_usuarioArgs
 }
 
 /**
@@ -461,15 +461,15 @@ export type ImagemCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exten
 /**
  * ImagemCountOutputType without action
  */
-export type ImagemCountOutputTypeCountImagem_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ImagemUsuarioWhereInput
+export type ImagemCountOutputTypeCountImagem_postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ImagemPostagemWhereInput
 }
 
 /**
  * ImagemCountOutputType without action
  */
-export type ImagemCountOutputTypeCountImagem_postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ImagemPostagemWhereInput
+export type ImagemCountOutputTypeCountImagem_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ImagemUsuarioWhereInput
 }
 
 
@@ -477,8 +477,8 @@ export type ImagemSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   id?: boolean
   url?: boolean
   nome?: boolean
-  imagem_usuario?: boolean | Prisma.Imagem$imagem_usuarioArgs<ExtArgs>
   imagem_postagem?: boolean | Prisma.Imagem$imagem_postagemArgs<ExtArgs>
+  imagem_usuario?: boolean | Prisma.Imagem$imagem_usuarioArgs<ExtArgs>
   _count?: boolean | Prisma.ImagemCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["imagem"]>
 
@@ -502,8 +502,8 @@ export type ImagemSelectScalar = {
 
 export type ImagemOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "url" | "nome", ExtArgs["result"]["imagem"]>
 export type ImagemInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  imagem_usuario?: boolean | Prisma.Imagem$imagem_usuarioArgs<ExtArgs>
   imagem_postagem?: boolean | Prisma.Imagem$imagem_postagemArgs<ExtArgs>
+  imagem_usuario?: boolean | Prisma.Imagem$imagem_usuarioArgs<ExtArgs>
   _count?: boolean | Prisma.ImagemCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ImagemIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -512,8 +512,8 @@ export type ImagemIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Exten
 export type $ImagemPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Imagem"
   objects: {
-    imagem_usuario: Prisma.$ImagemUsuarioPayload<ExtArgs>[]
     imagem_postagem: Prisma.$ImagemPostagemPayload<ExtArgs>[]
+    imagem_usuario: Prisma.$ImagemUsuarioPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -913,8 +913,8 @@ readonly fields: ImagemFieldRefs;
  */
 export interface Prisma__ImagemClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  imagem_usuario<T extends Prisma.Imagem$imagem_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Imagem$imagem_usuarioArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ImagemUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   imagem_postagem<T extends Prisma.Imagem$imagem_postagemArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Imagem$imagem_postagemArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ImagemPostagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  imagem_usuario<T extends Prisma.Imagem$imagem_usuarioArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Imagem$imagem_usuarioArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ImagemUsuarioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1340,30 +1340,6 @@ export type ImagemDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Intern
 }
 
 /**
- * Imagem.imagem_usuario
- */
-export type Imagem$imagem_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ImagemUsuario
-   */
-  select?: Prisma.ImagemUsuarioSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the ImagemUsuario
-   */
-  omit?: Prisma.ImagemUsuarioOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ImagemUsuarioInclude<ExtArgs> | null
-  where?: Prisma.ImagemUsuarioWhereInput
-  orderBy?: Prisma.ImagemUsuarioOrderByWithRelationInput | Prisma.ImagemUsuarioOrderByWithRelationInput[]
-  cursor?: Prisma.ImagemUsuarioWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ImagemUsuarioScalarFieldEnum | Prisma.ImagemUsuarioScalarFieldEnum[]
-}
-
-/**
  * Imagem.imagem_postagem
  */
 export type Imagem$imagem_postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1385,6 +1361,30 @@ export type Imagem$imagem_postagemArgs<ExtArgs extends runtime.Types.Extensions.
   take?: number
   skip?: number
   distinct?: Prisma.ImagemPostagemScalarFieldEnum | Prisma.ImagemPostagemScalarFieldEnum[]
+}
+
+/**
+ * Imagem.imagem_usuario
+ */
+export type Imagem$imagem_usuarioArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ImagemUsuario
+   */
+  select?: Prisma.ImagemUsuarioSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ImagemUsuario
+   */
+  omit?: Prisma.ImagemUsuarioOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ImagemUsuarioInclude<ExtArgs> | null
+  where?: Prisma.ImagemUsuarioWhereInput
+  orderBy?: Prisma.ImagemUsuarioOrderByWithRelationInput | Prisma.ImagemUsuarioOrderByWithRelationInput[]
+  cursor?: Prisma.ImagemUsuarioWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ImagemUsuarioScalarFieldEnum | Prisma.ImagemUsuarioScalarFieldEnum[]
 }
 
 /**

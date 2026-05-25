@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Dentista
@@ -236,10 +236,10 @@ export type DentistaWhereInput = {
   datatermino?: Prisma.DateTimeFilter<"Dentista"> | Date | string
   especializacao?: Prisma.StringFilter<"Dentista"> | string
   id_usuario?: Prisma.IntFilter<"Dentista"> | number
+  consultas?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
-  postagem?: Prisma.PostagemListRelationFilter
   endereco?: Prisma.XOR<Prisma.EnderecoNullableScalarRelationFilter, Prisma.EnderecoWhereInput> | null
-  consultas?: Prisma.ConsultaListRelationFilter
+  postagem?: Prisma.PostagemListRelationFilter
 }
 
 export type DentistaOrderByWithRelationInput = {
@@ -250,10 +250,10 @@ export type DentistaOrderByWithRelationInput = {
   datatermino?: Prisma.SortOrder
   especializacao?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
+  consultas?: Prisma.ConsultaOrderByWithRelationInput
   usuario?: Prisma.UsuarioOrderByWithRelationInput
-  postagem?: Prisma.PostagemOrderByRelationAggregateInput
   endereco?: Prisma.EnderecoOrderByWithRelationInput
-  consultas?: Prisma.ConsultaOrderByRelationAggregateInput
+  postagem?: Prisma.PostagemOrderByRelationAggregateInput
 }
 
 export type DentistaWhereUniqueInput = Prisma.AtLeast<{
@@ -267,10 +267,10 @@ export type DentistaWhereUniqueInput = Prisma.AtLeast<{
   datainicio?: Prisma.DateTimeFilter<"Dentista"> | Date | string
   datatermino?: Prisma.DateTimeFilter<"Dentista"> | Date | string
   especializacao?: Prisma.StringFilter<"Dentista"> | string
+  consultas?: Prisma.XOR<Prisma.ConsultaNullableScalarRelationFilter, Prisma.ConsultaWhereInput> | null
   usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
-  postagem?: Prisma.PostagemListRelationFilter
   endereco?: Prisma.XOR<Prisma.EnderecoNullableScalarRelationFilter, Prisma.EnderecoWhereInput> | null
-  consultas?: Prisma.ConsultaListRelationFilter
+  postagem?: Prisma.PostagemListRelationFilter
 }, "id" | "id_usuario">
 
 export type DentistaOrderByWithAggregationInput = {
@@ -307,10 +307,10 @@ export type DentistaCreateInput = {
   datainicio: Date | string
   datatermino: Date | string
   especializacao: string
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutDentistaInput
   usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
-  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
   endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
+  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaUncheckedCreateInput = {
@@ -321,9 +321,9 @@ export type DentistaUncheckedCreateInput = {
   datatermino: Date | string
   especializacao: string
   id_usuario: number
-  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutDentistaInput
   endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
+  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaUpdateInput = {
@@ -332,10 +332,10 @@ export type DentistaUpdateInput = {
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  consultas?: Prisma.ConsultaUpdateOneWithoutDentistaNestedInput
   usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
-  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaUncheckedUpdateInput = {
@@ -346,9 +346,9 @@ export type DentistaUncheckedUpdateInput = {
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaCreateManyInput = {
@@ -509,9 +509,9 @@ export type DentistaCreateWithoutUsuarioInput = {
   datainicio: Date | string
   datatermino: Date | string
   especializacao: string
-  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutDentistaInput
   endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
+  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaUncheckedCreateWithoutUsuarioInput = {
@@ -521,9 +521,9 @@ export type DentistaUncheckedCreateWithoutUsuarioInput = {
   datainicio: Date | string
   datatermino: Date | string
   especializacao: string
-  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutDentistaInput
   endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
+  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaCreateOrConnectWithoutUsuarioInput = {
@@ -548,9 +548,9 @@ export type DentistaUpdateWithoutUsuarioInput = {
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUpdateOneWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaUncheckedUpdateWithoutUsuarioInput = {
@@ -560,9 +560,9 @@ export type DentistaUncheckedUpdateWithoutUsuarioInput = {
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
-  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaCreateWithoutEnderecoInput = {
@@ -571,9 +571,9 @@ export type DentistaCreateWithoutEnderecoInput = {
   datainicio: Date | string
   datatermino: Date | string
   especializacao: string
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutDentistaInput
   usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
   postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaUncheckedCreateWithoutEnderecoInput = {
@@ -584,8 +584,8 @@ export type DentistaUncheckedCreateWithoutEnderecoInput = {
   datatermino: Date | string
   especializacao: string
   id_usuario: number
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutDentistaInput
   postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaCreateOrConnectWithoutEnderecoInput = {
@@ -610,9 +610,9 @@ export type DentistaUpdateWithoutEnderecoInput = {
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  consultas?: Prisma.ConsultaUpdateOneWithoutDentistaNestedInput
   usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
   postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaUncheckedUpdateWithoutEnderecoInput = {
@@ -623,8 +623,8 @@ export type DentistaUncheckedUpdateWithoutEnderecoInput = {
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutDentistaNestedInput
   postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaCreateWithoutConsultasInput = {
@@ -634,8 +634,8 @@ export type DentistaCreateWithoutConsultasInput = {
   datatermino: Date | string
   especializacao: string
   usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
-  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
   endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
+  postagem?: Prisma.PostagemCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaUncheckedCreateWithoutConsultasInput = {
@@ -646,8 +646,8 @@ export type DentistaUncheckedCreateWithoutConsultasInput = {
   datatermino: Date | string
   especializacao: string
   id_usuario: number
-  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
   endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
+  postagem?: Prisma.PostagemUncheckedCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaCreateOrConnectWithoutConsultasInput = {
@@ -673,8 +673,8 @@ export type DentistaUpdateWithoutConsultasInput = {
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
-  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaUncheckedUpdateWithoutConsultasInput = {
@@ -685,8 +685,8 @@ export type DentistaUncheckedUpdateWithoutConsultasInput = {
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
+  postagem?: Prisma.PostagemUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaCreateWithoutPostagemInput = {
@@ -695,9 +695,9 @@ export type DentistaCreateWithoutPostagemInput = {
   datainicio: Date | string
   datatermino: Date | string
   especializacao: string
+  consultas?: Prisma.ConsultaCreateNestedOneWithoutDentistaInput
   usuario: Prisma.UsuarioCreateNestedOneWithoutDentistaInput
   endereco?: Prisma.EnderecoCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.ConsultaCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaUncheckedCreateWithoutPostagemInput = {
@@ -708,8 +708,8 @@ export type DentistaUncheckedCreateWithoutPostagemInput = {
   datatermino: Date | string
   especializacao: string
   id_usuario: number
+  consultas?: Prisma.ConsultaUncheckedCreateNestedOneWithoutDentistaInput
   endereco?: Prisma.EnderecoUncheckedCreateNestedOneWithoutDentistaInput
-  consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutDentistaInput
 }
 
 export type DentistaCreateOrConnectWithoutPostagemInput = {
@@ -734,9 +734,9 @@ export type DentistaUpdateWithoutPostagemInput = {
   datainicio?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
+  consultas?: Prisma.ConsultaUpdateOneWithoutDentistaNestedInput
   usuario?: Prisma.UsuarioUpdateOneRequiredWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUpdateManyWithoutDentistaNestedInput
 }
 
 export type DentistaUncheckedUpdateWithoutPostagemInput = {
@@ -747,8 +747,8 @@ export type DentistaUncheckedUpdateWithoutPostagemInput = {
   datatermino?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   especializacao?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
+  consultas?: Prisma.ConsultaUncheckedUpdateOneWithoutDentistaNestedInput
   endereco?: Prisma.EnderecoUncheckedUpdateOneWithoutDentistaNestedInput
-  consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutDentistaNestedInput
 }
 
 
@@ -758,12 +758,10 @@ export type DentistaUncheckedUpdateWithoutPostagemInput = {
 
 export type DentistaCountOutputType = {
   postagem: number
-  consultas: number
 }
 
 export type DentistaCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   postagem?: boolean | DentistaCountOutputTypeCountPostagemArgs
-  consultas?: boolean | DentistaCountOutputTypeCountConsultasArgs
 }
 
 /**
@@ -783,13 +781,6 @@ export type DentistaCountOutputTypeCountPostagemArgs<ExtArgs extends runtime.Typ
   where?: Prisma.PostagemWhereInput
 }
 
-/**
- * DentistaCountOutputType without action
- */
-export type DentistaCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConsultaWhereInput
-}
-
 
 export type DentistaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -799,10 +790,10 @@ export type DentistaSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   datatermino?: boolean
   especializacao?: boolean
   id_usuario?: boolean
-  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  postagem?: boolean | Prisma.Dentista$postagemArgs<ExtArgs>
-  endereco?: boolean | Prisma.Dentista$enderecoArgs<ExtArgs>
   consultas?: boolean | Prisma.Dentista$consultasArgs<ExtArgs>
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.Dentista$enderecoArgs<ExtArgs>
+  postagem?: boolean | Prisma.Dentista$postagemArgs<ExtArgs>
   _count?: boolean | Prisma.DentistaCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["dentista"]>
 
@@ -840,10 +831,10 @@ export type DentistaSelectScalar = {
 
 export type DentistaOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "formacao" | "instituto" | "datainicio" | "datatermino" | "especializacao" | "id_usuario", ExtArgs["result"]["dentista"]>
 export type DentistaInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  postagem?: boolean | Prisma.Dentista$postagemArgs<ExtArgs>
-  endereco?: boolean | Prisma.Dentista$enderecoArgs<ExtArgs>
   consultas?: boolean | Prisma.Dentista$consultasArgs<ExtArgs>
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
+  endereco?: boolean | Prisma.Dentista$enderecoArgs<ExtArgs>
+  postagem?: boolean | Prisma.Dentista$postagemArgs<ExtArgs>
   _count?: boolean | Prisma.DentistaCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type DentistaIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -856,10 +847,10 @@ export type DentistaIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $DentistaPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Dentista"
   objects: {
+    consultas: Prisma.$ConsultaPayload<ExtArgs> | null
     usuario: Prisma.$UsuarioPayload<ExtArgs>
-    postagem: Prisma.$PostagemPayload<ExtArgs>[]
     endereco: Prisma.$EnderecoPayload<ExtArgs> | null
-    consultas: Prisma.$ConsultaPayload<ExtArgs>[]
+    postagem: Prisma.$PostagemPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -1263,10 +1254,10 @@ readonly fields: DentistaFieldRefs;
  */
 export interface Prisma__DentistaClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  consultas<T extends Prisma.Dentista$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$consultasArgs<ExtArgs>>): Prisma.Prisma__ConsultaClient<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   usuario<T extends Prisma.UsuarioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UsuarioDefaultArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  postagem<T extends Prisma.Dentista$postagemArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$postagemArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   endereco<T extends Prisma.Dentista$enderecoArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$enderecoArgs<ExtArgs>>): Prisma.Prisma__EnderecoClient<runtime.Types.Result.GetResult<Prisma.$EnderecoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  consultas<T extends Prisma.Dentista$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  postagem<T extends Prisma.Dentista$postagemArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Dentista$postagemArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1704,27 +1695,22 @@ export type DentistaDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * Dentista.postagem
+ * Dentista.consultas
  */
-export type Dentista$postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Dentista$consultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Postagem
+   * Select specific fields to fetch from the Consulta
    */
-  select?: Prisma.PostagemSelect<ExtArgs> | null
+  select?: Prisma.ConsultaSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Postagem
+   * Omit specific fields from the Consulta
    */
-  omit?: Prisma.PostagemOmit<ExtArgs> | null
+  omit?: Prisma.ConsultaOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.PostagemInclude<ExtArgs> | null
-  where?: Prisma.PostagemWhereInput
-  orderBy?: Prisma.PostagemOrderByWithRelationInput | Prisma.PostagemOrderByWithRelationInput[]
-  cursor?: Prisma.PostagemWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PostagemScalarFieldEnum | Prisma.PostagemScalarFieldEnum[]
+  include?: Prisma.ConsultaInclude<ExtArgs> | null
+  where?: Prisma.ConsultaWhereInput
 }
 
 /**
@@ -1747,27 +1733,27 @@ export type Dentista$enderecoArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
- * Dentista.consultas
+ * Dentista.postagem
  */
-export type Dentista$consultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Dentista$postagemArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Consulta
+   * Select specific fields to fetch from the Postagem
    */
-  select?: Prisma.ConsultaSelect<ExtArgs> | null
+  select?: Prisma.PostagemSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Consulta
+   * Omit specific fields from the Postagem
    */
-  omit?: Prisma.ConsultaOmit<ExtArgs> | null
+  omit?: Prisma.PostagemOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ConsultaInclude<ExtArgs> | null
-  where?: Prisma.ConsultaWhereInput
-  orderBy?: Prisma.ConsultaOrderByWithRelationInput | Prisma.ConsultaOrderByWithRelationInput[]
-  cursor?: Prisma.ConsultaWhereUniqueInput
+  include?: Prisma.PostagemInclude<ExtArgs> | null
+  where?: Prisma.PostagemWhereInput
+  orderBy?: Prisma.PostagemOrderByWithRelationInput | Prisma.PostagemOrderByWithRelationInput[]
+  cursor?: Prisma.PostagemWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
+  distinct?: Prisma.PostagemScalarFieldEnum | Prisma.PostagemScalarFieldEnum[]
 }
 
 /**

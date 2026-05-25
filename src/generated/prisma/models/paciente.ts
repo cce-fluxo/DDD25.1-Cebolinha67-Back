@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums.js"
-import type * as Prisma from "../internal/prismaNamespace.js"
+import type * as $Enums from "../enums"
+import type * as Prisma from "../internal/prismaNamespace"
 
 /**
  * Model Paciente
@@ -204,9 +204,9 @@ export type PacienteWhereInput = {
   id?: Prisma.IntFilter<"Paciente"> | number
   rg?: Prisma.StringFilter<"Paciente"> | string
   id_usuario?: Prisma.IntFilter<"Paciente"> | number
-  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
-  convenios?: Prisma.ConvenioListRelationFilter
   consultas?: Prisma.ConsultaListRelationFilter
+  convenios?: Prisma.ConvenioListRelationFilter
+  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
   postagem_paciente?: Prisma.PostagemPacienteListRelationFilter
 }
 
@@ -214,9 +214,9 @@ export type PacienteOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   rg?: Prisma.SortOrder
   id_usuario?: Prisma.SortOrder
-  usuario?: Prisma.UsuarioOrderByWithRelationInput
-  convenios?: Prisma.ConvenioOrderByRelationAggregateInput
   consultas?: Prisma.ConsultaOrderByRelationAggregateInput
+  convenios?: Prisma.ConvenioOrderByRelationAggregateInput
+  usuario?: Prisma.UsuarioOrderByWithRelationInput
   postagem_paciente?: Prisma.PostagemPacienteOrderByRelationAggregateInput
 }
 
@@ -227,9 +227,9 @@ export type PacienteWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.PacienteWhereInput | Prisma.PacienteWhereInput[]
   OR?: Prisma.PacienteWhereInput[]
   NOT?: Prisma.PacienteWhereInput | Prisma.PacienteWhereInput[]
-  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
-  convenios?: Prisma.ConvenioListRelationFilter
   consultas?: Prisma.ConsultaListRelationFilter
+  convenios?: Prisma.ConvenioListRelationFilter
+  usuario?: Prisma.XOR<Prisma.UsuarioScalarRelationFilter, Prisma.UsuarioWhereInput>
   postagem_paciente?: Prisma.PostagemPacienteListRelationFilter
 }, "id" | "rg" | "id_usuario">
 
@@ -255,9 +255,9 @@ export type PacienteScalarWhereWithAggregatesInput = {
 
 export type PacienteCreateInput = {
   rg: string
-  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
-  convenios?: Prisma.ConvenioCreateNestedManyWithoutPacienteInput
   consultas?: Prisma.ConsultaCreateNestedManyWithoutPacienteInput
+  convenios?: Prisma.ConvenioCreateNestedManyWithoutPacienteInput
+  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
   postagem_paciente?: Prisma.PostagemPacienteCreateNestedManyWithoutPacienteInput
 }
 
@@ -265,16 +265,16 @@ export type PacienteUncheckedCreateInput = {
   id?: number
   rg: string
   id_usuario: number
-  convenios?: Prisma.ConvenioUncheckedCreateNestedManyWithoutPacienteInput
   consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutPacienteInput
+  convenios?: Prisma.ConvenioUncheckedCreateNestedManyWithoutPacienteInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedCreateNestedManyWithoutPacienteInput
 }
 
 export type PacienteUpdateInput = {
   rg?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
-  convenios?: Prisma.ConvenioUpdateManyWithoutPacienteNestedInput
   consultas?: Prisma.ConsultaUpdateManyWithoutPacienteNestedInput
+  convenios?: Prisma.ConvenioUpdateManyWithoutPacienteNestedInput
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUpdateManyWithoutPacienteNestedInput
 }
 
@@ -282,8 +282,8 @@ export type PacienteUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   rg?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  convenios?: Prisma.ConvenioUncheckedUpdateManyWithoutPacienteNestedInput
   consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutPacienteNestedInput
+  convenios?: Prisma.ConvenioUncheckedUpdateManyWithoutPacienteNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedUpdateManyWithoutPacienteNestedInput
 }
 
@@ -417,16 +417,16 @@ export type PacienteUpdateOneRequiredWithoutConveniosNestedInput = {
 
 export type PacienteCreateWithoutUsuarioInput = {
   rg: string
-  convenios?: Prisma.ConvenioCreateNestedManyWithoutPacienteInput
   consultas?: Prisma.ConsultaCreateNestedManyWithoutPacienteInput
+  convenios?: Prisma.ConvenioCreateNestedManyWithoutPacienteInput
   postagem_paciente?: Prisma.PostagemPacienteCreateNestedManyWithoutPacienteInput
 }
 
 export type PacienteUncheckedCreateWithoutUsuarioInput = {
   id?: number
   rg: string
-  convenios?: Prisma.ConvenioUncheckedCreateNestedManyWithoutPacienteInput
   consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutPacienteInput
+  convenios?: Prisma.ConvenioUncheckedCreateNestedManyWithoutPacienteInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedCreateNestedManyWithoutPacienteInput
 }
 
@@ -448,23 +448,23 @@ export type PacienteUpdateToOneWithWhereWithoutUsuarioInput = {
 
 export type PacienteUpdateWithoutUsuarioInput = {
   rg?: Prisma.StringFieldUpdateOperationsInput | string
-  convenios?: Prisma.ConvenioUpdateManyWithoutPacienteNestedInput
   consultas?: Prisma.ConsultaUpdateManyWithoutPacienteNestedInput
+  convenios?: Prisma.ConvenioUpdateManyWithoutPacienteNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUpdateManyWithoutPacienteNestedInput
 }
 
 export type PacienteUncheckedUpdateWithoutUsuarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   rg?: Prisma.StringFieldUpdateOperationsInput | string
-  convenios?: Prisma.ConvenioUncheckedUpdateManyWithoutPacienteNestedInput
   consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutPacienteNestedInput
+  convenios?: Prisma.ConvenioUncheckedUpdateManyWithoutPacienteNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUncheckedUpdateManyWithoutPacienteNestedInput
 }
 
 export type PacienteCreateWithoutConsultasInput = {
   rg: string
-  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
   convenios?: Prisma.ConvenioCreateNestedManyWithoutPacienteInput
+  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
   postagem_paciente?: Prisma.PostagemPacienteCreateNestedManyWithoutPacienteInput
 }
 
@@ -494,8 +494,8 @@ export type PacienteUpdateToOneWithWhereWithoutConsultasInput = {
 
 export type PacienteUpdateWithoutConsultasInput = {
   rg?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
   convenios?: Prisma.ConvenioUpdateManyWithoutPacienteNestedInput
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUpdateManyWithoutPacienteNestedInput
 }
 
@@ -509,17 +509,17 @@ export type PacienteUncheckedUpdateWithoutConsultasInput = {
 
 export type PacienteCreateWithoutPostagem_pacienteInput = {
   rg: string
-  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
-  convenios?: Prisma.ConvenioCreateNestedManyWithoutPacienteInput
   consultas?: Prisma.ConsultaCreateNestedManyWithoutPacienteInput
+  convenios?: Prisma.ConvenioCreateNestedManyWithoutPacienteInput
+  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
 }
 
 export type PacienteUncheckedCreateWithoutPostagem_pacienteInput = {
   id?: number
   rg: string
   id_usuario: number
-  convenios?: Prisma.ConvenioUncheckedCreateNestedManyWithoutPacienteInput
   consultas?: Prisma.ConsultaUncheckedCreateNestedManyWithoutPacienteInput
+  convenios?: Prisma.ConvenioUncheckedCreateNestedManyWithoutPacienteInput
 }
 
 export type PacienteCreateOrConnectWithoutPostagem_pacienteInput = {
@@ -540,23 +540,23 @@ export type PacienteUpdateToOneWithWhereWithoutPostagem_pacienteInput = {
 
 export type PacienteUpdateWithoutPostagem_pacienteInput = {
   rg?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
-  convenios?: Prisma.ConvenioUpdateManyWithoutPacienteNestedInput
   consultas?: Prisma.ConsultaUpdateManyWithoutPacienteNestedInput
+  convenios?: Prisma.ConvenioUpdateManyWithoutPacienteNestedInput
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
 }
 
 export type PacienteUncheckedUpdateWithoutPostagem_pacienteInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   rg?: Prisma.StringFieldUpdateOperationsInput | string
   id_usuario?: Prisma.IntFieldUpdateOperationsInput | number
-  convenios?: Prisma.ConvenioUncheckedUpdateManyWithoutPacienteNestedInput
   consultas?: Prisma.ConsultaUncheckedUpdateManyWithoutPacienteNestedInput
+  convenios?: Prisma.ConvenioUncheckedUpdateManyWithoutPacienteNestedInput
 }
 
 export type PacienteCreateWithoutConveniosInput = {
   rg: string
-  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
   consultas?: Prisma.ConsultaCreateNestedManyWithoutPacienteInput
+  usuario: Prisma.UsuarioCreateNestedOneWithoutPacienteInput
   postagem_paciente?: Prisma.PostagemPacienteCreateNestedManyWithoutPacienteInput
 }
 
@@ -586,8 +586,8 @@ export type PacienteUpdateToOneWithWhereWithoutConveniosInput = {
 
 export type PacienteUpdateWithoutConveniosInput = {
   rg?: Prisma.StringFieldUpdateOperationsInput | string
-  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
   consultas?: Prisma.ConsultaUpdateManyWithoutPacienteNestedInput
+  usuario?: Prisma.UsuarioUpdateOneRequiredWithoutPacienteNestedInput
   postagem_paciente?: Prisma.PostagemPacienteUpdateManyWithoutPacienteNestedInput
 }
 
@@ -605,14 +605,14 @@ export type PacienteUncheckedUpdateWithoutConveniosInput = {
  */
 
 export type PacienteCountOutputType = {
-  convenios: number
   consultas: number
+  convenios: number
   postagem_paciente: number
 }
 
 export type PacienteCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  convenios?: boolean | PacienteCountOutputTypeCountConveniosArgs
   consultas?: boolean | PacienteCountOutputTypeCountConsultasArgs
+  convenios?: boolean | PacienteCountOutputTypeCountConveniosArgs
   postagem_paciente?: boolean | PacienteCountOutputTypeCountPostagem_pacienteArgs
 }
 
@@ -629,15 +629,15 @@ export type PacienteCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Ext
 /**
  * PacienteCountOutputType without action
  */
-export type PacienteCountOutputTypeCountConveniosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConvenioWhereInput
+export type PacienteCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ConsultaWhereInput
 }
 
 /**
  * PacienteCountOutputType without action
  */
-export type PacienteCountOutputTypeCountConsultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ConsultaWhereInput
+export type PacienteCountOutputTypeCountConveniosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ConvenioWhereInput
 }
 
 /**
@@ -652,9 +652,9 @@ export type PacienteSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   id?: boolean
   rg?: boolean
   id_usuario?: boolean
-  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  convenios?: boolean | Prisma.Paciente$conveniosArgs<ExtArgs>
   consultas?: boolean | Prisma.Paciente$consultasArgs<ExtArgs>
+  convenios?: boolean | Prisma.Paciente$conveniosArgs<ExtArgs>
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
   postagem_paciente?: boolean | Prisma.Paciente$postagem_pacienteArgs<ExtArgs>
   _count?: boolean | Prisma.PacienteCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["paciente"]>
@@ -681,9 +681,9 @@ export type PacienteSelectScalar = {
 
 export type PacienteOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "rg" | "id_usuario", ExtArgs["result"]["paciente"]>
 export type PacienteInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
-  convenios?: boolean | Prisma.Paciente$conveniosArgs<ExtArgs>
   consultas?: boolean | Prisma.Paciente$consultasArgs<ExtArgs>
+  convenios?: boolean | Prisma.Paciente$conveniosArgs<ExtArgs>
+  usuario?: boolean | Prisma.UsuarioDefaultArgs<ExtArgs>
   postagem_paciente?: boolean | Prisma.Paciente$postagem_pacienteArgs<ExtArgs>
   _count?: boolean | Prisma.PacienteCountOutputTypeDefaultArgs<ExtArgs>
 }
@@ -697,9 +697,9 @@ export type PacienteIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
 export type $PacientePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Paciente"
   objects: {
-    usuario: Prisma.$UsuarioPayload<ExtArgs>
-    convenios: Prisma.$ConvenioPayload<ExtArgs>[]
     consultas: Prisma.$ConsultaPayload<ExtArgs>[]
+    convenios: Prisma.$ConvenioPayload<ExtArgs>[]
+    usuario: Prisma.$UsuarioPayload<ExtArgs>
     postagem_paciente: Prisma.$PostagemPacientePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1100,9 +1100,9 @@ readonly fields: PacienteFieldRefs;
  */
 export interface Prisma__PacienteClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  usuario<T extends Prisma.UsuarioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UsuarioDefaultArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  convenios<T extends Prisma.Paciente$conveniosArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Paciente$conveniosArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   consultas<T extends Prisma.Paciente$consultasArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Paciente$consultasArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConsultaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  convenios<T extends Prisma.Paciente$conveniosArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Paciente$conveniosArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ConvenioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  usuario<T extends Prisma.UsuarioDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UsuarioDefaultArgs<ExtArgs>>): Prisma.Prisma__UsuarioClient<runtime.Types.Result.GetResult<Prisma.$UsuarioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   postagem_paciente<T extends Prisma.Paciente$postagem_pacienteArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Paciente$postagem_pacienteArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PostagemPacientePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1537,30 +1537,6 @@ export type PacienteDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inte
 }
 
 /**
- * Paciente.convenios
- */
-export type Paciente$conveniosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Convenio
-   */
-  select?: Prisma.ConvenioSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Convenio
-   */
-  omit?: Prisma.ConvenioOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ConvenioInclude<ExtArgs> | null
-  where?: Prisma.ConvenioWhereInput
-  orderBy?: Prisma.ConvenioOrderByWithRelationInput | Prisma.ConvenioOrderByWithRelationInput[]
-  cursor?: Prisma.ConvenioWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ConvenioScalarFieldEnum | Prisma.ConvenioScalarFieldEnum[]
-}
-
-/**
  * Paciente.consultas
  */
 export type Paciente$consultasArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1582,6 +1558,30 @@ export type Paciente$consultasArgs<ExtArgs extends runtime.Types.Extensions.Inte
   take?: number
   skip?: number
   distinct?: Prisma.ConsultaScalarFieldEnum | Prisma.ConsultaScalarFieldEnum[]
+}
+
+/**
+ * Paciente.convenios
+ */
+export type Paciente$conveniosArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Convenio
+   */
+  select?: Prisma.ConvenioSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Convenio
+   */
+  omit?: Prisma.ConvenioOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ConvenioInclude<ExtArgs> | null
+  where?: Prisma.ConvenioWhereInput
+  orderBy?: Prisma.ConvenioOrderByWithRelationInput | Prisma.ConvenioOrderByWithRelationInput[]
+  cursor?: Prisma.ConvenioWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ConvenioScalarFieldEnum | Prisma.ConvenioScalarFieldEnum[]
 }
 
 /**
