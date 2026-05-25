@@ -62,18 +62,14 @@ export class DentistaService {
       where: { id: id_dentista },
       include: {
         consultas: {
-          include: {
-            paciente: true, 
-          },
+          include: { paciente: true },
         },
       },
     });
 
-    // Se o dentista não existir, retorna null
     if (!dentistaComConsultasEPacientes) return null;
 
-    // Opcional: Extrair apenas a lista de pacientes das consultas
-    return dentistaComConsultasEPacientes.consultas.map((c) => c.paciente);
+    return dentistaComConsultasEPacientes.consultas?.paciente ?? null;
   }
 
   async editarDentista(id: number, updateDentistaDto: UpdateDentistaDto) {
