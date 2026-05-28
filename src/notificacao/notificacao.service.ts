@@ -24,23 +24,43 @@ export class NotificacaoService {
   
   async getDados(id:number){
     try{
-    const notificacao = await this.prisma.notificacao.findUnique({
-      where: {id}
-    })
+      const notificacao = await this.prisma.notificacao.findUnique({
+        where: {id}
+      })
 
-    if(!notificacao){
-      throw new NotFoundException("Notificação não encontrada")
-    }
+      if(!notificacao){
+        throw new NotFoundException("Notificação não encontrada")
+      }
 
-    return notificacao
-  }
- catch(error: any){
-    if (error.code === 'P2025') {
-      throw new NotFoundException('Notificação não encontrada');
+      return notificacao
     }
-    throw error;
+    catch(error: any){
+      if (error.code === 'P2025') {
+        throw new NotFoundException('Notificação não encontrada');
+      }
+      throw error;
+    }
   }
-}
+
+  async getNotificacaoUsuario(id:number){
+    try{
+      const minhasnotificacoes = await this.prisma.notificacao.findMany({
+        where: {id}
+      })
+
+      if(!minhasnotificacoes){
+        throw new NotFoundException("Notificações não encontradas")
+      }
+
+      return minhasnotificacoes
+    }
+    catch(error: any){
+      if (error.code === 'P2025') {
+        throw new NotFoundException('Notificações não encontradas');
+      }
+      throw error;
+    }
+  }
 
   async listarNotificacoes(){
     try{

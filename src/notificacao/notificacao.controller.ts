@@ -31,6 +31,14 @@ export class NotificacaoController {
     return this.notificacaoService.getDados(+id)
   }
 
+  @Get('/lista/minhasnotificacoes/:id')
+  @ApiOperation({summary: 'lista todas as minhas notificações'})
+  @ApiResponse({status: 200, description: "Notificações encontradas"})
+  @ApiResponse({status:404, description: 'Notificações não encontradas' })
+  listarMinhasNotificacoes(@Param('id') id:string){
+    return this.notificacaoService.getNotificacaoUsuario(+id)
+  }
+
   // /notificacoes/lista
 
   @Get('/lista/:id')
