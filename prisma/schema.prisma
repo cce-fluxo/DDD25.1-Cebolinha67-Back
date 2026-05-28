@@ -33,7 +33,7 @@ model Dentista {
   datatermino    DateTime
   especializacao String
   id_usuario     Int        @unique
-  consultas      Consulta?
+  consultas      Consulta[]
   usuario        Usuario    @relation(fields: [id_usuario], references: [id])
   endereco       Endereco?
   postagem       Postagem[]
@@ -108,16 +108,16 @@ model Endereco {
   complemento           String
   cep                   String
   id_dentista           Int       @unique
-  consultas             Consulta?
+  consultas             Consulta[]
   dentista              Dentista  @relation(fields: [id_dentista], references: [id])
 }
 
 model Consulta {
   id                  Int                  @id @default(autoincrement())
   id_paciente         Int
-  id_dentista         Int                  @unique
-  id_convenio         Int?                 @unique
-  id_endereco         Int                  @unique
+  id_dentista         Int                
+  id_convenio         Int?                 
+  id_endereco         Int                  
   convenio            Convenio?            @relation(fields: [id_convenio], references: [id])
   dentista            Dentista             @relation(fields: [id_dentista], references: [id])
   endereco            Endereco             @relation(fields: [id_endereco], references: [id])
@@ -168,7 +168,7 @@ model Convenio {
   nu_carteirinha     String
   dt_val_carteirinha DateTime
   id_paciente        Int
-  consultas          Consulta?
+  consultas          Consulta[]
   paciente           Paciente  @relation(fields: [id_paciente], references: [id])
 }
 
