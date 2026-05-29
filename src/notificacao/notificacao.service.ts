@@ -42,17 +42,19 @@ export class NotificacaoService {
     }
   }
 
-  async getNotificacaoUsuario(id:number){
+  async getNotificacaoUsuario(id_usuario: number){
     try{
-      const minhasnotificacoes = await this.prisma.notificacao.findMany({
-        where: {id}
+      const minhasnotificacoes = await this.prisma.notificacaoUsuario.findMany({
+        where: { id_usuario },
+        include: { notificacao: true }
       })
 
-      if(!minhasnotificacoes){
-        throw new NotFoundException("Notificações não encontradas")
-      }
-
-      return minhasnotificacoes
+      return minhasnotificacoes.map(n => ({
+        id: n.notificacao.id,
+        titulo: n.notificacao.titulo,
+        ds_mensagem: n.notificacao.ds_mensagem,
+        status: n.notificacao.lido ? 'lido' : 'nao_lido',
+      }))
     }
     catch(error: any){
       if (error.code === 'P2025') {

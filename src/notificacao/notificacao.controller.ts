@@ -20,17 +20,6 @@ import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 export class NotificacaoController {
   constructor(private readonly notificacaoService: NotificacaoService) {}
 
-  // /notificacoes/id
-  @Get('/:id')
-  //swagger 
-  @ApiOperation({summary: 'pega uma notificação pelo ID dela'})
-  @ApiParam({name: 'id' , type:Number})
-  @ApiResponse({status: 200, description: "Notificação encontrada"})
-  @ApiResponse({status:404, description: 'Notificação não encontrada' })
-  getDados(@Param('id') id:string){
-    return this.notificacaoService.getDados(+id)
-  }
-
   @Get('/lista/minhasnotificacoes/:id')
   @ApiOperation({summary: 'lista todas as minhas notificações'})
   @ApiResponse({status: 200, description: "Notificações encontradas"})
@@ -40,14 +29,23 @@ export class NotificacaoController {
   }
 
   // /notificacoes/lista
-
-  @Get('/lista/:id')
+  @Get('/lista')
   //swagger
   @ApiOperation({summary: 'lista todas as notificações'})
   @ApiResponse({status: 200, description: "Notificação encontrada"})
   @ApiResponse({status:404, description: 'Notificação não encontrada' })
   listarNotificacoes(){
     return this.notificacaoService.listarNotificacoes()
+  }
+
+  // /notificacoes/:id — deve ficar por último para não capturar rotas específicas
+  @Get('/:id')
+  @ApiOperation({summary: 'pega uma notificação pelo ID dela'})
+  @ApiParam({name: 'id' , type:Number})
+  @ApiResponse({status: 200, description: "Notificação encontrada"})
+  @ApiResponse({status:404, description: 'Notificação não encontrada' })
+  getDados(@Param('id') id:string){
+    return this.notificacaoService.getDados(+id)
   }
 
   @Patch("/status/:id")
